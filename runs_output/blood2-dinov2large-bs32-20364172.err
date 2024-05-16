@@ -1,0 +1,93 @@
+Failed to import backpack: cannot import name '_grad_input_padding' from 'torch.nn.grad' (/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/grad.py)
+
+
+
+no algorithm conf specified, going to use default
+
+
+
+/lustre/groups/aih/sina.wendrich/MA_code/test/domainlab/arg_parser.py:355: UserWarning: no algorithm conf specified, going to use default
+  warnings.warn("no algorithm conf specified, going to use default")
+
+overriding args.task None to blood_mon_eos_bas
+
+
+using device: cuda
+
+Using cache found in /home/aih/sina.wendrich/.cache/torch/hub/facebookresearch_dinov2_main
+/home/aih/sina.wendrich/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+/home/aih/sina.wendrich/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+/home/aih/sina.wendrich/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+reading domain: matek
+list of subfolders ['neutrophil_segmented', 'erythroblast', 'myeloblast', 'lymphocyte_typical', 'monocyte', 'neutrophil_band', 'basophil', 'promyelocyte', 'eosinophil', 'myelocyte', 'metamyelocyte']
+reading domain: mll
+list of subfolders ['neutrophil_segmented', 'erythroblast', 'myeloblast', 'lymphocyte_typical', 'monocyte', 'neutrophil_band', 'basophil', 'promyelocyte', 'eosinophil', 'myelocyte', 'metamyelocyte']
+reading domain: acevedo
+list of subfolders ['neutrophil_segmented', 'erythroblast', 'lymphocyte_typical', 'monocyte', 'neutrophil_band', 'basophil', 'promyelocyte', 'eosinophil', 'myelocyte', 'metamyelocyte']
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+
+
+
+!!!: not committed yet
+/lustre/groups/aih/sina.wendrich/MA_code/test/domainlab/utils/get_git_tag.py:16: UserWarning: !!!: not committed yet
+  warnings.warn("!!!: not committed yet")
+
+
+
+b'b976d8c0'
+model name: blood_mon_eos_bas_te_acevedo_erm_bb976d8c0_not_commited_2024md_05md_05_10_47_25_seed_0_20364172
+
+ Experiment start at: 2024-05-05 10:47:25.383338
+before training, model accuracy: 0.0875253677368164
+Traceback (most recent call last):
+  File "/lustre/groups/aih/sina.wendrich/MA_code/test/main_out.py", line 9, in <module>
+    domainlab_cli()
+  File "/lustre/groups/aih/sina.wendrich/MA_code/test/domainlab/cli.py", line 26, in domainlab_cli
+    exp.execute()
+  File "/lustre/groups/aih/sina.wendrich/MA_code/test/domainlab/exp/exp_main.py", line 76, in execute
+    flag_stop = self.trainer.tr_epoch(epoch)
+  File "/lustre/groups/aih/sina.wendrich/MA_code/test/domainlab/algos/trainers/train_basic.py", line 44, in tr_epoch
+    self.tr_batch(tensor_x, tensor_y, tensor_d, others, ind_batch, epoch)
+  File "/lustre/groups/aih/sina.wendrich/MA_code/test/domainlab/algos/trainers/train_basic.py", line 83, in tr_batch
+    loss = self.cal_loss(tensor_x, tensor_y, tensor_d, others)
+  File "/lustre/groups/aih/sina.wendrich/MA_code/test/domainlab/algos/trainers/train_basic.py", line 93, in cal_loss
+    loss_task = self.model.cal_task_loss(tensor_x, tensor_y)
+  File "/lustre/groups/aih/sina.wendrich/MA_code/test/domainlab/models/a_model_classif.py", line 159, in cal_task_loss
+    logit_y = self.cal_logit_y(tensor_x)
+  File "/lustre/groups/aih/sina.wendrich/MA_code/test/domainlab/models/a_model_classif.py", line 103, in cal_logit_y
+    feat = self.extract_semantic_feat(tensor_x)
+  File "/lustre/groups/aih/sina.wendrich/MA_code/test/domainlab/models/a_model_classif.py", line 95, in extract_semantic_feat
+    feat_tensor = super().extract_semantic_feat(tensor_x)
+  File "/lustre/groups/aih/sina.wendrich/MA_code/test/domainlab/models/a_model.py", line 124, in extract_semantic_feat
+    feat = self._net_invar_feat(tensor_x)
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/lustre/groups/aih/sina.wendrich/MA_code/test/examples/nets/dinov2.py", line 53, in forward
+    x = self.net_torchvision.forward_features(tensor)
+  File "/home/aih/sina.wendrich/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/models/vision_transformer.py", line 261, in forward_features
+    x = blk(x)
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/aih/sina.wendrich/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py", line 254, in forward
+    return super().forward(x_or_x_list)
+  File "/home/aih/sina.wendrich/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py", line 113, in forward
+    x = x + ffn_residual_func(x)
+  File "/home/aih/sina.wendrich/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py", line 94, in ffn_residual_func
+    return self.ls2(self.mlp(self.norm2(x)))
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/aih/sina.wendrich/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py", line 33, in forward
+    hidden = F.silu(x1) * x2
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 130.00 MiB. GPU 

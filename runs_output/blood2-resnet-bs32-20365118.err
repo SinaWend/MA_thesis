@@ -1,0 +1,732 @@
+Failed to import backpack: cannot import name '_grad_input_padding' from 'torch.nn.grad' (/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/grad.py)
+
+
+
+no algorithm conf specified, going to use default
+
+
+
+/ictstr01/groups/aih/sina.wendrich/MA_code/test/domainlab/arg_parser.py:355: UserWarning: no algorithm conf specified, going to use default
+  warnings.warn("no algorithm conf specified, going to use default")
+
+overriding args.task None to blood_mon_eos_bas
+
+
+using device: cuda
+
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+reading domain: matek
+list of subfolders ['neutrophil_segmented', 'erythroblast', 'myeloblast', 'lymphocyte_typical', 'monocyte', 'neutrophil_band', 'basophil', 'promyelocyte', 'eosinophil', 'myelocyte', 'metamyelocyte']
+reading domain: mll
+list of subfolders ['neutrophil_segmented', 'erythroblast', 'myeloblast', 'lymphocyte_typical', 'monocyte', 'neutrophil_band', 'basophil', 'promyelocyte', 'eosinophil', 'myelocyte', 'metamyelocyte']
+reading domain: acevedo
+list of subfolders ['neutrophil_segmented', 'erythroblast', 'lymphocyte_typical', 'monocyte', 'neutrophil_band', 'basophil', 'promyelocyte', 'eosinophil', 'myelocyte', 'metamyelocyte']
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+
+
+
+!!!: not committed yet
+/ictstr01/groups/aih/sina.wendrich/MA_code/test/domainlab/utils/get_git_tag.py:16: UserWarning: !!!: not committed yet
+  warnings.warn("!!!: not committed yet")
+
+
+
+b'b976d8c0'
+model name: blood_mon_eos_bas_te_acevedo_erm_bb976d8c0_not_commited_2024md_05md_05_14_11_30_seed_0_20365118
+
+ Experiment start at: 2024-05-05 14:11:30.594286
+before training, model accuracy: 0.05282306298613548
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/autograd/graph.py:744: UserWarning: Plan failed with a cudnnException: CUDNN_BACKEND_EXECUTION_PLAN_DESCRIPTOR: cudnnFinalize Descriptor Failed cudnn_status: CUDNN_STATUS_NOT_SUPPORTED (Triggered internally at /opt/conda/conda-bld/pytorch_1712608935911/work/aten/src/ATen/native/cudnn/Conv_v8.cpp:919.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+epoch: 1
+---- Training Domain: 
+scalar performance:
+{'acc': 0.92034996, 'precision': 0.8273467, 'recall': 0.7837036, 'specificity': 0.99116236, 'f1': 0.80230427, 'auroc': 0.99256414}
+confusion matrix:
+     0     1    2     3    4    5     6     7     8    9      10
+0   369     1    1     4    1    0    22    18     4    2     60
+1     0  1265    0     8    1    0     0    52     3    0      2
+2     2     3  184     0   48    1     1    13     4   48      8
+3     4     8    0  7570    1   13     5   701   135    3      0
+4     3     0   30     0  244    2     4    12    13    8    223
+5     9     0    5    66    2  335     5     0     2   96      1
+6    19     4    0     4    2    0  1817    15     9    2     36
+7     2    45    4    97    3    0     3  7048    49    1     12
+8     3    18   12   184   40    2     9   256  2679    2     90
+9    13     0   65    14    0   84     1     7     6  297      6
+10   16     9    5     9   23    2    29    69    38    0  12591
+---- Validation: 
+scalar performance:
+{'acc': 0.92055637, 'precision': 0.83031404, 'recall': 0.7878201, 'specificity': 0.9911751, 'f1': 0.8059752, 'auroc': 0.99271196}
+confusion matrix:
+     0     1    2     3    4    5     6     7     8    9      10
+0   370     0    2     3    0    0    22    17     4    2     63
+1     0  1260    0     5    0    0     0    62     3    0      2
+2     1     0  188     0   49    3     2    12     3   50      4
+3     4    10    1  7559    1   15     8   691   145    1      5
+4     2     0   32     1  246    0     0    11    10   11    226
+5     9     0    1    63    1  341     4     0     5   96      1
+6    17     6    1     6    1    1  1820    12    11    2     31
+7     1    38    5   104    4    0     4  7044    47    2     16
+8     2    15   13   191   39    2    10   263  2667    0     94
+9    15     0   67    12    0   72     4     4     5  309      5
+10   13    11    3     9   31    2    31    52    33    0  12611
+---- Test Domain (oracle): 
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: No positive samples in targets, true positive value should be meaningless. Returning zero tensor in true positive score
+  warnings.warn(*args, **kwargs)
+scalar performance:
+{'acc': 0.59917444, 'precision': 0.58994615, 'recall': 0.5343163, 'specificity': 0.9596621, 'f1': 0.48820865, 'auroc': 0.86264926}
+confusion matrix:
+     0     1   2    3   4    5     6     7     8    9     10
+0   958     0   0   18   0    5   121    48     3    7    10
+1     0  1167   0   24   0    0     1   287     2    0    18
+2    37     5  19   22  61   37    13   207   232   17   365
+3     0     0   0    0   0    0     0     0     0    0     0
+4     1     2   1    0  37    0     3    12    23    0  1554
+5    31     0   0  140   0  394     1     1     9   14     2
+6   130     3   0    5   4    0  1908    23    46    1   947
+7     5     0   0    2   0    0     5  1147     1    0     4
+8     7     0   0  146   1    3    10    65  1126    2    10
+9   128    12  25  182   1  195    15   300    58  167    54
+10    0     0   0    0   2    0     0     3     0    0  1641
+new oracle model saved
+after epoch: 1,now: 2024-05-05 14:40:56.673895,epoch time: 0:29:26.079609,used: 0:29:26.079609,model: blood_mon_eos_bas_te_acevedo_erm_bb976d8c0_not_commited_2024md_05md_05_14_11_30_seed_0_20365118
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/test
+epoch: 2
+---- Training Domain: 
+scalar performance:
+{'acc': 0.93129283, 'precision': 0.84387225, 'recall': 0.791115, 'specificity': 0.9925103, 'f1': 0.79453886, 'auroc': 0.99575835}
+confusion matrix:
+     0     1    2     3    4    5     6     7     8    9      10
+0   431     0    0     5    0    0     1     6     1    2     37
+1     0  1264    0    15    0    0     0    43     4    0      5
+2     2     0  175     1   28    0     0    15     4   84      3
+3     1     6    0  8125    0    7     0   204    89    7      0
+4     5     0   30     1  254    0     0     8    32   17    192
+5     0     0    0    37    0  252     0     0     6  223      2
+6   413     1    1     8    0    0  1323    15    13    5    128
+7     0    25    0   183    1    0     1  7002    38    2     11
+8     2     4    3   196    7    0     0   132  2887    5     58
+9     7     0   21    12    0   19     0     4     5  422      3
+10   27    10    1     9   11    1     1    35    27    0  12673
+---- Validation: 
+scalar performance:
+{'acc': 0.9303999, 'precision': 0.83861846, 'recall': 0.78748316, 'specificity': 0.99239624, 'f1': 0.79213715, 'auroc': 0.99551654}
+confusion matrix:
+     0     1    2     3    4    5     6     7     8    9      10
+0   422     1    0     4    0    0     1    11     2    3     39
+1     0  1264    0    15    0    0     0    45     6    0      2
+2     2     0  175     0   28    0     0    12     6   87      2
+3     3     8    1  8111    0    9     0   210    90    8      0
+4     8     0   31     1  258    0     0    10    35   10    186
+5     3     0    2    41    0  252     0     0     5  217      1
+6   400     2    0    11    0    0  1334    19     8    4    130
+7     0    21    1   182    1    0     1  6998    45    0     16
+8     2     4    3   197    5    1     1   131  2874    5     73
+9     8     0   30    14    0   21     0     1     5  409      5
+10   18     4    1     9   15    0     2    38    22    1  12686
+---- Test Domain (oracle): 
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: No positive samples in targets, true positive value should be meaningless. Returning zero tensor in true positive score
+  warnings.warn(*args, **kwargs)
+scalar performance:
+{'acc': 0.53242844, 'precision': 0.6371991, 'recall': 0.5203996, 'specificity': 0.9528805, 'f1': 0.48261216, 'auroc': 0.86160827}
+confusion matrix:
+     0     1   2    3   4    5    6     7     8    9     10
+0   997     0   0   46   0    2    2    31     2   80    10
+1     2  1290   0   47   0    0    1   122     1    3    33
+2     8    15  61   33  57    8    0    68   178  140   447
+3     0     0   0    0   0    0    0     0     0    0     0
+4     1     3   2    0  79    0    0     1    10    1  1536
+5     3     0   0  113   0  242    0     0     7  224     3
+6   498     0   0    5   1    0  394     4    27    4  2134
+7     5     2   0   28   0    0    1  1111     0    0    17
+8     6     0   0  150   2    4    1    24  1094   21    68
+9    21    24  41  148   0   40    0    92    33  699    39
+10    0     0   0    0   3    0    0     0     0    0  1643
+after epoch: 2,now: 2024-05-05 15:07:43.006484,epoch time: 0:26:46.332589,used: 0:56:12.412198,model: blood_mon_eos_bas_te_acevedo_erm_bb976d8c0_not_commited_2024md_05md_05_14_11_30_seed_0_20365118
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/test
+epoch: 3
+---- Training Domain: 
+scalar performance:
+{'acc': 0.945473, 'precision': 0.86206305, 'recall': 0.8423184, 'specificity': 0.99392956, 'f1': 0.8512782, 'auroc': 0.9950742}
+confusion matrix:
+     0     1    2     3    4    5     6     7     8    9      10
+0   429     1    0     5    1    0     5     8     1    4     29
+1     0  1207    0    12    0    0     0    37     5    0     71
+2     1     0  221     0   40    1     1     5     2   35      6
+3     0    19    0  8146    0   16     0   178    56    1     22
+4     1     0   24     1  356    4     1     1    11    9    131
+5     1     1    2    27    0  362     0     0     5  120      3
+6    34     4    4     7    0    1  1812    12    11    2     21
+7     1    30    1   178    1    0     1  6981    31    3     38
+8     1     3    4   240   12    4     2   105  2852    3     67
+9     0     1   76    12    0   61     1     2     3  334      3
+10   21     8    2     7   75    2     4    13    21    1  12638
+---- Validation: 
+scalar performance:
+{'acc': 0.9471178, 'precision': 0.865625, 'recall': 0.8499174, 'specificity': 0.994121, 'f1': 0.85705554, 'auroc': 0.99479955}
+confusion matrix:
+     0     1    2     3    4    5     6     7     8    9      10
+0   432     0    0     8    0    0     3     2     2    7     29
+1     0  1221    0    12    0    0     0    31     3    0     65
+2     0     1  223     0   43    0     1     5     2   32      5
+3     2    29    0  8151    0   11     0   176    51    2     18
+4     5     1   21     2  363    1     0     1    10    7    128
+5     2     1    5    24    0  379     0     0     5  104      1
+6    26     3    0    13    3    1  1822     5     8    4     23
+7     1    31    7   174    1    0     1  6980    26    1     43
+8     2     4    4   242   11    7     3    99  2868    4     52
+9     0     0   74    10    0   58     1     4     3  337      6
+10   20     6    3     7   83    1     6    14    21    3  12632
+---- Test Domain (oracle): 
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: No positive samples in targets, true positive value should be meaningless. Returning zero tensor in true positive score
+  warnings.warn(*args, **kwargs)
+scalar performance:
+{'acc': 0.5946267, 'precision': 0.607122, 'recall': 0.51350605, 'specificity': 0.95948505, 'f1': 0.5026347, 'auroc': 0.86283684}
+confusion matrix:
+     0     1   2    3    4    5     6    7     8    9     10
+0   446     0   0  103    0   52   240   14     2  254    59
+1     1  1195   0   75    0    0     4  150     8    0    66
+2     0     7  55   51  136   79    16   22   374   67   208
+3     0     0   0    0    0    0     0    0     0    0     0
+4     0     0   1    0  342    0     4    0    25    0  1261
+5     0     0   0  116    0  448     1    0     4   19     4
+6     5     0   0    4   14    1  2203    1   141    1   697
+7    26     1   0  209    0    0    42  862     5    1    18
+8     0     0   0  231    4   21    14    2  1067   10    21
+9     0    10  49  266    6  338     8   25   139  255    41
+10    0     0   0    0   18    0     2    0     0    0  1626
+after epoch: 3,now: 2024-05-05 15:34:24.651307,epoch time: 0:26:41.644823,used: 1:22:54.057021,model: blood_mon_eos_bas_te_acevedo_erm_bb976d8c0_not_commited_2024md_05md_05_14_11_30_seed_0_20365118
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/test
+epoch: 4
+---- Training Domain: 
+scalar performance:
+{'acc': 0.95061004, 'precision': 0.8594233, 'recall': 0.8538242, 'specificity': 0.99468243, 'f1': 0.85318565, 'auroc': 0.99678546}
+confusion matrix:
+     0     1    2     3    4    5     6     7     8    9      10
+0   419     2    0     6    0    3     6     4     2    4     37
+1     0  1296    2     8    0    0     0    21     2    0      3
+2     1     0  192     1   13    6     1     1     4   91      2
+3     0    12    0  8225    0   68     0    69    54    2      6
+4     5     0   55     1  349    1     0     3    15   18     92
+5     1     0    0    14    0  484     0     0     2   19      1
+6    10     0    1    14    2    5  1832     3    15    3     23
+7     0    41   10   284    2    1     3  6867    37    2     16
+8     0     0    1   193   12   20     0    88  2954    4     23
+9     2     0   15     4    1  173     0     0     2  294      2
+10   12     1    8    10   84    2     3    18    34    4  12618
+---- Validation: 
+scalar performance:
+{'acc': 0.9498462, 'precision': 0.8592592, 'recall': 0.8543509, 'specificity': 0.9945959, 'f1': 0.85341895, 'auroc': 0.9966792}
+confusion matrix:
+     0     1    2     3    4    5     6     7     8    9      10
+0   418     1    0    10    0    4     9     5     0    7     29
+1     0  1298    1     7    0    0     0    21     2    0      3
+2     0     0  201     1   13    4     1     1     3   87      1
+3     0    14    1  8241    0   65     0    67    46    2      4
+4     3     0   51     2  358    2     0     2    12   16     93
+5     1     0    0    13    0  477     0     0     3   26      1
+6    11     0    1     6    0    8  1835     5    12    4     26
+7     0    41   11   308    2    0     3  6838    44    3     15
+8     1     1    5   200   10   15     0    79  2950    4     31
+9     1     0   19     5    0  182     0     1     1  283      1
+10   13     3    9     9   74    2     6    26    40    3  12611
+---- Test Domain (oracle): 
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: No positive samples in targets, true positive value should be meaningless. Returning zero tensor in true positive score
+  warnings.warn(*args, **kwargs)
+scalar performance:
+{'acc': 0.49429792, 'precision': 0.62000495, 'recall': 0.45736286, 'specificity': 0.94995356, 'f1': 0.45996177, 'auroc': 0.85817313}
+confusion matrix:
+     0     1   2    3    4    5     6    7     8    9     10
+0   587     0   0  176    0   62    30   44    29  190    52
+1     2  1052   1   97    1    0    16  257    14    1    58
+2     1     1  66  132   73   58     0   11   253  138   282
+3     0     0   0    0    0    0     0    0     0    0     0
+4     0     0   6    1  309    0     1    0    34    1  1281
+5     0     0   0  174    0  377     0    0     6   30     5
+6    37     0   2   36    5    4  1017    4   203    3  1756
+7     2     0   0  449    0    0    13  684     6    3     7
+8     0     0   0  269    1   13     4    0  1055    3    25
+9     2     0  22  391    2  281     1   12    89  301    36
+10    0     0   1    0   28    0     0    0     0    0  1617
+after epoch: 4,now: 2024-05-05 16:01:10.974370,epoch time: 0:26:46.323063,used: 1:49:40.380084,model: blood_mon_eos_bas_te_acevedo_erm_bb976d8c0_not_commited_2024md_05md_05_14_11_30_seed_0_20365118
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/test
+epoch: 5
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9526434, 'precision': 0.87997234, 'recall': 0.856756, 'specificity': 0.9948956, 'f1': 0.8588762, 'auroc': 0.99713343}
+confusion matrix:
+     0     1    2     3    4    5     6     7     8    9      10
+0   429     0    0     2    0    0     5     3     1    1     42
+1     0  1293    0     6    0    0     0    22     1    0      9
+2     6     0  165     0   54   11     5     3     4   57      7
+3     2    35    0  8127    0   74     1    87   102    1     11
+4     2     1    8     1  414    0     2     1    14    1     95
+5     0     0    0     9    0  499     0     0     1   11      1
+6     6     1    0     0    0    2  1866     0     2    1     30
+7     2    60    1   245    5    1     3  6815    98    0     35
+8     1     5    1   101   10   17     2    41  3072    0     43
+9     5     0   18     6    3  205     1     0     5  250      0
+10    5     7    1     7   60    2     9     7    16    1  12676
+---- Validation: 
+scalar performance:
+{'acc': 0.95439345, 'precision': 0.87866676, 'recall': 0.8606635, 'specificity': 0.99510944, 'f1': 0.8617018, 'auroc': 0.996869}
+confusion matrix:
+     0     1    2     3    4    5     6     7     8    9      10
+0   427     1    0     2    0    1    11     3     2    0     36
+1     0  1284    0     7    0    0     0    23     4    0     14
+2     5     1  178     0   54    9     1     3     7   47      7
+3     3    42    0  8146    0   59     5    84    86    1     14
+4     3     0    5     0  422    1     2     2    10    4     90
+5     1     0    0     8    0  493     0     0     2   15      2
+6     9     2    1     1    2    2  1866     2     3    0     20
+7     2    60    1   230    1    1     2  6837    99    1     31
+8     1     5    2    83   12   17     3    35  3104    0     34
+9     6     1   27     2    3  197     0     0     4  248      5
+10    9     3    1     7   62    2    10     9    18    0  12675
+---- Test Domain (oracle): 
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: No positive samples in targets, true positive value should be meaningless. Returning zero tensor in true positive score
+  warnings.warn(*args, **kwargs)
+scalar performance:
+{'acc': 0.61337715, 'precision': 0.61788476, 'recall': 0.544001, 'specificity': 0.9607186, 'f1': 0.5243739, 'auroc': 0.8619869}
+confusion matrix:
+     0    1   2   3    4    5     6    7    8    9     10
+0   689    0   0  12    0   68   185    8    7  141    60
+1     3  974   0  69    0    0    27  311    9    3   103
+2     1    0  30  17  187   78    63    8   90  142   399
+3     0    0   0   0    0    0     0    0    0    0     0
+4     0    0   0   0  370    0     5    0    5    2  1251
+5     0    0   0  13    0  514     4    0    1   58     2
+6     7    0   0   2    2    0  2198    1    7    0   850
+7     9    1   2  53    0    1    91  950   21    4    32
+8     1    0   0  54    7  127    75    0  988   34    84
+9     8    0  28  91    6  423    36   14   41  438    52
+10    0    0   0   0   25    0     5    0    0    0  1616
+new oracle model saved
+better model found, saving less frequently
+model persisted
+after epoch: 5,now: 2024-05-05 16:30:29.369834,epoch time: 0:29:18.395464,used: 2:18:58.775548,model: blood_mon_eos_bas_te_acevedo_erm_bb976d8c0_not_commited_2024md_05md_05_14_11_30_seed_0_20365118
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/test
+epoch: 6
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9632652, 'precision': 0.9079626, 'recall': 0.88789976, 'specificity': 0.9960589, 'f1': 0.89580494, 'auroc': 0.9980421}
+confusion matrix:
+     0     1    2     3    4    5     6     7     8    9      10
+0   457     1    0     1    0    0     6     1     1    2     13
+1     0  1307    0     3    0    0     0    20     2    0      0
+2     1     0  190     0   45    1     2    10     5   56      2
+3     0     9    0  8068    0    8     1   246   105    2      0
+4     3     1    9     0  417    2     0     2    25    6     74
+5     0     0    0    25    0  446     1     0     5   43      1
+6     8     1    0     0    1    0  1869     5     2    1     20
+7     1    18    0    82    1    0     1  7110    40    2      7
+8     1     2    3    67    6    2     0    74  3119    0     22
+9     2     0   16     5    1   90     1     3     6  369      0
+10   11    13    2     7   51    1    14    12    31    0  12651
+---- Validation: 
+scalar performance:
+{'acc': 0.96300656, 'precision': 0.9104393, 'recall': 0.88443136, 'specificity': 0.9959984, 'f1': 0.8946018, 'auroc': 0.9979034}
+confusion matrix:
+     0     1    2     3    4    5     6     7     8    9      10
+0   454     0    0     2    0    0     7     1     3    0     16
+1     0  1301    0     2    0    0     0    25     4    0      0
+2     1     0  185     0   47    3     2     5     3   63      3
+3     0    11    0  8060    0   16     0   246   104    2      1
+4     5     1   10     1  395    1     1     2    23    3     97
+5     0     0    0    23    0  450     0     0     6   41      1
+6     7     2    0     0    1    0  1874     5     5    2     12
+7     0    19    0    87    1    0     1  7091    47    1     18
+8     0     2    1    62    6    2     0    68  3129    1     25
+9     0     1   11     6    0   86     0     5     5  379      0
+10    8     9    3     7   43    1     7     7    25    2  12684
+---- Test Domain (oracle): 
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: No positive samples in targets, true positive value should be meaningless. Returning zero tensor in true positive score
+  warnings.warn(*args, **kwargs)
+scalar performance:
+{'acc': 0.6241517, 'precision': 0.66288686, 'recall': 0.5345228, 'specificity': 0.9621377, 'f1': 0.52734, 'auroc': 0.8631618}
+confusion matrix:
+     0     1   2    3    4    5     6     7     8    9     10
+0   539     0   0   49    0    2    72    85     9  335    79
+1     1  1149   0   50    0    0     9   195    10    4    81
+2     1     0  24   30   75   10    10    28   185  123   529
+3     0     0   0    0    0    0     0     0     0    0     0
+4     0     0   0    0  237    0     0     1    15    1  1379
+5     0     0   0  118    0  264     0     0    12  193     5
+6     4     0   0    2    0    0  2209     1    16    0   835
+7     0     2   0   26    0    0     5  1111     2    3    15
+8     0     0   0  111    2    6    18     8  1177   15    33
+9     2     1  15  162    3   75     6    82   113  591    87
+10    0     0   0    0   26    0     0     0     0    0  1620
+new oracle model saved
+after epoch: 6,now: 2024-05-05 17:07:10.093580,epoch time: 0:36:40.723746,used: 2:55:39.499294,model: blood_mon_eos_bas_te_acevedo_erm_bb976d8c0_not_commited_2024md_05md_05_14_11_30_seed_0_20365118
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/test
+epoch: 7
+---- Training Domain: 
+scalar performance:
+{'acc': 0.96663636, 'precision': 0.9089059, 'recall': 0.8973601, 'specificity': 0.99638975, 'f1': 0.90250987, 'auroc': 0.9985721}
+confusion matrix:
+     0     1    2     3    4    5     6     7     8    9      10
+0   457     0    0     9    0    2     2     2     0    0     10
+1     0  1306    0    11    0    0     0    12     2    0      1
+2     2     1  227     3   16    3     1     6     2   51      0
+3     0     2    0  8311    0    7     0    73    45    1      0
+4     7     0   39     3  403    0     6     1    15    1     64
+5     1     0    0    29    0  458     0     0     6   26      1
+6     6     0    0     4    0    1  1884     2     2    1      8
+7     1    17    0   165    1    0     2  7014    53    0      9
+8     0     0    4   146    7    2     2    34  3071    0     30
+9     1     0   15    16    1   96     0     2     1  360      1
+10   15     2    2     8   70    0    14    19    21    3  12638
+---- Validation: 
+scalar performance:
+{'acc': 0.9654139, 'precision': 0.90659595, 'recall': 0.89771587, 'specificity': 0.996267, 'f1': 0.9013188, 'auroc': 0.9983266}
+confusion matrix:
+     0     1    2     3    4    5     6     7     8    9      10
+0   461     0    0     6    0    1     4     2     0    0      9
+1     0  1306    0    10    0    0     0    14     2    0      0
+2     0     0  229     3   13    4     2     4     3   53      1
+3     0     9    0  8300    0    5     0    71    52    1      2
+4     6     1   42     2  405    2     3     3     8    3     64
+5     0     0    0    22    0  471     0     1     3   23      1
+6     5     1    0     8    0    0  1876     1     5    2     10
+7     0    29    1   159    2    1     2  7017    48    0      6
+8     2     0    2   170   15    2     2    44  3032    0     27
+9     0     0   12    21    1  103     2     2     2  350      0
+10   15     1    5     8   66    1    24    18    13    0  12645
+---- Test Domain (oracle): 
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: No positive samples in targets, true positive value should be meaningless. Returning zero tensor in true positive score
+  warnings.warn(*args, **kwargs)
+scalar performance:
+{'acc': 0.60218287, 'precision': 0.65682614, 'recall': 0.50102997, 'specificity': 0.96091557, 'f1': 0.50674254, 'auroc': 0.861174}
+confusion matrix:
+     0     1   2    3    4    5     6     7     8    9     10
+0   626     0   0  177    0   15    23    63    10  203    53
+1     0  1259   0   51    0    0     0   154     4    0    31
+2     1    16  26  172   44   24    11    60   311   56   294
+3     0     0   0    0    0    0     0     0     0    0     0
+4     0    11   1    0  254    0     2     1    32    1  1331
+5     0     0   0  286    0  232     0     0     4   65     5
+6    14     5   0   41    4    0  2320     5   136    0   542
+7     5     4   0  102    0    0    10  1033     6    0     4
+8     0     0   0  322    1    0     5     3  1030    0     9
+9     0    12  10  645    0   88     4    54    75  212    37
+10    0     2   0    0   27    0     2     0     0    0  1615
+after epoch: 7,now: 2024-05-05 17:41:26.269627,epoch time: 0:34:16.176047,used: 3:29:55.675341,model: blood_mon_eos_bas_te_acevedo_erm_bb976d8c0_not_commited_2024md_05md_05_14_11_30_seed_0_20365118
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/test
+epoch: 8
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9671982, 'precision': 0.9099959, 'recall': 0.90217924, 'specificity': 0.9964483, 'f1': 0.90534836, 'auroc': 0.99888545}
+confusion matrix:
+     0     1    2     3    4    5     6     7     8    9      10
+0   410     0    0     1    2    0    17     4     1    0     48
+1     0  1299    0     4    0    0     0    25     1    0      3
+2     0     0  244     0   13    0     1     1     0   52      1
+3     3     4    0  8224    0    9     4   131    58    4      1
+4     0     1   28     0  440    0     0     1     7    2     60
+5     1     0    0    21    0  420     1     0     1   76      1
+6     2     0    0     1    0    0  1894     0     2    1      8
+7     0    16    7   124    1    0     3  7048    37    3     25
+8     1     0    5    90   13    3     2    49  3106    5     21
+9     1     0   29     6    1   48     0     0     1  407      0
+10    5     1    5     7   71    0    17     5    20    2  12658
+---- Validation: 
+scalar performance:
+{'acc': 0.9683563, 'precision': 0.91871965, 'recall': 0.9090929, 'specificity': 0.9965602, 'f1': 0.9132285, 'auroc': 0.99858487}
+confusion matrix:
+     0     1    2     3    4    5     6     7     8    9      10
+0   409     1    0     1    3    1    18     1     0    0     49
+1     0  1307    0     3    0    0     0    19     2    0      1
+2     1     0  262     0   10    1     2     0     0   36      0
+3     1     6    1  8200    0    7     4   152    65    4      0
+4     0     0   32     0  434    0     1     0     7    1     64
+5     0     0    0    19    0  433     0     0     1   67      1
+6     3     0    1     0    1    0  1896     0     2    1      4
+7     0    16    3   117    2    0     3  7067    43    0     14
+8     1     1    6    79   11    8     4    59  3093    3     31
+9     2     0   25     4    1   51     1     0     0  408      1
+10    0     0    3     7   49    0    17     6    21    0  12693
+---- Test Domain (oracle): 
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: No positive samples in targets, true positive value should be meaningless. Returning zero tensor in true positive score
+  warnings.warn(*args, **kwargs)
+scalar performance:
+{'acc': 0.6140768, 'precision': 0.6528624, 'recall': 0.49909922, 'specificity': 0.961521, 'f1': 0.5051016, 'auroc': 0.85325706}
+confusion matrix:
+     0     1    2    3    4    5     6    7     8    9     10
+0   193     0    2   82    5   15   174    7     1  564   127
+1     1  1168    1   61    0    0     2  131     1   10   124
+2     0     5  128   85  110   28    13    8   204  225   209
+3     0     0    0    0    0    0     0    0     0    0     0
+4     0     0    6    1  299    0    10    0    20    5  1292
+5     0     0    0   96    1  229     0    0     2  263     1
+6     0     4    0   73    4    1  2700    1    46    6   232
+7     4     1   10  193    0    0    73  780     6   73    24
+8     0     0    0  271    2    9    15    2  1002   54    15
+9     0     6   45  244    5   95     1    7    36  677    21
+10    0     0    1    0   29    0    15    0     0    0  1601
+after epoch: 8,now: 2024-05-05 18:12:18.335721,epoch time: 0:30:52.066094,used: 4:00:47.741435,model: blood_mon_eos_bas_te_acevedo_erm_bb976d8c0_not_commited_2024md_05md_05_14_11_30_seed_0_20365118
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/test
+epoch: 9
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9673587, 'precision': 0.90623724, 'recall': 0.9154438, 'specificity': 0.9965091, 'f1': 0.9102026, 'auroc': 0.9987146}
+confusion matrix:
+     0     1    2     3    4    5     6     7     8    9      10
+0   448     0    0     2    1    1    13     1     1    1     15
+1     0  1288    0     8    0    0     0    32     4    0      0
+2     3     0  270     1    5    1     1     1     2   27      1
+3     2     1    0  8309    0    7     2    54    64    1      0
+4     5     0   54     1  438    0     2     4     3    2     30
+5     0     0    1    20    0  451     3     0     6   39      1
+6     9     1    0     4    0    0  1869     3     4    0     16
+7     2     6    2   173    2    0     2  7039    28    0      7
+8     5     0    2    99   21    1     2    64  3065    0     37
+9     4     0   29     4    1   60     7     1     1  386      0
+10   28     1    1    12  106    0    18    27     6    1  12593
+---- Validation: 
+scalar performance:
+{'acc': 0.9667514, 'precision': 0.9020062, 'recall': 0.91220665, 'specificity': 0.99645257, 'f1': 0.90654147, 'auroc': 0.99869686}
+confusion matrix:
+     0     1    2     3    4    5     6     7     8    9      10
+0   446     0    0     2    2    0    15     1     1    1     15
+1     0  1286    1     9    0    0     0    35     1    0      0
+2     1     0  261     0    8    0     1     2     1   37      1
+3     6     0    0  8302    0    7     0    57    64    3      1
+4     3     1   59     1  428    0     2     6     3    0     36
+5     0     0    0    27    0  456     1     0     3   33      1
+6    15     0    0     3    1    1  1873     1     4    1      9
+7     0     8    2   168    2    0     1  7043    36    0      5
+8     4     0    1    94   21    2     1    67  3064    3     39
+9     2     0   27     3    0   62     4     3     2  390      0
+10   18     1    7    12  122    0    11    23     9    0  12593
+---- Test Domain (oracle): 
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: No positive samples in targets, true positive value should be meaningless. Returning zero tensor in true positive score
+  warnings.warn(*args, **kwargs)
+scalar performance:
+{'acc': 0.6107885, 'precision': 0.66221356, 'recall': 0.49025717, 'specificity': 0.9610085, 'f1': 0.50306326, 'auroc': 0.85951746}
+confusion matrix:
+     0     1    2    3    4    5     6    7     8    9     10
+0   214     0    1  121   25    3   356   42     7  267   134
+1     2  1222    0   56    0    0     6  152     4    4    53
+2     0     5  127   75  193    4    13   33   152  101   312
+3     0     0    0    0    0    0     0    0     0    0     0
+4     0     0    7    1  353    0     8    1     8    1  1254
+5     0     0    0  217    0  150     1    0     8  212     4
+6     0     3    0    5    1    0  2600    2    23    0   433
+7     2     0    1  300    0    0    19  817     8    7    10
+8     0     0    1  168   10    0    31    3  1125    8    24
+9     1     8   54  354   12   26     4   32    94  515    37
+10    0     0    1    0   30    0     8    0     0    0  1607
+early stop counter: 1
+val acc:0.9667513966560364, best validation acc: 0.9683563113212585, corresponding to test acc:                         0.6140767931938171 / 0.6241517066955566
+after epoch: 9,now: 2024-05-05 18:45:39.926891,epoch time: 0:33:21.591170,used: 4:34:09.332605,model: blood_mon_eos_bas_te_acevedo_erm_bb976d8c0_not_commited_2024md_05md_05_14_11_30_seed_0_20365118
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/test
+epoch: 10
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9743686, 'precision': 0.93423235, 'recall': 0.9224074, 'specificity': 0.99727225, 'f1': 0.92642236, 'auroc': 0.99904895}
+confusion matrix:
+     0     1    2     3    4    5     6     7     8    9      10
+0   399     1    0     1    5    0    47     2     4    3     20
+1     0  1318    0     4    0    0     0    10     0    0      0
+2     0     0  247     0   16    0     0     2     1   43      2
+3     0     7    0  8249    0   14     4   112    51    1      0
+4     3     0    7     0  486    0     2     2     2    2     35
+5     0     0    0    10    1  429     0     0     1   79      1
+6     0     2    1     1    1    0  1892     0     1    0     10
+7     0    18    1    78    3    0     2  7122    29    1     10
+8     0     3    2    71   11    3     4    37  3144    0     20
+9     0     0   13     4    1   18     3     3     0  451      0
+10    3     8    1     7   61    0     5     3    24    0  12681
+---- Validation: 
+scalar performance:
+{'acc': 0.97448176, 'precision': 0.9325519, 'recall': 0.9197625, 'specificity': 0.99728054, 'f1': 0.9244917, 'auroc': 0.99894327}
+confusion matrix:
+     0     1    2     3    4    5     6     7     8    9      10
+0   406     0    0     1    2    1    51     0     3    0     19
+1     0  1317    0     1    0    0     0    12     2    0      0
+2     0     0  253     0   18    0     0     1     2   38      0
+3     0     7    0  8246    0   12     7   110    55    2      1
+4     2     1    9     1  471    0     0     1     3    0     51
+5     0     0    0     9    1  418     0     0     3   89      1
+6     1     2    0     1    0    0  1885     1     0    2     16
+7     0    16    3    61    3    0     3  7133    34    3      9
+8     0     3    2    59   14    0     2    41  3154    2     19
+9     0     1   16     4    1   24     0     1     0  446      0
+10    1     4    1     7   50    0     9     5    16    1  12702
+---- Test Domain (oracle): 
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: No positive samples in targets, true positive value should be meaningless. Returning zero tensor in true positive score
+  warnings.warn(*args, **kwargs)
+scalar performance:
+{'acc': 0.59966415, 'precision': 0.6258363, 'recall': 0.5099332, 'specificity': 0.95957595, 'f1': 0.49454626, 'auroc': 0.85375875}
+confusion matrix:
+     0     1    2   3    4   5     6     7     8    9     10
+0   430     0    2  37   17   0    63    77    11  374   159
+1     1  1295    0  28    0   0     0   152     0    3    20
+2     0    12  138  17  228   3     0    29   141  107   340
+3     0     0    0   0    0   0     0     0     0    0     0
+4     0     4    4   0  280   0     2     1     9    1  1332
+5     0     0    0  63    4  55     0     0    18  446     6
+6     0    52    1  21   15   1  1779     6   113    1  1078
+7     0     1    0  40    0   0     8  1084     3   13    15
+8     0     0    2  57   17   1     4    20  1198   40    31
+9     0    14  100  84   17  19     0    68   104  688    43
+10    0     2    0   1   18   0     0     0     0    1  1624
+better model found, saving less frequently
+model persisted
+after epoch: 10,now: 2024-05-05 19:19:02.941679,epoch time: 0:33:23.014788,used: 5:07:32.347393,model: blood_mon_eos_bas_te_acevedo_erm_bb976d8c0_not_commited_2024md_05md_05_14_11_30_seed_0_20365118
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/test
+epoch: 11
+---- Training Domain: 
+scalar performance:
+{'acc': 0.975198, 'precision': 0.93839025, 'recall': 0.92346346, 'specificity': 0.9973676, 'f1': 0.9276018, 'auroc': 0.9989055}
+confusion matrix:
+     0     1    2     3    4    5     6     7     8    9      10
+0   463     0    0     0    0    0     3     2     2    0     13
+1     0  1317    0     3    0    0     1     6     0    0      5
+2     1     0  218     0   18    1     2     4     4   63      1
+3     5     7    0  8265    0    2     9    98    52    1      1
+4     5     0    2     0  475    0     0     1    10    0     46
+5     2     0    0    21    0  417     2     0     2   77      0
+6    12     0    0     1    1    0  1879     0     0    1     13
+7     4    47    1    77    2    0     2  7079    37    2     11
+8     0    11    1    53    3    0     0    21  3197    0      7
+9     2     0    4     6    0   19     2     0     2  458      0
+10   16     0    1     7   30    0     6     5    48    0  12681
+---- Validation: 
+scalar performance:
+{'acc': 0.9753912, 'precision': 0.9383629, 'recall': 0.9229508, 'specificity': 0.99739754, 'f1': 0.92718405, 'auroc': 0.9990472}
+confusion matrix:
+     0     1    2     3    4    5     6     7     8    9      10
+0   467     0    0     1    1    0     3     1     1    0      9
+1     0  1314    0     5    0    0     0    11     0    0      2
+2     3     0  214     0   21    0     2     0     2   70      0
+3     4     2    0  8291    0    2     8    84    47    2      0
+4     5     0    3     0  463    0     0     1    22    2     43
+5     2     0    0    21    0  425     2     0     5   65      1
+6     7     0    0     1    1    0  1878     0     5    1     15
+7     2    45    0    82    1    0     5  7081    37    1     11
+8     1    14    0    62    1    0     2    23  3187    2      4
+9     2     0    6     2    0   17     2     0     1  463      0
+10   18     0    1     7   34    0     7     4    42    1  12682
+---- Test Domain (oracle): 
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: No positive samples in targets, true positive value should be meaningless. Returning zero tensor in true positive score
+  warnings.warn(*args, **kwargs)
+scalar performance:
+{'acc': 0.49849576, 'precision': 0.60961664, 'recall': 0.44196638, 'specificity': 0.94939256, 'f1': 0.43314713, 'auroc': 0.83919305}
+confusion matrix:
+     0     1   2    3    4    5     6    7     8    9     10
+0   458     0   0   16    5    2    64   14     5  351   255
+1     4  1033   0   67    0    0     1  278     4   12   100
+2     0     0   5   33   43   14     1   16   185  140   578
+3     0     0   0    0    0    0     0    0     0    0     0
+4     0     0   0    0  114    0     0    0    27    1  1491
+5     1     0   0   51    1  165     0    0     8  359     7
+6     5     0   0    8    3    2  1183    1    90    0  1775
+7    50     0   0  199    0    0    41  795     8   43    28
+8     1     0   0  142    1    9     3    1  1073   33   107
+9     1     0   4  124    8   74     1   16   113  658   138
+10    0     0   0    0    4    0     0    0     1    0  1641
+after epoch: 11,now: 2024-05-05 19:46:04.066019,epoch time: 0:27:01.124340,used: 5:34:33.471733,model: blood_mon_eos_bas_te_acevedo_erm_bb976d8c0_not_commited_2024md_05md_05_14_11_30_seed_0_20365118
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/test
+epoch: 12
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9745291, 'precision': 0.93645656, 'recall': 0.91930187, 'specificity': 0.997213, 'f1': 0.9274611, 'auroc': 0.9986959}
+confusion matrix:
+     0     1    2     3    4    5     6     7     8    9      10
+0   460     0    0     2    3    1     1     3     0    1     11
+1     0  1298    0     5    0    0     0    23     2    0      3
+2     0     0  237     0   33    0     1     1     1   35      4
+3     0     2    0  8293    0   11     0    91    36    0      6
+4     1     0    9     0  432    0     2     2    15    2     76
+5     0     0    1    13    0  469     0     0     3   34      1
+6    13     0    0     8    0    0  1868     6     1    1     11
+7     1     2    2   119    6    0     1  7102    23    1      6
+8     1     0    0    66    4    0     0    64  3156    1      4
+9     1     0   25     5    0   48     0     2     1  410      1
+10    2     0    1     8   24    1    10     5    42    0  12699
+---- Validation: 
+scalar performance:
+{'acc': 0.97496325, 'precision': 0.9425795, 'recall': 0.9270376, 'specificity': 0.99724084, 'f1': 0.9344872, 'auroc': 0.9987682}
+confusion matrix:
+     0     1    2     3    4    5     6     7     8    9      10
+0   462     1    0     1    6    0     0     3     1    1      8
+1     0  1299    0     6    0    0     0    24     1    1      1
+2     0     0  254     0   27    0     1     2     1   21      6
+3     0     1    0  8287    0   17     0    94    40    0      1
+4     4     0    6     0  434    0     0     2     8    2     83
+5     1     0    0    10    0  472     0     0     1   36      1
+6    11     0    0     4    0    0  1869     6     2    1     15
+7     0     4    1   101    2    0     1  7115    28    1     12
+8     1     1    0    80    4    0     0    64  3135    2      9
+9     2     0   22     2    1   40     0     2     0  422      2
+10    1     0    1     7   23    0    10     5    48    1  12700
+---- Test Domain (oracle): 
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: No positive samples in targets, true positive value should be meaningless. Returning zero tensor in true positive score
+  warnings.warn(*args, **kwargs)
+scalar performance:
+{'acc': 0.6095991, 'precision': 0.6005297, 'recall': 0.5300213, 'specificity': 0.96081007, 'f1': 0.52197886, 'auroc': 0.8519036}
+confusion matrix:
+     0    1    2    3    4    5     6    7     8    9     10
+0   813    0    0   40    6   34    99   23    12  115    28
+1     3  950    5   70    0    0    35  348    35   19    34
+2     0    0  124   32  160   28    21   17   365  113   155
+3     0    0    0    0    0    0     0    0     0    0     0
+4     0    0    3    0  262    0    35    0   102    1  1230
+5     0    0    0   61    2  274     0    1     8  244     2
+6    13    0    1   31   11    3  2072    2   729    0   205
+7    33    0    7  166    0    1    32  874    14   34     3
+8     1    0    0  102    2   26    21   10  1187   17     4
+9     9    0   76  123   15  137    14   23   148  562    30
+10    0    0    0    0   17    0    22    0    12    0  1595
+early stop counter: 1
+val acc:0.9749632477760315, best validation acc: 0.9753912091255188, corresponding to test acc:                         0.49849575757980347 / 0.6241517066955566
+after epoch: 12,now: 2024-05-05 20:11:17.755971,epoch time: 0:25:13.689952,used: 5:59:47.161685,model: blood_mon_eos_bas_te_acevedo_erm_bb976d8c0_not_commited_2024md_05md_05_14_11_30_seed_0_20365118
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/test
+Experiment finished at epoch: 12 with time: 5:59:47.161685 at 2024-05-05 20:11:17.755971
+persisted model performance metric: 
+
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: No positive samples in targets, true positive value should be meaningless. Returning zero tensor in true positive score
+  warnings.warn(*args, **kwargs)
+scalar performance:
+{'acc': 0.59966415, 'precision': 0.6258363, 'recall': 0.5099332, 'specificity': 0.95957595, 'f1': 0.49454626, 'auroc': 0.85375875}
+confusion matrix:
+     0     1    2   3    4   5     6     7     8    9     10
+0   430     0    2  37   17   0    63    77    11  374   159
+1     1  1295    0  28    0   0     0   152     0    3    20
+2     0    12  138  17  228   3     0    29   141  107   340
+3     0     0    0   0    0   0     0     0     0    0     0
+4     0     4    4   0  280   0     2     1     9    1  1332
+5     0     0    0  63    4  55     0     0    18  446     6
+6     0    52    1  21   15   1  1779     6   113    1  1078
+7     0     1    0  40    0   0     8  1084     3   13    15
+8     0     0    2  57   17   1     4    20  1198   40    31
+9     0    14  100  84   17  19     0    68   104  688    43
+10    0     2    0   1   18   0     0     0     0    1  1624
+oracle model performance metric: 
+
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: No positive samples in targets, true positive value should be meaningless. Returning zero tensor in true positive score
+  warnings.warn(*args, **kwargs)
+scalar performance:
+{'acc': 0.6241517, 'precision': 0.66288686, 'recall': 0.5345228, 'specificity': 0.9621377, 'f1': 0.52734, 'auroc': 0.8631618}
+confusion matrix:
+     0     1   2    3    4    5     6     7     8    9     10
+0   539     0   0   49    0    2    72    85     9  335    79
+1     1  1149   0   50    0    0     9   195    10    4    81
+2     1     0  24   30   75   10    10    28   185  123   529
+3     0     0   0    0    0    0     0     0     0    0     0
+4     0     0   0    0  237    0     0     1    15    1  1379
+5     0     0   0  118    0  264     0     0    12  193     5
+6     4     0   0    2    0    0  2209     1    16    0   835
+7     0     2   0   26    0    0     5  1111     2    3    15
+8     0     0   0  111    2    6    18     8  1177   15    33
+9     2     1  15  162    3   75     6    82   113  591    87
+10    0     0   0    0   26    0     0     0     0    0  1620
+prediction saved in file zoutput/saved_predicts/blood_mon_eos_bas_te_acevedo_erm_bb976d8c0_not_commited_2024md_05md_05_14_11_30_seed_0_20365118_instance_wise_predictions.txt
+accuracy from prediction file 0.5996641712726509
+results aggregation path: zoutput/aggrsts/blood_mon_eos_bas_te_acevedo_exptag.csv
+confusion matrix saved in file: zoutput/aggrsts/blood_mon_eos_bas_te_acevedo_erm_bb976d8c0_not_commited_2024md_05md_05_14_11_30_seed_0_20365118_conf_mat.png
