@@ -6,6 +6,8 @@ class ViTBase(NetTorchVisionBase):
   
     def fetch_net(self, flag_pretrain):
         #model_name = "vit_base_patch16_224"
+        #model_name = "swin_tiny_patch4_window7_224"
+
         model_name = "vit_large_patch16_224"
         if flag_pretrain:
             self.net_torchvision = timm.create_model(model_name, pretrained=True)

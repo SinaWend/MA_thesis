@@ -458,14 +458,14 @@ def process_row_annotations(wsi, scn, x, patch_size, save_path, center_name, dow
                                      ((x + patch_size) , (y + patch_size) ),
                                      (x , (y + patch_size) )])
             label = 0
-            for annotation in annotations:
+            for annotation, anns in annotations:
                 if annotation.intersects(patch_polygon) or annotation.touches(patch_polygon):
                     label = 1
                     break
             im_path = patch_dir / f"{slide_name}_patch_{scn}_{x}_{y}_{center_name}_{label}.png"
             im = Image.fromarray(patch)
             im.save(im_path)
-            
+
             im_paths.append({"path": str(im_path), "label": label})
             patches_coords = pd.concat([patches_coords, pd.DataFrame({"scn": [scn], "x": [x], "y": [y], "label": [label]})], ignore_index=True)
 

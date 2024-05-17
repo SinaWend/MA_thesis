@@ -57,24 +57,27 @@ def get_task(na=None):
 
     domain_datasets_train = {}
     domain_datasets_val = {}
-    annotations_path = '/lustre/groups/shared/histology_data/CAMELYON17/annotations'
+    #annotations_path = '/lustre/groups/shared/histology_data/CAMELYON17/annotations'
+    annotations_path = 'C:/Users/SinaWendrich/MA_code/test/data/CAMELYON/annotations'
     centers_paths = [
-        '/lustre/groups/shared/histology_data/CAMELYON17/slides/center0',
-        '/lustre/groups/shared/histology_data/CAMELYON17/slides/center1',
-        '/lustre/groups/shared/histology_data/CAMELYON17/slides/center2',
-        '/lustre/groups/shared/histology_data/CAMELYON17/slides/center3',
-        '/lustre/groups/shared/histology_data/CAMELYON17/slides/center4',
+        'C:/Users/SinaWendrich/MA_code/test/data/CAMELYON/center0',
+        'C:/Users/SinaWendrich/MA_code/test/data/CAMELYON/center1',
+        # 'C:/Users/SinaWendrich/MA_code/test/data/CAMELYON/center2'
+        # '/lustre/groups/shared/histology_data/CAMELYON17/slides/center0',
+        # '/lustre/groups/shared/histology_data/CAMELYON17/slides/center1',
+        # '/lustre/groups/shared/histology_data/CAMELYON17/slides/center2',
+        # '/lustre/groups/shared/histology_data/CAMELYON17/slides/center3',
+        # '/lustre/groups/shared/histology_data/CAMELYON17/slides/center4'
     ]
-
     def extract_info(filename):
         parts = filename.split('_')
         patient_id = parts[1]
         node_id = parts[3][0]
         return patient_id, node_id
 
-    save_path = '/lustre/groups/aih/sina.wendrich/MA_code/output_CAMELYON17'
-
-    slides_processing = False
+    #save_path = '/lustre/groups/aih/sina.wendrich/MA_code/output_CAMELYON17'
+    save_path = 'C:/Users/SinaWendrich/MA_code/output_CAMELYON17' 
+    slides_processing = True
     if slides_processing:
         for filename in os.listdir(annotations_path):
             if filename.endswith('.xml'):
@@ -86,6 +89,9 @@ def get_task(na=None):
                         folder_path = center_path
                         annotation_path = os.path.join(annotations_path, filename)
                         coords, data = process_slides(slide_path, annotation_path, save_path, center_path)
+                        #only sample 20 from data
+                        if len(data) > 20:
+                            data = data.sample(n=20)
                         df_train, df_val, df_test = split_dataset(data, 0.7, 0.3)
                         dataset_train = HistopathologyDataset(df_train, transform=img_trans_train, num_classes=dim_y)
                         dataset_val = HistopathologyDataset(df_val, transform=img_trans_val_test, num_classes=dim_y)
