@@ -6,7 +6,7 @@ from torchvision import transforms
 from torch.utils.data import ConcatDataset, Dataset
 from domainlab.tasks.task_dset import mk_task_dset
 from domainlab.tasks.utils_task import ImSize
-from examples.tasks.patches_processing import process_slides_tissue_type
+from tasks.patches_processing import process_slides_tissue_type
 
 class HistopathologyDataset(Dataset):
     def __init__(self, dataframe, transform=None, num_classes=3):

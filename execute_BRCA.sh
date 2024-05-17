@@ -5,7 +5,7 @@
 #SBATCH --time=3-0:00:00
 #SBATCH --qos=cpu_normal
 #SBATCH --partition=cpu_p
-#SBATCH --output=runs_output/BRCA-dinov2-Washington-bs32-gpu-20epochs-erm-%j.out
-#SBATCH --error=runs_output/BRCA-dinov2-Washington-bs32-gpu-20epochs-erm-%j.err
+#SBATCH --output=../runs_output/BRCA-dinov2-Washington-bs32-gpu-20epochs-erm-%j.out
+#SBATCH --error=../runs_output/BRCA-dinov2-Washington-bs32-gpu-20epochs-erm-%j.err
 
-python main_out.py -c ./examples/conf/TCGA_BRCA.yaml
+python main_out.py -c ../conf/TCGA_BRCA.yaml

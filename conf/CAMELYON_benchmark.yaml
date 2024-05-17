@@ -12,7 +12,7 @@ test_domains:
   # - center3
   # - center4
 
-output_dir: zoutput/benchmarks/CAMELYON_centers_dann_dial
+output_dir: ../zoutput/benchmarks/CAMELYON_centers_dann_dial
 
 # Number of hyperparameter samples per task.
 # The total runs of each task are given
@@ -29,7 +29,7 @@ endseed: 100  # Start and end seeds are inclusive
 
 domainlab_args:
   # Common settings passed to each task
-  tpath: examples/tasks/task_CAMELYON17.py
+  tpath: ../tasks/task_CAMELYON17.py
   bs: 32
   epos: 30
   es: 20
@@ -39,13 +39,13 @@ domainlab_args:
 erm_dinov2:
   # Model-specific settings
   model: erm
-  npath: examples/nets/dinov2.py
+  npath: ../nets/dinov2.py
 
 
 dial_dinov2_config1:
   model: erm
   trainer: dial
-  npath: examples/nets/dinov2.py
+  npath: ../nets/dinov2.py
   hyperparameters:
     dial_steps_perturb:
       min: 1
@@ -67,7 +67,7 @@ dial_dinov2_config1:
 dial_dinov2_config2:
   model: erm
   trainer: dial
-  npath: examples/nets/dinov2.py
+  npath: ../nets/dinov2.py
   hyperparameters:
     dial_steps_perturb:
       min: 2
@@ -90,7 +90,7 @@ dial_dinov2_config2:
 dial_dinov2_config3:
   model: erm
   trainer: dial
-  npath: examples/nets/dinov2.py
+  npath: ../nets/dinov2.py
   hyperparameters:
     dial_steps_perturb:
       min: 3
@@ -111,13 +111,13 @@ dial_dinov2_config3:
 erm_vit:
   # Model-specific settings
   model: erm
-  npath: examples/nets/vit.py
+  npath: ../nets/vit.py
 
 
 dial_vit_config1:
   model: erm
   trainer: dial
-  npath: examples/nets/vit.py
+  npath: ../nets/vit.py
   hyperparameters:
     dial_steps_perturb:
       min: 1
@@ -138,7 +138,7 @@ dial_vit_config1:
 dial_vit_config2:
   model: erm
   trainer: dial
-  npath: examples/nets/vit.py
+  npath: ../nets/vit.py
   hyperparameters:
     dial_steps_perturb:
       min: 2
@@ -159,7 +159,7 @@ dial_vit_config2:
 dial_vit_config3:
   model: erm
   trainer: dial
-  npath: examples/nets/vit.py
+  npath: ../nets/vit.py
   hyperparameters:
     dial_steps_perturb:
       min: 3
@@ -179,13 +179,13 @@ dial_vit_config3:
 
 erm_resnet:
   model: erm
-  npath: examples/nets/resnet.py
+  npath: ../nets/resnet.py
 
 
 dial_resnet_config1:
   model: erm
   trainer: dial
-  npath: examples/nets/resnet.py
+  npath: ../nets/resnet.py
   hyperparameters:
     dial_steps_perturb:
       min: 1
@@ -206,7 +206,7 @@ dial_resnet_config1:
 dial_resnet_config2:
   model: erm
   trainer: dial
-  npath: examples/nets/resnet.py
+  npath: ../nets/resnet.py
   hyperparameters:
     dial_steps_perturb:
       min: 2
@@ -227,7 +227,7 @@ dial_resnet_config2:
 dial_resnet_config3:
   model: erm
   trainer: dial
-  npath: examples/nets/resnet.py
+  npath: ../nets/resnet.py
   hyperparameters:
     dial_steps_perturb:
       min: 3
@@ -247,7 +247,7 @@ dial_resnet_config3:
 
 # diva:
 #   model: diva
-#   npath: examples/nets/dinov2.py
+#   npath: ../nets/dinov2.py
 #   hyperparameters:
 #     gamma_y:
 #       min: 500000

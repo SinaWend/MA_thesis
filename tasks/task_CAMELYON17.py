@@ -2,12 +2,10 @@ from domainlab.tasks.task_dset import mk_task_dset
 import os
 import json
 import torch
-print(torch.cuda.is_available())
-print(torch.version.cuda)
 from PIL import Image
 from torchvision import transforms
 from domainlab.tasks.utils_task import ImSize
-from examples.tasks.patches_processing import process_slides
+from tasks.patches_processing import process_slides
 from torch.utils.data import ConcatDataset
 import pandas as pd
 
@@ -16,7 +14,6 @@ import pandas as pd
 class HistopathologyDataset(torch.utils.data.Dataset):
     def __init__(self, dataframe, transform=None, num_classes=2):
         self.dataframe = dataframe
-        #print(self.dataframe)
         self.transform = transform
         self.num_classes = num_classes
         self.targets = torch.tensor(self.dataframe['label'].values.astype(int), dtype=torch.long)

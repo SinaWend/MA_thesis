@@ -5,7 +5,7 @@
 #SBATCH --time=3-0:00:00
 #SBATCH --qos=cpu_normal
 #SBATCH --partition=cpu_p
-#SBATCH --output=runs_output/vitlarge-center4-20epochs-erm-%j.out
-#SBATCH --error=runs_output/vitlarge-center4-20epochs-erm-%j.err
+#SBATCH --output=../runs_output/vitlarge-center4-20epochs-erm-%j.out
+#SBATCH --error=../runs_output/vitlarge-center4-20epochs-erm-%j.err
 
-python main_out.py -c ./examples/conf/CAMELYON_vit.yaml
+python main_out.py -c ../conf/CAMELYON_vit.yaml

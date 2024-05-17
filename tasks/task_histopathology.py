@@ -5,7 +5,7 @@ import torch
 from PIL import Image
 from torchvision import transforms
 from domainlab.tasks.utils_task import ImSize
-from examples.tasks.patches_processing import process_slides_primary_diagnosis_test
+from tasks.patches_processing import process_slides_primary_diagnosis_test
 from torch.utils.data import ConcatDataset
 
 

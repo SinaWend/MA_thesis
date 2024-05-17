@@ -200,28 +200,20 @@ def process_slides_tissue_type(slide_path, save_path, tissue_type, file_extensio
     slide_files = sorted(Path(slide_path).glob(f"**/*{file_extension}"))
     print(f"Found {len(slide_files)} slide files with extension {file_extension}.")
 
-    # Create directories
-    # output_path = Path(save_path) / "h5_files"
-    # output_path.mkdir(parents=True, exist_ok=True)
-    # tile_path = Path(save_path) / f"tiling_previews_{patch_size}px_{resolution_in_mpp}mpp_{downscaling_factor}xdown_normal"
-    # tile_path.mkdir(parents=True, exist_ok=True)
-
     # Initialize data structures
     coords = pd.DataFrame({"scn": [], "x": [], "y": []}, dtype=int)
     paths = pd.DataFrame({"path": []})
 
     # Assign label based on passed tissue type
     label = tissue_type
-    print(label)
 
     # Process each slide file
     start = time.perf_counter()
     
     driver = get_driver(file_extension)
-    slide = slideio.open_slide(slide_path, 'SVS')
+    slide = slideio.open_slide(slide_path, driver)
     slide_name = Path(slide_path).stem
     # Process slide using your existing logic
-    # Assume you implement your slide processing and patch extraction here
 
     (Path(save_path) / "patches" / str(downscaling_factor) / slide_name).mkdir(parents=True, exist_ok=True)
 
@@ -273,7 +265,6 @@ def process_slides_tissue_type(slide_path, save_path, tissue_type, file_extensio
 
 def extract_submitter_id(full_slide_name):
     # Assumes that the submitter_id is always the first three parts of the file name
-    # Adjust according to your specific data if necessary
     parts = full_slide_name.split('-')
     if len(parts) >= 3:
         submitter_id = '-'.join(parts[:3])
@@ -288,10 +279,6 @@ def process_slides_primary_diagnosis(slide_path, save_path, diagnosis_to_label, 
     # Device setup
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    # Slide files
-    slide_files = sorted(Path(slide_path).glob(f"**/*{file_extension}"))
-    print(f"Found {len(slide_files)} slide files with extension {file_extension}.")
-
     # Load clinical data
     clinical_path = "/lustre/groups/aih/sina.wendrich/MA_code/TCGA_BRCA/clinical.project-tcga-brca.2024-04-30.json"
 
@@ -299,13 +286,6 @@ def process_slides_primary_diagnosis(slide_path, save_path, diagnosis_to_label, 
     with open(clinical_path, 'r') as file:
         clinical_data = json.load(file)
     clinical_dict = {entry["submitter_id"]: entry for entry in clinical_data}
-    print("Keys in clinical_dict:", list(clinical_dict.keys())[:5])  # print first few keys to check format
-
-    # Create directories
-    output_path = Path(save_path) / "h5_files"
-    output_path.mkdir(parents=True, exist_ok=True)
-    tile_path = Path(save_path) / f"tiling_previews_{patch_size}px_{resolution_in_mpp}mpp_{downscaling_factor}xdown_normal"
-    tile_path.mkdir(parents=True, exist_ok=True)
 
     # Process each slide file
     start = time.perf_counter()
@@ -313,9 +293,8 @@ def process_slides_primary_diagnosis(slide_path, save_path, diagnosis_to_label, 
     paths = pd.DataFrame({"path": []})
 
     driver = get_driver(file_extension)
-    slide = slideio.open_slide(slide_path, 'SVS')
+    slide = slideio.open_slide(slide_path, driver)
     slide_name = Path(slide_path).stem
-    print(f"Looking for clinical data for slide: {slide_name}")
 
     submitter_id = extract_submitter_id(slide_name)
     clinical_entry = clinical_dict.get(submitter_id)
@@ -328,8 +307,6 @@ def process_slides_primary_diagnosis(slide_path, save_path, diagnosis_to_label, 
         print(f"Warning: Clinical data for {slide_name} not found.")
         label = None  # Default label indicating missing data
 
-    # Process slide using your existing logic
-    # Assume you implement your slide processing and patch extraction here
 
     (Path(save_path) / "patches" / str(downscaling_factor) / slide_name).mkdir(parents=True, exist_ok=True)
 
@@ -374,135 +351,8 @@ def process_slides_primary_diagnosis(slide_path, save_path, diagnosis_to_label, 
 
 
 
-def process_slides_primary_diagnosis_test(slide_path, save_path,diagnosis_to_label, file_extension=".svs", patch_size=128, downscaling_factor=8,
-                   resolution_in_mpp=0, white_thresh=[175, 190, 178], black_thresh=0, calc_thresh=[40, 40, 40],
-                   invalid_ratio_thresh=0.5, edge_threshold=4):
-    # Set device to GPU if available, else CPU
-    device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
 
-    # Get slide files based on the provided path and file extension
-    slide_files = sorted(Path(slide_path).glob(f"**/*{file_extension}"))
-    print(f"Found {len(slide_files)} slide files with extension {file_extension}.")
-
-
-    # Get the driver for the slide file extension
-    driver = get_driver(file_extension)
-
-    # Create output directory
-    output_path = Path(save_path) / "h5_files"
-    output_path.mkdir(parents=True, exist_ok=True)
-
-    
-    # Create directories
-    tile_path = (
-            Path(save_path)
-            / f"tiling_previews_{patch_size}px_{resolution_in_mpp}mpp_{downscaling_factor}xdown_normal"
-        )
-    tile_path.mkdir(parents=True, exist_ok=True)
-    
-
-    # Process slide files
-    start = time.perf_counter()
-    for slide_file in tqdm(slide_files, position=0, leave=False, desc="slides"):
-        print(f"Processing slide: {slide_file.stem}")
-
-        slide = slideio.Slide(str(slide_file), driver)
-        slide_name = slide_file.stem
-        #ab hier extract_features function
-   
-        coords = pd.DataFrame({"scn": [], "x": [], "y": []}, dtype=int)
-        paths = pd.DataFrame({"path": []})
-
-        (Path(save_path) / "patches" / str(downscaling_factor)/slide_name).mkdir(
-                parents=True, exist_ok=True
-            )
-
-        
-
-        orig_sizes = []
-        # iterate over scenes of the slides
-        for scn in range(slide.num_scenes):
-            scene_coords = pd.DataFrame({"scn": [], "x": [], "y": []}, dtype=int)
-            scene_paths = []  # Temporary storage for paths of the current scene
-
-            scene = slide.get_scene(scn)
-            orig_sizes.append(scene.size)
-            try:
-                scaling = get_scaling(downscaling_factor, resolution_in_mpp, scene.resolution[0])
-            except Exception as e:
-                print(e)
-                print(f"Error determining resolution at slide ", slide_name, scn)
-                break
-            # read the scene in the desired resolution
-            wsi = scene.read_block(
-                size=(int(scene.size[0] // scaling), int(scene.size[1] // scaling))
-            )
-
-           
-            # Define the main loop that processes all patches
-            with concurrent.futures.ThreadPoolExecutor() as executor:
-                futures = []
-
-                # iterate over x (width) of scene
-                for x in tqdm(
-                    range(0, wsi.shape[0], patch_size),
-                    position=1,
-                    leave=False,
-                    desc=slide_name + "_" + str(scn),
-                ):
-                    # check if a full patch still 'fits' in x direction
-                    if x + patch_size > wsi.shape[0]:
-                        continue
-                    future = executor.submit(process_row, wsi, scn, x,patch_size, save_path, downscaling_factor, slide_name, white_thresh, black_thresh, calc_thresh, invalid_ratio_thresh, edge_threshold)
-                    futures.append(future)
-
-                for future in concurrent.futures.as_completed(futures):
-                    patches_coords, patches_paths = future.result()
-                    if len(patches_coords) > 0:
-                        scene_coords = pd.concat(
-                            [scene_coords, patches_coords], ignore_index=True
-                        )
-                        scene_paths.extend(patches_paths)  # Collect paths
-
-            coords = pd.concat([coords, scene_coords], ignore_index=True)
-            #TODO: Oder für jede Szene einen einzelnen Pfad?
-            paths = pd.concat([paths, pd.DataFrame({"path": scene_paths})], ignore_index=True)  
-
-
-
-    end = time.perf_counter()
-    elapsed_time = end - start
-
-    print("Time taken: ", elapsed_time, "seconds")
-
-######
-    slide_path = Path(slide_path)
-    clinical_json_files = list(slide_path.glob(f"clinical*.json"))
-    if clinical_json_files:
-        # If there are multiple clinical JSON files, this will pick the first one
-        clinical_json_path = clinical_json_files[0]
-        
-        with open(clinical_json_path, 'r') as file:
-            clinical_data = json.load(file)
-            
-        # Assuming clinical_data is a list and you're interested in the first item
-        primary_diagnosis = clinical_data[0]['diagnoses'][0]['primary_diagnosis']
-        
-        if primary_diagnosis not in diagnosis_to_label:
-            # Assign a new label
-            diagnosis_to_label[primary_diagnosis] = len(diagnosis_to_label) 
-        label = diagnosis_to_label[primary_diagnosis]
-    else:
-        print(f"Warning: Clinical data for {slide_name} not found.")
-        label = 0  # or another default label indicating missing data
-
-    length = len(paths)
-    paths['label'] =  [label] * length
-    return coords, paths
-
-
-
-
+#for CAMLEYON17 task:
 
 def parse_annotations(annotation_path,downscaling_factor):
     tree = ET.parse(annotation_path)
@@ -527,14 +377,9 @@ def process_slides(slide_path, annotation_path, save_path,center_path, file_exte
                    resolution_in_mpp=0, white_thresh=[195, 210, 200], black_thresh=0, calc_thresh=[40, 40, 40],
                    invalid_ratio_thresh=0.5, edge_threshold=4):
 
-    device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-    print(slide_path)
-   
+    device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")   
     center_name = os.path.basename(center_path)
 
-    #tile_path = Path(save_path) / f"tiling_previews_{patch_size}px_{resolution_in_mpp}mpp_{downscaling_factor}xdown_normal"
-    #tile_path.mkdir(parents=True, exist_ok=True)
-    
     
     driver = get_driver(file_extension)
     slide = slideio.Slide(str(slide_path), driver)
@@ -605,48 +450,22 @@ def process_row_annotations(wsi, scn, x, patch_size, save_path, center_name, dow
         if y + patch_size > wsi.shape[0]:
             continue
         patch = wsi[y:y+patch_size, x:x+patch_size, :]
-        
-     #debug treshold:   
-    #     target_polygon = Polygon([(1536, 11136), (1664, 11136), (1664, 11264), (1536, 11264), (1536, 11136)])
-    #     polygon = Polygon([(x , y), 
-    #                                  ((x + patch_size) , y ),
-    #                                  ((x + patch_size) , (y + patch_size) ),
-    #                                  (x , (y + patch_size) )])
-    #     if(polygon == target_polygon):
-    #         print("Examining patch at coordinates:", x, y)
-    #         if(np.all(patch == 0)):
-    #             print("Warning: Patch is all zeros at coordinates:", x, y)
-    #         plt.imshow(patch)
-    #         plt.savefig(save_path)
-    #         plt.close()
-    #         bool = threshold(patch, white_thresh, black_thresh, calc_thresh, invalid_ratio_thresh, edge_threshold)
-
         if threshold(patch, white_thresh, black_thresh, calc_thresh, invalid_ratio_thresh, edge_threshold):
             patch_dir = Path(save_path) / "patches" / f"{downscaling_factor}" / slide_name 
-
-            patch_dir.mkdir(parents=True, exist_ok=True)  # Ensure directory exists
-          
-       
+            patch_dir.mkdir(parents=True, exist_ok=True)        
             patch_polygon = Polygon([(x , y), 
                                      ((x + patch_size) , y ),
                                      ((x + patch_size) , (y + patch_size) ),
                                      (x , (y + patch_size) )])
             label = 0
-            for annotation, ann_label in annotations:
+            for annotation in annotations:
                 if annotation.intersects(patch_polygon) or annotation.touches(patch_polygon):
-                    # print("Annotation", annotation)
-                    # print("Ann Label", ann_label)
-                    # print("patch polygon", patch_polygon)
-                    # print(f"Patch at ({x}, {y}) intersects with annotation labeled {ann_label}")
                     label = 1
                     break
-                #else:
-                    #print(f"Patch at ({x}, {y}) does NOT intersect with annotation {annotation}")
-            
             im_path = patch_dir / f"{slide_name}_patch_{scn}_{x}_{y}_{center_name}_{label}.png"
             im = Image.fromarray(patch)
             im.save(im_path)
-
+            
             im_paths.append({"path": str(im_path), "label": label})
             patches_coords = pd.concat([patches_coords, pd.DataFrame({"scn": [scn], "x": [x], "y": [y], "label": [label]})], ignore_index=True)
 
