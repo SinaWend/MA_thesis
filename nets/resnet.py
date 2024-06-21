@@ -42,7 +42,14 @@ class ResNet4DeepAll(ResNetBase):
         self.net_torchvision.fc = nn.Linear(num_final_in, dim_y)
         # CHANGEME: user should change "fc" to their chosen neural
         # network's last layer's name
+        
+        # Freeze all layers first
+        for param in self.net_torchvision.parameters():
+            param.requires_grad = False
 
+        # Unfreeze the final linear layer
+        for param in self.net_torchvision.fc.parameters():
+            param.requires_grad = True
 
 class ResNetNoLastLayer(ResNetBase):
     """ResNetNoLastLayer."""

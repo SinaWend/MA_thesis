@@ -3,7 +3,7 @@ import torch.nn as nn
 from domainlab.compos.nn_zoo.nn_torchvision import NetTorchVisionBase
 
 
-DINO_PATH_FINETUNED_DOWNLOADED='../dinov2_vits_student_TCGA'
+DINO_PATH_FINETUNED_DOWNLOADED='/lustre/groups/aih/sina.wendrich/MA_code/test/dinov2_vits_student_TCGA'
 
 def get_dino_finetuned_downloaded():
     # load the original DINOv2 model with the correct architecture and parameters. The positional embedding is too large.
@@ -86,6 +86,14 @@ class DINOv2ForClassification(DINOv2Base):
         super().__init__(flag_finetuned, remove_last_layer=remove_last_layer)
         embed_dim = 384 # 1536 for vitlarge else  384
         self.net_torchvision.head = self._make_dinov2_linear_classification_head(dim_y, embed_dim, layers= 1)
+
+        # Freeze all existing parameters in the model
+        for param in self.net_torchvision.parameters():
+            param.requires_grad = False
+
+        # Unfreeze the new classification head
+        for param in self.net_torchvision.head.parameters():
+            param.requires_grad = True
 
     def _make_dinov2_linear_classification_head(self,
         dim_y,

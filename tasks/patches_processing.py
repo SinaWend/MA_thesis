@@ -144,7 +144,7 @@ def threshold(patch: np.array, white_thresh, black_thresh, calc_thresh, invalid_
 
 
 def process_row(
-    wsi: np.array, scn: int, x: int, patch_size,save_path ,downscaling_factor, slide_name: str, white_thresh, black_thresh, calc_thresh, invalid_ratio_thresh, edge_threshold
+    wsi: np.array, label, center_name, scn: int, x: int, patch_size,save_path ,downscaling_factor, slide_name: str, white_thresh, black_thresh, calc_thresh, invalid_ratio_thresh, edge_threshold
 ):
     """
     Process a row of a whole slide image (WSI) and extract patches that meet the threshold criteria.
@@ -174,7 +174,8 @@ def process_row(
         if threshold(patch, white_thresh, black_thresh, calc_thresh, invalid_ratio_thresh, edge_threshold):
 
             im = Image.fromarray(patch)
-            im_path = Path(save_path) / "patches" /str(downscaling_factor) / slide_name / f"{slide_name}_patch_{scn}_{x}_{y}.png"
+            im_path = Path(save_path) / "patches" /str(downscaling_factor) / slide_name / f"{slide_name}_patch_{scn}_{x}_{y}_{center_name}_{label}.png"
+            im_path.parent.mkdir(parents=True, exist_ok=True)
             im.save(im_path)
             im_paths.append(im_path)
 
@@ -189,16 +190,13 @@ def process_row(
 
 
 
-def process_slides_tissue_type(slide_path, save_path, tissue_type, file_extension=".svs", 
+def process_slides_tissue_type(slide_path, save_path, tissue_type, center_path, file_extension=".svs", 
                                      patch_size=128, downscaling_factor=8, resolution_in_mpp=0, 
                                      white_thresh=[175, 190, 178], black_thresh=0, calc_thresh=[40, 40, 40], 
                                      invalid_ratio_thresh=0.5, edge_threshold=4):
     # Device setup
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-    # Slide files
-    slide_files = sorted(Path(slide_path).glob(f"**/*{file_extension}"))
-    print(f"Found {len(slide_files)} slide files with extension {file_extension}.")
+    center_name = os.path.basename(center_path)
 
     # Initialize data structures
     coords = pd.DataFrame({"scn": [], "x": [], "y": []}, dtype=int)
@@ -238,7 +236,7 @@ def process_slides_tissue_type(slide_path, save_path, tissue_type, file_extensio
                 # check if a full patch still 'fits' in x direction
                 if x + patch_size > wsi.shape[0]:
                     continue
-                future = executor.submit(process_row, wsi, scn, x, patch_size, save_path, downscaling_factor, slide_name, white_thresh, black_thresh, calc_thresh, invalid_ratio_thresh, edge_threshold)
+                future = executor.submit(process_row, wsi,label,center_name, scn, x, patch_size, save_path, downscaling_factor, slide_name, white_thresh, black_thresh, calc_thresh, invalid_ratio_thresh, edge_threshold)
                 futures.append(future)
 
             for future in concurrent.futures.as_completed(futures):
@@ -250,7 +248,7 @@ def process_slides_tissue_type(slide_path, save_path, tissue_type, file_extensio
     # Append data to paths DataFrame
     length = len(paths)
     paths['label'] = [label] * length  # Assign the same label to all patches from the slide
-
+    print(length)
     end = time.perf_counter()
     elapsed_time = end - start
     print("Time taken: ", elapsed_time, "seconds")
@@ -272,7 +270,7 @@ def extract_submitter_id(full_slide_name):
         submitter_id = full_slide_name  # Fallback if the name is unexpectedly formatted
     return submitter_id
 
-def process_slides_primary_diagnosis(slide_path, save_path, diagnosis_to_label, file_extension=".svs", 
+def process_slides_primary_diagnosis(slide_path, save_path, diagnosis_to_label, center_name, file_extension=".svs", 
                                      patch_size=128, downscaling_factor=8, resolution_in_mpp=0, 
                                      white_thresh=[175, 190, 178], black_thresh=0, calc_thresh=[40, 40, 40], 
                                      invalid_ratio_thresh=0.5, edge_threshold=4):
@@ -331,7 +329,7 @@ def process_slides_primary_diagnosis(slide_path, save_path, diagnosis_to_label, 
                 # check if a full patch still 'fits' in x direction
                 if x + patch_size > wsi.shape[0]:
                     continue
-                future = executor.submit(process_row, wsi, scn, x, patch_size, save_path, downscaling_factor, slide_name, white_thresh, black_thresh, calc_thresh, invalid_ratio_thresh, edge_threshold)
+                future = executor.submit(process_row, wsi, label, center_name, scn, x, patch_size, save_path, downscaling_factor, slide_name, white_thresh, black_thresh, calc_thresh, invalid_ratio_thresh, edge_threshold)
                 futures.append(future)
 
             for future in concurrent.futures.as_completed(futures):
@@ -372,13 +370,11 @@ def parse_annotations(annotation_path,downscaling_factor):
         return annotations, annotation_polygons 
 
 
-
-def process_slides(slide_path, annotation_path, save_path,center_path, file_extension=".tif", patch_size=128, downscaling_factor=8,
+def process_slides(slide_path, annotation_path, save_path, center_name, patch_size, file_extension=".tif", downscaling_factor=8,
                    resolution_in_mpp=0, white_thresh=[195, 210, 200], black_thresh=0, calc_thresh=[40, 40, 40],
                    invalid_ratio_thresh=0.5, edge_threshold=4):
 
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")   
-    center_name = os.path.basename(center_path)
 
     
     driver = get_driver(file_extension)
@@ -451,7 +447,7 @@ def process_row_annotations(wsi, scn, x, patch_size, save_path, center_name, dow
             continue
         patch = wsi[y:y+patch_size, x:x+patch_size, :]
         if threshold(patch, white_thresh, black_thresh, calc_thresh, invalid_ratio_thresh, edge_threshold):
-            patch_dir = Path(save_path) / "patches" / f"{downscaling_factor}" / slide_name 
+            patch_dir = Path(save_path) / "patches" / f"{downscaling_factor}" / f"{patch_size}" / slide_name 
             patch_dir.mkdir(parents=True, exist_ok=True)        
             patch_polygon = Polygon([(x , y), 
                                      ((x + patch_size) , y ),
