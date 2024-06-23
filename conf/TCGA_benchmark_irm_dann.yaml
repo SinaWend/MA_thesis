@@ -1,0 +1,96 @@
+test_domains:
+  - Harvard Medical School
+  - Canada's Michael Smith Genome Sciences Centre
+  - Broad Institute of MIT and Harvard
+  - University of North Carolina
+  - Johns Hopkins / University of Southern California
+  - Mayo Clinic
+  - Salk Institute for Biological Studies
+
+output_dir: zoutput/benchmarks/TCGA_vitswin_irm_dann
+
+num_param_samples: 1
+
+san_check: True
+san_num: 5
+
+startseed: 100
+endseed: 100  # Start and end seeds are inclusive
+
+domainlab_args:
+  tpath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/tasks/task_tissue_TCGA.py
+  bs: 16
+  epos: 30
+  es: 20
+  lr: 1e-5
+
+dann_vitswin_config1:
+  model: dann
+  npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/vit.py
+  hyperparameters:
+    gamma_reg:
+      min: 0.000001
+      max: 0.000001
+      step: 0.1
+      distribution: uniform
+
+dann_vitswin_config2:
+  model: dann
+  npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/vit.py
+  hyperparameters:
+    gamma_reg:
+      min: 0.0001
+      max: 0.0001
+      step: 0.1
+      distribution: uniform
+
+irm_vitswin_config1:
+  model: erm
+  trainer: irm
+  npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/vit.py
+  hyperparameters:
+    gamma_reg:
+      min: 0.000001
+      max: 0.000001
+      step: 0.1
+      distribution: uniform
+
+irm_vitswin_config2:
+  model: erm
+  trainer: irm
+  npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/vit.py
+  hyperparameters:
+    gamma_reg:
+      min: 0.0001
+      max: 0.0001
+      step: 0.1
+      distribution: uniform
+
+irm_vitswin_config3:
+  model: erm
+  trainer: irm
+  npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/vit.py
+  hyperparameters:
+    gamma_reg:
+      min: 0.001
+      max: 0.001
+      step: 0.1
+      distribution: uniform
+    # learning_rate:
+    #   min: 5e-6
+    #   max: 5e-5
+    #   log: true
+
+irm_vitswin_config4:
+  model: erm
+  trainer: irm
+  npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/vit.py
+  hyperparameters:
+    gamma_reg:
+      min: 0.01
+      max: 0.01
+      step: 0.1
+      distribution: uniform
+    # batch_size:
+    #   values: [8, 16, 32]
+    #   distribution: categorical
