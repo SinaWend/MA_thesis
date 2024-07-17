@@ -33,6 +33,33 @@ import pandas as pd
 
 
 
+# class HistopathologyDataset(torch.utils.data.Dataset):
+#     def __init__(self, dataframe, transform=None, cancer_transform=None, num_classes=2, oversample_factor=1):
+#         self.dataframe = dataframe
+#         self.transform = transform
+#         self.cancer_transform = cancer_transform
+#         self.num_classes = num_classes
+#         self.oversample_factor = oversample_factor
+#         self.adjusted_indices = []
+#         for i, label in enumerate(dataframe['label']):
+#             self.adjusted_indices.extend([i] * (oversample_factor if label == 1 else 1))
+
+#     def __len__(self):
+#         return len(self.adjusted_indices)
+
+#     def __getitem__(self, idx):
+#         actual_idx = self.adjusted_indices[idx]
+#         img_path = self.dataframe.iloc[actual_idx]['path']
+#         label = int(self.dataframe.iloc[actual_idx]['label'])
+#         image = Image.open(img_path).convert("RGB")
+#         if label == 1 and self.cancer_transform:
+#             image = self.cancer_transform(image)
+#         elif self.transform:
+#             image = self.transform(image)
+#         label_tensor = torch.tensor(label, dtype=torch.long)
+#         label_one_hot = one_hot_encode(label_tensor, self.num_classes)
+#         return image, label_one_hot
+
 class HistopathologyDataset(torch.utils.data.Dataset):
     def __init__(self, dataframe, transform=None, cancer_transform=None, num_classes=2, oversample_factor=1):
         self.dataframe = dataframe
@@ -51,6 +78,7 @@ class HistopathologyDataset(torch.utils.data.Dataset):
         actual_idx = self.adjusted_indices[idx]
         img_path = self.dataframe.iloc[actual_idx]['path']
         label = int(self.dataframe.iloc[actual_idx]['label'])
+        domain = self.dataframe.iloc[actual_idx]['center']  # Extract domain
         image = Image.open(img_path).convert("RGB")
         if label == 1 and self.cancer_transform:
             image = self.cancer_transform(image)
@@ -58,7 +86,15 @@ class HistopathologyDataset(torch.utils.data.Dataset):
             image = self.transform(image)
         label_tensor = torch.tensor(label, dtype=torch.long)
         label_one_hot = one_hot_encode(label_tensor, self.num_classes)
-        return image, label_one_hot
+        #print(domain)
+        domain_num = extract_domain_number(domain)
+        domain_tensor = torch.tensor(domain_num, dtype=torch.long)
+        domain_one_hot = one_hot_encode(domain_tensor, 5)
+        return image, label_one_hot, domain_one_hot  # Return domain here
+
+def extract_domain_number(domain_str):
+    # Extract the numerical part from the domain string (e.g., 'center0' -> 0)
+    return int(domain_str[-1])
 
 def one_hot_encode(labels, num_classes):
     return torch.nn.functional.one_hot(labels, num_classes=num_classes)
@@ -208,7 +244,7 @@ def get_task(na=None):
             else:
                 transform = img_trans_train  # Use training transformations for other centers
                 cancer_transform = img_cancer_augment_train
-                oversample_factor = 3
+                oversample_factor = 10
             dataset_train = HistopathologyDataset(df_center_train, transform=transform, cancer_transform=cancer_transform, num_classes=dim_y, oversample_factor=oversample_factor)
             dataset_val = HistopathologyDataset(df_center_val, transform=img_trans_val_test, num_classes=dim_y)
                     
