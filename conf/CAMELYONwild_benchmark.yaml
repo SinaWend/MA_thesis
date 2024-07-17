@@ -1,0 +1,648 @@
+# Example of a comprehensive benchmark config for broader testing scenarios.
+
+# List of all domains that are used as test domains
+# In a leave-one-out setup, i.e., for each run,
+# one domain from this list is chosen as test domain
+# while training is performed on all other domains
+# of the specified dataset.
+test_domains:
+  - "0"
+  # - center1
+  # - center2
+  # - center3
+  # - center4
+
+output_dir: zoutput/benchmarks/CAMELYONWILD_center0_dinov2small_erm_irm_dial_lr1e5_bs16_classbalancing10_nofreezing
+
+# Number of hyperparameter samples per task.
+num_param_samples: 1
+
+startseed: 100
+endseed: 102
+
+domainlab_args:
+  tpath: /home/aih/sina.wendrich/MA_thesis/tasks/task_CAMELYON17_WILD.py
+  bs: 16
+  epos: 30
+  es: 5
+  lr: 1e-5
+
+
+# erm_dinov2_bs16:
+#   model: erm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/dinov2.py
+#   bs: 16  # Batch size set to 1024
+#  # Learning rate set to 0.0005
+# # Model configurations to be tested with different learning rates
+
+# erm_dinov2_bs32:
+#   model: erm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/dinov2.py
+#   bs: 32  # Batch size set to 32
+
+# erm_dinov2_bs64:
+#   model: erm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/dinov2.py
+#   bs: 64  # Batch size set to 64
+
+# erm_dinov2_bs128:
+#   model: erm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/dinov2.py
+#   bs: 128  # Batch size set to 128
+
+# erm_dinov2_bs256:
+#   model: erm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/dinov2.py
+#   bs: 256  # Batch size set to 256
+
+# erm_dinov2_bs512:
+#   model: erm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/dinov2.py
+#   bs: 512  # Batch size set to 512
+
+
+
+erm_dinov2:
+  model: erm
+  npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+
+irm_dinov2_config1:
+  model: erm
+  trainer: irm
+  npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+  hyperparameters:
+    gamma_reg:
+      min: 0.00001
+      max: 0.00001
+      step: 0.1
+      distribution: uniform
+
+
+irm_dinov2_config2:
+  model: erm
+  trainer: irm
+  npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+  hyperparameters:
+    gamma_reg:
+      min: 0.0001
+      max: 0.0001
+      step: 0.1
+      distribution: uniform
+
+irm_dinov2_config3:
+  model: erm
+  trainer: irm
+  npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+  hyperparameters:
+    gamma_reg:
+      min: 0.001
+      max: 0.001
+      step: 0.1
+      distribution: uniform
+
+irm_dinov2_config4:
+  model: erm
+  trainer: irm
+  npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+  hyperparameters:
+    gamma_reg:
+      min: 0.1
+      max: 0.1
+      step: 0.1
+      distribution: uniform
+
+irm_dinov2_config5:
+  model: erm
+  trainer: irm
+  npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+  hyperparameters:
+    gamma_reg:
+      min: 1
+      max: 1
+      step: 0.1
+      distribution: uniform
+
+
+
+dial_dinov2_config1:
+  model: erm
+  trainer: dial
+  npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+  hyperparameters:
+    dial_steps_perturb:
+      min: 1
+      max: 1
+      step: 1
+      distribution: uniform
+
+    dial_noise_scale:
+      min: 0.0001
+      max: 0.0001
+      distribution: loguniform
+
+    dial_epsilon:
+      min: 0.001
+      max: 0.001
+      distribution: loguniform
+
+dann_dinov2:
+  model: dann
+  npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+  hyperparameters:
+    gamma_reg:
+      min: 0.0001
+      max: 0.0001
+      step: 0.1
+      distribution: uniform
+
+dann_dial_dinov21:
+  model: dann
+  trainer: dial
+  npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+  hyperparameters:
+    gamma_reg:
+        min: 0.0001
+        max: 0.0001
+        step: 0.1
+        distribution: uniform
+    dial_steps_perturb:
+      min: 1
+      max: 1
+      step: 1
+      distribution: uniform
+
+    dial_noise_scale:
+      min: 0.0001
+      max: 0.0001
+      distribution: loguniform
+
+    dial_epsilon:
+      min: 0.001
+      max: 0.001
+      distribution: loguniform
+
+# dial_dinov2_config2:
+#   model: erm
+#   trainer: dial
+#   npath: //home/aih/sina.wendrich/MA_thesis/nets/dinov2_halffreeze_blocks.py
+#   hyperparameters:
+#     dial_steps_perturb:
+#       min: 2
+#       max: 2
+#       step: 1
+#       distribution: uniform
+
+#     dial_noise_scale:
+#       min: 0.0001
+#       max: 0.0001
+#       distribution: loguniform
+
+#     dial_epsilon:
+#       min: 0.001
+#       max: 0.001
+#       distribution: loguniform
+
+
+
+# dial_dinov2_config3:
+#   model: erm
+#   trainer: dial
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_halffreeze_blocks.py
+#   hyperparameters:
+#     dial_steps_perturb:
+#       min: 3
+#       max: 3
+#       step: 1
+#       distribution: uniform
+
+#     dial_noise_scale:
+#       min: 0.0001
+#       max: 0.0001
+#       distribution: loguniform
+
+#     dial_epsilon:
+#       min: 0.001
+#       max: 0.001
+#       distribution: loguniform
+
+
+# dann_dinov2_config1:
+#   model: dann
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2.py
+#   hyperparameters:
+#     gamma_reg:
+#       min: 0.00001
+#       max: 0.00001
+#       step: 0.1
+#       distribution: uniform
+
+# dann_dinov2_config2:
+#   model: dann
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2.py
+#   hyperparameters:
+#     gamma_reg:
+#       min: 0.0001
+#       max: 0.0001
+#       step: 0.1
+#       distribution: uniform
+
+# dann_dinov2_config3:
+#   model: dann
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2.py
+#   hyperparameters:
+#     gamma_reg:
+#       min: 0.001
+#       max: 0.001
+#       step: 0.1
+#       distribution: uniform
+
+# dann_dinov2_config4:
+#   model: dann
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2.py
+#   hyperparameters:
+#     gamma_reg:
+#       min: 0.1
+#       max: 0.1
+#       step: 0.1
+#       distribution: uniform
+
+# dann_dinov2_config5:
+#   model: dann
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2.py
+#   hyperparameters:
+#     gamma_reg:
+#       min: 1
+#       max: 1
+#       step: 0.1
+#       distribution: uniform
+
+
+
+# erm_vitbase_lr1e-6:
+#   model: erm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/vit.py
+#   lr: 1e-6
+
+# erm_vitbase_lr5e-6:
+#   model: erm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/vit.py
+#   lr: 5e-6
+
+# erm_vitbase_lr1e-5:
+#   model: erm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/vit.py
+#   lr: 1e-5
+
+# erm_vitbase_lr5e-5:
+#   model: erm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/vit.py
+#   lr: 5e-5
+
+# erm_vitbase_lr1e-4:
+#   model: erm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/vit.py
+#   lr: 1e-4
+
+# erm_vitbase_lr5e-4:
+#   model: erm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/vit.py
+#   lr: 5e-4
+
+# irm_vitbase_config1:
+#   model: erm
+#   trainer: irm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/vit.py
+#   hyperparameters:
+#     gamma_reg:
+#       min: 0.0001
+#       max: 0.0001
+#       step: 0.1
+#       distribution: uniform
+
+
+# irm_vitbase_config2:
+#   model: erm
+#   trainer: irm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/vit.py
+#   hyperparameters:
+#     gamma_reg:
+#       min: 0.0005
+#       max: 0.0005
+#       step: 0.1
+#       distribution: uniform
+
+# irm_vitbase_config3:
+#   model: erm
+#   trainer: irm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/vit.py
+#   hyperparameters:
+#     gamma_reg:
+#       min: 0.001
+#       max: 0.001
+#       step: 0.1
+#       distribution: uniform
+
+# irm_vit_config4:
+#   model: erm
+#   trainer: irm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/vit.py
+#   hyperparameters:
+#     gamma_reg:
+#       min: 0.005
+#       max: 0.005
+#       step: 0.1
+#       distribution: uniform
+
+# irm_vit_config5:
+#   model: erm
+#   trainer: irm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/vit.py
+#   hyperparameters:
+#     gamma_reg:
+#       min: 0.01
+#       max: 0.01
+#       step: 0.1
+#       distribution: uniform
+
+# irm_vit_config6:
+#   model: erm
+#   trainer: irm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/vit.py
+#   hyperparameters:
+#     gamma_reg:
+#       min: 0.05
+#       max: 0.05
+#       step: 0.1
+#       distribution: uniform
+
+# irm_vit_config7:
+#   model: erm
+#   trainer: irm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/vit.py
+#   hyperparameters:
+#     gamma_reg:
+#       min: 0.1
+#       max: 0.1
+#       step: 0.1
+#       distribution: uniform
+
+
+# dial_vitbase_config1:
+#   model: erm
+#   trainer: dial
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/vit.py
+#   hyperparameters:
+#     dial_steps_perturb:
+#       min: 1
+#       max: 1
+#       step: 1
+#       distribution: uniform
+
+#     dial_noise_scale:
+#       min: 0.0001
+#       max: 0.0001
+#       distribution: loguniform
+
+#     dial_epsilon:
+#       min: 0.001
+#       max: 0.001
+#       distribution: loguniform
+
+# dial_vitbase_config2:
+#   model: erm
+#   trainer: dial
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/vit.py
+#   hyperparameters:
+#     dial_steps_perturb:
+#       min: 2
+#       max: 2
+#       step: 1
+#       distribution: uniform
+
+#     dial_noise_scale:
+#       min: 0.0001
+#       max: 0.0001
+#       distribution: loguniform
+
+#     dial_epsilon:
+#       min: 0.001
+#       max: 0.001
+#       distribution: loguniform
+
+# dial_vitbase_config3:
+#   model: erm
+#   trainer: dial
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/vit.py
+#   hyperparameters:
+#     dial_steps_perturb:
+#       min: 3
+#       max: 3
+#       step: 1
+#       distribution: uniform
+
+#     dial_noise_scale:
+#       min: 0.0001
+#       max: 0.0001
+#       distribution: loguniform
+
+#     dial_epsilon:
+#       min: 0.001
+#       max: 0.001
+#       distribution: loguniform
+
+# erm_resnet_lr1e-1:
+#   model: erm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/resnet.py
+#   lr: 1e-1  # Learning rate set to 0.1
+
+# erm_resnet_lr1e-4:
+#   model: erm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/resnet.py
+#   lr: 1e-4  # Learning rate set to 0.01
+
+# erm_resnet_lr5e-5:
+#   model: erm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/resnet.py
+#   lr: 5e-5  # Learning rate set to 0.001
+
+# erm_resnet_lr1e-5:
+#   model: erm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/resnet.py
+#   lr: 1e-5  # Learning rate set to 0.0001
+
+# erm_resnet_lr5e-6:
+#   model: erm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/resnet.py
+#   lr: 5e-6  # Learning rate set to 0.00001
+
+# erm_resnet_lr1e-6:
+#   model: erm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/resnet.py
+#   lr: 1e-6  # Learning rate set to 0.000001
+
+
+# erm_resnet_bs16:
+#   model: erm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/resnet.py
+#   bs: 16  # Batch size set to 16
+
+# erm_resnet_bs32:
+#   model: erm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/resnet.py
+#   bs: 32  # Batch size set to 32
+
+# erm_resnet_bs64:
+#   model: erm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/resnet.py
+#   bs: 64  # Batch size set to 64
+
+# erm_resnet_bs128:
+#   model: erm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/resnet.py
+#   bs: 128  # Batch size set to 128
+
+# erm_resnet_bs256:
+#   model: erm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/resnet.py
+#   bs: 256  # Batch size set to 256
+
+# erm_resnet_bs512:
+#   model: erm
+#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/resnet.py
+#   bs: 512  # Batch size set to 512
+
+
+
+# irm_resnet_config1:
+#   model: erm
+#   trainer: irm
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/resnet.py
+#   hyperparameters:
+#     gamma_reg:
+#       min: 0.0001
+#       max: 0.0001
+#       step: 0.1
+#       distribution: uniform
+
+# irm_resnet_config2:
+#   model: erm
+#   trainer: irm
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/resnet.py
+#   hyperparameters:
+#     gamma_reg:
+#       min: 0.001
+#       max: 0.001
+#       step: 0.1
+#       distribution: uniform
+
+# irm_resnet_config3:
+#   model: erm
+#   trainer: irm
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/resnet.py
+#   hyperparameters:
+#     gamma_reg:
+#       min: 0.01
+#       max: 0.01
+#       step: 0.1
+#       distribution: uniform
+
+# irm_resnet_config4:
+#   model: erm
+#   trainer: irm
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/resnet.py
+#   hyperparameters:
+#     gamma_reg:
+#       min: 0.1
+#       max: 0.1
+#       step: 0.1
+#       distribution: uniform
+
+# irm_resnet_config5:
+#   model: erm
+#   trainer: irm
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/resnet.py
+#   hyperparameters:
+#     gamma_reg:
+#       min: 1
+#       max: 1
+#       step: 0.1
+#       distribution: uniform
+
+# dial_resnet_config1:
+#   model: erm
+#   trainer: dial
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/resnet.py
+#   hyperparameters:
+#     dial_steps_perturb:
+#       min: 1
+#       max: 1
+#       step: 1
+#       distribution: uniform
+
+#     dial_noise_scale:
+#       min: 0.0001
+#       max: 0.0001
+#       distribution: loguniform
+
+#     dial_epsilon:
+#       min: 0.001
+#       max: 0.001
+#       distribution: loguniform
+
+
+# dial_resnet_config2:
+#   model: erm
+#   trainer: dial
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/resnet.py
+#   hyperparameters:
+#     dial_steps_perturb:
+#       min: 2
+#       max: 2
+#       step: 1
+#       distribution: uniform
+
+#     dial_noise_scale:
+#       min: 0.0001
+#       max: 0.0001
+#       distribution: loguniform
+
+#     dial_epsilon:
+#       min: 0.001
+#       max: 0.001
+#       distribution: loguniform
+
+# dial_resnet_config3:
+#   model: erm
+#   trainer: dial
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/resnet.py
+#   hyperparameters:
+#     dial_steps_perturb:
+#       min: 3
+#       max: 3
+#       step: 1
+#       distribution: uniform
+
+#     dial_noise_scale:
+#       min: 0.0001
+#       max: 0.0001
+#       distribution: loguniform
+
+#     dial_epsilon:
+#       min: 0.001
+#       max: 0.001
+#       distribution: loguniform
+
+# diva:
+#   model: diva
+#   npath: ../nets/dinov2.py
+#   hyperparameters:
+#     gamma_y:
+#       min: 500000
+#       max: 1000000
+#       step: 50000
+#       distribution: loguniform
+#     gamma_d:
+#       min: 50000
+#       max: 150000
+#       step: 5000
+#       distribution: loguniform
