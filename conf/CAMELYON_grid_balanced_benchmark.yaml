@@ -1,0 +1,99 @@
+# test benchmark config.
+mode: grid
+test_domains:
+  - center0
+  # - center1
+  # - center2
+  # - center3
+  # - center4
+
+output_dir: zoutput/benchmarks/CAMELYONbalanced_center0_dinov2small_erm_irm_dial_lr1e5_bs16_grid_nofreeze
+
+startseed: 100
+endseed: 102
+
+Shared_params:
+  gamma_y:
+    min: 1e4
+    max: 2e5
+    step: 100
+    distribution: loguniform
+    num: 8
+
+  zx_dim:
+    min: 0
+    max: 96
+    step: 32
+    distribution: uniform
+    datatype: int
+    num: 4
+
+  zy_dim:
+    min: 32
+    max: 96
+    step: 32
+    distribution: uniform
+    datatype: int
+    num: 3
+
+  gamma_reg:
+    min: 0.01
+    max: 10
+    distribution: loguniform
+    num: 8
+
+domainlab_args:
+  tpath: /home/aih/sina.wendrich/MA_thesis/tasks/task_CAMELYON17_balanced.py
+  bs: 16
+  epos: 30
+  es: 5
+  lr: 1e-5
+  npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+
+method_diva:
+  model: diva
+  zx_dim: 0
+  zd_dim: 32
+  shared:
+    - gamma_y
+    - zx_dim
+    - zy_dim
+    - gamma_reg
+  npath_dom: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+
+  hyperparameters:
+    gamma_d:
+      min: 1e4
+      max: 1e6
+      step: 10000
+      distribution: loguniform
+      datatype: float
+      num: 2
+
+method_hduva:
+  model: hduva
+  npath_encoder_x2topic_h: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+  npath_encoder_sandwich_x2h4zd: /home/aih/sina.wendrich/MA_thesis//nets/dinov2_nofreeze.py
+  shared:
+    - gamma_y
+    - zx_dim
+    - zy_dim
+    - gamma_reg
+  zx_dim: 0
+  zd_dim: 32
+
+erm:
+  model: erm
+
+
+mldg:
+  model: erm
+  trainer: mldg
+  shared:
+    - gamma_reg
+
+dann:
+  model: dann
+  shared:
+    - gamma_reg
+

@@ -28,12 +28,7 @@ class ViTForClassification(ViTBase):
         num_final_in = self.net_torchvision.head.in_features
         self.net_torchvision.head = nn.Linear(num_final_in, dim_y) 
          # Freeze all the parameters of the model
-        for param in self.net_torchvision.parameters():
-            param.requires_grad = False
-
-        # Unfreeze the parameters of the new classification head
-        for param in self.net_torchvision.head.parameters():
-            param.requires_grad = True
+        
 def build_feat_extract_net(dim_y, remove_last_layer=True):
     """
     -param dim_y: Number of classes. If None, feature extractor is returned without classification head.

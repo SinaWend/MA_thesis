@@ -43,7 +43,7 @@ class ResNet4DeepAll(ResNetBase):
         # CHANGEME: user should change "fc" to their chosen neural
         # network's last layer's name
         
-      
+    
 
 class ResNetNoLastLayer(ResNetBase):
     """ResNetNoLastLayer."""

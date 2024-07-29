@@ -1,0 +1,95 @@
+test_domains:
+  - center0
+  # - center1
+  # - center2
+  # - center3
+  # - center4
+
+output_dir: zoutput/benchmarks/CAMELYONbalanced_center0_dinov2small_erm_differentmodels_lr1e5_bs32__45_nofreeze
+
+# Number of hyperparameter samples per task.
+num_param_samples: 5
+
+startseed: 100
+endseed: 102
+
+domainlab_args:
+  tpath: /home/aih/sina.wendrich/MA_thesis/tasks/task_CAMELYON17_balanced.py
+  bs: 32
+  epos: 30
+  es: 5
+  lr: 1e-5
+  npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+
+Shared_params:
+  num_shared_param_samples: 5
+  gamma_y:
+    min: 1e4
+    max: 2e5
+    step: 100
+    distribution: loguniform
+
+  zx_dim:
+    min: 0
+    max: 96
+    step: 32
+    distribution: uniform
+    datatype: int
+
+  zy_dim:
+    min: 32
+    max: 96
+    step: 32
+    distribution: uniform
+    datatype: int
+
+  zd_dim:
+    reference: zy_dim
+
+  gamma_reg:
+    min: 0.01
+    max: 10
+    distribution: loguniform
+
+diva:
+  model: diva
+  # set nname_dom = nname when changing nname
+  npath_dom: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+  shared:
+    - gamma_y
+    - zx_dim
+    - zy_dim
+    - zd_dim
+
+  hyperparameters:
+    gamma_d:
+      min: 1e4
+      max: 1e6
+      step: 10_000
+      distribution: loguniform
+
+hduva:
+  model: hduva
+  npath_encoder_x2topic_h: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+  npath_encoder_sandwich_x2h4zd: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+  shared:
+    - gamma_y
+    - zx_dim
+    - zy_dim
+    - zd_dim
+
+erm:
+  model: erm
+
+mldg:
+  model: erm
+  trainer: mldg
+  shared:
+    - gamma_reg
+
+dann:
+  model: dann
+  shared:
+    - gamma_reg
+
+

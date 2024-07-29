@@ -1,14 +1,14 @@
 import torch.nn as nn
 from torchvision import models as torchvisionmodels
-from torchvision.models import ResNet50_Weights
+from torchvision.models import DenseNet121_Weights
 
 from domainlab.compos.nn_zoo.nn import LayerId
 from domainlab.compos.nn_zoo.nn_torchvision import NetTorchVisionBase
 
 
-class ResNetBase(NetTorchVisionBase):
+class DenseNetBase(NetTorchVisionBase):
     """
-    Since ResNet can be fetched from torchvision
+    Since DenseNet can be fetched from torchvision
     """
 
     def fetch_net(self, flag_pretrain):
@@ -17,18 +17,18 @@ class ResNetBase(NetTorchVisionBase):
         :param flag_pretrain:
         """
         if flag_pretrain:
-            self.net_torchvision = torchvisionmodels.resnet.resnet50(
-                weights=ResNet50_Weights.IMAGENET1K_V2
+            self.net_torchvision = torchvisionmodels.densenet.densenet121(
+                weights=DenseNet121_Weights.IMAGENET1K_V1
             )
         else:
-            self.net_torchvision = torchvisionmodels.resnet.resnet50(weights="None")
+            self.net_torchvision = torchvisionmodels.densenet.densenet121(weights=None)
         # CHANGEME: user can modify this line to choose other neural
         # network architectures from 'torchvision.models'
 
 
-class ResNet4DeepAll(ResNetBase):
+class DenseNet4DeepAll(DenseNetBase):
     """
-    change the size of the last layer
+    Change the size of the last layer
     """
 
     def __init__(self, flag_pretrain, dim_y):
@@ -38,15 +38,14 @@ class ResNet4DeepAll(ResNetBase):
         :param dim_y:
         """
         super().__init__(flag_pretrain)
-        num_final_in = self.net_torchvision.fc.in_features
-        self.net_torchvision.fc = nn.Linear(num_final_in, dim_y)
-        # CHANGEME: user should change "fc" to their chosen neural
+        num_final_in = self.net_torchvision.classifier.in_features
+        self.net_torchvision.classifier = nn.Linear(num_final_in, dim_y)
+        # CHANGEME: user should change "classifier" to their chosen neural
         # network's last layer's name
-        
-      
 
-class ResNetNoLastLayer(ResNetBase):
-    """ResNetNoLastLayer."""
+
+class DenseNetNoLastLayer(DenseNetBase):
+    """DenseNetNoLastLayer."""
 
     def __init__(self, flag_pretrain):
         """__init__.
@@ -54,8 +53,8 @@ class ResNetNoLastLayer(ResNetBase):
         :param flag_pretrain:
         """
         super().__init__(flag_pretrain)
-        self.net_torchvision.fc = LayerId()
-        # CHANGEME: user should change "fc" to their chosen neural
+        self.net_torchvision.classifier = LayerId()
+        # CHANGEME: user should change "classifier" to their chosen neural
         # network's last layer's name
 
 
@@ -67,11 +66,11 @@ class ResNetNoLastLayer(ResNetBase):
 def build_feat_extract_net(dim_y, remove_last_layer):
     """
     This function is compulsory to return a neural network feature extractor.
-    :param dim_y: number of classes to be classify can be None
+    :param dim_y: number of classes to be classified, can be None
     if remove_last_layer = True
-    :param remove_last_layer: for resnet for example, whether
-    remove the last layer or not.
+    :param remove_last_layer: for densenet for example, whether
+    to remove the last layer or not.
     """
     if remove_last_layer:
-        return ResNetNoLastLayer(flag_pretrain=True)
-    return ResNet4DeepAll(flag_pretrain=True, dim_y=dim_y)
+        return DenseNetNoLastLayer(flag_pretrain=False)
+    return DenseNet4DeepAll(flag_pretrain=False, dim_y=dim_y)

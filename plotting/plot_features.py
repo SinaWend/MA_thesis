@@ -4,35 +4,36 @@ from sklearn.manifold import TSNE
 import matplotlib.pyplot as plt
 import os
 
-def load_and_concatenate_features(out_dir, number):
+def load_and_concatenate_features(out_dir, numbers):
     features_list = []
     labels_list = []
     domains_list = []
     slurm_job_id = None
 
-    for dataset_type in ['train', 'val', 'test']:
-        feature_filename = [f for f in os.listdir(os.path.join(out_dir, 'features')) if f'features_{dataset_type}' in f and number in f]
-        label_filename = [f for f in os.listdir(os.path.join(out_dir, 'features')) if f'labels_{dataset_type}' in f and number in f]
-        domain_filename = [f for f in os.listdir(os.path.join(out_dir, 'features')) if f'domains_{dataset_type}' in f and number in f]
+    for number in numbers:
+        for dataset_type in ['train', 'val', 'test']:
+            feature_filename = [f for f in os.listdir(os.path.join(out_dir, 'features')) if f'features_{dataset_type}' in f and number in f]
+            label_filename = [f for f in os.listdir(os.path.join(out_dir, 'features')) if f'labels_{dataset_type}' in f and number in f]
+            domain_filename = [f for f in os.listdir(os.path.join(out_dir, 'features')) if f'domains_{dataset_type}' in f and number in f]
 
-        if feature_filename and label_filename and domain_filename:
-            features = np.load(os.path.join(out_dir, 'features', feature_filename[0]))
-            labels = np.load(os.path.join(out_dir, 'features', label_filename[0]))
-            domains = np.load(os.path.join(out_dir, 'features', domain_filename[0]))
+            if feature_filename and label_filename and domain_filename:
+                features = np.load(os.path.join(out_dir, 'features', feature_filename[0]))
+                labels = np.load(os.path.join(out_dir, 'features', label_filename[0]))
+                domains = np.load(os.path.join(out_dir, 'features', domain_filename[0]))
 
-            if labels.ndim > 1 and labels.shape[1] > 1:
-                labels = np.argmax(labels, axis=1)
+                if labels.ndim > 1 and labels.shape[1] > 1:
+                    labels = np.argmax(labels, axis=1)
 
-            features_list.append(features)
-            labels_list.append(labels)
-            domains_list.append(domains)
+                features_list.append(features)
+                labels_list.append(labels)
+                domains_list.append(domains)
 
-            # Extract slurm job ID from filename
-            if slurm_job_id is None:
-                slurm_job_id = feature_filename[0].split('_')[-1].split('.')[0]
+                # Extract slurm job ID from filename
+                if slurm_job_id is None:
+                    slurm_job_id = feature_filename[0].split('_')[-1].split('.')[0]
 
-            # Print domain distribution for each dataset type
-            print(f"Domain distribution for {dataset_type}: {np.unique(domains, return_counts=True)}")
+                # Print domain distribution for each dataset type
+                print(f"Domain distribution for {dataset_type} with number {number}: {np.unique(domains, return_counts=True)}")
 
     all_features = np.concatenate(features_list, axis=0)
     all_labels = np.concatenate(labels_list, axis=0)
@@ -50,16 +51,21 @@ def create_legend(scatter, unique_items, title):
                        for item, color in zip(unique_items, colors)]
     return legend_elements
 
-def find_index_from_error_file(out_dir, number):
-    error_files = [f for f in os.listdir(out_dir) if f.endswith('.err') and number in f]
+def find_index_from_error_file(out_dir, number, new_structure=False):
+    if new_structure:
+        error_dir = os.path.join(out_dir, 'slurm_logs', 'run_experiment')
+    else:
+        error_dir = out_dir
+        
+    error_files = [f for f in os.listdir(error_dir) if f.endswith('.err') and number in f]
     if error_files:
         index = error_files[0].split('-')[1].split('=')[1]
         return index
     return None
 
-def plot_combined(out_dir, number):
-    features, labels, domains, slurm_job_id = load_and_concatenate_features(out_dir, number)
-    index = find_index_from_error_file(out_dir, number)
+def plot_combined(out_dir, numbers, new_structure=False):
+    features, labels, domains, slurm_job_id = load_and_concatenate_features(out_dir, numbers)
+    index = find_index_from_error_file(out_dir, numbers[0], new_structure)
 
     if index is None:
         index = 'unknown'
@@ -117,64 +123,66 @@ def plot_combined(out_dir, number):
     plt.savefig(os.path.join(out_dir, f't-SNE_plot_combined_{index}_{slurm_job_id}.png'))
     plt.close()
 
-def load_and_plot(out_dir, dataset_type, number):
-    feature_filename = [f for f in os.listdir(os.path.join(out_dir, 'features')) if f'features_{dataset_type}' in f and number in f]
-    label_filename = [f for f in os.listdir(os.path.join(out_dir, 'features')) if f'labels_{dataset_type}' in f and number in f]
-    domain_filename = [f for f in os.listdir(os.path.join(out_dir, 'features')) if f'domains_{dataset_type}' in f and number in f]
+def load_and_plot(out_dir, dataset_type, numbers, new_structure=False):
+    for number in numbers:
+        feature_filename = [f for f in os.listdir(os.path.join(out_dir, 'features')) if f'features_{dataset_type}' in f and number in f]
+        label_filename = [f for f in os.listdir(os.path.join(out_dir, 'features')) if f'labels_{dataset_type}' in f and number in f]
+        domain_filename = [f for f in os.listdir(os.path.join(out_dir, 'features')) if f'domains_{dataset_type}' in f and number in f]
 
-    if feature_filename and label_filename and domain_filename:
-        slurm_job_id = feature_filename[0].split('_')[-1].split('.')[0]
-        index = find_index_from_error_file(out_dir, number)
+        if feature_filename and label_filename and domain_filename:
+            slurm_job_id = feature_filename[0].split('_')[-1].split('.')[0]
+            index = find_index_from_error_file(out_dir, number, new_structure)
 
-        if index is None:
-            index = 'unknown'
+            if index is None:
+                index = 'unknown'
 
-        features = np.load(os.path.join(out_dir, 'features', feature_filename[0]))
-        labels = np.load(os.path.join(out_dir, 'features', label_filename[0]))
-        domains = np.load(os.path.join(out_dir, 'features', domain_filename[0]))
+            features = np.load(os.path.join(out_dir, 'features', feature_filename[0]))
+            labels = np.load(os.path.join(out_dir, 'features', label_filename[0]))
+            domains = np.load(os.path.join(out_dir, 'features', domain_filename[0]))
 
-        # Print shapes for debugging
-        print(f"Features shape: {features.shape}")
-        print(f"Labels shape: {labels.shape}")
-        print(f"Domains shape: {domains.shape}")
+            # Print shapes for debugging
+            print(f"Features shape: {features.shape}")
+            print(f"Labels shape: {labels.shape}")
+            print(f"Domains shape: {domains.shape}")
 
-        # Ensure labels are single integers (not one-hot encoded)
-        if labels.ndim > 1 and labels.shape[1] > 1:
-            labels = np.argmax(labels, axis=1)
+            # Ensure labels are single integers (not one-hot encoded)
+            if (labels.ndim > 1 and labels.shape[1] > 1):
+                labels = np.argmax(labels, axis=1)
 
-        # Print shapes after processing
-        print(f"Processed Labels shape: {labels.shape}")
+            # Print shapes after processing
+            print(f"Processed Labels shape: {labels.shape}")
 
-        # Plot UMAP
-        umap_results = umap.UMAP(n_components=2).fit_transform(features)
-        plt.figure(figsize=(10, 6))
-        scatter = plt.scatter(umap_results[:, 0], umap_results[:, 1], c=labels, cmap='viridis', alpha=0.5)
-        plt.colorbar(scatter)
-        plt.title(f'UMAP visualization ({dataset_type})')
-        unique_labels = np.unique(labels)
-        legend_elements = create_legend(scatter, unique_labels, "Labels")
-        plt.legend(handles=legend_elements, title="Labels")
-        plt.savefig(os.path.join(out_dir, f'UMAP_plot_{dataset_type}_{index}_{slurm_job_id}.png'))
-        plt.close()
+            # Plot UMAP
+            umap_results = umap.UMAP(n_components=2).fit_transform(features)
+            plt.figure(figsize=(10, 6))
+            scatter = plt.scatter(umap_results[:, 0], umap_results[:, 1], c=labels, cmap='viridis', alpha=0.5)
+            plt.colorbar(scatter)
+            plt.title(f'UMAP visualization ({dataset_type} - Number {number})')
+            unique_labels = np.unique(labels)
+            legend_elements = create_legend(scatter, unique_labels, "Labels")
+            plt.legend(handles=legend_elements, title="Labels")
+            plt.savefig(os.path.join(out_dir, f'UMAP_plot_{dataset_type}_{index}_{slurm_job_id}.png'))
+            plt.close()
 
-        # Plot t-SNE
-        tsne = TSNE(n_components=2, perplexity=min(30, len(features) - 1))
-        tsne_results = tsne.fit_transform(features)
-        plt.figure(figsize=(10, 6))
-        scatter = plt.scatter(tsne_results[:, 0], tsne_results[:, 1], c=labels, cmap='viridis', alpha=0.5)
-        plt.colorbar(scatter)
-        plt.title(f't-SNE visualization ({dataset_type})')
-        unique_labels = np.unique(labels)
-        legend_elements = create_legend(scatter, unique_labels, "Labels")
-        plt.legend(handles=legend_elements, title="Labels")
-        plt.savefig(os.path.join(out_dir, f't-SNE_plot_{dataset_type}_{index}_{slurm_job_id}.png'))
-        plt.close()
+            # Plot t-SNE
+            tsne = TSNE(n_components=2, perplexity=min(30, len(features) - 1))
+            tsne_results = tsne.fit_transform(features)
+            plt.figure(figsize=(10, 6))
+            scatter = plt.scatter(tsne_results[:, 0], tsne_results[:, 1], c=labels, cmap='viridis', alpha=0.5)
+            plt.colorbar(scatter)
+            plt.title(f't-SNE visualization ({dataset_type} - Number {number})')
+            unique_labels = np.unique(labels)
+            legend_elements = create_legend(scatter, unique_labels, "Labels")
+            plt.legend(handles=legend_elements, title="Labels")
+            plt.savefig(os.path.join(out_dir, f't-SNE_plot_{dataset_type}_{index}_{slurm_job_id}.png'))
+            plt.close()
 
+out_dir = '/home/aih/sina.wendrich/MA_thesis/DomainLab/zoutput/benchmarks/CAMELYONbalanced_center0_dinov2small_erm_irm_dial_lr1e5_bs16_allfreeze_2024-07-22_23-46-53'
+numbers = ['22769262', '22769261', '22769260', '22769263', '22769264', '22769265', '22769259']
+new_structure = True
 
-out_dir = '/home/aih/sina.wendrich/MA_thesis/DomainLab/zoutput/benchmarks/CAMELYON_center0_dinov2small_erm_irm_dial_lr1e5_bs16_classbalancing10_halffreeze_blocks_featuregeneration/'
-number = '21787676'
 for dataset_type in ['train', 'val', 'test']:
-    load_and_plot(out_dir, dataset_type, number)
+    load_and_plot(out_dir, dataset_type, numbers, new_structure)
 
 # Plot combined data
-plot_combined(out_dir, number)
+plot_combined(out_dir, numbers, new_structure)

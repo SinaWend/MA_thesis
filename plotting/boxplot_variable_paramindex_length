@@ -1,0 +1,117 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from ast import literal_eval
+import textwrap
+import os
+
+# Define the paths and filenames
+file_info = [
+    {'path': '/home/aih/sina.wendrich/MA_thesis/DomainLab/zoutput/benchmarks/CAMELYONbalanced_center0_dinov2small_erm_higherregularization_irm_dial_lr1e5_bs16_nofreeze_2024-07-22_16-00-54/', 'filename': 'results.csv', 'label': 'test_data'},
+    #{'path': '/home/aih/sina.wendrich/MA_thesis/DomainLab/zoutput/benchmarks/CAMELYONbalanced_center0_dinov2small_erm_higherregularization_irm_dial_lr1e5_bs16_nofreeze_2024-07-22_16-00-54/', 'filename': 'bestvalepoch_validation_results.csv', 'label': 'val_data'},
+    # Add more file info as needed
+]
+
+# Read hyperparameters file (assuming all folders have the same hyperparameters.csv file)
+hyperparameters_path = os.path.join(file_info[0]['path'], 'hyperparameters.csv')
+hyperparameters = pd.read_csv(hyperparameters_path, index_col=0)
+
+# Read the data from the files
+dataframes = []
+
+for info in file_info:
+    df = pd.read_csv(os.path.join(info['path'], info['filename']), index_col=False, skipinitialspace=True)
+    df['params'] = df['params'].apply(literal_eval)
+    df['source'] = info['label']
+    dataframes.append(df)
+
+# Combine the data from all files
+data = pd.concat(dataframes, axis=0)
+
+# Strip leading and trailing spaces from column names
+data.columns = data.columns.str.strip()
+
+# Ensure param_index is treated as a categorical variable and sort it
+data['param_index'] = pd.Categorical(data['param_index'].astype(str).str.strip(), ordered=True)
+data.sort_values('param_index', inplace=True)
+
+# Define function to create FacetGrid for specified indices and metric
+def create_facetgrid(filtered_data, metric, title, filename_suffix, first_color='C0', other_color='C1', same_color=True):
+    num_plots = len(filtered_data['param_index'].unique())
+
+    if num_plots <= 5:
+        col_wrap = num_plots
+    elif num_plots % 3 == 0:
+        col_wrap = 3
+    else:
+        col_wrap = 4
+
+    top_adjust = 0.92 if num_plots > col_wrap else 0.98
+    title_y_position = 1.05 if num_plots > col_wrap else 1.15
+
+    g = sns.FacetGrid(filtered_data, col='param_index', col_wrap=col_wrap, height=4, aspect=1.5, sharey=True, col_order=filtered_data['param_index'].unique())
+
+    # Map boxplot with custom color palette based on param_index
+    for idx, (param_index, ax) in enumerate(zip(g.col_names, g.axes.flat)):
+        color = first_color if (same_color or idx == 0) else other_color
+        sns.boxplot(x='source', y=metric, data=filtered_data[filtered_data['param_index'] == param_index], ax=ax, color=color, order=[info['label'] for info in file_info])
+
+        # Update titles with hyperparameters
+        if int(param_index) in hyperparameters.index:
+            method = hyperparameters.loc[int(param_index), 'method']
+            params = hyperparameters.loc[int(param_index), 'params']
+            
+            # Remove empty params
+            if params.strip() == '{}':
+                hyperparam_info = method
+            else:
+                # Wrap long parameter strings with increased width
+                wrapped_params = '\n'.join(textwrap.wrap(params, width=80))
+                hyperparam_info = f"{method}\n{wrapped_params}"
+        else:
+            hyperparam_info = "Unknown Parameters"
+        ax.set_title(hyperparam_info, fontsize=10)  # Adjust title font size for better fitting
+
+    g.set_axis_labels('Source', metric.capitalize(), fontsize=14)  # Increase axis labels font size
+    g.set(ylim=(0, 1))
+    plt.subplots_adjust(top=top_adjust, hspace=0.4, wspace=0.3)
+    # Rotate x-axis labels to avoid overlap and increase font size
+    for ax in g.axes.flat:
+        for label in ax.get_xticklabels():
+            label.set_rotation(45)
+            label.set_horizontalalignment('right')
+            label.set_fontsize(12)  # Increase x-axis labels font size
+        ax.set_xlabel('')  # Remove 'Source' below
+
+    # Add super title for the whole plot
+    g.fig.suptitle(title, fontsize=18, y=title_y_position)  # Adjust title position higher for single row
+
+    # Save the plot in the respective directories
+    all_labels = '_'.join([info['label'] for info in file_info])
+    plot_path = os.path.join(file_info[0]['path'], f"{filename_suffix}_{all_labels}_{metric}.png")
+    g.savefig(plot_path)
+    plt.show()
+    plt.close()
+
+# Function to filter data based on optional param_index values
+def filter_data(data, param_indices=None):
+    if param_indices is not None:
+        return data[data['param_index'].isin(param_indices)]
+    return data
+
+# Example usage with optional param_indices
+param_indices_to_plot = ['0', '1', '2', '3', '4', '5']  # Specify which param_index values to plot, or set to None for all
+#param_indices_to_plot = ['0', '6', '7', '8']  # Specify which param_index values to plot, or set to None for all
+#param_indices_to_plot = ['0', '6']  # Specify which param_index values to plot, or set to None for all
+
+metrics_to_plot = ['acc', 'binary_recall']  # Specify the metrics to plot
+
+for metric in metrics_to_plot:
+    filtered_data = filter_data(data, param_indices_to_plot)
+
+    # Create the plot for selected param indices
+    filename_suffix_selected = f"selected_param_indices_{'_'.join(param_indices_to_plot)}" if param_indices_to_plot else "all_param_indices"
+    create_facetgrid(filtered_data, metric, f'Comparison of {metric.capitalize()}', filename_suffix_selected, same_color=True)
+
+    # Create the plot for all param indices
+    create_facetgrid(data, metric, f'Comparison of {metric.capitalize()}', 'all_param_indices', same_color=True)

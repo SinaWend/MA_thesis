@@ -86,7 +86,7 @@ def process_log(file_path, hyperparameters):
         f.writelines(test_results)
 
 # Directory containing .err files and hyperparameters.csv
-log_dir_path = '/home/aih/sina.wendrich/MA_thesis/DomainLab/zoutput/benchmarks/CAMELYON_center0_dinov2small_erm_dial_irm_lr1e5_bs16_classbalancing10_allfreeze/'
+log_dir_path = '/home/aih/sina.wendrich/MA_thesis/zoutput_oversampling10/benchmarks/CAMELYON_center0_dinov2small_erm_irm_dial_lr1e5_bs16_classbalancing10_halffreeze_blocks'
 
 # Load hyperparameters from CSV
 hyperparameters = {}

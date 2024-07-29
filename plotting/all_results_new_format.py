@@ -6,7 +6,7 @@ import pandas as pd
 from ast import literal_eval
 
 # Function to process individual log files
-def process_log(file_path, hyperparameters):
+def process_log(file_path, hyperparameters, output_dir):
     with open(file_path, 'r') as file:
         content = file.read()
 
@@ -25,13 +25,10 @@ def process_log(file_path, hyperparameters):
     # Add quotation marks around the params value
     params = f'"{params}"'
     
-    # Get the directory of the .err file
-    dir_path = os.path.dirname(file_path)
-    
     # File paths for output files
-    train_output_path = os.path.join(dir_path, f'train_results_{param_index}-{experiment_number}.csv')
-    val_output_path = os.path.join(dir_path, f'validation_results_{param_index}-{experiment_number}.csv')
-    test_output_path = os.path.join(dir_path, f'test_results_{param_index}-{experiment_number}.csv')
+    train_output_path = os.path.join(output_dir, f'train_results_{param_index}-{experiment_number}.csv')
+    val_output_path = os.path.join(output_dir, f'validation_results_{param_index}-{experiment_number}.csv')
+    test_output_path = os.path.join(output_dir, f'test_results_{param_index}-{experiment_number}.csv')
     
     # Regex to find blocks of experiments
     experiment_blocks = re.split(r'(?=Experiment start at:)', content)[1:]
@@ -86,7 +83,7 @@ def process_log(file_path, hyperparameters):
         f.writelines(test_results)
 
 # Directory containing .err files and hyperparameters.csv
-log_dir_path = '/home/aih/sina.wendrich/MA_thesis/zoutput_oversampling10/benchmarks/CAMELYON_center0_dinov2small_erm_dial_irm_lr1e5_bs16_classbalancing10_allfreeze'
+log_dir_path = '/home/aih/sina.wendrich/MA_thesis/zoutput_balanced/benchmarks/CAMELYONbalanced_center0_dinov2small_erm_dannratio_3seeds_nofreeze_2024-07-27_14-18-24'
 
 # Load hyperparameters from CSV
 hyperparameters = {}
@@ -100,9 +97,9 @@ with open(os.path.join(log_dir_path, 'hyperparameters.csv'), 'r') as file:
             'params': row['params']
         }
 
-# Process all .err files in the directory
-for log_file_path in glob.glob(os.path.join(log_dir_path, '*.err')):
-    process_log(log_file_path, hyperparameters)
+# Process log files and save results in log_dir_path
+for log_file_path in glob.glob(os.path.join(log_dir_path,'slurm_logs', 'run_experiment', '*.err')):
+    process_log(log_file_path, hyperparameters, log_dir_path)
 
 # Function to combine results
 def combine_results(directory, result_type):
@@ -182,8 +179,6 @@ def extract_rows(file_path, results):
             epoch = str(row['epos']).strip()
 
             line = row.to_string(header=False, index=False)
-            #print(row.to_string(header=False, index=False))
-
             if (param_index, seed) in results and results[(param_index, seed)] == epoch and line not in seen_lines:
                 rows_to_include.append(row)
                 seen_lines.add(line)
@@ -206,25 +201,8 @@ def process_logs(directory, results):
             combined_results.extend(rows)
 
         combined_output_path = os.path.join(directory, f'bestvalepoch_{result_type}_results.csv')
-        
-        # Write combined results to CSV with quotes around the params field
-        with open(combined_output_path, 'w', newline='') as f:
-            writer = csv.writer(f)
-            writer.writerow(combined_results[0])
-            
-            for row in combined_results[1:]:
-                # Ensure params field is quoted
-                row = row.to_dict()
-                params_value = str(row["params"]).replace('"', '')
-                params_value = '"' + params_value + '"'
-                
-                # Remove any extra quotes
-                params_value = params_value.replace('""', '"')
-                
-                row['params'] = params_value
-                writer.writerow([row[col] for col in combined_results[0]])
-
-
+        combined_df = pd.DataFrame(combined_results[1:], columns=combined_results[0])
+        combined_df.to_csv(combined_output_path, index=False)
 
 # Process all result files in the directory
 process_logs(log_dir_path, results)

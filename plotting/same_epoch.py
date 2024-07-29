@@ -68,7 +68,7 @@ def process_logs(directory, results):
         combined_df.to_csv(combined_output_path, index=False)
 
 # Directory containing results files and results.csv
-log_dir_path = '/home/aih/sina.wendrich/MA_thesis/DomainLab/zoutput/benchmarks/CAMELYON_center0_dinov2small_erm_dial_irm_lr1e5_bs16_classbalancing10_allfreeze/'
+log_dir_path = '/home/aih/sina.wendrich/MA_thesis/zoutput_oversampling10/benchmarks/CAMELYON_center0_dinov2small_erm_dial_irm_lr1e5_bs16_classbalancing10_allfreeze'
 results_csv_path = os.path.join(log_dir_path, 'results.csv')
 results = read_results_csv(results_csv_path)
 

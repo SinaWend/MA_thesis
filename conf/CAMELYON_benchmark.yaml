@@ -12,7 +12,7 @@ test_domains:
   # - center3
   # - center4
 
-output_dir: zoutput/benchmarks/CAMELYON_center0_dinov2small_erm_irm_dial_lr1e5_bs16_classbalancing10_3_4_freeze_blocks 
+output_dir: zoutput/benchmarks/CAMELYON_center0_dinov2small_irm_config4_2
 
 # Number of hyperparameter samples per task.
 num_param_samples: 1
@@ -28,122 +28,208 @@ domainlab_args:
   lr: 1e-5
 
 
-# erm_dinov2_bs16:
+
+# erm_dinov2_bs16_lr1e3:
 #   model: erm
-#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/dinov2.py
-#   bs: 16  # Batch size set to 1024
-#  # Learning rate set to 0.0005
-# # Model configurations to be tested with different learning rates
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+#   bs: 16
+#   lr: 1e-3
 
-# erm_dinov2_bs32:
+# erm_dinov2_bs16_lr1e4:
 #   model: erm
-#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/dinov2.py
-#   bs: 32  # Batch size set to 32
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+#   bs: 16
+#   lr: 1e-4
 
-# erm_dinov2_bs64:
+# erm_dinov2_bs16_lr1e5:
 #   model: erm
-#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/dinov2.py
-#   bs: 64  # Batch size set to 64
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+#   bs: 16
+#   lr: 1e-5
 
-# erm_dinov2_bs128:
+# erm_dinov2_bs16_lr1e6:
 #   model: erm
-#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/dinov2.py
-#   bs: 128  # Batch size set to 128
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+#   bs: 16
+#   lr: 1e-6
 
-# erm_dinov2_bs256:
+# erm_dinov2_bs32_lr1e3:
 #   model: erm
-#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/dinov2.py
-#   bs: 256  # Batch size set to 256
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+#   bs: 32
+#   lr: 1e-3
 
-# erm_dinov2_bs512:
+# erm_dinov2_bs32_lr1e4:
 #   model: erm
-#   npath: /lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/nets/dinov2.py
-#   bs: 512  # Batch size set to 512
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+#   bs: 32
+#   lr: 1e-4
+
+# erm_dinov2_bs32_lr1e5:
+#   model: erm
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+#   bs: 32
+#   lr: 1e-5
+
+# erm_dinov2_bs32_lr1e6:
+#   model: erm
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+#   bs: 32
+#   lr: 1e-6
+
+# erm_dinov2_bs64_lr1e3:
+#   model: erm
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+#   bs: 64
+#   lr: 1e-3
+
+# erm_dinov2_bs64_lr1e4:
+#   model: erm
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+#   bs: 64
+#   lr: 1e-4
+
+# erm_dinov2_bs64_lr1e5:
+#   model: erm
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+#   bs: 64
+#   lr: 1e-5
+
+# erm_dinov2_bs64_lr1e6:
+#   model: erm
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+#   bs: 64
+#   lr: 1e-6
 
 
+# erm_dinov2:
+#   model: erm
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
 
-erm_dinov2:
+# irm_dinov2_config1:
+#   model: erm
+#   trainer: irm
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_3_4_freeze_blocks.py
+#   hyperparameters:
+#     gamma_reg:
+#       min: 0.00001
+#       max: 0.00001
+#       step: 0.1
+#       distribution: uniform
+
+
+# irm_dinov2_config2:
+#   model: erm
+#   trainer: irm
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_3_4_freeze_blocks.py
+#   hyperparameters:
+#     gamma_reg:
+#       min: 0.0001
+#       max: 0.0001
+#       step: 0.1
+#       distribution: uniform
+
+# irm_dinov2_config3:
+#   model: erm
+#   trainer: irm
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_3_4_freeze_blocks.py
+#   hyperparameters:
+#     gamma_reg:
+#       min: 0.001
+#       max: 0.001
+#       step: 0.1
+#       distribution: uniform
+
+
+irm_dinov2_config4_2_nofreeze:
   model: erm
-  npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_3_4_freeze_blocks.py
+  trainer: irm
+  npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+  hyperparameters:
+    gamma_reg:
+      min: 0.01
+      max: 0.01
+      step: 0.01
+      distribution: uniform
 
-irm_dinov2_config1:
+irm_dinov2_config4_2_halffreeze:
+  model: erm
+  trainer: irm
+  npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_halffreeze_blocks.py
+  hyperparameters:
+    gamma_reg:
+      min: 0.01
+      max: 0.01
+      step: 0.01
+      distribution: uniform
+
+irm_dinov2_config4_2_threefourth:
   model: erm
   trainer: irm
   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_3_4_freeze_blocks.py
   hyperparameters:
     gamma_reg:
-      min: 0.00001
-      max: 0.00001
-      step: 0.1
+      min: 0.01
+      max: 0.01
+      step: 0.01
       distribution: uniform
 
-
-irm_dinov2_config2:
+irm_dinov2_config4_2_allfreeze:
   model: erm
   trainer: irm
-  npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_3_4_freeze_blocks.py
+  npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_allfreeze.py
   hyperparameters:
     gamma_reg:
-      min: 0.0001
-      max: 0.0001
-      step: 0.1
-      distribution: uniform
-
-irm_dinov2_config3:
-  model: erm
-  trainer: irm
-  npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_3_4_freeze_blocks.py
-  hyperparameters:
-    gamma_reg:
-      min: 0.001
-      max: 0.001
-      step: 0.1
-      distribution: uniform
-
-irm_dinov2_config4:
-  model: erm
-  trainer: irm
-  npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_3_4_freeze_blocks.py
-  hyperparameters:
-    gamma_reg:
-      min: 0.1
-      max: 0.1
-      step: 0.1
-      distribution: uniform
-
-irm_dinov2_config5:
-  model: erm
-  trainer: irm
-  npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_3_4_freeze_blocks.py
-  hyperparameters:
-    gamma_reg:
-      min: 1
-      max: 1
-      step: 0.1
+      min: 0.01
+      max: 0.01
+      step: 0.01
       distribution: uniform
 
 
+# irm_dinov2_config4:
+#   model: erm
+#   trainer: irm
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_3_4_freeze_blocks.py
+#   hyperparameters:
+#     gamma_reg:
+#       min: 0.1
+#       max: 0.1
+#       step: 0.1
+#       distribution: uniform
 
-dial_dinov2_config1:
-  model: erm
-  trainer: dial
-  npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_3_4_freeze_blocks.py
-  hyperparameters:
-    dial_steps_perturb:
-      min: 1
-      max: 1
-      step: 1
-      distribution: uniform
+# irm_dinov2_config5:
+#   model: erm
+#   trainer: irm
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_3_4_freeze_blocks.py
+#   hyperparameters:
+#     gamma_reg:
+#       min: 1
+#       max: 1
+#       step: 0.1
+#       distribution: uniform
 
-    dial_noise_scale:
-      min: 0.0001
-      max: 0.0001
-      distribution: loguniform
 
-    dial_epsilon:
-      min: 0.001
-      max: 0.001
-      distribution: loguniform
+
+# dial_dinov2_config1:
+#   model: erm
+#   trainer: dial
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_3_4_freeze_blocks.py
+#   hyperparameters:
+#     dial_steps_perturb:
+#       min: 1
+#       max: 1
+#       step: 1
+#       distribution: uniform
+
+#     dial_noise_scale:
+#       min: 0.0001
+#       max: 0.0001
+#       distribution: loguniform
+
+#     dial_epsilon:
+#       min: 0.001
+#       max: 0.001
+#       distribution: loguniform
 
 
 # dial_dinov2_config2:

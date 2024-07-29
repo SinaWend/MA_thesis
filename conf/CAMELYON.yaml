@@ -1,11 +1,99 @@
 
 
 te_d: center0  # domain name of test domain
-tpath: tasks/task_CAMELYON17.py  # python file path to specify the task
+tpath: /home/aih/sina.wendrich/MA_thesis/tasks/task_CAMELYON17_balanced2.py 
 bs: 32  # batch size
 es: 10
-model: dann  # model DANN
+model: diva
 epos: 20  # number of epochs
-gamma_reg: 5  # hyperparameter of DANN
-npath: nets/vit.py  # neural network for class classification
-npath_dom: nets/vit.py  # neural network for domain classification
+#gamma_reg: 5  # hyperparameter of DANN
+npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+npath_dom: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+gamma_y:
+  min: 1e4
+  max: 2e5
+  step: 100
+  distribution: loguniform
+
+gamma_d:
+  min: 1e4
+  max: 1e6
+  step: 10_000
+  distribution: loguniform
+
+zx_dim:
+  min: 0
+  max: 96
+  step: 32
+  distribution: uniform
+
+zy_dim:
+  min: 32
+  max: 96
+  step: 32
+  distribution: uniform
+
+zd_dim:
+  reference: zy_dim
+
+# test_domains:
+#   - center0
+  # - center1
+  # - center2
+  # - center3
+  # - center4
+
+#output_dir: zoutput/benchmarks/CAMELYONbalanced_new_center0_dinov2small_erm_irm_dial_lr1e5_bs16_nofreeze
+
+# Number of hyperparameter samples per task.
+# num_param_samples: 1
+
+# startseed: 100
+# endseed: 102
+
+# domainlab_args:
+#   tpath: /home/aih/sina.wendrich/MA_thesis/tasks/task_CAMELYON17_balanced2.py
+#   bs: 16
+#   epos: 1
+#   es: 5
+#   lr: 1e-5
+
+
+
+# erm_dinov2:
+#   model: erm
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+
+# diva:
+#   model: diva
+#   # set nname_dom = nname when changing nname
+#   npath_dom: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+#   npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+
+#   hyperparameters:
+#     gamma_y:
+#       min: 1e4
+#       max: 2e5
+#       step: 100
+#       distribution: loguniform
+
+#     gamma_d:
+#       min: 1e4
+#       max: 1e6
+#       step: 10_000
+#       distribution: loguniform
+
+#     zx_dim:
+#       min: 0
+#       max: 96
+#       step: 32
+#       distribution: uniform
+
+#     zy_dim:
+#       min: 32
+#       max: 96
+#       step: 32
+#       distribution: uniform
+
+#     zd_dim:
+#       reference: zy_dim
