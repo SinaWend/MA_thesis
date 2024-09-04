@@ -1,0 +1,17 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, nvidia_gpu=1
+Select jobs to execute...
+
+[Wed Jun 19 02:27:30 2024]
+rule run_experiment:
+    input: zoutput/benchmarks/CAMELYON_center0_irm_resnet_different_bs128_lre4_classbalancing/hyperparameters.csv
+    output: zoutput/benchmarks/CAMELYON_center0_irm_resnet_different_bs128_lre4_classbalancing/rule_results/0.csv
+    jobid: 0
+    reason: Forced execution
+    wildcards: index=0
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=/tmp, partition=gpu_p, qos=gpu_normal, nvidia_gpu=1
+
+slurmstepd: error: *** JOB 21504939 ON supergpu03 CANCELLED AT 2024-06-19T02:28:52 ***

@@ -5,7 +5,6 @@ import csv
 import pandas as pd
 from ast import literal_eval
 
-# Function to process individual log files
 def process_log(file_path, hyperparameters, output_dir):
     with open(file_path, 'r') as file:
         content = file.read()
@@ -15,21 +14,21 @@ def process_log(file_path, hyperparameters, output_dir):
     if not experiment_info:
         return
     param_index, experiment_number = experiment_info.groups()
-    
+
     # Get the method and params from hyperparameters.csv
     hyperparam_data = hyperparameters.get(param_index, {})
     method = hyperparam_data.get('method', 'unknown')
     algo = hyperparam_data.get('model', 'unknown')
     params = hyperparam_data.get('params', '{}')
-    
+
     # Add quotation marks around the params value
     params = f'"{params}"'
-    
+
     # File paths for output files
     train_output_path = os.path.join(output_dir, f'train_results_{param_index}-{experiment_number}.csv')
     val_output_path = os.path.join(output_dir, f'validation_results_{param_index}-{experiment_number}.csv')
     test_output_path = os.path.join(output_dir, f'test_results_{param_index}-{experiment_number}.csv')
-    
+
     # Regex to find blocks of experiments
     experiment_blocks = re.split(r'(?=Experiment start at:)', content)[1:]
 
@@ -43,35 +42,36 @@ def process_log(file_path, hyperparameters, output_dir):
         experiment_details = re.search(r'(\d{4}md_\d{2}md_\d{2}_\d{2}_\d{2}_\d{2})_seed_(\d+)', block)
         if not experiment_details:
             continue
-        
+
         mname, seed = experiment_details.groups()
-        
+
         # Domain processing
         domains = {
             'training': ('Training Domain:', train_results),
             'validation': ('Validation:', val_results),
             'test': ('Test Domain \(oracle\):', test_results)
         }
-        
+
         for domain, (domain_title, result_list) in domains.items():
             # Find all epochs for the current domain
-            epoch_matches = list(re.finditer(rf"epoch: (\d+).*?---- {domain_title}", block, re.DOTALL))
+            epoch_matches = list(re.finditer(rf"(epoch: (\d+)\n.*?---- {domain_title})", block, re.DOTALL))
             if not epoch_matches:
                 print(f"No epochs found for {domain} in experiment {mname}_seed_{seed}")
                 continue
 
             for match in epoch_matches:
-                epoch = match.group(1)
-                
-                # Extract performance data for each epoch
-                performance_match = re.search(rf"epoch: {epoch}.*?---- {domain_title}.*?scalar performance:\s*({{.*?}})", block, re.DOTALL)
+                epoch = match.group(2)
+                performance_match = re.search(rf"epoch: {epoch}\n.*?---- {domain_title}.*?scalar performance:\s*({{.*?}})", block, re.DOTALL)
                 if not performance_match:
                     print(f"No performance data found for {domain} in experiment {mname}_seed_{seed} at epoch {epoch}")
                     continue
-                
+
                 data = eval(performance_match.group(1).replace('\'', '"'))  # Convert to valid JSON and parse
-                
                 result_line = f"{param_index}, {method}, mname_{mname}_seed_{seed}, commit_b44271c83_not_commited, {algo}, {epoch}, center0, {seed}, {params}, {data['acc']}, {data['precision']}, {data['recall']}, {data['specificity']}, {data['f1']}, {data['auroc']}, {data['binary_precision']}, {data['binary_recall']}, {data['binary_specificity']}, {data['binary_f1_score']}, , , , \n"
+                
+                # Print statement for debugging
+                print(f"Adding line for {domain} at epoch {epoch}: {result_line}")
+
                 result_list.append(result_line)
 
     # Write to files
@@ -83,7 +83,7 @@ def process_log(file_path, hyperparameters, output_dir):
         f.writelines(test_results)
 
 # Directory containing .err files and hyperparameters.csv
-log_dir_path = '/home/aih/sina.wendrich/MA_thesis/zoutput_balanced/benchmarks/CAMELYONbalanced_center0_dinov2small_erm_dannratio_3seeds_nofreeze_2024-07-27_14-18-24'
+log_dir_path = '/home/aih/sina.wendrich/MA_thesis/zoutput_balanced/benchmarks/CAMELYONbalancednew_center4_dinov2small_erm_dann_dial_diva_2024-08-07_17-53-28'
 
 # Load hyperparameters from CSV
 hyperparameters = {}
@@ -100,6 +100,7 @@ with open(os.path.join(log_dir_path, 'hyperparameters.csv'), 'r') as file:
 # Process log files and save results in log_dir_path
 for log_file_path in glob.glob(os.path.join(log_dir_path,'slurm_logs', 'run_experiment', '*.err')):
     process_log(log_file_path, hyperparameters, log_dir_path)
+
 
 # Function to combine results
 def combine_results(directory, result_type):

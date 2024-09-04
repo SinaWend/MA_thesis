@@ -1,0 +1,17 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, nvidia_gpu=1
+Select jobs to execute...
+
+[Fri May 24 17:34:29 2024]
+rule run_experiment:
+    input: zoutput/benchmarks/TCGA_vit_dial/hyperparameters.csv
+    output: zoutput/benchmarks/TCGA_vit_dial/rule_results/1.csv
+    jobid: 0
+    reason: Forced execution
+    wildcards: index=1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=/tmp, partition=gpu_p, qos=gpu_normal, nvidia_gpu=1
+
+slurmstepd: error: *** JOB 20815246 ON gpusrv47 CANCELLED AT 2024-05-24T17:34:44 ***

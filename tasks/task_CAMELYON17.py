@@ -11,55 +11,6 @@ import pandas as pd
 
 
 
-# class HistopathologyDataset(torch.utils.data.Dataset):
-#     def __init__(self, dataframe, transform=None, num_classes=2):
-#         self.dataframe = dataframe
-#         self.transform = transform
-#         self.num_classes = num_classes
-#         self.targets = torch.tensor(self.dataframe['label'].values.astype(int), dtype=torch.long)
-
-#     def __len__(self):
-#         return len(self.dataframe)
-
-#     def __getitem__(self, idx):
-#         img_path = self.dataframe.iloc[idx]['path']  # Access path
-#         label = int(self.dataframe.iloc[idx]['label'])  # Access corresponding label, ensure it's integer
-#         image = Image.open(img_path).convert("RGB")
-#         if self.transform:
-#             image = self.transform(image)
-#         label = torch.tensor(label, dtype=torch.long)
-#         label_one_hot = one_hot_encode(label, self.num_classes)
-#         return image, label_one_hot
-
-
-
-# class HistopathologyDataset(torch.utils.data.Dataset):
-#     def __init__(self, dataframe, transform=None, cancer_transform=None, num_classes=2, oversample_factor=1):
-#         self.dataframe = dataframe
-#         self.transform = transform
-#         self.cancer_transform = cancer_transform
-#         self.num_classes = num_classes
-#         self.oversample_factor = oversample_factor
-#         self.adjusted_indices = []
-#         for i, label in enumerate(dataframe['label']):
-#             self.adjusted_indices.extend([i] * (oversample_factor if label == 1 else 1))
-
-#     def __len__(self):
-#         return len(self.adjusted_indices)
-
-#     def __getitem__(self, idx):
-#         actual_idx = self.adjusted_indices[idx]
-#         img_path = self.dataframe.iloc[actual_idx]['path']
-#         label = int(self.dataframe.iloc[actual_idx]['label'])
-#         image = Image.open(img_path).convert("RGB")
-#         if label == 1 and self.cancer_transform:
-#             image = self.cancer_transform(image)
-#         elif self.transform:
-#             image = self.transform(image)
-#         label_tensor = torch.tensor(label, dtype=torch.long)
-#         label_one_hot = one_hot_encode(label_tensor, self.num_classes)
-#         return image, label_one_hot
-
 class HistopathologyDataset(torch.utils.data.Dataset):
     def __init__(self, dataframe, transform=None, cancer_transform=None, num_classes=2, oversample_factor=1):
         self.dataframe = dataframe
@@ -86,7 +37,6 @@ class HistopathologyDataset(torch.utils.data.Dataset):
             image = self.transform(image)
         label_tensor = torch.tensor(label, dtype=torch.long)
         label_one_hot = one_hot_encode(label_tensor, self.num_classes)
-        #print(domain)
         domain_num = extract_domain_number(domain)
         domain_tensor = torch.tensor(domain_num, dtype=torch.long)
         domain_one_hot = one_hot_encode(domain_tensor, 5)
@@ -131,32 +81,12 @@ def get_transforms():
 def get_task(na=None):
     dim_y = 2
     task = mk_task_dset(isize=ImSize(3, 224, 224), dim_y=dim_y, taskna="custom_histopathology_task")
-
-    #Augmentations for training
-    # img_trans_train = transforms.Compose([
-    #     transforms.RandomResizedCrop(224, scale=(0.8, 1.0)),
-    #     transforms.RandomHorizontalFlip(),
-    #     transforms.RandomVerticalFlip(),
-    #     transforms.RandomRotation(degrees=15),
-    #     transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2, hue=0.1),
-    #     transforms.ToTensor(),
-    # ])
-
-    # # Basic transformations for validation and testing
-    # img_trans_val_test = transforms.Compose([
-    #     transforms.Resize((224, 224)),
-    #     transforms.ToTensor(),
-    # ])
     img_trans_train, img_cancer_augment_train, img_trans_val_test = get_transforms()
 
     domain_datasets_train = {}
     domain_datasets_val = {}
     annotations_path = '/lustre/groups/shared/histology_data/CAMELYON17/annotations'
-    #annotations_path = 'C:/Users/SinaWendrich/MA_code/test/data/CAMELYON/annotations'
     centers_paths = [
-        # 'C:/Users/SinaWendrich/MA_code/test/data/CAMELYON/center0',
-        # 'C:/Users/SinaWendrich/MA_code/test/data/CAMELYON/center1',
-        # 'C:/Users/SinaWendrich/MA_code/test/data/CAMELYON/center2'
         '/lustre/groups/shared/histology_data/CAMELYON17/slides/center0',
         '/lustre/groups/shared/histology_data/CAMELYON17/slides/center1',
         '/lustre/groups/shared/histology_data/CAMELYON17/slides/center2',
@@ -170,7 +100,6 @@ def get_task(na=None):
         return patient_id, node_id
 
     save_path = '/lustre/groups/aih/sina.wendrich/MA_code/output_CAMELYON17'
-    #save_path = 'C:/Users/SinaWendrich/MA_code/output_CAMELYON17' 
     slides_processing = False
     patch_size = 128
     if slides_processing:
@@ -185,14 +114,9 @@ def get_task(na=None):
                         folder_path = center_path
                         annotation_path = os.path.join(annotations_path, filename)
                         coords, data = process_slides(slide_path, annotation_path, save_path, center_path, patch_size)
-                        #only sample 20 from data
-                        # if len(data) > 20:
-                        #     data = data.sample(n=20)
                         df_train, df_val, df_test = split_dataset(data, 0.7, 0.3)
                         dataset_train = HistopathologyDataset(df_train, transform=img_trans_train, num_classes=dim_y)
                         dataset_val = HistopathologyDataset(df_val, transform=img_trans_val_test, num_classes=dim_y)
-                        #dataset_train = HistopathologyDataset(df_center_train, transform=img_trans_train, cancer_transform=img_cancer_augment_train, num_classes=dim_y, oversample_factor=3)
-                        #dataset_val = HistopathologyDataset(df_center_val, transform=img_trans_val_test, num_classes=dim_y)
                         domain_name = os.path.basename(center_path)
                         if domain_name not in domain_datasets_train:
                             domain_datasets_train[domain_name] = []
@@ -202,7 +126,6 @@ def get_task(na=None):
                         break
     else:
         patches_path = os.path.join(save_path, "patches/8")
-        #patches_path = os.path.join(save_path, "patches/8/", patch_size)
         data = []
         for slide_dir in os.listdir(patches_path):
             slide_path = os.path.join(patches_path, slide_dir)
@@ -219,21 +142,6 @@ def get_task(na=None):
 
         dataframe = pd.DataFrame(data)
         df_train, df_val, df_test = split_dataset(dataframe, 0.7, 0.3)
-        # for center_name in set(dataframe['center']):
-        #     df_center_train = df_train[df_train['center'] == center_name]
-        #     df_center_val = df_val[df_val['center'] == center_name]
-        #     dataset_train = HistopathologyDataset(df_center_train, transform=img_trans_train, num_classes=dim_y)
-        #     dataset_val = HistopathologyDataset(df_center_val, transform=img_trans_val_test, num_classes=dim_y)
-        #     # dataset_train = HistopathologyDataset(df_center_train, transform=img_trans_train, cancer_transform=img_cancer_augment_train, num_classes=dim_y, oversample_factor=3)
-        #     # dataset_val = HistopathologyDataset(df_center_val, transform=img_trans_val_test, num_classes=dim_y)
-        #     update_datasets(domain_datasets_train, domain_datasets_val, dataset_train, dataset_val, center_name)
-        # for center_name in set(dataframe['center']):
-        #     df_center_train = df_train[df_train['center'] == center_name]
-        #     df_center_val = df_val[df_val['center'] == center_name]
-        #     if center_name == 'center0':
-        #         transform = img_trans_val_test  # No augmentation for center0
-        #     else:
-        #         transform = img_trans_train 
         for center_name in set(dataframe['center']):
             df_center_train = df_train[df_train['center'] == center_name]
             df_center_val = df_val[df_val['center'] == center_name]
@@ -247,9 +155,6 @@ def get_task(na=None):
                 oversample_factor = 10
             dataset_train = HistopathologyDataset(df_center_train, transform=transform, cancer_transform=cancer_transform, num_classes=dim_y, oversample_factor=oversample_factor)
             dataset_val = HistopathologyDataset(df_center_val, transform=img_trans_val_test, num_classes=dim_y)
-                    
-            # dataset_train = HistopathologyDataset(df_center_train, transform=transform, num_classes=dim_y)
-            # dataset_val = HistopathologyDataset(df_center_val, transform=img_trans_val_test, num_classes=dim_y)
             update_datasets(domain_datasets_train, domain_datasets_val, dataset_train, dataset_val, center_name)
 
     for domain_name in domain_datasets_train:

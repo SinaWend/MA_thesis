@@ -177,12 +177,16 @@ def load_and_plot(out_dir, dataset_type, numbers, new_structure=False):
             plt.savefig(os.path.join(out_dir, f't-SNE_plot_{dataset_type}_{index}_{slurm_job_id}.png'))
             plt.close()
 
-out_dir = '/home/aih/sina.wendrich/MA_thesis/DomainLab/zoutput/benchmarks/CAMELYONbalanced_center0_dinov2small_erm_irm_dial_lr1e5_bs16_allfreeze_2024-07-22_23-46-53'
-numbers = ['22769262', '22769261', '22769260', '22769263', '22769264', '22769265', '22769259']
+out_dir = '/home/aih/sina.wendrich/MA_thesis/zoutput_blood/benchmarks/BLOOD_acevedo_dinov2small_vit_resnet_erm_features_2024-08-13_02-20-58'
+#numbers = ['24076675', '24076680', '24076683', '24078373', '24076668', '24076671', '24076673', '24076676', '24076678', '24076681', '24076684', '24076666', '24076669', '24076672', '24076674', '24076677', '24076679', '24076682', '24076685','24076667', '24076670']
+numbers = ['24132708', '24132713', '24132716', '24132725', '24132701', '24132704', '24132706', '24141961', '24141962', '24141958', '24141963', '24141959', '24141964', '24141960', '24132707', '24132710', '24132712', '24132715', '24132718','24132700', '24132703']
+numbers = ['24116079', '24116076', '24116077', '24116078']
+numbers = ['24148166', '24148164', '24148165']
+
 new_structure = True
 
-for dataset_type in ['train', 'val', 'test']:
-    load_and_plot(out_dir, dataset_type, numbers, new_structure)
+# for dataset_type in ['train', 'val', 'test']:
+#     load_and_plot(out_dir, dataset_type, numbers, new_structure)
 
 # Plot combined data
 plot_combined(out_dir, numbers, new_structure)

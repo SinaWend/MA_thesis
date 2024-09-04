@@ -83,19 +83,7 @@ def get_task(na=None):
 
     domain_datasets_train = {}
     domain_datasets_val = {}
-    annotations_path = '/lustre/groups/shared/histology_data/CAMELYON17/annotations'
-    centers_paths = [
-        '/lustre/groups/shared/histology_data/CAMELYON17/slides/center0',
-        '/lustre/groups/shared/histology_data/CAMELYON17/slides/center1',
-        '/lustre/groups/shared/histology_data/CAMELYON17/slides/center2',
-        '/lustre/groups/shared/histology_data/CAMELYON17/slides/center3',
-        '/lustre/groups/shared/histology_data/CAMELYON17/slides/center4'
-    ]
-    def extract_info(filename):
-        parts = filename.split('_')
-        patient_id = parts[1]
-        node_id = parts[3][0]
-        return patient_id, node_id
+ 
 
     save_path = '/lustre/groups/aih/sina.wendrich/MA_code/output_CAMELYON17'
     
@@ -115,20 +103,23 @@ def get_task(na=None):
                 })
 
     dataframe = pd.DataFrame(data)
-    dataframe = balance_classes(dataframe)  # Balance the classes here
     df_train, df_val, df_test = split_dataset(dataframe, 0.7, 0.3)
     for center_name in set(dataframe['center']):
         df_center_train = df_train[df_train['center'] == center_name]
         df_center_val = df_val[df_val['center'] == center_name]
         if center_name == 'center0':
-            transform = img_trans_val_test  # Only use non-augmenting transformations for center0
+            transform = img_trans_val_test
             cancer_transform = img_trans_val_test
             oversample_factor = 1
         else:
-            transform = img_trans_train  # Use training transformations for other centers
+            transform = img_trans_train
             cancer_transform = img_cancer_augment_train
-            oversample_factor = 20
-        dataset_train = HistopathologyDataset(df_center_train, transform=transform, cancer_transform=cancer_transform, num_classes=dim_y, oversample_factor=oversample_factor)
+            oversample_factor = 30
+
+        # Balance each center's training data considering the oversampling
+        df_center_train_balanced = balance_classes(df_center_train, oversample_factor, 'center0')
+
+        dataset_train = HistopathologyDataset(df_center_train_balanced, transform=transform, cancer_transform=cancer_transform, num_classes=dim_y, oversample_factor=oversample_factor)
         dataset_val = HistopathologyDataset(df_center_val, transform=img_trans_val_test, num_classes=dim_y)
                 
         update_datasets(domain_datasets_train, domain_datasets_val, dataset_train, dataset_val, center_name)
@@ -140,14 +131,24 @@ def get_task(na=None):
 
     return task
 
-def balance_classes(dataframe):
+def balance_classes(dataframe, oversample_factor=1, exclude_center=None):
+    # Only balance classes if the center is not the one to exclude
+    if dataframe['center'].iloc[0] == exclude_center:
+        return dataframe  # Return the original dataframe if it's the excluded center
+    
     cancer_df = dataframe[dataframe['label'] == 1]
     noncancer_df = dataframe[dataframe['label'] == 0]
-    if len(cancer_df) < len(noncancer_df):
-        noncancer_df = noncancer_df.sample(len(cancer_df), random_state=42)
+    
+    effective_cancer_count = len(cancer_df) * oversample_factor
+    if effective_cancer_count < len(noncancer_df):
+        noncancer_df = noncancer_df.sample(effective_cancer_count, random_state=42)
     else:
-        cancer_df = cancer_df.sample(len(noncancer_df), random_state=42)
+        cancer_needed = (len(noncancer_df) + oversample_factor - 1) // oversample_factor
+        if cancer_needed < len(cancer_df):
+            cancer_df = cancer_df.sample(cancer_needed, random_state=42)
+    
     return pd.concat([cancer_df, noncancer_df])
+
 
 def split_dataset(df, train_split, val_split):
     df_shuffled = df.sample(frac=1).reset_index(drop=True)

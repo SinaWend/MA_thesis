@@ -1,0 +1,2275 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, nvidia_gpu=1
+Select jobs to execute...
+
+[Wed Jul 31 10:47:45 2024]
+rule run_experiment:
+    input: zoutput/benchmarks/CAMELYONbalancednew_center0_dinov2small_erm_irm_nofreeze_halffreeze_allfreeze_2024-07-31_03-06-46/hyperparameters.csv
+    output: zoutput/benchmarks/CAMELYONbalancednew_center0_dinov2small_erm_irm_nofreeze_halffreeze_allfreeze_2024-07-31_03-06-46/rule_results/19.csv
+    jobid: 0
+    reason: Forced execution
+    wildcards: index=19
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=/tmp, partition=gpu_p, qos=gpu_normal, nvidia_gpu=1
+
+/home/aih/gizem.mert/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: libtorch_cuda_cu.so: cannot open shared object file: No such file or directory
+  warn(f"Failed to load image Python extension: {e}")
+Failed to import backpack: cannot import name '_grad_input_padding' from 'torch.nn.grad' (/home/aih/gizem.mert/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/grad.py)
+before experiment loop: 
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| Active memory         |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| Requested memory      |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| Allocations           |       0    |       0    |       0    |       0    |
+|       from large pool |       0    |       0    |       0    |       0    |
+|       from small pool |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Active allocs         |       0    |       0    |       0    |       0    |
+|       from large pool |       0    |       0    |       0    |       0    |
+|       from small pool |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |       0    |       0    |       0    |       0    |
+|       from large pool |       0    |       0    |       0    |       0    |
+|       from small pool |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |       0    |       0    |       0    |       0    |
+|       from large pool |       0    |       0    |       0    |       0    |
+|       from small pool |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+before experiment starts
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| Active memory         |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| Requested memory      |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| Allocations           |       0    |       0    |       0    |       0    |
+|       from large pool |       0    |       0    |       0    |       0    |
+|       from small pool |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Active allocs         |       0    |       0    |       0    |       0    |
+|       from large pool |       0    |       0    |       0    |       0    |
+|       from small pool |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |       0    |       0    |       0    |       0    |
+|       from large pool |       0    |       0    |       0    |       0    |
+|       from small pool |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |       0    |       0    |       0    |       0    |
+|       from large pool |       0    |       0    |       0    |       0    |
+|       from small pool |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+
+overriding args.task None to dset
+
+
+using device: cuda:0
+
+Using cache found in /home/aih/gizem.mert/.cache/torch/hub/facebookresearch_dinov2_main
+/home/aih/gizem.mert/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+/home/aih/gizem.mert/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+/home/aih/gizem.mert/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+/home/aih/gizem.mert/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+/home/aih/gizem.mert/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+fatal: detected dubious ownership in repository at '/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+
+
+
+!!!: not committed yet
+/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab/domainlab/utils/get_git_tag.py:16: UserWarning: !!!: not committed yet
+  warnings.warn("!!!: not committed yet")
+
+
+
+warning: Not a git repository. Use --no-index to compare two paths outside a working tree
+usage: git diff --no-index [<options>] <path> <path>
+
+Diff output format options
+    -p, --patch           generate patch
+    -s, --no-patch        suppress diff output
+    -u                    generate patch
+    -U, --unified[=<n>]   generate diffs with <n> lines context
+    -W, --function-context
+                          generate diffs with <n> lines context
+    --raw                 generate the diff in raw format
+    --patch-with-raw      synonym for '-p --raw'
+    --patch-with-stat     synonym for '-p --stat'
+    --numstat             machine friendly --stat
+    --shortstat           output only the last line of --stat
+    -X, --dirstat[=<param1,param2>...]
+                          output the distribution of relative amount of changes for each sub-directory
+    --cumulative          synonym for --dirstat=cumulative
+    --dirstat-by-file[=<param1,param2>...]
+                          synonym for --dirstat=files,param1,param2...
+    --check               warn if changes introduce conflict markers or whitespace errors
+    --summary             condensed summary such as creations, renames and mode changes
+    --name-only           show only names of changed files
+    --name-status         show only names and status of changed files
+    --stat[=<width>[,<name-width>[,<count>]]]
+                          generate diffstat
+    --stat-width <width>  generate diffstat with a given width
+    --stat-name-width <width>
+                          generate diffstat with a given name width
+    --stat-graph-width <width>
+                          generate diffstat with a given graph width
+    --stat-count <count>  generate diffstat with limited lines
+    --compact-summary     generate compact summary in diffstat
+    --binary              output a binary diff that can be applied
+    --full-index          show full pre- and post-image object names on the "index" lines
+    --color[=<when>]      show colored diff
+    --ws-error-highlight <kind>
+                          highlight whitespace errors in the 'context', 'old' or 'new' lines in the diff
+    -z                    do not munge pathnames and use NULs as output field terminators in --raw or --numstat
+    --abbrev[=<n>]        use <n> digits to display object names
+    --src-prefix <prefix>
+                          show the given source prefix instead of "a/"
+    --dst-prefix <prefix>
+                          show the given destination prefix instead of "b/"
+    --line-prefix <prefix>
+                          prepend an additional prefix to every line of output
+    --no-prefix           do not show any source or destination prefix
+    --inter-hunk-context <n>
+                          show context between diff hunks up to the specified number of lines
+    --output-indicator-new <char>
+                          specify the character to indicate a new line instead of '+'
+    --output-indicator-old <char>
+                          specify the character to indicate an old line instead of '-'
+    --output-indicator-context <char>
+                          specify the character to indicate a context instead of ' '
+
+Diff rename options
+    -B, --break-rewrites[=<n>[/<m>]]
+                          break complete rewrite changes into pairs of delete and create
+    -M, --find-renames[=<n>]
+                          detect renames
+    -D, --irreversible-delete
+                          omit the preimage for deletes
+    -C, --find-copies[=<n>]
+                          detect copies
+    --find-copies-harder  use unmodified files as source to find copies
+    --no-renames          disable rename detection
+    --rename-empty        use empty blobs as rename source
+    --follow              continue listing the history of a file beyond renames
+    -l <n>                prevent rename/copy detection if the number of rename/copy targets exceeds given limit
+
+Diff algorithm options
+    --minimal             produce the smallest possible diff
+    -w, --ignore-all-space
+                          ignore whitespace when comparing lines
+    -b, --ignore-space-change
+                          ignore changes in amount of whitespace
+    --ignore-space-at-eol
+                          ignore changes in whitespace at EOL
+    --ignore-cr-at-eol    ignore carrier-return at the end of line
+    --ignore-blank-lines  ignore changes whose lines are all blank
+    -I, --ignore-matching-lines <regex>
+                          ignore changes whose all lines match <regex>
+    --indent-heuristic    heuristic to shift diff hunk boundaries for easy reading
+    --patience            generate diff using the "patience diff" algorithm
+    --histogram           generate diff using the "histogram diff" algorithm
+    --diff-algorithm <algorithm>
+                          choose a diff algorithm
+    --anchored <text>     generate diff using the "anchored diff" algorithm
+    --word-diff[=<mode>]  show word diff, using <mode> to delimit changed words
+    --word-diff-regex <regex>
+                          use <regex> to decide what a word is
+    --color-words[=<regex>]
+                          equivalent to --word-diff=color --word-diff-regex=<regex>
+    --color-moved[=<mode>]
+                          moved lines of code are colored differently
+    --color-moved-ws <mode>
+                          how white spaces are ignored in --color-moved
+
+Other diff options
+    --relative[=<prefix>]
+                          when run from subdir, exclude changes outside and show relative paths
+    -a, --text            treat all files as text
+    -R                    swap two inputs, reverse the diff
+    --exit-code           exit with 1 if there were differences, 0 otherwise
+    --quiet               disable all output of the program
+    --ext-diff            allow an external diff helper to be executed
+    --textconv            run external text conversion filters when comparing binary files
+    --ignore-submodules[=<when>]
+                          ignore changes to submodules in the diff generation
+    --submodule[=<format>]
+                          specify how differences in submodules are shown
+    --ita-invisible-in-index
+                          hide 'git add -N' entries from the index
+    --ita-visible-in-index
+                          treat 'git add -N' entries as real in the index
+    -S <string>           look for differences that change the number of occurrences of the specified string
+    -G <regex>            look for differences that change the number of occurrences of the specified regex
+    --pickaxe-all         show all changes in the changeset with -S or -G
+    --pickaxe-regex       treat <string> in -S as extended POSIX regular expression
+    -O <file>             control the order in which files appear in the output
+    --rotate-to <path>    show the change in the specified path first
+    --skip-to <path>      skip the output to the specified path
+    --find-object <object-id>
+                          look for differences that change the number of occurrences of the specified object
+    --diff-filter [(A|C|D|M|R|T|U|X|B)...[*]]
+                          select files by diff type
+    --output <file>       output to a specific file
+
+not in a git repository
+/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab/domainlab/utils/get_git_tag.py:26: UserWarning: not in a git repository
+  warnings.warn("not in a git repository")
+fatal: detected dubious ownership in repository at '/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+not in a git repository
+/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab/domainlab/utils/get_git_tag.py:38: UserWarning: not in a git repository
+  warnings.warn("not in a git repository")
+model name: dset_te_center0_erm_no_git_version_2024md_07md_31_11_01_34_seed_0_23775395
+
+ Experiment start at: 2024-07-31 11:01:35.175783
+/home/aih/gizem.mert/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Plan failed with a cudnnException: CUDNN_BACKEND_EXECUTION_PLAN_DESCRIPTOR: cudnnFinalize Descriptor Failed cudnn_status: CUDNN_STATUS_NOT_SUPPORTED (Triggered internally at /opt/conda/conda-bld/pytorch_1712608935911/work/aten/src/ATen/native/cudnn/Conv_v8.cpp:919.)
+  return F.conv2d(input, weight, bias, self.stride,
+before training, model accuracy: 0.7297859191894531
+epoch: 1
+---- Training Domain: 
+scalar performance:
+{'acc': 0.70404464, 'precision': 0.704098, 'recall': 0.70403755, 'specificity': 0.70403755, 'f1': 0.7040205, 'auroc': 0.7677072, 'binary_precision': 0.70100087, 'binary_recall': 0.7124791, 'binary_specificity': 0.69559604, 'binary_f1_score': 0.70669335}
+confusion matrix:
+       0      1
+0  19933   8723
+1   8253  20451
+---- Validation: 
+/home/aih/gizem.mert/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Plan failed with a cudnnException: CUDNN_BACKEND_EXECUTION_PLAN_DESCRIPTOR: cudnnFinalize Descriptor Failed cudnn_status: CUDNN_STATUS_NOT_SUPPORTED (Triggered internally at /opt/conda/conda-bld/pytorch_1712608935911/work/aten/src/ATen/native/cudnn/Conv_v8.cpp:919.)
+  return F.conv2d(input, weight, bias, self.stride,
+scalar performance:
+{'acc': 0.7835781, 'precision': 0.53706205, 'recall': 0.694441, 'specificity': 0.694441, 'f1': 0.5174975, 'auroc': 0.7763013, 'binary_precision': 0.09179781, 'binary_recall': 0.59875584, 'binary_specificity': 0.7901262, 'binary_f1_score': 0.15918957}
+confusion matrix:
+       0     1
+0  14340  3809
+1    258   385
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.7636625, 'precision': 0.54023725, 'recall': 0.68612564, 'specificity': 0.68612564, 'f1': 0.51859885, 'auroc': 0.7591733, 'binary_precision': 0.10248042, 'binary_recall': 0.6015326, 'binary_specificity': 0.7707187, 'binary_f1_score': 0.1751255}
+confusion matrix:
+      0     1
+0  4622  1375
+1   104   157
+new oracle model saved
+better model found
+persisted
+after epoch: 1,now: 2024-07-31 11:23:23.680075,epoch time: 0:21:48.504292,used: 0:21:48.504292,model: dset_te_center0_erm_no_git_version_2024md_07md_31_11_01_34_seed_0_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 2
+---- Training Domain: 
+scalar performance:
+{'acc': 0.80843794, 'precision': 0.8084414, 'recall': 0.80843925, 'specificity': 0.80843925, 'f1': 0.8084377, 'auroc': 0.8844665, 'binary_precision': 0.80969197, 'binary_recall': 0.8068146, 'binary_specificity': 0.81006384, 'binary_f1_score': 0.8082507}
+confusion matrix:
+       0      1
+0  23214   5443
+1   5545  23158
+---- Validation: 
+scalar performance:
+{'acc': 0.8332269, 'precision': 0.5527873, 'recall': 0.73064566, 'specificity': 0.73064566, 'f1': 0.5549102, 'auroc': 0.8046702, 'binary_precision': 0.12131347, 'binary_recall': 0.62052876, 'binary_specificity': 0.84076256, 'binary_f1_score': 0.20295016}
+confusion matrix:
+       0     1
+0  15259  2890
+1    244   399
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.82070947, 'precision': 0.56059146, 'recall': 0.7342138, 'specificity': 0.7342138, 'f1': 0.56397444, 'auroc': 0.8181498, 'binary_precision': 0.13974896, 'binary_recall': 0.63984674, 'binary_specificity': 0.828581, 'binary_f1_score': 0.22939561}
+confusion matrix:
+      0     1
+0  4969  1028
+1    94   167
+new oracle model saved
+better model found
+persisted
+after epoch: 2,now: 2024-07-31 11:43:29.694291,epoch time: 0:20:06.014216,used: 0:41:54.518508,model: dset_te_center0_erm_no_git_version_2024md_07md_31_11_01_34_seed_0_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 3
+---- Training Domain: 
+scalar performance:
+{'acc': 0.84372383, 'precision': 0.84372383, 'recall': 0.843724, 'specificity': 0.843724, 'f1': 0.84372383, 'auroc': 0.9197166, 'binary_precision': 0.8441074, 'binary_recall': 0.8434604, 'binary_specificity': 0.8439877, 'binary_f1_score': 0.8437838}
+confusion matrix:
+       0      1
+0  24187   4471
+1   4493  24209
+---- Validation: 
+scalar performance:
+{'acc': 0.85594934, 'precision': 0.55968255, 'recall': 0.7311586, 'specificity': 0.7311586, 'f1': 0.570822, 'auroc': 0.81649345, 'binary_precision': 0.13559322, 'binary_recall': 0.59720063, 'binary_specificity': 0.86511654, 'binary_f1_score': 0.2210072}
+confusion matrix:
+       0     1
+0  15701  2448
+1    259   384
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.8422819, 'precision': 0.57464033, 'recall': 0.7674575, 'specificity': 0.7674575, 'f1': 0.5889086, 'auroc': 0.84676504, 'binary_precision': 0.16512915, 'binary_recall': 0.68582374, 'binary_specificity': 0.84909123, 'binary_f1_score': 0.266171}
+confusion matrix:
+      0    1
+0  5092  905
+1    82  179
+new oracle model saved
+better model found
+persisted
+after epoch: 3,now: 2024-07-31 12:03:22.546342,epoch time: 0:19:52.852051,used: 1:01:47.370559,model: dset_te_center0_erm_no_git_version_2024md_07md_31_11_01_34_seed_0_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 4
+---- Training Domain: 
+scalar performance:
+{'acc': 0.8624128, 'precision': 0.86262316, 'recall': 0.86242247, 'specificity': 0.86242247, 'f1': 0.86239505, 'auroc': 0.93540895, 'binary_precision': 0.87155867, 'binary_recall': 0.8503641, 'binary_specificity': 0.8744809, 'binary_f1_score': 0.86083096}
+confusion matrix:
+       0      1
+0  25060   3597
+1   4295  24408
+---- Validation: 
+scalar performance:
+{'acc': 0.87787354, 'precision': 0.57125825, 'recall': 0.74175906, 'specificity': 0.74175906, 'f1': 0.5918838, 'auroc': 0.82526505, 'binary_precision': 0.15839536, 'binary_recall': 0.5956454, 'binary_specificity': 0.88787264, 'binary_f1_score': 0.25024503}
+confusion matrix:
+       0     1
+0  16114  2035
+1    260   383
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.8620965, 'precision': 0.58838564, 'recall': 0.79062235, 'specificity': 0.79062235, 'f1': 0.61235714, 'auroc': 0.8663125, 'binary_precision': 0.19096509, 'binary_recall': 0.7126437, 'binary_specificity': 0.86860096, 'binary_f1_score': 0.30121455}
+confusion matrix:
+      0    1
+0  5209  788
+1    75  186
+new oracle model saved
+better model found
+persisted
+after epoch: 4,now: 2024-07-31 12:21:24.830053,epoch time: 0:18:02.283711,used: 1:19:49.654270,model: dset_te_center0_erm_no_git_version_2024md_07md_31_11_01_34_seed_0_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 5
+---- Training Domain: 
+scalar performance:
+{'acc': 0.8723675, 'precision': 0.87262774, 'recall': 0.8723772, 'specificity': 0.8723772, 'f1': 0.8723473, 'auroc': 0.9432634, 'binary_precision': 0.8826604, 'binary_recall': 0.85913384, 'binary_specificity': 0.8856206, 'binary_f1_score': 0.87073827}
+confusion matrix:
+       0      1
+0  25381   3278
+1   4043  24658
+---- Validation: 
+scalar performance:
+{'acc': 0.884685, 'precision': 0.57626945, 'recall': 0.7475355, 'specificity': 0.7475355, 'f1': 0.60006285, 'auroc': 0.8297632, 'binary_precision': 0.16811846, 'binary_recall': 0.60031104, 'binary_specificity': 0.89476, 'binary_f1_score': 0.26267436}
+confusion matrix:
+       0     1
+0  16239  1910
+1    257   386
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.86593163, 'precision': 0.59368134, 'recall': 0.80544966, 'specificity': 0.80544966, 'f1': 0.6203975, 'auroc': 0.8780693, 'binary_precision': 0.20020747, 'binary_recall': 0.7394636, 'binary_specificity': 0.8714357, 'binary_f1_score': 0.31510204}
+confusion matrix:
+      0    1
+0  5226  771
+1    68  193
+new oracle model saved
+better model found
+persisted
+after epoch: 5,now: 2024-07-31 12:40:27.890483,epoch time: 0:19:03.060430,used: 1:38:52.714700,model: dset_te_center0_erm_no_git_version_2024md_07md_31_11_01_34_seed_0_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 6
+---- Training Domain: 
+scalar performance:
+{'acc': 0.8840481, 'precision': 0.8842586, 'recall': 0.8840592, 'specificity': 0.8840592, 'f1': 0.8840343, 'auroc': 0.95090306, 'binary_precision': 0.89349174, 'binary_recall': 0.872296, 'binary_specificity': 0.8958224, 'binary_f1_score': 0.88276666}
+confusion matrix:
+       0      1
+0  25668   2985
+1   3666  25041
+---- Validation: 
+scalar performance:
+{'acc': 0.883195, 'precision': 0.57593393, 'recall': 0.7497643, 'specificity': 0.7497643, 'f1': 0.5993811, 'auroc': 0.83316207, 'binary_precision': 0.16723843, 'binary_recall': 0.60653186, 'binary_specificity': 0.89299685, 'binary_f1_score': 0.2621849}
+confusion matrix:
+       0     1
+0  16207  1942
+1    253   390
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.86529243, 'precision': 0.59644586, 'recall': 0.81977487, 'specificity': 0.81977487, 'f1': 0.62404895, 'auroc': 0.88672686, 'binary_precision': 0.20426829, 'binary_recall': 0.77011496, 'binary_specificity': 0.8694347, 'binary_f1_score': 0.32289156}
+confusion matrix:
+      0    1
+0  5214  783
+1    60  201
+early stop counter: 1
+val acc:0.8831949830055237, best validation acc: 0.8846849799156189, corresponding to test acc:                         0.8659316301345825 / 0.8659316301345825
+after epoch: 6,now: 2024-07-31 13:05:43.090763,epoch time: 0:25:15.200280,used: 2:04:07.914980,model: dset_te_center0_erm_no_git_version_2024md_07md_31_11_01_34_seed_0_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 7
+---- Training Domain: 
+scalar performance:
+{'acc': 0.8894003, 'precision': 0.8899577, 'recall': 0.8894142, 'specificity': 0.8894142, 'f1': 0.88936317, 'auroc': 0.954528, 'binary_precision': 0.90488607, 'binary_recall': 0.8704575, 'binary_specificity': 0.90837085, 'binary_f1_score': 0.8873379}
+confusion matrix:
+       0      1
+0  26033   2626
+1   3718  24983
+---- Validation: 
+scalar performance:
+{'acc': 0.88910174, 'precision': 0.57910794, 'recall': 0.74832207, 'specificity': 0.74832207, 'f1': 0.6046412, 'auroc': 0.8340563, 'binary_precision': 0.17383431, 'binary_recall': 0.59720063, 'binary_specificity': 0.8994435, 'binary_f1_score': 0.2692847}
+confusion matrix:
+       0     1
+0  16324  1825
+1    259   384
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.8729626, 'precision': 0.6017348, 'recall': 0.82377684, 'specificity': 0.82377684, 'f1': 0.6328019, 'auroc': 0.8931439, 'binary_precision': 0.21474358, 'binary_recall': 0.77011496, 'binary_specificity': 0.8774387, 'binary_f1_score': 0.3358396}
+confusion matrix:
+      0    1
+0  5262  735
+1    60  201
+new oracle model saved
+better model found
+persisted
+after epoch: 7,now: 2024-07-31 13:40:47.716539,epoch time: 0:35:04.625776,used: 2:39:12.540756,model: dset_te_center0_erm_no_git_version_2024md_07md_31_11_01_34_seed_0_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 8
+---- Training Domain: 
+scalar performance:
+{'acc': 0.8966527, 'precision': 0.8970042, 'recall': 0.89666474, 'specificity': 0.89666474, 'f1': 0.8966318, 'auroc': 0.9591285, 'binary_precision': 0.90901905, 'binary_recall': 0.8817197, 'binary_specificity': 0.9116097, 'binary_f1_score': 0.8951613}
+confusion matrix:
+       0      1
+0  26124   2533
+1   3395  25308
+---- Validation: 
+scalar performance:
+{'acc': 0.87792677, 'precision': 0.5744978, 'recall': 0.7560376, 'specificity': 0.7560376, 'f1': 0.5965013, 'auroc': 0.83635616, 'binary_precision': 0.16374746, 'binary_recall': 0.62519443, 'binary_specificity': 0.8868808, 'binary_f1_score': 0.2595223}
+confusion matrix:
+       0     1
+0  16096  2053
+1    241   402
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.85730267, 'precision': 0.593768, 'recall': 0.8266001, 'specificity': 0.8266001, 'f1': 0.6185439, 'auroc': 0.898839, 'binary_precision': 0.19789675, 'binary_recall': 0.79310346, 'binary_specificity': 0.8600967, 'binary_f1_score': 0.31675592}
+confusion matrix:
+      0    1
+0  5158  839
+1    54  207
+early stop counter: 1
+val acc:0.877926766872406, best validation acc: 0.8891017436981201, corresponding to test acc:                         0.8729625940322876 / 0.8729625940322876
+after epoch: 8,now: 2024-07-31 14:15:37.483261,epoch time: 0:34:49.766722,used: 3:14:02.307478,model: dset_te_center0_erm_no_git_version_2024md_07md_31_11_01_34_seed_0_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 9
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9013947, 'precision': 0.9017048, 'recall': 0.9014064, 'specificity': 0.9014064, 'f1': 0.9013775, 'auroc': 0.96198523, 'binary_precision': 0.9130762, 'binary_recall': 0.8874373, 'binary_specificity': 0.9153755, 'binary_f1_score': 0.90007424}
+confusion matrix:
+       0      1
+0  26231   2425
+1   3231  25473
+---- Validation: 
+scalar performance:
+{'acc': 0.8785654, 'precision': 0.5754054, 'recall': 0.75861835, 'specificity': 0.75861835, 'f1': 0.5979031, 'auroc': 0.8384869, 'binary_precision': 0.16537362, 'binary_recall': 0.62986004, 'binary_specificity': 0.8873767, 'binary_f1_score': 0.26196638}
+confusion matrix:
+       0     1
+0  16105  2044
+1    238   405
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.8595398, 'precision': 0.5955075, 'recall': 0.8295996, 'specificity': 0.8295996, 'f1': 0.6214501, 'auroc': 0.902307, 'binary_precision': 0.20116054, 'binary_recall': 0.79693484, 'binary_specificity': 0.86226445, 'binary_f1_score': 0.3212355}
+confusion matrix:
+      0    1
+0  5171  826
+1    53  208
+early stop counter: 2
+val acc:0.8785653710365295, best validation acc: 0.8891017436981201, corresponding to test acc:                         0.8729625940322876 / 0.8729625940322876
+after epoch: 9,now: 2024-07-31 14:51:11.195474,epoch time: 0:35:33.712213,used: 3:49:36.019691,model: dset_te_center0_erm_no_git_version_2024md_07md_31_11_01_34_seed_0_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 10
+---- Training Domain: 
+scalar performance:
+{'acc': 0.90735704, 'precision': 0.9076449, 'recall': 0.9073664, 'specificity': 0.9073664, 'f1': 0.907342, 'auroc': 0.96561337, 'binary_precision': 0.9186538, 'binary_recall': 0.89400697, 'binary_specificity': 0.92072576, 'binary_f1_score': 0.9061628}
+confusion matrix:
+       0      1
+0  26388   2272
+1   3042  25658
+---- Validation: 
+scalar performance:
+{'acc': 0.8723393, 'precision': 0.5727206, 'recall': 0.7606454, 'specificity': 0.7606454, 'f1': 0.59292245, 'auroc': 0.8399421, 'binary_precision': 0.15968992, 'binary_recall': 0.6407465, 'binary_specificity': 0.88054436, 'binary_f1_score': 0.2556624}
+confusion matrix:
+       0     1
+0  15981  2168
+1    231   412
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.8489933, 'precision': 0.5905363, 'recall': 0.8295939, 'specificity': 0.8295939, 'f1': 0.61197215, 'auroc': 0.9050298, 'binary_precision': 0.19077757, 'binary_recall': 0.8084291, 'binary_specificity': 0.85075873, 'binary_f1_score': 0.3087052}
+confusion matrix:
+      0    1
+0  5102  895
+1    50  211
+early stop counter: 3
+val acc:0.8723393082618713, best validation acc: 0.8891017436981201, corresponding to test acc:                         0.8729625940322876 / 0.8729625940322876
+after epoch: 10,now: 2024-07-31 15:15:18.690862,epoch time: 0:24:07.495388,used: 4:13:43.515079,model: dset_te_center0_erm_no_git_version_2024md_07md_31_11_01_34_seed_0_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 11
+---- Training Domain: 
+scalar performance:
+{'acc': 0.90730476, 'precision': 0.9084226, 'recall': 0.9073249, 'specificity': 0.9073249, 'f1': 0.9072442, 'auroc': 0.9663301, 'binary_precision': 0.929982, 'binary_recall': 0.88108844, 'binary_specificity': 0.9335613, 'binary_f1_score': 0.9048752}
+confusion matrix:
+       0      1
+0  26754   1904
+1   3413  25289
+---- Validation: 
+scalar performance:
+{'acc': 0.8883035, 'precision': 0.57921827, 'recall': 0.75090903, 'specificity': 0.75090903, 'f1': 0.60471946, 'auroc': 0.8396069, 'binary_precision': 0.17383513, 'binary_recall': 0.60342145, 'binary_specificity': 0.8983966, 'binary_f1_score': 0.26991305}
+confusion matrix:
+       0     1
+0  16305  1844
+1    255   388
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.872643, 'precision': 0.60386074, 'recall': 0.8346041, 'specificity': 0.8346041, 'f1': 0.6356832, 'auroc': 0.9065663, 'binary_precision': 0.21789473, 'binary_recall': 0.79310346, 'binary_specificity': 0.8761047, 'binary_f1_score': 0.34186623}
+confusion matrix:
+      0    1
+0  5254  743
+1    54  207
+early stop counter: 4
+val acc:0.8883035182952881, best validation acc: 0.8891017436981201, corresponding to test acc:                         0.8729625940322876 / 0.8729625940322876
+after epoch: 11,now: 2024-07-31 15:35:36.400971,epoch time: 0:20:17.710109,used: 4:34:01.225188,model: dset_te_center0_erm_no_git_version_2024md_07md_31_11_01_34_seed_0_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 12
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9111925, 'precision': 0.9123563, 'recall': 0.91121197, 'specificity': 0.91121197, 'f1': 0.9111326, 'auroc': 0.9687278, 'binary_precision': 0.93444735, 'binary_recall': 0.88456845, 'binary_specificity': 0.9378555, 'binary_f1_score': 0.9088241}
+confusion matrix:
+       0      1
+0  26878   1781
+1   3313  25388
+---- Validation: 
+scalar performance:
+{'acc': 0.88777137, 'precision': 0.57952434, 'recall': 0.75363374, 'specificity': 0.75363374, 'f1': 0.60510254, 'auroc': 0.8407781, 'binary_precision': 0.17422222, 'binary_recall': 0.6096423, 'binary_specificity': 0.8976252, 'binary_f1_score': 0.27099895}
+confusion matrix:
+       0     1
+0  16291  1858
+1    251   392
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.87232345, 'precision': 0.60401845, 'recall': 0.8362696, 'specificity': 0.8362696, 'f1': 0.6358425, 'auroc': 0.90918326, 'binary_precision': 0.21802935, 'binary_recall': 0.79693484, 'binary_specificity': 0.87560445, 'binary_f1_score': 0.3423868}
+confusion matrix:
+      0    1
+0  5251  746
+1    53  208
+early stop counter: 5
+val acc:0.8877713680267334, best validation acc: 0.8891017436981201, corresponding to test acc:                         0.8729625940322876 / 0.8729625940322876
+after epoch: 12,now: 2024-07-31 15:57:17.890207,epoch time: 0:21:41.489236,used: 4:55:42.714424,model: dset_te_center0_erm_no_git_version_2024md_07md_31_11_01_34_seed_0_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 13
+---- Training Domain: 
+scalar performance:
+{'acc': 0.91593444, 'precision': 0.9164711, 'recall': 0.9159477, 'specificity': 0.9159477, 'f1': 0.9159091, 'auroc': 0.9703652, 'binary_precision': 0.9316054, 'binary_recall': 0.897913, 'binary_specificity': 0.9339824, 'binary_f1_score': 0.914449}
+confusion matrix:
+       0      1
+0  26767   1892
+1   2930  25771
+---- Validation: 
+scalar performance:
+{'acc': 0.87042356, 'precision': 0.5728875, 'recall': 0.7656541, 'specificity': 0.7656541, 'f1': 0.59275794, 'auroc': 0.8441788, 'binary_precision': 0.15957446, 'binary_recall': 0.65318817, 'binary_specificity': 0.87812, 'binary_f1_score': 0.25648856}
+confusion matrix:
+       0     1
+0  15937  2212
+1    223   420
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.84691596, 'precision': 0.5905329, 'recall': 0.834007, 'specificity': 0.834007, 'f1': 0.6113643, 'auroc': 0.9115286, 'binary_precision': 0.19022222, 'binary_recall': 0.8199234, 'binary_specificity': 0.8480907, 'binary_f1_score': 0.3088023}
+confusion matrix:
+      0    1
+0  5086  911
+1    47  214
+early stop counter: 6
+val acc:0.8704235553741455, best validation acc: 0.8891017436981201, corresponding to test acc:                         0.8729625940322876 / 0.8729625940322876
+after epoch: 13,now: 2024-07-31 16:18:25.897962,epoch time: 0:21:08.007755,used: 5:16:50.722179,model: dset_te_center0_erm_no_git_version_2024md_07md_31_11_01_34_seed_0_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 14
+---- Training Domain: 
+scalar performance:
+{'acc': 0.91628313, 'precision': 0.9162891, 'recall': 0.91628456, 'specificity': 0.91628456, 'f1': 0.91628295, 'auroc': 0.97081137, 'binary_precision': 0.91806316, 'binary_recall': 0.9142887, 'binary_specificity': 0.9182805, 'binary_f1_score': 0.916172}
+confusion matrix:
+       0      1
+0  26317   2342
+1   2460  26241
+---- Validation: 
+scalar performance:
+{'acc': 0.83711153, 'precision': 0.5635421, 'recall': 0.7814104, 'specificity': 0.7814104, 'f1': 0.5707625, 'auroc': 0.84826326, 'binary_precision': 0.13867304, 'binary_recall': 0.7216174, 'binary_specificity': 0.8412034, 'binary_f1_score': 0.23263976}
+confusion matrix:
+       0     1
+0  15267  2882
+1    179   464
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.81080216, 'precision': 0.5772128, 'recall': 0.82982296, 'specificity': 0.82982296, 'f1': 0.58199185, 'auroc': 0.9138279, 'binary_precision': 0.16239941, 'binary_recall': 0.85057473, 'binary_specificity': 0.8090712, 'binary_f1_score': 0.27272728}
+confusion matrix:
+      0     1
+0  4852  1145
+1    39   222
+early stop counter: 7
+val acc:0.8371115326881409, best validation acc: 0.8891017436981201, corresponding to test acc:                         0.8729625940322876 / 0.8729625940322876
+after epoch: 14,now: 2024-07-31 16:39:48.985074,epoch time: 0:21:23.087112,used: 5:38:13.809291,model: dset_te_center0_erm_no_git_version_2024md_07md_31_11_01_34_seed_0_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 15
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9174512, 'precision': 0.91780144, 'recall': 0.9174644, 'specificity': 0.9174644, 'f1': 0.9174356, 'auroc': 0.9723746, 'binary_precision': 0.9301274, 'binary_recall': 0.90287745, 'binary_specificity': 0.93205136, 'binary_f1_score': 0.9162999}
+confusion matrix:
+       0      1
+0  26707   1947
+1   2788  25918
+---- Validation: 
+scalar performance:
+{'acc': 0.85903573, 'precision': 0.5689396, 'recall': 0.7702592, 'specificity': 0.7702592, 'f1': 0.58452135, 'auroc': 0.8473356, 'binary_precision': 0.15100905, 'binary_recall': 0.6749611, 'binary_specificity': 0.8655573, 'binary_f1_score': 0.24680124}
+confusion matrix:
+       0     1
+0  15709  2440
+1    209   434
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.83573025, 'precision': 0.58599097, 'recall': 0.83366776, 'specificity': 0.83366776, 'f1': 0.6019278, 'auroc': 0.9145256, 'binary_precision': 0.18068276, 'binary_recall': 0.8314176, 'binary_specificity': 0.83591795, 'binary_f1_score': 0.29685363}
+confusion matrix:
+      0    1
+0  5013  984
+1    44  217
+early stop counter: 8
+val acc:0.8590357303619385, best validation acc: 0.8891017436981201, corresponding to test acc:                         0.8729625940322876 / 0.8729625940322876
+after epoch: 15,now: 2024-07-31 17:01:11.970259,epoch time: 0:21:22.985185,used: 5:59:36.794476,model: dset_te_center0_erm_no_git_version_2024md_07md_31_11_01_34_seed_0_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+Experiment finished at epoch: 15 with time: 5:59:36.794476 at 2024-07-31 17:01:11.970259
+persisted model performance metric: 
+
+scalar performance:
+{'acc': 0.8729626, 'precision': 0.6017348, 'recall': 0.82377684, 'specificity': 0.82377684, 'f1': 0.6328019, 'auroc': 0.8931439, 'binary_precision': 0.21474358, 'binary_recall': 0.77011496, 'binary_specificity': 0.8774387, 'binary_f1_score': 0.3358396}
+confusion matrix:
+      0    1
+0  5262  735
+1    60  201
+oracle model performance metric: 
+
+scalar performance:
+{'acc': 0.8729626, 'precision': 0.6017348, 'recall': 0.82377684, 'specificity': 0.82377684, 'f1': 0.6328019, 'auroc': 0.8931439, 'binary_precision': 0.21474358, 'binary_recall': 0.77011496, 'binary_specificity': 0.8774387, 'binary_f1_score': 0.3358396}
+confusion matrix:
+      0    1
+0  5262  735
+1    60  201
+results aggregation path: zoutput/benchmarks/CAMELYONbalancednew_center0_dinov2small_erm_irm_nofreeze_halffreeze_allfreeze_2024-07-31_03-06-46/rule_results/19.csv
+results aggregation path: zoutput/benchmarks/CAMELYONbalancednew_center0_dinov2small_erm_irm_nofreeze_halffreeze_allfreeze_2024-07-31_03-06-46/rule_results/19.csv
+confusion matrix saved in file: zoutput/benchmarks/CAMELYONbalancednew_center0_dinov2small_erm_irm_nofreeze_halffreeze_allfreeze_2024-07-31_03-06-46/confusion_matrix/19.csv.txt
+before torch memory clean up
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      | 191877 KiB | 461507 KiB | 263033 GiB | 263033 GiB |
+|       from large pool | 174400 KiB | 427880 KiB | 257626 GiB | 257626 GiB |
+|       from small pool |  17477 KiB |  38507 KiB |   5406 GiB |   5406 GiB |
+|---------------------------------------------------------------------------|
+| Active memory         | 191877 KiB | 461507 KiB | 263033 GiB | 263033 GiB |
+|       from large pool | 174400 KiB | 427880 KiB | 257626 GiB | 257626 GiB |
+|       from small pool |  17477 KiB |  38507 KiB |   5406 GiB |   5406 GiB |
+|---------------------------------------------------------------------------|
+| Requested memory      | 189283 KiB | 457564 KiB | 263017 GiB | 263016 GiB |
+|       from large pool | 172814 KiB | 424940 KiB | 257622 GiB | 257622 GiB |
+|       from small pool |  16469 KiB |  37503 KiB |   5394 GiB |   5394 GiB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   | 509952 KiB | 509952 KiB | 509952 KiB |      0 B   |
+|       from large pool | 466944 KiB | 466944 KiB | 466944 KiB |      0 B   |
+|       from small pool |  43008 KiB |  43008 KiB |  43008 KiB |      0 B   |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |  39546 KiB |  87761 KiB | 138991 GiB | 138991 GiB |
+|       from large pool |  30400 KiB |  79704 KiB | 133574 GiB | 133574 GiB |
+|       from small pool |   9146 KiB |   9902 KiB |   5416 GiB |   5416 GiB |
+|---------------------------------------------------------------------------|
+| Allocations           |    2966    |    7653    |   60976 K  |   60973 K  |
+|       from large pool |      76    |     158    |   25392 K  |   25392 K  |
+|       from small pool |    2890    |    7575    |   35583 K  |   35580 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |    2966    |    7653    |   60976 K  |   60973 K  |
+|       from large pool |      76    |     158    |   25392 K  |   25392 K  |
+|       from small pool |    2890    |    7575    |   35583 K  |   35580 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |      42    |      42    |      42    |       0    |
+|       from large pool |      21    |      21    |      21    |       0    |
+|       from small pool |      21    |      21    |      21    |       0    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |      34    |    3602    |   33573 K  |   33573 K  |
+|       from large pool |       9    |      18    |   17302 K  |   17302 K  |
+|       from small pool |      25    |    3594    |   16270 K  |   16270 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+after torch memory clean up
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |  17088 KiB | 461507 KiB | 263033 GiB | 263033 GiB |
+|       from large pool |  17088 KiB | 427880 KiB | 257626 GiB | 257626 GiB |
+|       from small pool |      0 KiB |  38507 KiB |   5406 GiB |   5406 GiB |
+|---------------------------------------------------------------------------|
+| Active memory         |  17088 KiB | 461507 KiB | 263033 GiB | 263033 GiB |
+|       from large pool |  17088 KiB | 427880 KiB | 257626 GiB | 257626 GiB |
+|       from small pool |      0 KiB |  38507 KiB |   5406 GiB |   5406 GiB |
+|---------------------------------------------------------------------------|
+| Requested memory      |  16640 KiB | 457564 KiB | 263017 GiB | 263017 GiB |
+|       from large pool |  16640 KiB | 424940 KiB | 257622 GiB | 257622 GiB |
+|       from small pool |      0 KiB |  37503 KiB |   5394 GiB |   5394 GiB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   | 231424 KiB | 509952 KiB | 509952 KiB | 278528 KiB |
+|       from large pool | 204800 KiB | 466944 KiB | 466944 KiB | 262144 KiB |
+|       from small pool |  26624 KiB |  43008 KiB |  43008 KiB |  16384 KiB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |  23872 KiB |  87761 KiB | 138991 GiB | 138991 GiB |
+|       from large pool |  23872 KiB |  79704 KiB | 133574 GiB | 133574 GiB |
+|       from small pool |      0 KiB |  18293 KiB |   5416 GiB |   5416 GiB |
+|---------------------------------------------------------------------------|
+| Allocations           |       2    |    7653    |   60976 K  |   60976 K  |
+|       from large pool |       2    |     158    |   25392 K  |   25392 K  |
+|       from small pool |       0    |    7575    |   35583 K  |   35583 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |       2    |    7653    |   60976 K  |   60976 K  |
+|       from large pool |       2    |     158    |   25392 K  |   25392 K  |
+|       from small pool |       0    |    7575    |   35583 K  |   35583 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |      23    |      42    |      42    |      19    |
+|       from large pool |      10    |      21    |      21    |      11    |
+|       from small pool |      13    |      21    |      21    |       8    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |       3    |    3602    |   33574 K  |   33574 K  |
+|       from large pool |       3    |      18    |   17302 K  |   17302 K  |
+|       from small pool |       0    |    3594    |   16272 K  |   16272 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+before experiment starts
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |  17088 KiB | 461507 KiB | 263033 GiB | 263033 GiB |
+|       from large pool |  17088 KiB | 427880 KiB | 257626 GiB | 257626 GiB |
+|       from small pool |      0 KiB |  38507 KiB |   5406 GiB |   5406 GiB |
+|---------------------------------------------------------------------------|
+| Active memory         |  17088 KiB | 461507 KiB | 263033 GiB | 263033 GiB |
+|       from large pool |  17088 KiB | 427880 KiB | 257626 GiB | 257626 GiB |
+|       from small pool |      0 KiB |  38507 KiB |   5406 GiB |   5406 GiB |
+|---------------------------------------------------------------------------|
+| Requested memory      |  16640 KiB | 457564 KiB | 263017 GiB | 263017 GiB |
+|       from large pool |  16640 KiB | 424940 KiB | 257622 GiB | 257622 GiB |
+|       from small pool |      0 KiB |  37503 KiB |   5394 GiB |   5394 GiB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   | 231424 KiB | 509952 KiB | 509952 KiB | 278528 KiB |
+|       from large pool | 204800 KiB | 466944 KiB | 466944 KiB | 262144 KiB |
+|       from small pool |  26624 KiB |  43008 KiB |  43008 KiB |  16384 KiB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |  23872 KiB |  87761 KiB | 138991 GiB | 138991 GiB |
+|       from large pool |  23872 KiB |  79704 KiB | 133574 GiB | 133574 GiB |
+|       from small pool |      0 KiB |  18293 KiB |   5416 GiB |   5416 GiB |
+|---------------------------------------------------------------------------|
+| Allocations           |       2    |    7653    |   60976 K  |   60976 K  |
+|       from large pool |       2    |     158    |   25392 K  |   25392 K  |
+|       from small pool |       0    |    7575    |   35583 K  |   35583 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |       2    |    7653    |   60976 K  |   60976 K  |
+|       from large pool |       2    |     158    |   25392 K  |   25392 K  |
+|       from small pool |       0    |    7575    |   35583 K  |   35583 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |      23    |      42    |      42    |      19    |
+|       from large pool |      10    |      21    |      21    |      11    |
+|       from small pool |      13    |      21    |      21    |       8    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |       3    |    3602    |   33574 K  |   33574 K  |
+|       from large pool |       3    |      18    |   17302 K  |   17302 K  |
+|       from small pool |       0    |    3594    |   16272 K  |   16272 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+
+overriding args.task None to dset
+
+
+using device: cuda:0
+
+Using cache found in /home/aih/gizem.mert/.cache/torch/hub/facebookresearch_dinov2_main
+/home/aih/gizem.mert/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+/home/aih/gizem.mert/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+fatal: detected dubious ownership in repository at '/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+
+
+
+!!!: not committed yet
+/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab/domainlab/utils/get_git_tag.py:16: UserWarning: !!!: not committed yet
+  warnings.warn("!!!: not committed yet")
+
+
+
+warning: Not a git repository. Use --no-index to compare two paths outside a working tree
+usage: git diff --no-index [<options>] <path> <path>
+
+Diff output format options
+    -p, --patch           generate patch
+    -s, --no-patch        suppress diff output
+    -u                    generate patch
+    -U, --unified[=<n>]   generate diffs with <n> lines context
+    -W, --function-context
+                          generate diffs with <n> lines context
+    --raw                 generate the diff in raw format
+    --patch-with-raw      synonym for '-p --raw'
+    --patch-with-stat     synonym for '-p --stat'
+    --numstat             machine friendly --stat
+    --shortstat           output only the last line of --stat
+    -X, --dirstat[=<param1,param2>...]
+                          output the distribution of relative amount of changes for each sub-directory
+    --cumulative          synonym for --dirstat=cumulative
+    --dirstat-by-file[=<param1,param2>...]
+                          synonym for --dirstat=files,param1,param2...
+    --check               warn if changes introduce conflict markers or whitespace errors
+    --summary             condensed summary such as creations, renames and mode changes
+    --name-only           show only names of changed files
+    --name-status         show only names and status of changed files
+    --stat[=<width>[,<name-width>[,<count>]]]
+                          generate diffstat
+    --stat-width <width>  generate diffstat with a given width
+    --stat-name-width <width>
+                          generate diffstat with a given name width
+    --stat-graph-width <width>
+                          generate diffstat with a given graph width
+    --stat-count <count>  generate diffstat with limited lines
+    --compact-summary     generate compact summary in diffstat
+    --binary              output a binary diff that can be applied
+    --full-index          show full pre- and post-image object names on the "index" lines
+    --color[=<when>]      show colored diff
+    --ws-error-highlight <kind>
+                          highlight whitespace errors in the 'context', 'old' or 'new' lines in the diff
+    -z                    do not munge pathnames and use NULs as output field terminators in --raw or --numstat
+    --abbrev[=<n>]        use <n> digits to display object names
+    --src-prefix <prefix>
+                          show the given source prefix instead of "a/"
+    --dst-prefix <prefix>
+                          show the given destination prefix instead of "b/"
+    --line-prefix <prefix>
+                          prepend an additional prefix to every line of output
+    --no-prefix           do not show any source or destination prefix
+    --inter-hunk-context <n>
+                          show context between diff hunks up to the specified number of lines
+    --output-indicator-new <char>
+                          specify the character to indicate a new line instead of '+'
+    --output-indicator-old <char>
+                          specify the character to indicate an old line instead of '-'
+    --output-indicator-context <char>
+                          specify the character to indicate a context instead of ' '
+
+Diff rename options
+    -B, --break-rewrites[=<n>[/<m>]]
+                          break complete rewrite changes into pairs of delete and create
+    -M, --find-renames[=<n>]
+                          detect renames
+    -D, --irreversible-delete
+                          omit the preimage for deletes
+    -C, --find-copies[=<n>]
+                          detect copies
+    --find-copies-harder  use unmodified files as source to find copies
+    --no-renames          disable rename detection
+    --rename-empty        use empty blobs as rename source
+    --follow              continue listing the history of a file beyond renames
+    -l <n>                prevent rename/copy detection if the number of rename/copy targets exceeds given limit
+
+Diff algorithm options
+    --minimal             produce the smallest possible diff
+    -w, --ignore-all-space
+                          ignore whitespace when comparing lines
+    -b, --ignore-space-change
+                          ignore changes in amount of whitespace
+    --ignore-space-at-eol
+                          ignore changes in whitespace at EOL
+    --ignore-cr-at-eol    ignore carrier-return at the end of line
+    --ignore-blank-lines  ignore changes whose lines are all blank
+    -I, --ignore-matching-lines <regex>
+                          ignore changes whose all lines match <regex>
+    --indent-heuristic    heuristic to shift diff hunk boundaries for easy reading
+    --patience            generate diff using the "patience diff" algorithm
+    --histogram           generate diff using the "histogram diff" algorithm
+    --diff-algorithm <algorithm>
+                          choose a diff algorithm
+    --anchored <text>     generate diff using the "anchored diff" algorithm
+    --word-diff[=<mode>]  show word diff, using <mode> to delimit changed words
+    --word-diff-regex <regex>
+                          use <regex> to decide what a word is
+    --color-words[=<regex>]
+                          equivalent to --word-diff=color --word-diff-regex=<regex>
+    --color-moved[=<mode>]
+                          moved lines of code are colored differently
+    --color-moved-ws <mode>
+                          how white spaces are ignored in --color-moved
+
+Other diff options
+    --relative[=<prefix>]
+                          when run from subdir, exclude changes outside and show relative paths
+    -a, --text            treat all files as text
+    -R                    swap two inputs, reverse the diff
+    --exit-code           exit with 1 if there were differences, 0 otherwise
+    --quiet               disable all output of the program
+    --ext-diff            allow an external diff helper to be executed
+    --textconv            run external text conversion filters when comparing binary files
+    --ignore-submodules[=<when>]
+                          ignore changes to submodules in the diff generation
+    --submodule[=<format>]
+                          specify how differences in submodules are shown
+    --ita-invisible-in-index
+                          hide 'git add -N' entries from the index
+    --ita-visible-in-index
+                          treat 'git add -N' entries as real in the index
+    -S <string>           look for differences that change the number of occurrences of the specified string
+    -G <regex>            look for differences that change the number of occurrences of the specified regex
+    --pickaxe-all         show all changes in the changeset with -S or -G
+    --pickaxe-regex       treat <string> in -S as extended POSIX regular expression
+    -O <file>             control the order in which files appear in the output
+    --rotate-to <path>    show the change in the specified path first
+    --skip-to <path>      skip the output to the specified path
+    --find-object <object-id>
+                          look for differences that change the number of occurrences of the specified object
+    --diff-filter [(A|C|D|M|R|T|U|X|B)...[*]]
+                          select files by diff type
+    --output <file>       output to a specific file
+
+not in a git repository
+/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab/domainlab/utils/get_git_tag.py:26: UserWarning: not in a git repository
+  warnings.warn("not in a git repository")
+fatal: detected dubious ownership in repository at '/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+not in a git repository
+/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab/domainlab/utils/get_git_tag.py:38: UserWarning: not in a git repository
+  warnings.warn("not in a git repository")
+model name: dset_te_center0_erm_no_git_version_2024md_07md_31_17_13_42_seed_1_23775395
+
+ Experiment start at: 2024-07-31 17:13:42.703640
+/home/aih/gizem.mert/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Plan failed with a cudnnException: CUDNN_BACKEND_EXECUTION_PLAN_DESCRIPTOR: cudnnFinalize Descriptor Failed cudnn_status: CUDNN_STATUS_NOT_SUPPORTED (Triggered internally at /opt/conda/conda-bld/pytorch_1712608935911/work/aten/src/ATen/native/cudnn/Conv_v8.cpp:919.)
+  return F.conv2d(input, weight, bias, self.stride,
+before training, model accuracy: 0.6474379897117615
+epoch: 1
+---- Training Domain: 
+scalar performance:
+{'acc': 0.6330533, 'precision': 0.63420403, 'recall': 0.63301915, 'specificity': 0.63301915, 'f1': 0.63222885, 'auroc': 0.6687704, 'binary_precision': 0.6219578, 'binary_recall': 0.67990565, 'binary_specificity': 0.58613265, 'binary_f1_score': 0.64964205}
+confusion matrix:
+       0      1
+0  16873  11914
+1   9228  19601
+---- Validation: 
+scalar performance:
+{'acc': 0.8679296, 'precision': 0.49792618, 'recall': 0.49447665, 'specificity': 0.49447665, 'f1': 0.48837757, 'auroc': 0.7020166, 'binary_precision': 0.032191068, 'binary_recall': 0.09212481, 'binary_specificity': 0.8968285, 'binary_f1_score': 0.047710653}
+confusion matrix:
+       0     1
+0  16203  1864
+1    611    62
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.88817275, 'precision': 0.53645873, 'recall': 0.5738441, 'specificity': 0.5738441, 'f1': 0.5437911, 'auroc': 0.7897643, 'binary_precision': 0.10830325, 'binary_recall': 0.23076923, 'binary_specificity': 0.91691893, 'binary_f1_score': 0.14742015}
+confusion matrix:
+      0    1
+0  5452  494
+1   200   60
+new oracle model saved
+better model found
+persisted
+after epoch: 1,now: 2024-07-31 17:36:28.631783,epoch time: 0:22:45.928143,used: 0:22:45.928143,model: dset_te_center0_erm_no_git_version_2024md_07md_31_17_13_42_seed_1_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 2
+---- Training Domain: 
+scalar performance:
+{'acc': 0.75636977, 'precision': 0.75658345, 'recall': 0.7563591, 'specificity': 0.7563591, 'f1': 0.7563138, 'auroc': 0.8286653, 'binary_precision': 0.7493594, 'binary_recall': 0.7709598, 'binary_specificity': 0.7417584, 'binary_f1_score': 0.7600062}
+confusion matrix:
+       0      1
+0  21353   7434
+1   6603  22226
+---- Validation: 
+scalar performance:
+{'acc': 0.8780149, 'precision': 0.52065283, 'recall': 0.5540675, 'specificity': 0.5540675, 'f1': 0.5211304, 'auroc': 0.7665359, 'binary_precision': 0.07305453, 'binary_recall': 0.205052, 'binary_specificity': 0.90308297, 'binary_f1_score': 0.10772834}
+confusion matrix:
+       0     1
+0  16316  1751
+1    535   138
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.89526266, 'precision': 0.57114303, 'recall': 0.65294254, 'specificity': 0.65294254, 'f1': 0.5904304, 'auroc': 0.8398458, 'binary_precision': 0.1706081, 'binary_recall': 0.38846153, 'binary_specificity': 0.9174235, 'binary_f1_score': 0.2370892}
+confusion matrix:
+      0    1
+0  5455  491
+1   159  101
+new oracle model saved
+better model found
+persisted
+after epoch: 2,now: 2024-07-31 17:58:35.352373,epoch time: 0:22:06.720590,used: 0:44:52.648733,model: dset_te_center0_erm_no_git_version_2024md_07md_31_17_13_42_seed_1_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 3
+---- Training Domain: 
+scalar performance:
+{'acc': 0.81788045, 'precision': 0.81790936, 'recall': 0.8178771, 'specificity': 0.8178771, 'f1': 0.81787515, 'auroc': 0.89661485, 'binary_precision': 0.8150452, 'binary_recall': 0.8227071, 'binary_specificity': 0.8130471, 'binary_f1_score': 0.81885827}
+confusion matrix:
+       0      1
+0  23406   5382
+1   5111  23717
+---- Validation: 
+scalar performance:
+{'acc': 0.88964784, 'precision': 0.5542939, 'recall': 0.6430716, 'specificity': 0.6430716, 'f1': 0.56897837, 'auroc': 0.80263436, 'binary_precision': 0.13347346, 'binary_recall': 0.37741455, 'binary_specificity': 0.9087286, 'binary_f1_score': 0.19720498}
+confusion matrix:
+       0     1
+0  16418  1649
+1    419   254
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.89945215, 'precision': 0.59525007, 'recall': 0.7176544, 'specificity': 0.7176544, 'f1': 0.62391865, 'auroc': 0.8661337, 'binary_precision': 0.21293375, 'binary_recall': 0.5192308, 'binary_specificity': 0.91607803, 'binary_f1_score': 0.30201343}
+confusion matrix:
+      0    1
+0  5447  499
+1   125  135
+new oracle model saved
+better model found
+persisted
+after epoch: 3,now: 2024-07-31 18:20:34.229802,epoch time: 0:21:58.877429,used: 1:06:51.526162,model: dset_te_center0_erm_no_git_version_2024md_07md_31_17_13_42_seed_1_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 4
+---- Training Domain: 
+scalar performance:
+{'acc': 0.84853166, 'precision': 0.848534, 'recall': 0.84853256, 'specificity': 0.84853256, 'f1': 0.84853154, 'auroc': 0.92555404, 'binary_precision': 0.8496191, 'binary_recall': 0.84723186, 'binary_specificity': 0.84983325, 'binary_f1_score': 0.8484238}
+confusion matrix:
+       0      1
+0  24465   4323
+1   4404  24424
+---- Validation: 
+scalar performance:
+{'acc': 0.8996265, 'precision': 0.57489324, 'recall': 0.6911628, 'specificity': 0.6911628, 'f1': 0.59825575, 'auroc': 0.8205559, 'binary_precision': 0.17102396, 'binary_recall': 0.4665676, 'binary_specificity': 0.915758, 'binary_f1_score': 0.25029892}
+confusion matrix:
+       0     1
+0  16545  1522
+1    359   314
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9034805, 'precision': 0.6109401, 'recall': 0.7602143, 'specificity': 0.7602143, 'f1': 0.6459148, 'auroc': 0.88107514, 'binary_precision': 0.24042879, 'binary_recall': 0.60384613, 'binary_specificity': 0.9165826, 'binary_f1_score': 0.34392112}
+confusion matrix:
+      0    1
+0  5450  496
+1   103  157
+new oracle model saved
+better model found
+persisted
+after epoch: 4,now: 2024-07-31 18:42:12.200422,epoch time: 0:21:37.970620,used: 1:28:29.496782,model: dset_te_center0_erm_no_git_version_2024md_07md_31_17_13_42_seed_1_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 5
+---- Training Domain: 
+scalar performance:
+{'acc': 0.8649334, 'precision': 0.86611885, 'recall': 0.8649541, 'specificity': 0.8649541, 'f1': 0.8648285, 'auroc': 0.94026256, 'binary_precision': 0.8871353, 'binary_recall': 0.8364841, 'binary_specificity': 0.8934241, 'binary_f1_score': 0.8610654}
+confusion matrix:
+       0      1
+0  25719   3068
+1   4714  24115
+---- Validation: 
+scalar performance:
+{'acc': 0.91542155, 'precision': 0.59238863, 'recall': 0.7022156, 'specificity': 0.7022156, 'f1': 0.6207022, 'auroc': 0.82974637, 'binary_precision': 0.20542635, 'binary_recall': 0.47251114, 'binary_specificity': 0.93192005, 'binary_f1_score': 0.2863575}
+confusion matrix:
+       0     1
+0  16837  1230
+1    355   318
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9152433, 'precision': 0.62714756, 'recall': 0.7700309, 'specificity': 0.7700309, 'f1': 0.66565347, 'auroc': 0.89255995, 'binary_precision': 0.27226028, 'binary_recall': 0.61153847, 'binary_specificity': 0.92852336, 'binary_f1_score': 0.37677726}
+confusion matrix:
+      0    1
+0  5521  425
+1   101  159
+new oracle model saved
+better model found
+persisted
+after epoch: 5,now: 2024-07-31 19:03:57.488124,epoch time: 0:21:45.287702,used: 1:50:14.784484,model: dset_te_center0_erm_no_git_version_2024md_07md_31_17_13_42_seed_1_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 6
+---- Training Domain: 
+scalar performance:
+{'acc': 0.88018954, 'precision': 0.88099885, 'recall': 0.88020635, 'specificity': 0.88020635, 'f1': 0.8801291, 'auroc': 0.9507395, 'binary_precision': 0.89874154, 'binary_recall': 0.857123, 'binary_specificity': 0.9032897, 'binary_f1_score': 0.87743896}
+confusion matrix:
+       0      1
+0  26003   2784
+1   4119  24710
+---- Validation: 
+scalar performance:
+{'acc': 0.91584843, 'precision': 0.6006911, 'recall': 0.72890186, 'specificity': 0.72890186, 'f1': 0.6328201, 'auroc': 0.8366736, 'binary_precision': 0.21995044, 'binary_recall': 0.5274888, 'binary_specificity': 0.93031496, 'binary_f1_score': 0.31045038}
+confusion matrix:
+       0     1
+0  16808  1259
+1    318   355
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.91073155, 'precision': 0.62954366, 'recall': 0.80261713, 'specificity': 0.80261713, 'f1': 0.67152166, 'auroc': 0.9005828, 'binary_precision': 0.27384615, 'binary_recall': 0.6846154, 'binary_specificity': 0.9206189, 'binary_f1_score': 0.3912088}
+confusion matrix:
+      0    1
+0  5474  472
+1    82  178
+better model found
+persisted
+after epoch: 6,now: 2024-07-31 19:29:12.749314,epoch time: 0:25:15.261190,used: 2:15:30.045674,model: dset_te_center0_erm_no_git_version_2024md_07md_31_17_13_42_seed_1_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 7
+---- Training Domain: 
+scalar performance:
+{'acc': 0.8910719, 'precision': 0.8922523, 'recall': 0.89109194, 'specificity': 0.89109194, 'f1': 0.8909935, 'auroc': 0.9569557, 'binary_precision': 0.91395324, 'binary_recall': 0.86360955, 'binary_specificity': 0.91857433, 'binary_f1_score': 0.8880685}
+confusion matrix:
+       0      1
+0  26443   2344
+1   3932  24897
+---- Validation: 
+scalar performance:
+{'acc': 0.91862327, 'precision': 0.6059874, 'recall': 0.7360631, 'specificity': 0.7360631, 'f1': 0.63961756, 'auroc': 0.84063625, 'binary_precision': 0.23003802, 'binary_recall': 0.5393759, 'binary_specificity': 0.93275034, 'binary_f1_score': 0.3225233}
+confusion matrix:
+       0     1
+0  16852  1215
+1    310   363
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9142765, 'precision': 0.63775766, 'recall': 0.81917906, 'specificity': 0.81917906, 'f1': 0.6826378, 'auroc': 0.90673107, 'binary_precision': 0.28881988, 'binary_recall': 0.7153846, 'binary_specificity': 0.92297345, 'binary_f1_score': 0.41150442}
+confusion matrix:
+      0    1
+0  5488  458
+1    74  186
+better model found
+persisted
+after epoch: 7,now: 2024-07-31 19:51:39.409423,epoch time: 0:22:26.660109,used: 2:37:56.705783,model: dset_te_center0_erm_no_git_version_2024md_07md_31_17_13_42_seed_1_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 8
+---- Training Domain: 
+scalar performance:
+{'acc': 0.8973896, 'precision': 0.8978352, 'recall': 0.89740187, 'specificity': 0.89740187, 'f1': 0.8973629, 'auroc': 0.9605919, 'binary_precision': 0.9113329, 'binary_recall': 0.88060635, 'binary_specificity': 0.9141974, 'binary_f1_score': 0.8957062}
+confusion matrix:
+       0      1
+0  26317   2470
+1   3442  25387
+---- Validation: 
+scalar performance:
+{'acc': 0.904429, 'precision': 0.59598005, 'recall': 0.7544513, 'specificity': 0.7544513, 'f1': 0.6284479, 'auroc': 0.84568906, 'binary_precision': 0.20824635, 'binary_recall': 0.59286773, 'binary_specificity': 0.91603476, 'binary_f1_score': 0.30822712}
+confusion matrix:
+       0     1
+0  16550  1517
+1    274   399
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.8970351, 'precision': 0.6236435, 'recall': 0.83960515, 'specificity': 0.83960515, 'f1': 0.66556937, 'auroc': 0.9125521, 'binary_precision': 0.25798213, 'binary_recall': 0.77692306, 'binary_specificity': 0.90228724, 'binary_f1_score': 0.3873442}
+confusion matrix:
+      0    1
+0  5365  581
+1    58  202
+early stop counter: 1
+val acc:0.904429018497467, best validation acc: 0.9186232686042786, corresponding to test acc:                         0.9142764806747437 / 0.9152433276176453
+after epoch: 8,now: 2024-07-31 20:12:34.718627,epoch time: 0:20:55.309204,used: 2:58:52.014987,model: dset_te_center0_erm_no_git_version_2024md_07md_31_17_13_42_seed_1_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 9
+---- Training Domain: 
+scalar performance:
+{'acc': 0.90455776, 'precision': 0.9052886, 'recall': 0.90457255, 'specificity': 0.90457255, 'f1': 0.904517, 'auroc': 0.9651288, 'binary_precision': 0.92267275, 'binary_recall': 0.8832732, 'binary_specificity': 0.9258719, 'binary_f1_score': 0.90254325}
+confusion matrix:
+       0      1
+0  26654   2134
+1   3365  25463
+---- Validation: 
+scalar performance:
+{'acc': 0.9071505, 'precision': 0.5990339, 'recall': 0.75657797, 'specificity': 0.75657797, 'f1': 0.6325805, 'auroc': 0.8480808, 'binary_precision': 0.21424745, 'binary_recall': 0.5943536, 'binary_specificity': 0.91880226, 'binary_f1_score': 0.31496063}
+confusion matrix:
+       0     1
+0  16600  1467
+1    273   400
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.90686435, 'precision': 0.63616526, 'recall': 0.8520906, 'specificity': 0.8520906, 'f1': 0.6827787, 'auroc': 0.91613626, 'binary_precision': 0.28219178, 'binary_recall': 0.7923077, 'binary_specificity': 0.9118735, 'binary_f1_score': 0.4161616}
+confusion matrix:
+      0    1
+0  5422  524
+1    54  206
+early stop counter: 2
+val acc:0.9071505069732666, best validation acc: 0.9186232686042786, corresponding to test acc:                         0.9142764806747437 / 0.9152433276176453
+after epoch: 9,now: 2024-07-31 20:33:29.965005,epoch time: 0:20:55.246378,used: 3:19:47.261365,model: dset_te_center0_erm_no_git_version_2024md_07md_31_17_13_42_seed_1_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 10
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9080637, 'precision': 0.90901923, 'recall': 0.90808225, 'specificity': 0.90808225, 'f1': 0.90801275, 'auroc': 0.9666931, 'binary_precision': 0.9289803, 'binary_recall': 0.88383627, 'binary_specificity': 0.9323282, 'binary_f1_score': 0.9058462}
+confusion matrix:
+       0      1
+0  26838   1948
+1   3349  25481
+---- Validation: 
+scalar performance:
+{'acc': 0.9068303, 'precision': 0.5999514, 'recall': 0.76141876, 'specificity': 0.76141876, 'f1': 0.6339844, 'auroc': 0.84840715, 'binary_precision': 0.21568628, 'binary_recall': 0.6047548, 'binary_specificity': 0.9180827, 'binary_f1_score': 0.31796876}
+confusion matrix:
+       0     1
+0  16587  1480
+1    266   407
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9081534, 'precision': 0.6381218, 'recall': 0.85460234, 'specificity': 0.85460234, 'f1': 0.68542707, 'auroc': 0.9177585, 'binary_precision': 0.2859116, 'binary_recall': 0.79615384, 'binary_specificity': 0.9130508, 'binary_f1_score': 0.4207317}
+confusion matrix:
+      0    1
+0  5429  517
+1    53  207
+early stop counter: 3
+val acc:0.9068303108215332, best validation acc: 0.9186232686042786, corresponding to test acc:                         0.9142764806747437 / 0.9152433276176453
+after epoch: 10,now: 2024-07-31 20:54:41.307222,epoch time: 0:21:11.342217,used: 3:40:58.603582,model: dset_te_center0_erm_no_git_version_2024md_07md_31_17_13_42_seed_1_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 11
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9105457, 'precision': 0.9110526, 'recall': 0.9105585, 'specificity': 0.9105585, 'f1': 0.91051984, 'auroc': 0.9679265, 'binary_precision': 0.9256715, 'binary_recall': 0.8929203, 'binary_specificity': 0.9281967, 'binary_f1_score': 0.909001}
+confusion matrix:
+       0      1
+0  26720   2067
+1   3087  25742
+---- Validation: 
+scalar performance:
+{'acc': 0.88484526, 'precision': 0.5855835, 'recall': 0.77219003, 'specificity': 0.77219003, 'f1': 0.6130395, 'auroc': 0.8523172, 'binary_precision': 0.18551461, 'binary_recall': 0.6508172, 'binary_specificity': 0.89356285, 'binary_f1_score': 0.28872776}
+confusion matrix:
+       0     1
+0  16144  1923
+1    235   438
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.8830164, 'precision': 0.61497235, 'recall': 0.8525182, 'specificity': 0.8525182, 'f1': 0.65265787, 'auroc': 0.9204067, 'binary_precision': 0.23878923, 'binary_recall': 0.8192308, 'binary_specificity': 0.8858056, 'binary_f1_score': 0.36979166}
+confusion matrix:
+      0    1
+0  5267  679
+1    47  213
+early stop counter: 4
+val acc:0.8848452568054199, best validation acc: 0.9186232686042786, corresponding to test acc:                         0.9142764806747437 / 0.9152433276176453
+after epoch: 11,now: 2024-07-31 21:15:55.505222,epoch time: 0:21:14.198000,used: 4:02:12.801582,model: dset_te_center0_erm_no_git_version_2024md_07md_31_17_13_42_seed_1_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 12
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9158046, 'precision': 0.9167512, 'recall': 0.91582125, 'specificity': 0.91582125, 'f1': 0.91575897, 'auroc': 0.9712211, 'binary_precision': 0.93678725, 'binary_recall': 0.8919107, 'binary_specificity': 0.93973184, 'binary_f1_score': 0.9137983}
+confusion matrix:
+       0      1
+0  27053   1735
+1   3116  25712
+---- Validation: 
+scalar performance:
+{'acc': 0.90149415, 'precision': 0.5965854, 'recall': 0.76723444, 'specificity': 0.76723444, 'f1': 0.6295842, 'auroc': 0.85144866, 'binary_precision': 0.20835406, 'binary_recall': 0.6225854, 'binary_specificity': 0.91188353, 'binary_f1_score': 0.31222057}
+confusion matrix:
+       0     1
+0  16475  1592
+1    254   419
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9055753, 'precision': 0.6357884, 'recall': 0.8569349, 'specificity': 0.8569349, 'f1': 0.6824836, 'auroc': 0.9217729, 'binary_precision': 0.28091398, 'binary_recall': 0.8038462, 'binary_specificity': 0.91002357, 'binary_f1_score': 0.41633466}
+confusion matrix:
+      0    1
+0  5411  535
+1    51  209
+early stop counter: 5
+val acc:0.9014941453933716, best validation acc: 0.9186232686042786, corresponding to test acc:                         0.9142764806747437 / 0.9152433276176453
+after epoch: 12,now: 2024-07-31 21:36:52.343223,epoch time: 0:20:56.838001,used: 4:23:09.639583,model: dset_te_center0_erm_no_git_version_2024md_07md_31_17_13_42_seed_1_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 13
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9151972, 'precision': 0.9166336, 'recall': 0.9152186, 'specificity': 0.9152186, 'f1': 0.9151269, 'auroc': 0.9719847, 'binary_precision': 0.94128054, 'binary_recall': 0.88577473, 'binary_specificity': 0.9446625, 'binary_f1_score': 0.91268456}
+confusion matrix:
+       0      1
+0  27194   1593
+1   3293  25536
+---- Validation: 
+scalar performance:
+{'acc': 0.9002668, 'precision': 0.5959164, 'recall': 0.76874375, 'specificity': 0.76874375, 'f1': 0.6286684, 'auroc': 0.85306394, 'binary_precision': 0.20686275, 'binary_recall': 0.62704307, 'binary_specificity': 0.91044444, 'binary_f1_score': 0.31109473}
+confusion matrix:
+       0     1
+0  16449  1618
+1    251   422
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.90380275, 'precision': 0.6341174, 'recall': 0.8578488, 'specificity': 0.8578488, 'f1': 0.6802939, 'auroc': 0.9230691, 'binary_precision': 0.27741084, 'binary_recall': 0.8076923, 'binary_specificity': 0.90800536, 'binary_f1_score': 0.41297933}
+confusion matrix:
+      0    1
+0  5399  547
+1    50  210
+early stop counter: 6
+val acc:0.9002668261528015, best validation acc: 0.9186232686042786, corresponding to test acc:                         0.9142764806747437 / 0.9152433276176453
+after epoch: 13,now: 2024-07-31 21:57:44.218751,epoch time: 0:20:51.875528,used: 4:44:01.515111,model: dset_te_center0_erm_no_git_version_2024md_07md_31_17_13_42_seed_1_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 14
+---- Training Domain: 
+scalar performance:
+{'acc': 0.91858166, 'precision': 0.919907, 'recall': 0.91860217, 'specificity': 0.91860217, 'f1': 0.91852, 'auroc': 0.97373486, 'binary_precision': 0.9436806, 'binary_recall': 0.8904228, 'binary_specificity': 0.9467815, 'binary_f1_score': 0.91627854}
+confusion matrix:
+       0      1
+0  27255   1532
+1   3159  25670
+---- Validation: 
+scalar performance:
+{'acc': 0.90064037, 'precision': 0.5959294, 'recall': 0.76750696, 'specificity': 0.76750696, 'f1': 0.62867063, 'auroc': 0.85151494, 'binary_precision': 0.20699853, 'binary_recall': 0.6240713, 'binary_specificity': 0.9109426, 'binary_f1_score': 0.31088084}
+confusion matrix:
+       0     1
+0  16458  1609
+1    253   420
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.90702546, 'precision': 0.6375159, 'recall': 0.85769165, 'specificity': 0.85769165, 'f1': 0.68478096, 'auroc': 0.92339903, 'binary_precision': 0.28435373, 'binary_recall': 0.8038462, 'binary_specificity': 0.9115372, 'binary_f1_score': 0.4201005}
+confusion matrix:
+      0    1
+0  5420  526
+1    51  209
+early stop counter: 7
+val acc:0.9006403684616089, best validation acc: 0.9186232686042786, corresponding to test acc:                         0.9142764806747437 / 0.9152433276176453
+after epoch: 14,now: 2024-07-31 22:19:26.386271,epoch time: 0:21:42.167520,used: 5:05:43.682631,model: dset_te_center0_erm_no_git_version_2024md_07md_31_17_13_42_seed_1_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 15
+---- Training Domain: 
+scalar performance:
+{'acc': 0.92285126, 'precision': 0.9239133, 'recall': 0.9228705, 'specificity': 0.9228705, 'f1': 0.92280525, 'auroc': 0.97585905, 'binary_precision': 0.94532305, 'binary_recall': 0.89774543, 'binary_specificity': 0.94799554, 'binary_f1_score': 0.92092013}
+confusion matrix:
+       0      1
+0  27289   1497
+1   2948  25882
+---- Validation: 
+scalar performance:
+{'acc': 0.8938634, 'precision': 0.59130156, 'recall': 0.7704297, 'specificity': 0.7704297, 'f1': 0.6219695, 'auroc': 0.8525087, 'binary_precision': 0.19733211, 'binary_recall': 0.63744426, 'binary_specificity': 0.9034151, 'binary_f1_score': 0.30136988}
+confusion matrix:
+       0     1
+0  16322  1745
+1    244   429
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.90041894, 'precision': 0.63150764, 'recall': 0.8615999, 'specificity': 0.8615999, 'f1': 0.67684144, 'auroc': 0.92411125, 'binary_precision': 0.27168366, 'binary_recall': 0.8192308, 'binary_specificity': 0.90396905, 'binary_f1_score': 0.40804598}
+confusion matrix:
+      0    1
+0  5375  571
+1    47  213
+early stop counter: 8
+val acc:0.8938633799552917, best validation acc: 0.9186232686042786, corresponding to test acc:                         0.9142764806747437 / 0.9152433276176453
+after epoch: 15,now: 2024-07-31 22:40:52.351812,epoch time: 0:21:25.965541,used: 5:27:09.648172,model: dset_te_center0_erm_no_git_version_2024md_07md_31_17_13_42_seed_1_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+Experiment finished at epoch: 15 with time: 5:27:09.648172 at 2024-07-31 22:40:52.351812
+persisted model performance metric: 
+
+scalar performance:
+{'acc': 0.9142765, 'precision': 0.63775766, 'recall': 0.81917906, 'specificity': 0.81917906, 'f1': 0.6826378, 'auroc': 0.90673107, 'binary_precision': 0.28881988, 'binary_recall': 0.7153846, 'binary_specificity': 0.92297345, 'binary_f1_score': 0.41150442}
+confusion matrix:
+      0    1
+0  5488  458
+1    74  186
+oracle model performance metric: 
+
+scalar performance:
+{'acc': 0.9152433, 'precision': 0.62714756, 'recall': 0.7700309, 'specificity': 0.7700309, 'f1': 0.66565347, 'auroc': 0.89255995, 'binary_precision': 0.27226028, 'binary_recall': 0.61153847, 'binary_specificity': 0.92852336, 'binary_f1_score': 0.37677726}
+confusion matrix:
+      0    1
+0  5521  425
+1   101  159
+results aggregation path: zoutput/benchmarks/CAMELYONbalancednew_center0_dinov2small_erm_irm_nofreeze_halffreeze_allfreeze_2024-07-31_03-06-46/rule_results/19.csv
+confusion matrix saved in file: zoutput/benchmarks/CAMELYONbalancednew_center0_dinov2small_erm_irm_nofreeze_halffreeze_allfreeze_2024-07-31_03-06-46/confusion_matrix/19.csv.txt
+before torch memory clean up
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      | 190959 KiB | 461507 KiB | 528408 GiB | 528408 GiB |
+|       from large pool | 173494 KiB | 427880 KiB | 517550 GiB | 517550 GiB |
+|       from small pool |  17465 KiB |  38507 KiB |  10858 GiB |  10858 GiB |
+|---------------------------------------------------------------------------|
+| Active memory         | 190959 KiB | 461507 KiB | 528408 GiB | 528408 GiB |
+|       from large pool | 173494 KiB | 427880 KiB | 517550 GiB | 517550 GiB |
+|       from small pool |  17465 KiB |  38507 KiB |  10858 GiB |  10858 GiB |
+|---------------------------------------------------------------------------|
+| Requested memory      | 189280 KiB | 457564 KiB | 528377 GiB | 528377 GiB |
+|       from large pool | 172814 KiB | 424940 KiB | 517543 GiB | 517543 GiB |
+|       from small pool |  16466 KiB |  37503 KiB |  10833 GiB |  10833 GiB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   | 526336 KiB | 526336 KiB |    786 MiB | 278528 KiB |
+|       from large pool | 487424 KiB | 487424 KiB |    732 MiB | 262144 KiB |
+|       from small pool |  38912 KiB |  43008 KiB |     54 MiB |  16384 KiB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |  40464 KiB |  87761 KiB | 287225 GiB | 287225 GiB |
+|       from large pool |  31306 KiB |  79704 KiB | 276345 GiB | 276345 GiB |
+|       from small pool |   9158 KiB |  18293 KiB |  10879 GiB |  10879 GiB |
+|---------------------------------------------------------------------------|
+| Allocations           |    2942    |    7685    |  122348 K  |  122346 K  |
+|       from large pool |      76    |     158    |   51012 K  |   51012 K  |
+|       from small pool |    2866    |    7607    |   71336 K  |   71333 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |    2942    |    7685    |  122348 K  |  122346 K  |
+|       from large pool |      76    |     158    |   51012 K  |   51012 K  |
+|       from small pool |    2866    |    7607    |   71336 K  |   71333 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |      41    |      42    |      60    |      19    |
+|       from large pool |      22    |      22    |      33    |      11    |
+|       from small pool |      19    |      21    |      27    |       8    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |      33    |    3620    |   63853 K  |   63853 K  |
+|       from large pool |      10    |      23    |   31620 K  |   31620 K  |
+|       from small pool |      23    |    3610    |   32233 K  |   32233 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+after torch memory clean up
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |  17088 KiB | 461507 KiB | 528408 GiB | 528408 GiB |
+|       from large pool |  17088 KiB | 427880 KiB | 517550 GiB | 517550 GiB |
+|       from small pool |      0 KiB |  38507 KiB |  10858 GiB |  10858 GiB |
+|---------------------------------------------------------------------------|
+| Active memory         |  17088 KiB | 461507 KiB | 528408 GiB | 528408 GiB |
+|       from large pool |  17088 KiB | 427880 KiB | 517550 GiB | 517550 GiB |
+|       from small pool |      0 KiB |  38507 KiB |  10858 GiB |  10858 GiB |
+|---------------------------------------------------------------------------|
+| Requested memory      |  16640 KiB | 457564 KiB | 528377 GiB | 528377 GiB |
+|       from large pool |  16640 KiB | 424940 KiB | 517543 GiB | 517543 GiB |
+|       from small pool |      0 KiB |  37503 KiB |  10833 GiB |  10833 GiB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   | 231424 KiB | 526336 KiB |    786 MiB | 573440 KiB |
+|       from large pool | 204800 KiB | 487424 KiB |    732 MiB | 544768 KiB |
+|       from small pool |  26624 KiB |  43008 KiB |     54 MiB |  28672 KiB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |  23872 KiB |  87761 KiB | 287225 GiB | 287225 GiB |
+|       from large pool |  23872 KiB |  79704 KiB | 276345 GiB | 276345 GiB |
+|       from small pool |      0 KiB |  21236 KiB |  10879 GiB |  10879 GiB |
+|---------------------------------------------------------------------------|
+| Allocations           |       2    |    7685    |  122348 K  |  122348 K  |
+|       from large pool |       2    |     158    |   51012 K  |   51012 K  |
+|       from small pool |       0    |    7607    |   71336 K  |   71336 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |       2    |    7685    |  122348 K  |  122348 K  |
+|       from large pool |       2    |     158    |   51012 K  |   51012 K  |
+|       from small pool |       0    |    7607    |   71336 K  |   71336 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |      23    |      42    |      60    |      37    |
+|       from large pool |      10    |      22    |      33    |      23    |
+|       from small pool |      13    |      21    |      27    |      14    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |       3    |    3620    |   63855 K  |   63855 K  |
+|       from large pool |       3    |      23    |   31620 K  |   31620 K  |
+|       from small pool |       0    |    3610    |   32234 K  |   32234 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+before experiment starts
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |  17088 KiB | 461507 KiB | 528408 GiB | 528408 GiB |
+|       from large pool |  17088 KiB | 427880 KiB | 517550 GiB | 517550 GiB |
+|       from small pool |      0 KiB |  38507 KiB |  10858 GiB |  10858 GiB |
+|---------------------------------------------------------------------------|
+| Active memory         |  17088 KiB | 461507 KiB | 528408 GiB | 528408 GiB |
+|       from large pool |  17088 KiB | 427880 KiB | 517550 GiB | 517550 GiB |
+|       from small pool |      0 KiB |  38507 KiB |  10858 GiB |  10858 GiB |
+|---------------------------------------------------------------------------|
+| Requested memory      |  16640 KiB | 457564 KiB | 528377 GiB | 528377 GiB |
+|       from large pool |  16640 KiB | 424940 KiB | 517543 GiB | 517543 GiB |
+|       from small pool |      0 KiB |  37503 KiB |  10833 GiB |  10833 GiB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   | 231424 KiB | 526336 KiB |    786 MiB | 573440 KiB |
+|       from large pool | 204800 KiB | 487424 KiB |    732 MiB | 544768 KiB |
+|       from small pool |  26624 KiB |  43008 KiB |     54 MiB |  28672 KiB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |  23872 KiB |  87761 KiB | 287225 GiB | 287225 GiB |
+|       from large pool |  23872 KiB |  79704 KiB | 276345 GiB | 276345 GiB |
+|       from small pool |      0 KiB |  21236 KiB |  10879 GiB |  10879 GiB |
+|---------------------------------------------------------------------------|
+| Allocations           |       2    |    7685    |  122348 K  |  122348 K  |
+|       from large pool |       2    |     158    |   51012 K  |   51012 K  |
+|       from small pool |       0    |    7607    |   71336 K  |   71336 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |       2    |    7685    |  122348 K  |  122348 K  |
+|       from large pool |       2    |     158    |   51012 K  |   51012 K  |
+|       from small pool |       0    |    7607    |   71336 K  |   71336 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |      23    |      42    |      60    |      37    |
+|       from large pool |      10    |      22    |      33    |      23    |
+|       from small pool |      13    |      21    |      27    |      14    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |       3    |    3620    |   63855 K  |   63855 K  |
+|       from large pool |       3    |      23    |   31620 K  |   31620 K  |
+|       from small pool |       0    |    3610    |   32234 K  |   32234 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+
+overriding args.task None to dset
+
+
+using device: cuda:0
+
+Using cache found in /home/aih/gizem.mert/.cache/torch/hub/facebookresearch_dinov2_main
+/home/aih/gizem.mert/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+/home/aih/gizem.mert/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+fatal: detected dubious ownership in repository at '/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+
+
+
+!!!: not committed yet
+/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab/domainlab/utils/get_git_tag.py:16: UserWarning: !!!: not committed yet
+  warnings.warn("!!!: not committed yet")
+
+
+
+warning: Not a git repository. Use --no-index to compare two paths outside a working tree
+usage: git diff --no-index [<options>] <path> <path>
+
+Diff output format options
+    -p, --patch           generate patch
+    -s, --no-patch        suppress diff output
+    -u                    generate patch
+    -U, --unified[=<n>]   generate diffs with <n> lines context
+    -W, --function-context
+                          generate diffs with <n> lines context
+    --raw                 generate the diff in raw format
+    --patch-with-raw      synonym for '-p --raw'
+    --patch-with-stat     synonym for '-p --stat'
+    --numstat             machine friendly --stat
+    --shortstat           output only the last line of --stat
+    -X, --dirstat[=<param1,param2>...]
+                          output the distribution of relative amount of changes for each sub-directory
+    --cumulative          synonym for --dirstat=cumulative
+    --dirstat-by-file[=<param1,param2>...]
+                          synonym for --dirstat=files,param1,param2...
+    --check               warn if changes introduce conflict markers or whitespace errors
+    --summary             condensed summary such as creations, renames and mode changes
+    --name-only           show only names of changed files
+    --name-status         show only names and status of changed files
+    --stat[=<width>[,<name-width>[,<count>]]]
+                          generate diffstat
+    --stat-width <width>  generate diffstat with a given width
+    --stat-name-width <width>
+                          generate diffstat with a given name width
+    --stat-graph-width <width>
+                          generate diffstat with a given graph width
+    --stat-count <count>  generate diffstat with limited lines
+    --compact-summary     generate compact summary in diffstat
+    --binary              output a binary diff that can be applied
+    --full-index          show full pre- and post-image object names on the "index" lines
+    --color[=<when>]      show colored diff
+    --ws-error-highlight <kind>
+                          highlight whitespace errors in the 'context', 'old' or 'new' lines in the diff
+    -z                    do not munge pathnames and use NULs as output field terminators in --raw or --numstat
+    --abbrev[=<n>]        use <n> digits to display object names
+    --src-prefix <prefix>
+                          show the given source prefix instead of "a/"
+    --dst-prefix <prefix>
+                          show the given destination prefix instead of "b/"
+    --line-prefix <prefix>
+                          prepend an additional prefix to every line of output
+    --no-prefix           do not show any source or destination prefix
+    --inter-hunk-context <n>
+                          show context between diff hunks up to the specified number of lines
+    --output-indicator-new <char>
+                          specify the character to indicate a new line instead of '+'
+    --output-indicator-old <char>
+                          specify the character to indicate an old line instead of '-'
+    --output-indicator-context <char>
+                          specify the character to indicate a context instead of ' '
+
+Diff rename options
+    -B, --break-rewrites[=<n>[/<m>]]
+                          break complete rewrite changes into pairs of delete and create
+    -M, --find-renames[=<n>]
+                          detect renames
+    -D, --irreversible-delete
+                          omit the preimage for deletes
+    -C, --find-copies[=<n>]
+                          detect copies
+    --find-copies-harder  use unmodified files as source to find copies
+    --no-renames          disable rename detection
+    --rename-empty        use empty blobs as rename source
+    --follow              continue listing the history of a file beyond renames
+    -l <n>                prevent rename/copy detection if the number of rename/copy targets exceeds given limit
+
+Diff algorithm options
+    --minimal             produce the smallest possible diff
+    -w, --ignore-all-space
+                          ignore whitespace when comparing lines
+    -b, --ignore-space-change
+                          ignore changes in amount of whitespace
+    --ignore-space-at-eol
+                          ignore changes in whitespace at EOL
+    --ignore-cr-at-eol    ignore carrier-return at the end of line
+    --ignore-blank-lines  ignore changes whose lines are all blank
+    -I, --ignore-matching-lines <regex>
+                          ignore changes whose all lines match <regex>
+    --indent-heuristic    heuristic to shift diff hunk boundaries for easy reading
+    --patience            generate diff using the "patience diff" algorithm
+    --histogram           generate diff using the "histogram diff" algorithm
+    --diff-algorithm <algorithm>
+                          choose a diff algorithm
+    --anchored <text>     generate diff using the "anchored diff" algorithm
+    --word-diff[=<mode>]  show word diff, using <mode> to delimit changed words
+    --word-diff-regex <regex>
+                          use <regex> to decide what a word is
+    --color-words[=<regex>]
+                          equivalent to --word-diff=color --word-diff-regex=<regex>
+    --color-moved[=<mode>]
+                          moved lines of code are colored differently
+    --color-moved-ws <mode>
+                          how white spaces are ignored in --color-moved
+
+Other diff options
+    --relative[=<prefix>]
+                          when run from subdir, exclude changes outside and show relative paths
+    -a, --text            treat all files as text
+    -R                    swap two inputs, reverse the diff
+    --exit-code           exit with 1 if there were differences, 0 otherwise
+    --quiet               disable all output of the program
+    --ext-diff            allow an external diff helper to be executed
+    --textconv            run external text conversion filters when comparing binary files
+    --ignore-submodules[=<when>]
+                          ignore changes to submodules in the diff generation
+    --submodule[=<format>]
+                          specify how differences in submodules are shown
+    --ita-invisible-in-index
+                          hide 'git add -N' entries from the index
+    --ita-visible-in-index
+                          treat 'git add -N' entries as real in the index
+    -S <string>           look for differences that change the number of occurrences of the specified string
+    -G <regex>            look for differences that change the number of occurrences of the specified regex
+    --pickaxe-all         show all changes in the changeset with -S or -G
+    --pickaxe-regex       treat <string> in -S as extended POSIX regular expression
+    -O <file>             control the order in which files appear in the output
+    --rotate-to <path>    show the change in the specified path first
+    --skip-to <path>      skip the output to the specified path
+    --find-object <object-id>
+                          look for differences that change the number of occurrences of the specified object
+    --diff-filter [(A|C|D|M|R|T|U|X|B)...[*]]
+                          select files by diff type
+    --output <file>       output to a specific file
+
+not in a git repository
+/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab/domainlab/utils/get_git_tag.py:26: UserWarning: not in a git repository
+  warnings.warn("not in a git repository")
+fatal: detected dubious ownership in repository at '/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+not in a git repository
+/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab/domainlab/utils/get_git_tag.py:38: UserWarning: not in a git repository
+  warnings.warn("not in a git repository")
+model name: dset_te_center0_erm_no_git_version_2024md_07md_31_22_52_57_seed_2_23775395
+
+ Experiment start at: 2024-07-31 22:52:57.924725
+/home/aih/gizem.mert/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Plan failed with a cudnnException: CUDNN_BACKEND_EXECUTION_PLAN_DESCRIPTOR: cudnnFinalize Descriptor Failed cudnn_status: CUDNN_STATUS_NOT_SUPPORTED (Triggered internally at /opt/conda/conda-bld/pytorch_1712608935911/work/aten/src/ATen/native/cudnn/Conv_v8.cpp:919.)
+  return F.conv2d(input, weight, bias, self.stride,
+before training, model accuracy: 0.754768431186676
+epoch: 1
+---- Training Domain: 
+scalar performance:
+{'acc': 0.7360387, 'precision': 0.7361655, 'recall': 0.7360359, 'specificity': 0.7360359, 'f1': 0.73600173, 'auroc': 0.81198716, 'binary_precision': 0.73075247, 'binary_recall': 0.74769366, 'binary_specificity': 0.7243781, 'binary_f1_score': 0.73912597}
+confusion matrix:
+       0      1
+0  21112   8033
+1   7357  21802
+---- Validation: 
+scalar performance:
+{'acc': 0.6326107, 'precision': 0.5245018, 'recall': 0.68655014, 'specificity': 0.68655014, 'f1': 0.4415832, 'auroc': 0.754225, 'binary_precision': 0.062300097, 'binary_recall': 0.74418604, 'binary_specificity': 0.6289142, 'binary_f1_score': 0.114974976}
+confusion matrix:
+       0     1
+0  11428  6743
+1    154   448
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.35774964, 'precision': 0.50218946, 'recall': 0.5132452, 'specificity': 0.5132452, 'f1': 0.2919447, 'auroc': 0.4893645, 'binary_precision': 0.04029304, 'binary_recall': 0.6818182, 'binary_specificity': 0.34467232, 'binary_f1_score': 0.076089464}
+confusion matrix:
+      0     1
+0  2067  3930
+1    77   165
+new oracle model saved
+better model found
+persisted
+after epoch: 1,now: 2024-07-31 23:14:41.957849,epoch time: 0:21:44.033124,used: 0:21:44.033124,model: dset_te_center0_erm_no_git_version_2024md_07md_31_22_52_57_seed_2_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 2
+---- Training Domain: 
+scalar performance:
+{'acc': 0.81548434, 'precision': 0.8158672, 'recall': 0.8154874, 'specificity': 0.8154874, 'f1': 0.8154294, 'auroc': 0.89372206, 'binary_precision': 0.82690734, 'binary_recall': 0.7980931, 'binary_specificity': 0.8328816, 'binary_f1_score': 0.8122447}
+confusion matrix:
+       0      1
+0  24276   4871
+1   5887  23270
+---- Validation: 
+scalar performance:
+{'acc': 0.73919994, 'precision': 0.53388005, 'recall': 0.7167159, 'specificity': 0.7167159, 'f1': 0.49583244, 'auroc': 0.7820237, 'binary_precision': 0.08131825, 'binary_recall': 0.692691, 'binary_specificity': 0.7407407, 'binary_f1_score': 0.14554973}
+confusion matrix:
+       0     1
+0  13460  4711
+1    185   417
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.570444, 'precision': 0.5169311, 'recall': 0.6119875, 'specificity': 0.6119875, 'f1': 0.4116851, 'auroc': 0.633584, 'binary_precision': 0.057692308, 'binary_recall': 0.6570248, 'binary_specificity': 0.56695014, 'binary_f1_score': 0.10607071}
+confusion matrix:
+      0     1
+0  3400  2597
+1    83   159
+new oracle model saved
+better model found
+persisted
+after epoch: 2,now: 2024-07-31 23:35:52.578188,epoch time: 0:21:10.620339,used: 0:42:54.653463,model: dset_te_center0_erm_no_git_version_2024md_07md_31_22_52_57_seed_2_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 3
+---- Training Domain: 
+scalar performance:
+{'acc': 0.84580815, 'precision': 0.8460059, 'recall': 0.8458098, 'specificity': 0.8458098, 'f1': 0.8457866, 'auroc': 0.92208505, 'binary_precision': 0.85431165, 'binary_recall': 0.83385926, 'binary_specificity': 0.85776037, 'binary_f1_score': 0.8439616}
+confusion matrix:
+       0      1
+0  25002   4146
+1   4844  24312
+---- Validation: 
+scalar performance:
+{'acc': 0.77030843, 'precision': 0.5393839, 'recall': 0.73278546, 'specificity': 0.73278546, 'f1': 0.5144906, 'auroc': 0.80031395, 'binary_precision': 0.09176937, 'binary_recall': 0.692691, 'binary_specificity': 0.77287984, 'binary_f1_score': 0.16206762}
+confusion matrix:
+       0     1
+0  14044  4127
+1    185   417
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.6432121, 'precision': 0.5267657, 'recall': 0.66768444, 'specificity': 0.66768444, 'f1': 0.45333093, 'auroc': 0.7136358, 'binary_precision': 0.072413795, 'binary_recall': 0.6942149, 'binary_specificity': 0.64115393, 'binary_f1_score': 0.13114753}
+confusion matrix:
+      0     1
+0  3845  2152
+1    74   168
+new oracle model saved
+better model found
+persisted
+after epoch: 3,now: 2024-07-31 23:57:44.540656,epoch time: 0:21:51.962468,used: 1:04:46.615931,model: dset_te_center0_erm_no_git_version_2024md_07md_31_22_52_57_seed_2_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 4
+---- Training Domain: 
+scalar performance:
+{'acc': 0.86434895, 'precision': 0.8645986, 'recall': 0.8643521, 'specificity': 0.8643521, 'f1': 0.8643265, 'auroc': 0.93748415, 'binary_precision': 0.8741988, 'binary_recall': 0.85126376, 'binary_specificity': 0.8774404, 'binary_f1_score': 0.86257887}
+confusion matrix:
+       0      1
+0  25573   3572
+1   4337  24822
+---- Validation: 
+scalar performance:
+{'acc': 0.81121826, 'precision': 0.5459015, 'recall': 0.7354479, 'specificity': 0.7354479, 'f1': 0.5376001, 'auroc': 0.811414, 'binary_precision': 0.105630025, 'binary_recall': 0.65448505, 'binary_specificity': 0.8164108, 'binary_f1_score': 0.18190213}
+confusion matrix:
+       0     1
+0  14835  3336
+1    208   394
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.7065235, 'precision': 0.53505963, 'recall': 0.70061755, 'specificity': 0.70061755, 'f1': 0.48873785, 'auroc': 0.75854456, 'binary_precision': 0.087272726, 'binary_recall': 0.6942149, 'binary_specificity': 0.70702016, 'binary_f1_score': 0.15505306}
+confusion matrix:
+      0     1
+0  4240  1757
+1    74   168
+new oracle model saved
+better model found
+persisted
+after epoch: 4,now: 2024-08-01 00:19:37.888142,epoch time: 0:21:53.347486,used: 1:26:39.963417,model: dset_te_center0_erm_no_git_version_2024md_07md_31_22_52_57_seed_2_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 5
+---- Training Domain: 
+scalar performance:
+{'acc': 0.87590903, 'precision': 0.876534, 'recall': 0.87591183, 'specificity': 0.87591183, 'f1': 0.8758581, 'auroc': 0.9459599, 'binary_precision': 0.89190835, 'binary_recall': 0.85553575, 'binary_specificity': 0.8962879, 'binary_f1_score': 0.8733435}
+confusion matrix:
+       0      1
+0  26125   3023
+1   4212  24944
+---- Validation: 
+scalar performance:
+{'acc': 0.8293826, 'precision': 0.5504976, 'recall': 0.7400127, 'specificity': 0.7400127, 'f1': 0.5498014, 'auroc': 0.8201532, 'binary_precision': 0.114894874, 'binary_recall': 0.64451826, 'binary_specificity': 0.83550715, 'binary_f1_score': 0.19502386}
+confusion matrix:
+       0     1
+0  15182  2989
+1    214   388
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.74338835, 'precision': 0.54312396, 'recall': 0.7297075, 'specificity': 0.7297075, 'f1': 0.512841, 'auroc': 0.79112214, 'binary_precision': 0.101466276, 'binary_recall': 0.71487606, 'binary_specificity': 0.74453896, 'binary_f1_score': 0.1777093}
+confusion matrix:
+      0     1
+0  4465  1532
+1    69   173
+new oracle model saved
+better model found
+persisted
+after epoch: 5,now: 2024-08-01 00:41:07.461434,epoch time: 0:21:29.573292,used: 1:48:09.536709,model: dset_te_center0_erm_no_git_version_2024md_07md_31_22_52_57_seed_2_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 6
+---- Training Domain: 
+scalar performance:
+{'acc': 0.88542813, 'precision': 0.8856364, 'recall': 0.88543093, 'specificity': 0.88543093, 'f1': 0.88541317, 'auroc': 0.9529736, 'binary_precision': 0.8946592, 'binary_recall': 0.8737954, 'binary_specificity': 0.8970664, 'binary_f1_score': 0.8841043}
+confusion matrix:
+       0      1
+0  26145   3000
+1   3680  25479
+---- Validation: 
+scalar performance:
+{'acc': 0.8275182, 'precision': 0.55176514, 'recall': 0.74948925, 'specificity': 0.74948925, 'f1': 0.5509377, 'auroc': 0.8283843, 'binary_precision': 0.11663758, 'binary_recall': 0.66611296, 'binary_specificity': 0.83286554, 'binary_f1_score': 0.19851485}
+confusion matrix:
+       0     1
+0  15134  3037
+1    201   401
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.747716, 'precision': 0.54772854, 'recall': 0.75376874, 'specificity': 0.75376874, 'f1': 0.52005136, 'auroc': 0.81688434, 'binary_precision': 0.10823529, 'binary_recall': 0.76033056, 'binary_specificity': 0.7472069, 'binary_f1_score': 0.18949535}
+confusion matrix:
+      0     1
+0  4481  1516
+1    58   184
+new oracle model saved
+early stop counter: 1
+val acc:0.8275182247161865, best validation acc: 0.829382598400116, corresponding to test acc:                         0.7433883547782898 / 0.7477160096168518
+after epoch: 6,now: 2024-08-01 01:02:27.454529,epoch time: 0:21:19.993095,used: 2:09:29.529804,model: dset_te_center0_erm_no_git_version_2024md_07md_31_22_52_57_seed_2_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 7
+---- Training Domain: 
+scalar performance:
+{'acc': 0.8901276, 'precision': 0.89168835, 'recall': 0.890133, 'specificity': 0.890133, 'f1': 0.89001906, 'auroc': 0.95701885, 'binary_precision': 0.91645616, 'binary_recall': 0.85855883, 'binary_specificity': 0.9217072, 'binary_f1_score': 0.8865633}
+confusion matrix:
+       0      1
+0  26865   2282
+1   4124  25033
+---- Validation: 
+scalar performance:
+{'acc': 0.8652853, 'precision': 0.56266, 'recall': 0.746513, 'specificity': 0.746513, 'f1': 0.576996, 'auroc': 0.834291, 'binary_precision': 0.13954358, 'binary_recall': 0.6196013, 'binary_specificity': 0.8734247, 'binary_f1_score': 0.22778624}
+confusion matrix:
+       0     1
+0  15871  2300
+1    229   373
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.80365443, 'precision': 0.5599369, 'recall': 0.7709702, 'specificity': 0.7709702, 'f1': 0.55637884, 'auroc': 0.8353908, 'binary_precision': 0.13293503, 'binary_recall': 0.7355372, 'binary_specificity': 0.8064032, 'binary_f1_score': 0.22517394}
+confusion matrix:
+      0     1
+0  4836  1161
+1    64   178
+new oracle model saved
+better model found
+persisted
+after epoch: 7,now: 2024-08-01 01:23:59.010093,epoch time: 0:21:31.555564,used: 2:31:01.085368,model: dset_te_center0_erm_no_git_version_2024md_07md_31_22_52_57_seed_2_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 8
+---- Training Domain: 
+scalar performance:
+{'acc': 0.8974513, 'precision': 0.89835846, 'recall': 0.89745533, 'specificity': 0.89745533, 'f1': 0.8973935, 'auroc': 0.9606838, 'binary_precision': 0.917411, 'binary_recall': 0.87358093, 'binary_specificity': 0.9213298, 'binary_f1_score': 0.8949596}
+confusion matrix:
+       0      1
+0  26854   2293
+1   3686  25471
+---- Validation: 
+scalar performance:
+{'acc': 0.8525542, 'precision': 0.55918264, 'recall': 0.75198233, 'specificity': 0.75198233, 'f1': 0.5687773, 'auroc': 0.83894646, 'binary_precision': 0.13188307, 'binary_recall': 0.64451826, 'binary_specificity': 0.85944635, 'binary_f1_score': 0.21896161}
+confusion matrix:
+       0     1
+0  15617  2554
+1    214   388
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.786344, 'precision': 0.55734795, 'recall': 0.77584493, 'specificity': 0.77584493, 'f1': 0.5467757, 'auroc': 0.84879625, 'binary_precision': 0.1266256, 'binary_recall': 0.7644628, 'binary_specificity': 0.787227, 'binary_f1_score': 0.21726365}
+confusion matrix:
+      0     1
+0  4721  1276
+1    57   185
+early stop counter: 1
+val acc:0.852554202079773, best validation acc: 0.8652852773666382, corresponding to test acc:                         0.8036544322967529 / 0.8036544322967529
+after epoch: 8,now: 2024-08-01 01:45:13.346598,epoch time: 0:21:14.336505,used: 2:52:15.421873,model: dset_te_center0_erm_no_git_version_2024md_07md_31_22_52_57_seed_2_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 9
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9024252, 'precision': 0.9032579, 'recall': 0.90242994, 'specificity': 0.90242994, 'f1': 0.9023756, 'auroc': 0.9640802, 'binary_precision': 0.92163414, 'binary_recall': 0.87969, 'binary_specificity': 0.9251698, 'binary_f1_score': 0.9001737}
+confusion matrix:
+       0      1
+0  26965   2181
+1   3508  25650
+---- Validation: 
+scalar performance:
+{'acc': 0.8473339, 'precision': 0.55899626, 'recall': 0.75972533, 'specificity': 0.75972533, 'f1': 0.56702507, 'auroc': 0.8425354, 'binary_precision': 0.1307893, 'binary_recall': 0.66611296, 'binary_specificity': 0.85333776, 'binary_f1_score': 0.21864776}
+confusion matrix:
+       0     1
+0  15506  2665
+1    201   401
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.7821766, 'precision': 0.5576247, 'recall': 0.7816081, 'specificity': 0.7816081, 'f1': 0.54554605, 'auroc': 0.8590418, 'binary_precision': 0.1264214, 'binary_recall': 0.78099173, 'binary_specificity': 0.7822244, 'binary_f1_score': 0.21761659}
+confusion matrix:
+      0     1
+0  4691  1306
+1    53   189
+early stop counter: 2
+val acc:0.8473339080810547, best validation acc: 0.8652852773666382, corresponding to test acc:                         0.8036544322967529 / 0.8036544322967529
+after epoch: 9,now: 2024-08-01 02:06:18.613686,epoch time: 0:21:05.267088,used: 3:13:20.688961,model: dset_te_center0_erm_no_git_version_2024md_07md_31_22_52_57_seed_2_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 10
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9084454, 'precision': 0.90908206, 'recall': 0.9084488, 'specificity': 0.9084488, 'f1': 0.90841025, 'auroc': 0.96692896, 'binary_precision': 0.92526335, 'binary_recall': 0.88870597, 'binary_specificity': 0.9281916, 'binary_f1_score': 0.9066163}
+confusion matrix:
+       0      1
+0  27054   2093
+1   3245  25912
+---- Validation: 
+scalar performance:
+{'acc': 0.8442444, 'precision': 0.5585071, 'recall': 0.7621447, 'specificity': 0.7621447, 'f1': 0.56543076, 'auroc': 0.84586227, 'binary_precision': 0.12954691, 'binary_recall': 0.6744186, 'binary_specificity': 0.8498707, 'binary_f1_score': 0.21734476}
+confusion matrix:
+       0     1
+0  15443  2728
+1    196   406
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.78201634, 'precision': 0.5596879, 'recall': 0.79342115, 'specificity': 0.79342115, 'f1': 0.548043, 'auroc': 0.86730695, 'binary_precision': 0.12931034, 'binary_recall': 0.8057851, 'binary_specificity': 0.7810572, 'binary_f1_score': 0.22285715}
+confusion matrix:
+      0     1
+0  4684  1313
+1    47   195
+early stop counter: 3
+val acc:0.8442444205284119, best validation acc: 0.8652852773666382, corresponding to test acc:                         0.8036544322967529 / 0.8036544322967529
+after epoch: 10,now: 2024-08-01 02:28:06.561473,epoch time: 0:21:47.947787,used: 3:35:08.636748,model: dset_te_center0_erm_no_git_version_2024md_07md_31_22_52_57_seed_2_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 11
+---- Training Domain: 
+scalar performance:
+{'acc': 0.90906286, 'precision': 0.9095584, 'recall': 0.90906584, 'specificity': 0.90906584, 'f1': 0.9090357, 'auroc': 0.96689194, 'binary_precision': 0.9238478, 'binary_recall': 0.8916555, 'binary_specificity': 0.9264761, 'binary_f1_score': 0.9074662}
+confusion matrix:
+       0      1
+0  27004   2143
+1   3159  25998
+---- Validation: 
+scalar performance:
+{'acc': 0.8405689, 'precision': 0.55957747, 'recall': 0.7738978, 'specificity': 0.7738978, 'f1': 0.5657876, 'auroc': 0.8489183, 'binary_precision': 0.13067655, 'binary_recall': 0.7026578, 'binary_specificity': 0.84513783, 'binary_f1_score': 0.22036989}
+confusion matrix:
+       0     1
+0  15357  2814
+1    179   423
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.7815355, 'precision': 0.5599053, 'recall': 0.79515374, 'specificity': 0.79515374, 'f1': 0.5481259, 'auroc': 0.87460744, 'binary_precision': 0.12954395, 'binary_recall': 0.80991733, 'binary_specificity': 0.7803902, 'binary_f1_score': 0.2233618}
+confusion matrix:
+      0     1
+0  4680  1317
+1    46   196
+early stop counter: 4
+val acc:0.8405689001083374, best validation acc: 0.8652852773666382, corresponding to test acc:                         0.8036544322967529 / 0.8036544322967529
+after epoch: 11,now: 2024-08-01 02:49:36.203119,epoch time: 0:21:29.641646,used: 3:56:38.278394,model: dset_te_center0_erm_no_git_version_2024md_07md_31_22_52_57_seed_2_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 12
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9128533, 'precision': 0.9134193, 'recall': 0.9128572, 'specificity': 0.9128572, 'f1': 0.91282403, 'auroc': 0.9695373, 'binary_precision': 0.9287673, 'binary_recall': 0.8943343, 'binary_specificity': 0.93138, 'binary_f1_score': 0.9112257}
+confusion matrix:
+       0      1
+0  27146   2000
+1   3081  26077
+---- Validation: 
+scalar performance:
+{'acc': 0.85042346, 'precision': 0.5614983, 'recall': 0.7677457, 'specificity': 0.7677457, 'f1': 0.57140493, 'auroc': 0.84997714, 'binary_precision': 0.13525133, 'binary_recall': 0.679402, 'binary_specificity': 0.85608935, 'binary_f1_score': 0.22559294}
+confusion matrix:
+       0     1
+0  15556  2615
+1    193   409
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.79820484, 'precision': 0.564433, 'recall': 0.80184203, 'specificity': 0.80184203, 'f1': 0.56012255, 'auroc': 0.87847364, 'binary_precision': 0.13859275, 'binary_recall': 0.8057851, 'binary_specificity': 0.79789895, 'binary_f1_score': 0.23650697}
+confusion matrix:
+      0     1
+0  4785  1212
+1    47   195
+early stop counter: 5
+val acc:0.8504234552383423, best validation acc: 0.8652852773666382, corresponding to test acc:                         0.8036544322967529 / 0.8036544322967529
+after epoch: 12,now: 2024-08-01 03:11:28.606437,epoch time: 0:21:52.403318,used: 4:18:30.681712,model: dset_te_center0_erm_no_git_version_2024md_07md_31_22_52_57_seed_2_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 13
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9148772, 'precision': 0.9161073, 'recall': 0.9148818, 'specificity': 0.9148818, 'f1': 0.91481483, 'auroc': 0.9712969, 'binary_precision': 0.93877405, 'binary_recall': 0.8876771, 'binary_specificity': 0.94208664, 'binary_f1_score': 0.9125108}
+confusion matrix:
+       0      1
+0  27459   1688
+1   3275  25882
+---- Validation: 
+scalar performance:
+{'acc': 0.86805516, 'precision': 0.56768346, 'recall': 0.76561093, 'specificity': 0.76561093, 'f1': 0.58477604, 'auroc': 0.8513062, 'binary_precision': 0.14821763, 'binary_recall': 0.65614617, 'binary_specificity': 0.8750757, 'binary_f1_score': 0.24181207}
+confusion matrix:
+       0     1
+0  15901  2270
+1    207   395
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.82336915, 'precision': 0.57065505, 'recall': 0.80105275, 'specificity': 0.80105275, 'f1': 0.577108, 'auroc': 0.88250804, 'binary_precision': 0.15210356, 'binary_recall': 0.7768595, 'binary_specificity': 0.825246, 'binary_f1_score': 0.25439784}
+confusion matrix:
+      0     1
+0  4949  1048
+1    54   188
+new oracle model saved
+better model found
+persisted
+after epoch: 13,now: 2024-08-01 03:33:16.356270,epoch time: 0:21:47.749833,used: 4:40:18.431545,model: dset_te_center0_erm_no_git_version_2024md_07md_31_22_52_57_seed_2_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 14
+---- Training Domain: 
+scalar performance:
+{'acc': 0.91769004, 'precision': 0.91872394, 'recall': 0.91769516, 'specificity': 0.91769516, 'f1': 0.91763985, 'auroc': 0.97285056, 'binary_precision': 0.93958205, 'binary_recall': 0.8928253, 'binary_specificity': 0.942565, 'binary_f1_score': 0.91560715}
+confusion matrix:
+       0      1
+0  27472   1674
+1   3125  26033
+---- Validation: 
+scalar performance:
+{'acc': 0.86683005, 'precision': 0.5675242, 'recall': 0.7673872, 'specificity': 0.7673872, 'f1': 0.5842561, 'auroc': 0.85207176, 'binary_precision': 0.14773571, 'binary_recall': 0.6611296, 'binary_specificity': 0.8736448, 'binary_f1_score': 0.24150486}
+confusion matrix:
+       0     1
+0  15875  2296
+1    204   398
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.8235294, 'precision': 0.5707177, 'recall': 0.80113614, 'specificity': 0.80113614, 'f1': 0.57724416, 'auroc': 0.8852588, 'binary_precision': 0.15222672, 'binary_recall': 0.7768595, 'binary_specificity': 0.8254127, 'binary_f1_score': 0.25457007}
+confusion matrix:
+      0     1
+0  4950  1047
+1    54   188
+new oracle model saved
+early stop counter: 1
+val acc:0.866830050945282, best validation acc: 0.8680551648139954, corresponding to test acc:                         0.8233691453933716 / 0.8235294222831726
+after epoch: 14,now: 2024-08-01 03:54:46.818351,epoch time: 0:21:30.462081,used: 5:01:48.893626,model: dset_te_center0_erm_no_git_version_2024md_07md_31_22_52_57_seed_2_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+epoch: 15
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9212747, 'precision': 0.9218545, 'recall': 0.9212766, 'specificity': 0.9212766, 'f1': 0.92124784, 'auroc': 0.9741835, 'binary_precision': 0.93752, 'binary_recall': 0.9027268, 'binary_specificity': 0.9398264, 'binary_f1_score': 0.9197945}
+confusion matrix:
+       0      1
+0  27395   1754
+1   2836  26319
+---- Validation: 
+scalar performance:
+{'acc': 0.86065096, 'precision': 0.56615686, 'recall': 0.77302885, 'specificity': 0.77302885, 'f1': 0.5807588, 'auroc': 0.8536575, 'binary_precision': 0.1444209, 'binary_recall': 0.679402, 'binary_specificity': 0.86665565, 'binary_f1_score': 0.23820618}
+confusion matrix:
+       0     1
+0  15748  2423
+1    193   409
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.81856066, 'precision': 0.570318, 'recall': 0.80648243, 'specificity': 0.80648243, 'f1': 0.57501614, 'auroc': 0.8886833, 'binary_precision': 0.15070644, 'binary_recall': 0.7933884, 'binary_specificity': 0.81957644, 'binary_f1_score': 0.25329813}
+confusion matrix:
+      0     1
+0  4915  1082
+1    50   192
+early stop counter: 2
+val acc:0.8606509566307068, best validation acc: 0.8680551648139954, corresponding to test acc:                         0.8233691453933716 / 0.8235294222831726
+after epoch: 15,now: 2024-08-01 04:15:14.153299,epoch time: 0:20:27.334948,used: 5:22:16.228574,model: dset_te_center0_erm_no_git_version_2024md_07md_31_22_52_57_seed_2_23775395
+working direcotry: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis_new/DomainLab
+Experiment finished at epoch: 15 with time: 5:22:16.228574 at 2024-08-01 04:15:14.153299
+persisted model performance metric: 
+
+scalar performance:
+{'acc': 0.82336915, 'precision': 0.57065505, 'recall': 0.80105275, 'specificity': 0.80105275, 'f1': 0.577108, 'auroc': 0.88250804, 'binary_precision': 0.15210356, 'binary_recall': 0.7768595, 'binary_specificity': 0.825246, 'binary_f1_score': 0.25439784}
+confusion matrix:
+      0     1
+0  4949  1048
+1    54   188
+oracle model performance metric: 
+
+scalar performance:
+{'acc': 0.8235294, 'precision': 0.5707177, 'recall': 0.80113614, 'specificity': 0.80113614, 'f1': 0.57724416, 'auroc': 0.8852588, 'binary_precision': 0.15222672, 'binary_recall': 0.7768595, 'binary_specificity': 0.8254127, 'binary_f1_score': 0.25457007}
+confusion matrix:
+      0     1
+0  4950  1047
+1    54   188
+results aggregation path: zoutput/benchmarks/CAMELYONbalancednew_center0_dinov2small_erm_irm_nofreeze_halffreeze_allfreeze_2024-07-31_03-06-46/rule_results/19.csv
+confusion matrix saved in file: zoutput/benchmarks/CAMELYONbalancednew_center0_dinov2small_erm_irm_nofreeze_halffreeze_allfreeze_2024-07-31_03-06-46/confusion_matrix/19.csv.txt
+before torch memory clean up
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      | 190965 KiB | 461507 KiB |    782 TiB |    782 TiB |
+|       from large pool | 173494 KiB | 427880 KiB |    766 TiB |    766 TiB |
+|       from small pool |  17471 KiB |  38507 KiB |     16 TiB |     16 TiB |
+|---------------------------------------------------------------------------|
+| Active memory         | 190965 KiB | 461507 KiB |    782 TiB |    782 TiB |
+|       from large pool | 173494 KiB | 427880 KiB |    766 TiB |    766 TiB |
+|       from small pool |  17471 KiB |  38507 KiB |     16 TiB |     16 TiB |
+|---------------------------------------------------------------------------|
+| Requested memory      | 189282 KiB | 457564 KiB |    782 TiB |    782 TiB |
+|       from large pool | 172814 KiB | 424940 KiB |    766 TiB |    766 TiB |
+|       from small pool |  16468 KiB |  37503 KiB |     16 TiB |     16 TiB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   | 526336 KiB | 526336 KiB |   1074 MiB | 573440 KiB |
+|       from large pool | 487424 KiB | 487424 KiB |   1008 MiB | 544768 KiB |
+|       from small pool |  38912 KiB |  43008 KiB |     66 MiB |  28672 KiB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |  40458 KiB |  87761 KiB | 439947 GiB | 439947 GiB |
+|       from large pool |  31306 KiB |  79704 KiB | 423335 GiB | 423335 GiB |
+|       from small pool |   9152 KiB |  21236 KiB |  16612 GiB |  16612 GiB |
+|---------------------------------------------------------------------------|
+| Allocations           |    2954    |    7771    |  185031 K  |  185028 K  |
+|       from large pool |      76    |     158    |   77328 K  |   77328 K  |
+|       from small pool |    2878    |    7693    |  107703 K  |  107700 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |    2954    |    7771    |  185031 K  |  185028 K  |
+|       from large pool |      76    |     158    |   77328 K  |   77328 K  |
+|       from small pool |    2878    |    7693    |  107703 K  |  107700 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |      41    |      42    |      78    |      37    |
+|       from large pool |      22    |      22    |      45    |      23    |
+|       from small pool |      19    |      21    |      33    |      14    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |      31    |    3665    |   97764 K  |   97764 K  |
+|       from large pool |      10    |      23    |   46370 K  |   46370 K  |
+|       from small pool |      21    |    3655    |   51394 K  |   51394 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+after torch memory clean up
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |  17088 KiB | 461507 KiB |    782 TiB |    782 TiB |
+|       from large pool |  17088 KiB | 427880 KiB |    766 TiB |    766 TiB |
+|       from small pool |      0 KiB |  38507 KiB |     16 TiB |     16 TiB |
+|---------------------------------------------------------------------------|
+| Active memory         |  17088 KiB | 461507 KiB |    782 TiB |    782 TiB |
+|       from large pool |  17088 KiB | 427880 KiB |    766 TiB |    766 TiB |
+|       from small pool |      0 KiB |  38507 KiB |     16 TiB |     16 TiB |
+|---------------------------------------------------------------------------|
+| Requested memory      |  16640 KiB | 457564 KiB |    782 TiB |    782 TiB |
+|       from large pool |  16640 KiB | 424940 KiB |    766 TiB |    766 TiB |
+|       from small pool |      0 KiB |  37503 KiB |     16 TiB |     16 TiB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   | 231424 KiB | 526336 KiB |   1074 MiB |    848 MiB |
+|       from large pool | 204800 KiB | 487424 KiB |   1008 MiB |    808 MiB |
+|       from small pool |  26624 KiB |  43008 KiB |     66 MiB |     40 MiB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |  23872 KiB |  87761 KiB | 439948 GiB | 439948 GiB |
+|       from large pool |  23872 KiB |  79704 KiB | 423336 GiB | 423335 GiB |
+|       from small pool |      0 KiB |  21236 KiB |  16612 GiB |  16612 GiB |
+|---------------------------------------------------------------------------|
+| Allocations           |       2    |    7771    |  185031 K  |  185031 K  |
+|       from large pool |       2    |     158    |   77328 K  |   77328 K  |
+|       from small pool |       0    |    7693    |  107703 K  |  107703 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |       2    |    7771    |  185031 K  |  185031 K  |
+|       from large pool |       2    |     158    |   77328 K  |   77328 K  |
+|       from small pool |       0    |    7693    |  107703 K  |  107703 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |      23    |      42    |      78    |      55    |
+|       from large pool |      10    |      22    |      45    |      35    |
+|       from small pool |      13    |      21    |      33    |      20    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |       3    |    3665    |   97765 K  |   97765 K  |
+|       from large pool |       3    |      23    |   46370 K  |   46370 K  |
+|       from small pool |       0    |    3655    |   51395 K  |   51395 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+[Thu Aug  1 04:16:46 2024]
+Finished job 0.
+1 of 1 steps (100%) done

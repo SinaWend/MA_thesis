@@ -1,0 +1,35 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, nvidia_gpu=1
+Select jobs to execute...
+
+[Fri Jun 14 10:57:55 2024]
+rule run_experiment:
+    input: zoutput/benchmarks/CAMELYON_center0_erm_vit_resnet_dinov2_bs16_different_learningrates/hyperparameters.csv
+    output: zoutput/benchmarks/CAMELYON_center0_erm_vit_resnet_dinov2_bs16_different_learningrates/rule_results/1.csv
+    jobid: 0
+    reason: Forced execution
+    wildcards: index=1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=/tmp, partition=gpu_p, qos=gpu_normal, nvidia_gpu=1
+
+[Fri Jun 14 10:58:11 2024]
+Error in rule run_experiment:
+    jobid: 0
+    input: zoutput/benchmarks/CAMELYON_center0_erm_vit_resnet_dinov2_bs16_different_learningrates/hyperparameters.csv
+    output: zoutput/benchmarks/CAMELYON_center0_erm_vit_resnet_dinov2_bs16_different_learningrates/rule_results/1.csv
+
+RuleException:
+OSError in file /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/exp_protocol/benchmark.smk, line 130:
+[Errno 122] Disk quota exceeded
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/exp_protocol/benchmark.smk", line 130, in __rule_run_experiment
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/exp_protocol/run_experiment.py", line 15, in <module>
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/exp/exp_main.py", line 8, in <module>
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/algos/zoo_algos.py", line 5, in <module>
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/algos/builder_dann.py", line 14, in <module>
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/models/model_dann.py", line 9, in <module>
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/models/a_model_classif.py", line 32, in <module>
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message

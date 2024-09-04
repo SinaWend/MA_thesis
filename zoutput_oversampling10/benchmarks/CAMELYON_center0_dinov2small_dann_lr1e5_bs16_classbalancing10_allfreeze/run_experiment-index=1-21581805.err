@@ -1,0 +1,3093 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, nvidia_gpu=1
+Select jobs to execute...
+
+[Wed Jun 26 06:11:07 2024]
+rule run_experiment:
+    input: zoutput/benchmarks/CAMELYON_center0_dinov2small_dann_lr1e5_bs16_classbalancing10/hyperparameters.csv
+    output: zoutput/benchmarks/CAMELYON_center0_dinov2small_dann_lr1e5_bs16_classbalancing10/rule_results/1.csv
+    jobid: 0
+    reason: Forced execution
+    wildcards: index=1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=/tmp, partition=gpu_p, qos=gpu_normal, nvidia_gpu=1
+
+Failed to import backpack: cannot import name '_grad_input_padding' from 'torch.nn.grad' (/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/grad.py)
+before experiment loop: 
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| Active memory         |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| Requested memory      |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| Allocations           |       0    |       0    |       0    |       0    |
+|       from large pool |       0    |       0    |       0    |       0    |
+|       from small pool |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Active allocs         |       0    |       0    |       0    |       0    |
+|       from large pool |       0    |       0    |       0    |       0    |
+|       from small pool |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |       0    |       0    |       0    |       0    |
+|       from large pool |       0    |       0    |       0    |       0    |
+|       from small pool |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |       0    |       0    |       0    |       0    |
+|       from large pool |       0    |       0    |       0    |       0    |
+|       from small pool |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+before experiment starts
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| Active memory         |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| Requested memory      |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| Allocations           |       0    |       0    |       0    |       0    |
+|       from large pool |       0    |       0    |       0    |       0    |
+|       from small pool |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Active allocs         |       0    |       0    |       0    |       0    |
+|       from large pool |       0    |       0    |       0    |       0    |
+|       from small pool |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |       0    |       0    |       0    |       0    |
+|       from large pool |       0    |       0    |       0    |       0    |
+|       from small pool |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |       0    |       0    |       0    |       0    |
+|       from large pool |       0    |       0    |       0    |       0    |
+|       from small pool |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+
+overriding args.task None to dset
+
+
+using device: cuda:0
+
+Using cache found in /home/aih/sina.wendrich/.cache/torch/hub/facebookresearch_dinov2_main
+/home/aih/sina.wendrich/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+/home/aih/sina.wendrich/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+/home/aih/sina.wendrich/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+
+
+
+!!!: not committed yet
+/ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab/domainlab/utils/get_git_tag.py:16: UserWarning: !!!: not committed yet
+  warnings.warn("!!!: not committed yet")
+
+
+
+b'44271c83'
+model name: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+
+ Experiment start at: 2024-06-26 06:22:14.319610
+epoch: 1
+---- Training Domain: 
+scalar performance:
+{'acc': 0.8942146, 'precision': 0.90373456, 'recall': 0.8136685, 'specificity': 0.8136685, 'f1': 0.84582376, 'auroc': 0.9455162, 'binary_precision': 0.9186921, 'binary_recall': 0.6472547, 'binary_specificity': 0.9800822, 'binary_f1_score': 0.7594483}
+confusion matrix:
+       0     1
+0  41481   843
+1   5191  9525
+---- Validation: 
+scalar performance:
+{'acc': 0.9517348, 'precision': 0.6084684, 'recall': 0.5879839, 'specificity': 0.5879839, 'f1': 0.59693754, 'auroc': 0.77278686, 'binary_precision': 0.24517375, 'binary_recall': 0.19751166, 'binary_specificity': 0.97845614, 'binary_f1_score': 0.21877691}
+confusion matrix:
+       0    1
+0  17758  391
+1    516  127
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.95206136, 'precision': 0.6555314, 'recall': 0.57737106, 'specificity': 0.57737106, 'f1': 0.601034, 'auroc': 0.8352274, 'binary_precision': 0.3464567, 'binary_recall': 0.16858238, 'binary_specificity': 0.98615974, 'binary_f1_score': 0.22680412}
+confusion matrix:
+      0   1
+0  5914  83
+1   217  44
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_1.png
+new oracle model saved
+better model found
+persisted
+after epoch: 1,now: 2024-06-26 06:41:00.568210,epoch time: 0:18:46.248600,used: 0:18:46.248600,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 2
+---- Training Domain: 
+scalar performance:
+{'acc': 0.922493, 'precision': 0.9249263, 'recall': 0.8686119, 'specificity': 0.8686119, 'f1': 0.8919319, 'auroc': 0.96096325, 'binary_precision': 0.9291253, 'binary_recall': 0.757306, 'binary_specificity': 0.97991776, 'binary_f1_score': 0.8344629}
+confusion matrix:
+       0      1
+0  41476    850
+1   3571  11143
+---- Validation: 
+scalar performance:
+{'acc': 0.9574819, 'precision': 0.66714936, 'recall': 0.6442132, 'specificity': 0.6442132, 'f1': 0.6547118, 'auroc': 0.8212224, 'binary_precision': 0.35869566, 'binary_recall': 0.30793157, 'binary_specificity': 0.9804948, 'binary_f1_score': 0.33138075}
+confusion matrix:
+       0    1
+0  17795  354
+1    445  198
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9608501, 'precision': 0.760815, 'recall': 0.6625794, 'specificity': 0.6625794, 'f1': 0.69889796, 'auroc': 0.87589705, 'binary_precision': 0.55, 'binary_recall': 0.33716476, 'binary_specificity': 0.987994, 'binary_f1_score': 0.41805226}
+confusion matrix:
+      0   1
+0  5925  72
+1   173  88
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_2.png
+new oracle model saved
+better model found
+persisted
+after epoch: 2,now: 2024-06-26 06:59:06.474003,epoch time: 0:18:05.905793,used: 0:36:52.154393,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 3
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9287167, 'precision': 0.93483996, 'recall': 0.87632346, 'specificity': 0.87632346, 'f1': 0.900519, 'auroc': 0.96568877, 'binary_precision': 0.9453831, 'binary_recall': 0.7680756, 'binary_specificity': 0.9845714, 'binary_f1_score': 0.8475555}
+confusion matrix:
+       0      1
+0  41671    653
+1   3413  11303
+---- Validation: 
+scalar performance:
+{'acc': 0.95987654, 'precision': 0.6798015, 'recall': 0.6357022, 'specificity': 0.6357022, 'f1': 0.6542506, 'auroc': 0.84066993, 'binary_precision': 0.3846154, 'binary_recall': 0.28771386, 'binary_specificity': 0.98369056, 'binary_f1_score': 0.3291815}
+confusion matrix:
+       0    1
+0  17853  296
+1    458  185
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96756154, 'precision': 0.8530783, 'recall': 0.6715781, 'specificity': 0.6715781, 'f1': 0.72799665, 'auroc': 0.8912258, 'binary_precision': 0.733871, 'binary_recall': 0.348659, 'binary_specificity': 0.99449724, 'binary_f1_score': 0.47272727}
+confusion matrix:
+      0   1
+0  5964  33
+1   170  91
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_3.png
+new oracle model saved
+better model found
+persisted
+after epoch: 3,now: 2024-06-26 07:17:06.230577,epoch time: 0:17:59.756574,used: 0:54:51.910967,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 4
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9379734, 'precision': 0.94041353, 'recall': 0.8951782, 'specificity': 0.8951782, 'f1': 0.9147823, 'auroc': 0.97227, 'binary_precision': 0.944776, 'binary_recall': 0.8067541, 'binary_specificity': 0.9836023, 'binary_f1_score': 0.8703269}
+confusion matrix:
+       0      1
+0  41629    694
+1   2844  11873
+---- Validation: 
+scalar performance:
+{'acc': 0.95955724, 'precision': 0.6847973, 'recall': 0.65803856, 'specificity': 0.65803856, 'f1': 0.670231, 'auroc': 0.8549359, 'binary_precision': 0.39305303, 'binary_recall': 0.33437014, 'binary_specificity': 0.981707, 'binary_f1_score': 0.36134452}
+confusion matrix:
+       0    1
+0  17817  332
+1    428  215
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9682007, 'precision': 0.83572423, 'recall': 0.70672596, 'specificity': 0.70672596, 'f1': 0.75430465, 'auroc': 0.90080225, 'binary_precision': 0.6962025, 'binary_recall': 0.42145595, 'binary_specificity': 0.991996, 'binary_f1_score': 0.5250597}
+confusion matrix:
+      0    1
+0  5949   48
+1   151  110
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_4.png
+new oracle model saved
+early stop counter: 1
+val acc:0.9595572352409363, best validation acc: 0.959876537322998, corresponding to test acc:                         0.9675615429878235 / 0.96820068359375
+after epoch: 4,now: 2024-06-26 07:34:58.928034,epoch time: 0:17:52.697457,used: 1:12:44.608424,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 5
+---- Training Domain: 
+scalar performance:
+{'acc': 0.94218093, 'precision': 0.94472575, 'recall': 0.9022181, 'specificity': 0.9022181, 'f1': 0.920837, 'auroc': 0.97512615, 'binary_precision': 0.9493153, 'binary_recall': 0.8196521, 'binary_specificity': 0.98478407, 'binary_f1_score': 0.8797316}
+confusion matrix:
+       0      1
+0  41680    644
+1   2654  12062
+---- Validation: 
+scalar performance:
+{'acc': 0.95977014, 'precision': 0.68580925, 'recall': 0.65664864, 'specificity': 0.65664864, 'f1': 0.669819, 'auroc': 0.8630743, 'binary_precision': 0.39517626, 'binary_recall': 0.33125973, 'binary_specificity': 0.9820376, 'binary_f1_score': 0.3604061}
+confusion matrix:
+       0    1
+0  17823  326
+1    430  213
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9685203, 'precision': 0.8322911, 'recall': 0.71971905, 'specificity': 0.71971905, 'f1': 0.76331115, 'auroc': 0.90727866, 'binary_precision': 0.6882353, 'binary_recall': 0.44827586, 'binary_specificity': 0.99116224, 'binary_f1_score': 0.54292345}
+confusion matrix:
+      0    1
+0  5944   53
+1   144  117
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_5.png
+new oracle model saved
+early stop counter: 2
+val acc:0.959770143032074, best validation acc: 0.959876537322998, corresponding to test acc:                         0.9675615429878235 / 0.9685202836990356
+after epoch: 5,now: 2024-06-26 07:52:51.886217,epoch time: 0:17:52.958183,used: 1:30:37.566607,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 6
+---- Training Domain: 
+scalar performance:
+{'acc': 0.94570476, 'precision': 0.9480095, 'recall': 0.90837693, 'specificity': 0.90837693, 'f1': 0.9259177, 'auroc': 0.97775126, 'binary_precision': 0.95220304, 'binary_recall': 0.8312606, 'binary_specificity': 0.9854932, 'binary_f1_score': 0.88763106}
+confusion matrix:
+       0      1
+0  41711    614
+1   2483  12232
+---- Validation: 
+scalar performance:
+{'acc': 0.959238, 'precision': 0.6812711, 'recall': 0.65337294, 'specificity': 0.65337294, 'f1': 0.6659983, 'auroc': 0.8706269, 'binary_precision': 0.38632163, 'binary_recall': 0.32503888, 'binary_specificity': 0.981707, 'binary_f1_score': 0.35304055}
+confusion matrix:
+       0    1
+0  17817  332
+1    434  209
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9688399, 'precision': 0.8293855, 'recall': 0.73271215, 'specificity': 0.73271215, 'f1': 0.77183384, 'auroc': 0.91322255, 'binary_precision': 0.6813187, 'binary_recall': 0.47509578, 'binary_specificity': 0.9903285, 'binary_f1_score': 0.5598194}
+confusion matrix:
+      0    1
+0  5939   58
+1   137  124
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_6.png
+new oracle model saved
+early stop counter: 3
+val acc:0.9592379927635193, best validation acc: 0.959876537322998, corresponding to test acc:                         0.9675615429878235 / 0.9688398838043213
+after epoch: 6,now: 2024-06-26 08:10:54.016491,epoch time: 0:18:02.130274,used: 1:48:39.696881,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 7
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9503857, 'precision': 0.9496951, 'recall': 0.91901994, 'specificity': 0.91901994, 'f1': 0.93298733, 'auroc': 0.97843266, 'binary_precision': 0.9484046, 'binary_recall': 0.85420203, 'binary_specificity': 0.9838378, 'binary_f1_score': 0.8988419}
+confusion matrix:
+       0      1
+0  41637    684
+1   2146  12573
+---- Validation: 
+scalar performance:
+{'acc': 0.95806724, 'precision': 0.68005127, 'recall': 0.67301834, 'specificity': 0.67301834, 'f1': 0.6764548, 'auroc': 0.87407386, 'binary_precision': 0.38249594, 'binary_recall': 0.36702955, 'binary_specificity': 0.9790071, 'binary_f1_score': 0.37460318}
+confusion matrix:
+       0    1
+0  17768  381
+1    407  236
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96740174, 'precision': 0.805405, 'recall': 0.7557821, 'specificity': 0.7557821, 'f1': 0.7781377, 'auroc': 0.91507185, 'binary_precision': 0.6313364, 'binary_recall': 0.5249042, 'binary_specificity': 0.98666, 'binary_f1_score': 0.57322174}
+confusion matrix:
+      0    1
+0  5917   80
+1   124  137
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_7.png
+early stop counter: 4
+val acc:0.9580672383308411, best validation acc: 0.959876537322998, corresponding to test acc:                         0.9675615429878235 / 0.9688398838043213
+after epoch: 7,now: 2024-06-26 08:28:43.854749,epoch time: 0:17:49.838258,used: 2:06:29.535139,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 8
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9509642, 'precision': 0.95187837, 'recall': 0.91848683, 'specificity': 0.91848683, 'f1': 0.93357444, 'auroc': 0.98070586, 'binary_precision': 0.95357335, 'binary_recall': 0.85138625, 'binary_specificity': 0.98558736, 'binary_f1_score': 0.8995872}
+confusion matrix:
+       0      1
+0  41714    610
+1   2187  12529
+---- Validation: 
+scalar performance:
+{'acc': 0.9579076, 'precision': 0.6773331, 'recall': 0.66693527, 'specificity': 0.66693527, 'f1': 0.67195463, 'auroc': 0.87777996, 'binary_precision': 0.37748346, 'binary_recall': 0.35458788, 'binary_specificity': 0.9792826, 'binary_f1_score': 0.36567765}
+confusion matrix:
+       0    1
+0  17773  376
+1    415  228
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96708214, 'precision': 0.8035282, 'recall': 0.7519507, 'specificity': 0.7519507, 'f1': 0.7750586, 'auroc': 0.9168314, 'binary_precision': 0.627907, 'binary_recall': 0.51724136, 'binary_specificity': 0.98666, 'binary_f1_score': 0.5672269}
+confusion matrix:
+      0    1
+0  5917   80
+1   126  135
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_8.png
+early stop counter: 5
+val acc:0.9579076170921326, best validation acc: 0.959876537322998, corresponding to test acc:                         0.9675615429878235 / 0.9688398838043213
+after epoch: 8,now: 2024-06-26 08:46:57.885952,epoch time: 0:18:14.031203,used: 2:24:43.566342,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 9
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9502104, 'precision': 0.952499, 'recall': 0.91599435, 'specificity': 0.91599435, 'f1': 0.93233395, 'auroc': 0.981292, 'binary_precision': 0.95670563, 'binary_recall': 0.8452915, 'binary_specificity': 0.9866972, 'binary_f1_score': 0.8975543}
+confusion matrix:
+       0      1
+0  41759    563
+1   2277  12441
+---- Validation: 
+scalar performance:
+{'acc': 0.959238, 'precision': 0.6795786, 'recall': 0.64812255, 'specificity': 0.64812255, 'f1': 0.6621316, 'auroc': 0.88045764, 'binary_precision': 0.3833017, 'binary_recall': 0.31415242, 'binary_specificity': 0.9820927, 'binary_f1_score': 0.34529915}
+confusion matrix:
+       0    1
+0  17824  325
+1    441  202
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9683605, 'precision': 0.8170164, 'recall': 0.748953, 'specificity': 0.748953, 'f1': 0.77842355, 'auroc': 0.9179692, 'binary_precision': 0.6551724, 'binary_recall': 0.5095785, 'binary_specificity': 0.9883275, 'binary_f1_score': 0.57327586}
+confusion matrix:
+      0    1
+0  5927   70
+1   128  133
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_9.png
+early stop counter: 6
+val acc:0.9592379927635193, best validation acc: 0.959876537322998, corresponding to test acc:                         0.9675615429878235 / 0.9688398838043213
+after epoch: 9,now: 2024-06-26 09:06:08.607978,epoch time: 0:19:10.722026,used: 2:43:54.288368,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 10
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9502279, 'precision': 0.9532901, 'recall': 0.9153414, 'specificity': 0.9153414, 'f1': 0.93225646, 'auroc': 0.9819296, 'binary_precision': 0.9588967, 'binary_recall': 0.84325314, 'binary_specificity': 0.9874297, 'binary_f1_score': 0.8973645}
+confusion matrix:
+       0      1
+0  41790    532
+1   2307  12411
+---- Validation: 
+scalar performance:
+{'acc': 0.95961046, 'precision': 0.68093944, 'recall': 0.6445651, 'specificity': 0.6445651, 'f1': 0.66044164, 'auroc': 0.8825987, 'binary_precision': 0.38627452, 'binary_recall': 0.30637637, 'binary_specificity': 0.9827539, 'binary_f1_score': 0.34171724}
+confusion matrix:
+       0    1
+0  17836  313
+1    446  197
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96772134, 'precision': 0.8100766, 'recall': 0.75045186, 'specificity': 0.75045186, 'f1': 0.77672184, 'auroc': 0.9191253, 'binary_precision': 0.6411483, 'binary_recall': 0.51341, 'binary_specificity': 0.98749375, 'binary_f1_score': 0.5702128}
+confusion matrix:
+      0    1
+0  5922   75
+1   127  134
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_10.png
+early stop counter: 7
+val acc:0.9596104621887207, best validation acc: 0.959876537322998, corresponding to test acc:                         0.9675615429878235 / 0.9688398838043213
+after epoch: 10,now: 2024-06-26 09:28:49.585479,epoch time: 0:22:40.977501,used: 3:06:35.265869,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 11
+---- Training Domain: 
+scalar performance:
+{'acc': 0.95243686, 'precision': 0.9533187, 'recall': 0.92097205, 'specificity': 0.92097205, 'f1': 0.93564117, 'auroc': 0.9820514, 'binary_precision': 0.95495903, 'binary_recall': 0.8559777, 'binary_specificity': 0.9859664, 'binary_f1_score': 0.90276337}
+confusion matrix:
+       0      1
+0  41733    594
+1   2119  12594
+---- Validation: 
+scalar performance:
+{'acc': 0.95881224, 'precision': 0.68103695, 'recall': 0.6614031, 'specificity': 0.6614031, 'f1': 0.6705785, 'auroc': 0.88304305, 'binary_precision': 0.38528895, 'binary_recall': 0.3421462, 'binary_specificity': 0.9806601, 'binary_f1_score': 0.36243823}
+confusion matrix:
+       0    1
+0  17798  351
+1    423  220
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96676254, 'precision': 0.79833853, 'recall': 0.7609456, 'specificity': 0.7609456, 'f1': 0.7782388, 'auroc': 0.91940224, 'binary_precision': 0.6167401, 'binary_recall': 0.5363985, 'binary_specificity': 0.98549277, 'binary_f1_score': 0.57377046}
+confusion matrix:
+      0    1
+0  5910   87
+1   121  140
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_11.png
+early stop counter: 8
+val acc:0.9588122367858887, best validation acc: 0.959876537322998, corresponding to test acc:                         0.9675615429878235 / 0.9688398838043213
+after epoch: 11,now: 2024-06-26 09:51:59.266246,epoch time: 0:23:09.680767,used: 3:29:44.946636,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 12
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9550491, 'precision': 0.9570571, 'recall': 0.92434216, 'specificity': 0.92434216, 'f1': 0.9391773, 'auroc': 0.98348427, 'binary_precision': 0.96079177, 'binary_recall': 0.8608997, 'binary_specificity': 0.9877847, 'binary_f1_score': 0.9081069}
+confusion matrix:
+       0      1
+0  41807    517
+1   2047  12669
+---- Validation: 
+scalar performance:
+{'acc': 0.9598233, 'precision': 0.68071234, 'recall': 0.6394249, 'specificity': 0.6394249, 'f1': 0.65704393, 'auroc': 0.88400865, 'binary_precision': 0.38617885, 'binary_recall': 0.29548988, 'binary_specificity': 0.98336, 'binary_f1_score': 0.33480173}
+confusion matrix:
+       0    1
+0  17847  302
+1    453  190
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96644294, 'precision': 0.7996774, 'recall': 0.74428785, 'specificity': 0.74428785, 'f1': 0.7688243, 'auroc': 0.9191594, 'binary_precision': 0.62085307, 'binary_recall': 0.5019157, 'binary_specificity': 0.98666, 'binary_f1_score': 0.5550847}
+confusion matrix:
+      0    1
+0  5917   80
+1   130  131
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_12.png
+early stop counter: 9
+val acc:0.9598233103752136, best validation acc: 0.959876537322998, corresponding to test acc:                         0.9675615429878235 / 0.9688398838043213
+after epoch: 12,now: 2024-06-26 10:18:15.696633,epoch time: 0:26:16.430387,used: 3:56:01.377023,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 13
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9564516, 'precision': 0.95717585, 'recall': 0.9278539, 'specificity': 0.9278539, 'f1': 0.9412879, 'auroc': 0.985041, 'binary_precision': 0.9585364, 'binary_recall': 0.86877334, 'binary_specificity': 0.9869344, 'binary_f1_score': 0.91145015}
+confusion matrix:
+       0      1
+0  41772    553
+1   1931  12784
+---- Validation: 
+scalar performance:
+{'acc': 0.95870584, 'precision': 0.68081796, 'recall': 0.6628482, 'specificity': 0.6628482, 'f1': 0.6712973, 'auroc': 0.8848156, 'binary_precision': 0.3847487, 'binary_recall': 0.3452566, 'binary_specificity': 0.9804397, 'binary_f1_score': 0.36393443}
+confusion matrix:
+       0    1
+0  17794  355
+1    421  222
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96676254, 'precision': 0.79707444, 'recall': 0.76644266, 'specificity': 0.76644266, 'f1': 0.7808229, 'auroc': 0.91985375, 'binary_precision': 0.6137339, 'binary_recall': 0.54789275, 'binary_specificity': 0.9849925, 'binary_f1_score': 0.5789474}
+confusion matrix:
+      0    1
+0  5907   90
+1   118  143
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_13.png
+early stop counter: 10
+val acc:0.9587058424949646, best validation acc: 0.959876537322998, corresponding to test acc:                         0.9675615429878235 / 0.9688398838043213
+after epoch: 13,now: 2024-06-26 10:45:58.393800,epoch time: 0:27:42.697167,used: 4:23:44.074190,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 14
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9535589, 'precision': 0.9597397, 'recall': 0.9182354, 'specificity': 0.9182354, 'f1': 0.9365777, 'auroc': 0.9853163, 'binary_precision': 0.9709602, 'binary_recall': 0.84525996, 'binary_specificity': 0.9912109, 'binary_f1_score': 0.9037602}
+confusion matrix:
+       0      1
+0  41953    372
+1   2277  12438
+---- Validation: 
+scalar performance:
+{'acc': 0.96104723, 'precision': 0.6873276, 'recall': 0.6310579, 'specificity': 0.6310579, 'f1': 0.65357447, 'auroc': 0.8869529, 'binary_precision': 0.4, 'binary_recall': 0.27682737, 'binary_specificity': 0.98528844, 'binary_f1_score': 0.32720587}
+confusion matrix:
+       0    1
+0  17882  267
+1    465  178
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96740174, 'precision': 0.8106326, 'recall': 0.7392911, 'specificity': 0.7392911, 'f1': 0.7698003, 'auroc': 0.9209094, 'binary_precision': 0.6432161, 'binary_recall': 0.49042144, 'binary_specificity': 0.9881607, 'binary_f1_score': 0.5565217}
+confusion matrix:
+      0    1
+0  5926   71
+1   133  128
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_14.png
+better model found
+persisted
+after epoch: 14,now: 2024-06-26 11:17:11.745878,epoch time: 0:31:13.352078,used: 4:54:57.426268,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 15
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9556276, 'precision': 0.9601511, 'recall': 0.9230729, 'specificity': 0.9230729, 'f1': 0.9396829, 'auroc': 0.98587394, 'binary_precision': 0.96846396, 'binary_recall': 0.855832, 'binary_specificity': 0.99031377, 'binary_f1_score': 0.90867096}
+confusion matrix:
+       0      1
+0  41918    410
+1   2121  12591
+---- Validation: 
+scalar performance:
+{'acc': 0.9616326, 'precision': 0.6861982, 'recall': 0.61335963, 'specificity': 0.61335963, 'f1': 0.63979805, 'auroc': 0.88778365, 'binary_precision': 0.39896372, 'binary_recall': 0.23950233, 'binary_specificity': 0.98721695, 'binary_f1_score': 0.2993197}
+confusion matrix:
+       0    1
+0  17917  232
+1    489  154
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96724194, 'precision': 0.82598466, 'recall': 0.7007287, 'specificity': 0.7007287, 'f1': 0.74689674, 'auroc': 0.9200181, 'binary_precision': 0.6772152, 'binary_recall': 0.4099617, 'binary_specificity': 0.9914957, 'binary_f1_score': 0.51073986}
+confusion matrix:
+      0    1
+0  5946   51
+1   154  107
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_15.png
+better model found
+persisted
+after epoch: 15,now: 2024-06-26 11:44:50.417123,epoch time: 0:27:38.671245,used: 5:22:36.097513,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 16
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9564691, 'precision': 0.96039915, 'recall': 0.925011, 'specificity': 0.925011, 'f1': 0.94094527, 'auroc': 0.9872031, 'binary_precision': 0.9676581, 'binary_recall': 0.8600163, 'binary_specificity': 0.9900057, 'binary_f1_score': 0.91066736}
+confusion matrix:
+       0      1
+0  41901    423
+1   2060  12656
+---- Validation: 
+scalar performance:
+{'acc': 0.9608876, 'precision': 0.6879638, 'recall': 0.6369757, 'specificity': 0.6369757, 'f1': 0.6579468, 'auroc': 0.8885461, 'binary_precision': 0.40086207, 'binary_recall': 0.28926906, 'binary_specificity': 0.9846824, 'binary_f1_score': 0.33604336}
+confusion matrix:
+       0    1
+0  17871  278
+1    457  186
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96708214, 'precision': 0.8056831, 'recall': 0.74462134, 'specificity': 0.74462134, 'f1': 0.7713654, 'auroc': 0.92000854, 'binary_precision': 0.6328502, 'binary_recall': 0.5019157, 'binary_specificity': 0.987327, 'binary_f1_score': 0.5598291}
+confusion matrix:
+      0    1
+0  5921   76
+1   130  131
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_16.png
+early stop counter: 1
+val acc:0.960887610912323, best validation acc: 0.9616326093673706, corresponding to test acc:                         0.9672419428825378 / 0.9688398838043213
+after epoch: 16,now: 2024-06-26 12:12:33.736221,epoch time: 0:27:43.319098,used: 5:50:19.416611,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 17
+---- Training Domain: 
+scalar performance:
+{'acc': 0.95510167, 'precision': 0.96273965, 'recall': 0.9196178, 'specificity': 0.9196178, 'f1': 0.9386023, 'auroc': 0.9861976, 'binary_precision': 0.97655636, 'binary_recall': 0.8463002, 'binary_specificity': 0.9929353, 'binary_f1_score': 0.9067744}
+confusion matrix:
+       0      1
+0  42024    299
+1   2262  12455
+---- Validation: 
+scalar performance:
+{'acc': 0.9612069, 'precision': 0.6824433, 'recall': 0.6138893, 'specificity': 0.6138893, 'f1': 0.6392079, 'auroc': 0.8892581, 'binary_precision': 0.39141414, 'binary_recall': 0.24105754, 'binary_specificity': 0.98672104, 'binary_f1_score': 0.2983638}
+confusion matrix:
+       0    1
+0  17908  241
+1    488  155
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96692234, 'precision': 0.813154, 'recall': 0.7188853, 'specificity': 0.7188853, 'f1': 0.7567347, 'auroc': 0.91970956, 'binary_precision': 0.65, 'binary_recall': 0.44827586, 'binary_specificity': 0.98949474, 'binary_f1_score': 0.53061223}
+confusion matrix:
+      0    1
+0  5934   63
+1   144  117
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_17.png
+early stop counter: 2
+val acc:0.9612069129943848, best validation acc: 0.9616326093673706, corresponding to test acc:                         0.9672419428825378 / 0.9688398838043213
+after epoch: 17,now: 2024-06-26 12:40:54.991720,epoch time: 0:28:21.255499,used: 6:18:40.672110,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 18
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9574158, 'precision': 0.96264255, 'recall': 0.92548096, 'specificity': 0.92548096, 'f1': 0.9421364, 'auroc': 0.9874588, 'binary_precision': 0.9722542, 'binary_recall': 0.85949177, 'binary_specificity': 0.99147016, 'binary_f1_score': 0.91240215}
+confusion matrix:
+       0      1
+0  41961    361
+1   2068  12650
+---- Validation: 
+scalar performance:
+{'acc': 0.96030223, 'precision': 0.6845622, 'recall': 0.64042294, 'specificity': 0.64042294, 'f1': 0.6590947, 'auroc': 0.8892456, 'binary_precision': 0.39381444, 'binary_recall': 0.2970451, 'binary_specificity': 0.98380077, 'binary_f1_score': 0.3386525}
+confusion matrix:
+       0    1
+0  17855  294
+1    452  191
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.965644, 'precision': 0.793329, 'recall': 0.7402063, 'specificity': 0.7402063, 'f1': 0.763801, 'auroc': 0.9189212, 'binary_precision': 0.6084906, 'binary_recall': 0.49425286, 'binary_specificity': 0.98615974, 'binary_f1_score': 0.54545456}
+confusion matrix:
+      0    1
+0  5914   83
+1   132  129
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_18.png
+early stop counter: 3
+val acc:0.9603022336959839, best validation acc: 0.9616326093673706, corresponding to test acc:                         0.9672419428825378 / 0.9688398838043213
+after epoch: 18,now: 2024-06-26 13:04:36.367655,epoch time: 0:23:41.375935,used: 6:42:22.048045,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 19
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9599404, 'precision': 0.9644336, 'recall': 0.93029773, 'specificity': 0.93029773, 'f1': 0.94574434, 'auroc': 0.98823965, 'binary_precision': 0.97276944, 'binary_recall': 0.8690541, 'binary_specificity': 0.99154145, 'binary_f1_score': 0.9179916}
+confusion matrix:
+       0      1
+0  41966    358
+1   1927  12789
+---- Validation: 
+scalar performance:
+{'acc': 0.96067476, 'precision': 0.68624794, 'recall': 0.6368655, 'specificity': 0.6368655, 'f1': 0.6572859, 'auroc': 0.88942397, 'binary_precision': 0.3974359, 'binary_recall': 0.28926906, 'binary_specificity': 0.98446196, 'binary_f1_score': 0.33483347}
+confusion matrix:
+       0    1
+0  17867  282
+1    457  186
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96580374, 'precision': 0.7952266, 'recall': 0.7384573, 'specificity': 0.7384573, 'f1': 0.7634578, 'auroc': 0.9192927, 'binary_precision': 0.61244017, 'binary_recall': 0.49042144, 'binary_specificity': 0.98649323, 'binary_f1_score': 0.54468083}
+confusion matrix:
+      0    1
+0  5916   81
+1   133  128
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_19.png
+early stop counter: 4
+val acc:0.9606747627258301, best validation acc: 0.9616326093673706, corresponding to test acc:                         0.9672419428825378 / 0.9688398838043213
+after epoch: 19,now: 2024-06-26 13:27:26.561316,epoch time: 0:22:50.193661,used: 7:05:12.241706,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 20
+---- Training Domain: 
+scalar performance:
+{'acc': 0.96079946, 'precision': 0.96366423, 'recall': 0.9331635, 'specificity': 0.9331635, 'f1': 0.9471115, 'auroc': 0.9881473, 'binary_precision': 0.9690342, 'binary_recall': 0.8760617, 'binary_specificity': 0.99026537, 'binary_f1_score': 0.92020553}
+confusion matrix:
+       0      1
+0  41911    412
+1   1824  12893
+---- Validation: 
+scalar performance:
+{'acc': 0.95961046, 'precision': 0.6840364, 'recall': 0.6543158, 'specificity': 0.6543158, 'f1': 0.66769266, 'auroc': 0.8896445, 'binary_precision': 0.39179105, 'binary_recall': 0.32659408, 'binary_specificity': 0.9820376, 'binary_f1_score': 0.35623413}
+confusion matrix:
+       0    1
+0  17823  326
+1    433  210
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96580374, 'precision': 0.789696, 'recall': 0.76411, 'specificity': 0.76411, 'f1': 0.77623725, 'auroc': 0.91953826, 'binary_precision': 0.59915614, 'binary_recall': 0.5440613, 'binary_specificity': 0.98415875, 'binary_f1_score': 0.57028115}
+confusion matrix:
+      0    1
+0  5902   95
+1   119  142
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_20.png
+early stop counter: 5
+val acc:0.9596104621887207, best validation acc: 0.9616326093673706, corresponding to test acc:                         0.9672419428825378 / 0.9688398838043213
+after epoch: 20,now: 2024-06-26 13:48:23.909415,epoch time: 0:20:57.348099,used: 7:26:09.589805,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 21
+---- Training Domain: 
+scalar performance:
+{'acc': 0.95862556, 'precision': 0.96564436, 'recall': 0.9259765, 'specificity': 0.9259765, 'f1': 0.9436405, 'auroc': 0.98825216, 'binary_precision': 0.97846967, 'binary_recall': 0.85852134, 'binary_specificity': 0.9934316, 'binary_f1_score': 0.9145794}
+confusion matrix:
+       0      1
+0  42046    278
+1   2082  12634
+---- Validation: 
+scalar performance:
+{'acc': 0.9608344, 'precision': 0.67507696, 'recall': 0.6046958, 'specificity': 0.6046958, 'f1': 0.62985665, 'auroc': 0.88982654, 'binary_precision': 0.3773087, 'binary_recall': 0.22239502, 'binary_specificity': 0.98699653, 'binary_f1_score': 0.27984342}
+confusion matrix:
+       0    1
+0  17913  236
+1    500  143
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96644294, 'precision': 0.8114562, 'recall': 0.7094735, 'specificity': 0.7094735, 'f1': 0.7493739, 'auroc': 0.9191358, 'binary_precision': 0.6473988, 'binary_recall': 0.42911878, 'binary_specificity': 0.9898282, 'binary_f1_score': 0.516129}
+confusion matrix:
+      0    1
+0  5936   61
+1   149  112
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_21.png
+early stop counter: 6
+val acc:0.9608343839645386, best validation acc: 0.9616326093673706, corresponding to test acc:                         0.9672419428825378 / 0.9688398838043213
+after epoch: 21,now: 2024-06-26 14:13:07.063745,epoch time: 0:24:43.154330,used: 7:50:52.744135,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 22
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9573457, 'precision': 0.9653947, 'recall': 0.92301357, 'specificity': 0.92301357, 'f1': 0.9417318, 'auroc': 0.98855424, 'binary_precision': 0.97999376, 'binary_recall': 0.8520758, 'binary_specificity': 0.99395126, 'binary_f1_score': 0.91156906}
+confusion matrix:
+       0      1
+0  42067    256
+1   2177  12540
+---- Validation: 
+scalar performance:
+{'acc': 0.96126014, 'precision': 0.6733342, 'recall': 0.5929153, 'specificity': 0.5929153, 'f1': 0.6193831, 'auroc': 0.889958, 'binary_precision': 0.37463126, 'binary_recall': 0.19751166, 'binary_specificity': 0.9883189, 'binary_f1_score': 0.25865582}
+confusion matrix:
+       0    1
+0  17937  212
+1    516  127
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9650048, 'precision': 0.80250597, 'recall': 0.68856746, 'specificity': 0.68856746, 'f1': 0.73085165, 'auroc': 0.91818774, 'binary_precision': 0.63125, 'binary_recall': 0.38697317, 'binary_specificity': 0.9901618, 'binary_f1_score': 0.47981}
+confusion matrix:
+      0    1
+0  5938   59
+1   160  101
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_22.png
+early stop counter: 7
+val acc:0.9612601399421692, best validation acc: 0.9616326093673706, corresponding to test acc:                         0.9672419428825378 / 0.9688398838043213
+after epoch: 22,now: 2024-06-26 14:35:06.717132,epoch time: 0:21:59.653387,used: 8:12:52.397522,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 23
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9583275, 'precision': 0.9656353, 'recall': 0.9252485, 'specificity': 0.9252485, 'f1': 0.9431939, 'auroc': 0.9891466, 'binary_precision': 0.9789629, 'binary_recall': 0.85690016, 'binary_specificity': 0.99359685, 'binary_f1_score': 0.9138736}
+confusion matrix:
+       0      1
+0  42052    271
+1   2106  12611
+---- Validation: 
+scalar performance:
+{'acc': 0.959983, 'precision': 0.6798065, 'recall': 0.63350713, 'specificity': 0.63350713, 'f1': 0.652772, 'auroc': 0.8906978, 'binary_precision': 0.38477802, 'binary_recall': 0.2830482, 'binary_specificity': 0.98396605, 'binary_f1_score': 0.32616487}
+confusion matrix:
+       0    1
+0  17858  291
+1    461  182
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9653244, 'precision': 0.7913029, 'recall': 0.73637486, 'specificity': 0.73637486, 'f1': 0.7606312, 'auroc': 0.9189608, 'binary_precision': 0.6047619, 'binary_recall': 0.48659003, 'binary_specificity': 0.98615974, 'binary_f1_score': 0.5392781}
+confusion matrix:
+      0    1
+0  5914   83
+1   134  127
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_23.png
+early stop counter: 8
+val acc:0.9599829912185669, best validation acc: 0.9616326093673706, corresponding to test acc:                         0.9672419428825378 / 0.9688398838043213
+after epoch: 23,now: 2024-06-26 15:02:04.532197,epoch time: 0:26:57.815065,used: 8:39:50.212587,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 24
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9593443, 'precision': 0.9653282, 'recall': 0.9280435, 'specificity': 0.9280435, 'f1': 0.94476223, 'auroc': 0.9893142, 'binary_precision': 0.976335, 'binary_recall': 0.8633646, 'binary_specificity': 0.99272245, 'binary_f1_score': 0.91638124}
+confusion matrix:
+       0      1
+0  42014    308
+1   2011  12707
+---- Validation: 
+scalar performance:
+{'acc': 0.9585994, 'precision': 0.67556137, 'recall': 0.64854205, 'specificity': 0.64854205, 'f1': 0.6607659, 'auroc': 0.89067197, 'binary_precision': 0.37523106, 'binary_recall': 0.31570762, 'binary_specificity': 0.9813764, 'binary_f1_score': 0.3429054}
+confusion matrix:
+       0    1
+0  17811  338
+1    440  203
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.964845, 'precision': 0.7825594, 'recall': 0.7617774, 'specificity': 0.7617774, 'f1': 0.7717205, 'auroc': 0.9189416, 'binary_precision': 0.58506227, 'binary_recall': 0.54022986, 'binary_specificity': 0.983325, 'binary_f1_score': 0.56175303}
+confusion matrix:
+      0    1
+0  5897  100
+1   120  141
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_24.png
+early stop counter: 9
+val acc:0.9585993885993958, best validation acc: 0.9616326093673706, corresponding to test acc:                         0.9672419428825378 / 0.9688398838043213
+after epoch: 24,now: 2024-06-26 15:28:48.819283,epoch time: 0:26:44.287086,used: 9:06:34.499673,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 25
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9585028, 'precision': 0.96637315, 'recall': 0.92507374, 'specificity': 0.92507374, 'f1': 0.94337976, 'auroc': 0.9890034, 'binary_precision': 0.98069286, 'binary_recall': 0.85600704, 'binary_specificity': 0.99414045, 'binary_f1_score': 0.9141177}
+confusion matrix:
+       0      1
+0  42076    248
+1   2119  12597
+---- Validation: 
+scalar performance:
+{'acc': 0.96062154, 'precision': 0.67839766, 'recall': 0.61658645, 'specificity': 0.61658645, 'f1': 0.64015377, 'auroc': 0.8910308, 'binary_precision': 0.38313252, 'binary_recall': 0.24727838, 'binary_specificity': 0.98589456, 'binary_f1_score': 0.3005671}
+confusion matrix:
+       0    1
+0  17893  256
+1    484  159
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96596354, 'precision': 0.7997596, 'recall': 0.7275467, 'specificity': 0.7275467, 'f1': 0.75812685, 'auroc': 0.9194821, 'binary_precision': 0.622449, 'binary_recall': 0.46743295, 'binary_specificity': 0.98766047, 'binary_f1_score': 0.53391683}
+confusion matrix:
+      0    1
+0  5923   74
+1   139  122
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_25.png
+early stop counter: 10
+val acc:0.9606215357780457, best validation acc: 0.9616326093673706, corresponding to test acc:                         0.9672419428825378 / 0.9688398838043213
+after epoch: 25,now: 2024-06-26 15:56:06.207675,epoch time: 0:27:17.388392,used: 9:33:51.888065,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 26
+---- Training Domain: 
+scalar performance:
+{'acc': 0.96174616, 'precision': 0.9674857, 'recall': 0.9322324, 'specificity': 0.9322324, 'f1': 0.94814587, 'auroc': 0.9902222, 'binary_precision': 0.9781083, 'binary_recall': 0.8712461, 'binary_specificity': 0.99321866, 'binary_f1_score': 0.92158973}
+confusion matrix:
+       0      1
+0  42035    287
+1   1895  12823
+---- Validation: 
+scalar performance:
+{'acc': 0.95913154, 'precision': 0.67706454, 'recall': 0.642817, 'specificity': 0.642817, 'f1': 0.6578519, 'auroc': 0.891399, 'binary_precision': 0.37864077, 'binary_recall': 0.30326593, 'binary_specificity': 0.9823682, 'binary_f1_score': 0.33678755}
+confusion matrix:
+       0    1
+0  17829  320
+1    448  195
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9650048, 'precision': 0.78496987, 'recall': 0.7545315, 'specificity': 0.7545315, 'f1': 0.76878285, 'auroc': 0.91914034, 'binary_precision': 0.5905172, 'binary_recall': 0.5249042, 'binary_specificity': 0.98415875, 'binary_f1_score': 0.5557809}
+confusion matrix:
+      0    1
+0  5902   95
+1   124  137
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_26.png
+early stop counter: 11
+val acc:0.9591315388679504, best validation acc: 0.9616326093673706, corresponding to test acc:                         0.9672419428825378 / 0.9688398838043213
+after epoch: 26,now: 2024-06-26 16:15:16.084340,epoch time: 0:19:09.876665,used: 9:53:01.764730,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 27
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9621494, 'precision': 0.9653163, 'recall': 0.93514884, 'specificity': 0.93514884, 'f1': 0.9489635, 'auroc': 0.98914194, 'binary_precision': 0.9712613, 'binary_recall': 0.8793478, 'binary_specificity': 0.9909499, 'binary_f1_score': 0.9230221}
+confusion matrix:
+       0      1
+0  41937    383
+1   1776  12944
+---- Validation: 
+scalar performance:
+{'acc': 0.95806724, 'precision': 0.674466, 'recall': 0.655017, 'specificity': 0.655017, 'f1': 0.664085, 'auroc': 0.8917359, 'binary_precision': 0.37258348, 'binary_recall': 0.32970452, 'binary_specificity': 0.9803295, 'binary_f1_score': 0.34983498}
+confusion matrix:
+       0    1
+0  17792  357
+1    431  212
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.964845, 'precision': 0.7817658, 'recall': 0.76727444, 'specificity': 0.76727444, 'f1': 0.77430403, 'auroc': 0.9183353, 'binary_precision': 0.58299595, 'binary_recall': 0.55172414, 'binary_specificity': 0.98282474, 'binary_f1_score': 0.56692916}
+confusion matrix:
+      0    1
+0  5894  103
+1   117  144
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_27.png
+early stop counter: 12
+val acc:0.9580672383308411, best validation acc: 0.9616326093673706, corresponding to test acc:                         0.9672419428825378 / 0.9688398838043213
+after epoch: 27,now: 2024-06-26 16:37:13.615382,epoch time: 0:21:57.531042,used: 10:14:59.295772,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 28
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9610098, 'precision': 0.9680516, 'recall': 0.9299147, 'specificity': 0.9299147, 'f1': 0.9469874, 'auroc': 0.9897276, 'binary_precision': 0.980981, 'binary_recall': 0.86566556, 'binary_specificity': 0.99416393, 'binary_f1_score': 0.9197228}
+confusion matrix:
+       0      1
+0  42076    247
+1   1977  12740
+---- Validation: 
+scalar performance:
+{'acc': 0.9581737, 'precision': 0.67386186, 'recall': 0.6513218, 'specificity': 0.6513218, 'f1': 0.6616985, 'auroc': 0.8910537, 'binary_precision': 0.37163374, 'binary_recall': 0.32192847, 'binary_specificity': 0.9807152, 'binary_f1_score': 0.345}
+confusion matrix:
+       0    1
+0  17799  350
+1    436  207
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9646852, 'precision': 0.78161347, 'recall': 0.7598617, 'specificity': 0.7598617, 'f1': 0.77024424, 'auroc': 0.9179705, 'binary_precision': 0.5833333, 'binary_recall': 0.5363985, 'binary_specificity': 0.983325, 'binary_f1_score': 0.5588822}
+confusion matrix:
+      0    1
+0  5897  100
+1   121  140
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_28.png
+early stop counter: 13
+val acc:0.9581736922264099, best validation acc: 0.9616326093673706, corresponding to test acc:                         0.9672419428825378 / 0.9688398838043213
+after epoch: 28,now: 2024-06-26 17:00:16.140515,epoch time: 0:23:02.525133,used: 10:38:01.820905,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 29
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9619565, 'precision': 0.9685437, 'recall': 0.9318427, 'specificity': 0.9318427, 'f1': 0.9483455, 'auroc': 0.9904007, 'binary_precision': 0.98068523, 'binary_recall': 0.8696391, 'binary_specificity': 0.99404633, 'binary_f1_score': 0.92182994}
+confusion matrix:
+       0      1
+0  42075    252
+1   1918  12795
+---- Validation: 
+scalar performance:
+{'acc': 0.95977014, 'precision': 0.68232924, 'recall': 0.64539784, 'specificity': 0.64539784, 'f1': 0.6614995, 'auroc': 0.8921169, 'binary_precision': 0.38899803, 'binary_recall': 0.30793157, 'binary_specificity': 0.9828641, 'binary_f1_score': 0.34375}
+confusion matrix:
+       0    1
+0  17838  311
+1    445  198
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96356666, 'precision': 0.7759765, 'recall': 0.7372901, 'specificity': 0.7372901, 'f1': 0.7549881, 'auroc': 0.9175111, 'binary_precision': 0.57399106, 'binary_recall': 0.49042144, 'binary_specificity': 0.98415875, 'binary_f1_score': 0.52892566}
+confusion matrix:
+      0    1
+0  5902   95
+1   133  128
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_29.png
+early stop counter: 14
+val acc:0.959770143032074, best validation acc: 0.9616326093673706, corresponding to test acc:                         0.9672419428825378 / 0.9688398838043213
+after epoch: 29,now: 2024-06-26 17:20:51.917899,epoch time: 0:20:35.777384,used: 10:58:37.598289,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 30
+---- Training Domain: 
+scalar performance:
+{'acc': 0.96069425, 'precision': 0.96811146, 'recall': 0.929077, 'specificity': 0.929077, 'f1': 0.9465059, 'auroc': 0.9903841, 'binary_precision': 0.981696, 'binary_recall': 0.86375374, 'binary_specificity': 0.9944003, 'binary_f1_score': 0.9189561}
+confusion matrix:
+       0      1
+0  42087    237
+1   2005  12711
+---- Validation: 
+scalar performance:
+{'acc': 0.9585994, 'precision': 0.67372173, 'recall': 0.6432916, 'specificity': 0.6432916, 'f1': 0.65683866, 'auroc': 0.89046484, 'binary_precision': 0.3719165, 'binary_recall': 0.30482116, 'binary_specificity': 0.98176205, 'binary_f1_score': 0.33504274}
+confusion matrix:
+       0    1
+0  17818  331
+1    447  196
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.964845, 'precision': 0.7825594, 'recall': 0.7617774, 'specificity': 0.7617774, 'f1': 0.7717205, 'auroc': 0.91710603, 'binary_precision': 0.58506227, 'binary_recall': 0.54022986, 'binary_specificity': 0.983325, 'binary_f1_score': 0.56175303}
+confusion matrix:
+      0    1
+0  5897  100
+1   120  141
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_30.png
+early stop counter: 15
+val acc:0.9585993885993958, best validation acc: 0.9616326093673706, corresponding to test acc:                         0.9672419428825378 / 0.9688398838043213
+after epoch: 30,now: 2024-06-26 17:40:12.325378,epoch time: 0:19:20.407479,used: 11:17:58.005768,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_06_22_14_seed_0_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+Experiment finished at epoch: 30 with time: 11:17:58.005768 at 2024-06-26 17:40:12.325378
+persisted model performance metric: 
+
+scalar performance:
+{'acc': 0.96724194, 'precision': 0.82598466, 'recall': 0.7007287, 'specificity': 0.7007287, 'f1': 0.74689674, 'auroc': 0.9200181, 'binary_precision': 0.6772152, 'binary_recall': 0.4099617, 'binary_specificity': 0.9914957, 'binary_f1_score': 0.51073986}
+confusion matrix:
+      0    1
+0  5946   51
+1   154  107
+results aggregation path: zoutput/benchmarks/CAMELYON_center0_dinov2small_dann_lr1e5_bs16_classbalancing10/rule_results/1.csv
+results aggregation path: zoutput/benchmarks/CAMELYON_center0_dinov2small_dann_lr1e5_bs16_classbalancing10/rule_results/1.csv
+confusion matrix saved in file: zoutput/benchmarks/CAMELYON_center0_dinov2small_dann_lr1e5_bs16_classbalancing10/confusion_matrix/1.csv.txt
+before torch memory clean up
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      | 191453 KiB | 374816 KiB |    894 TiB |    894 TiB |
+|       from large pool | 174400 KiB | 349689 KiB |    876 TiB |    876 TiB |
+|       from small pool |  17053 KiB |  30007 KiB |     18 TiB |     18 TiB |
+|---------------------------------------------------------------------------|
+| Active memory         | 191453 KiB | 374816 KiB |    894 TiB |    894 TiB |
+|       from large pool | 174400 KiB | 349689 KiB |    876 TiB |    876 TiB |
+|       from small pool |  17053 KiB |  30007 KiB |     18 TiB |     18 TiB |
+|---------------------------------------------------------------------------|
+| Requested memory      | 189184 KiB | 371302 KiB |    894 TiB |    894 TiB |
+|       from large pool | 172814 KiB | 346853 KiB |    876 TiB |    876 TiB |
+|       from small pool |  16370 KiB |  29327 KiB |     18 TiB |     18 TiB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   | 434176 KiB | 434176 KiB | 434176 KiB |      0 B   |
+|       from large pool | 399360 KiB | 399360 KiB | 399360 KiB |      0 B   |
+|       from small pool |  34816 KiB |  34816 KiB |  34816 KiB |      0 B   |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |  33826 KiB |  74567 KiB | 513934 GiB | 513934 GiB |
+|       from large pool |  30400 KiB |  70632 KiB | 494733 GiB | 494733 GiB |
+|       from small pool |   3426 KiB |   9057 KiB |  19201 GiB |  19201 GiB |
+|---------------------------------------------------------------------------|
+| Allocations           |    2118    |    7613    |  180815 K  |  180813 K  |
+|       from large pool |      76    |     121    |   88427 K  |   88426 K  |
+|       from small pool |    2042    |    7536    |   92388 K  |   92386 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |    2118    |    7613    |  180815 K  |  180813 K  |
+|       from large pool |      76    |     121    |   88427 K  |   88426 K  |
+|       from small pool |    2042    |    7536    |   92388 K  |   92386 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |      35    |      35    |      35    |       0    |
+|       from large pool |      18    |      18    |      18    |       0    |
+|       from small pool |      17    |      17    |      17    |       0    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |      30    |    3580    |   98194 K  |   98194 K  |
+|       from large pool |       9    |      16    |   58775 K  |   58775 K  |
+|       from small pool |      21    |    3571    |   39419 K  |   39419 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+after torch memory clean up
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |  17088 KiB | 374816 KiB |    894 TiB |    894 TiB |
+|       from large pool |  17088 KiB | 349689 KiB |    876 TiB |    876 TiB |
+|       from small pool |      0 KiB |  30007 KiB |     18 TiB |     18 TiB |
+|---------------------------------------------------------------------------|
+| Active memory         |  17088 KiB | 374816 KiB |    894 TiB |    894 TiB |
+|       from large pool |  17088 KiB | 349689 KiB |    876 TiB |    876 TiB |
+|       from small pool |      0 KiB |  30007 KiB |     18 TiB |     18 TiB |
+|---------------------------------------------------------------------------|
+| Requested memory      |  16640 KiB | 371302 KiB |    894 TiB |    894 TiB |
+|       from large pool |  16640 KiB | 346853 KiB |    876 TiB |    876 TiB |
+|       from small pool |      0 KiB |  29327 KiB |     18 TiB |     18 TiB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   | 225280 KiB | 434176 KiB | 434176 KiB | 208896 KiB |
+|       from large pool | 204800 KiB | 399360 KiB | 399360 KiB | 194560 KiB |
+|       from small pool |  20480 KiB |  34816 KiB |  34816 KiB |  14336 KiB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |  23872 KiB |  77074 KiB | 513935 GiB | 513935 GiB |
+|       from large pool |  23872 KiB |  70632 KiB | 494733 GiB | 494733 GiB |
+|       from small pool |      0 KiB |  15512 KiB |  19201 GiB |  19201 GiB |
+|---------------------------------------------------------------------------|
+| Allocations           |       2    |    7613    |  180815 K  |  180815 K  |
+|       from large pool |       2    |     121    |   88427 K  |   88427 K  |
+|       from small pool |       0    |    7536    |   92388 K  |   92388 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |       2    |    7613    |  180815 K  |  180815 K  |
+|       from large pool |       2    |     121    |   88427 K  |   88427 K  |
+|       from small pool |       0    |    7536    |   92388 K  |   92388 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |      20    |      35    |      35    |      15    |
+|       from large pool |      10    |      18    |      18    |       8    |
+|       from small pool |      10    |      17    |      17    |       7    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |       3    |    3580    |   98195 K  |   98195 K  |
+|       from large pool |       3    |      16    |   58775 K  |   58775 K  |
+|       from small pool |       0    |    3571    |   39419 K  |   39419 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+before experiment starts
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |  17088 KiB | 374816 KiB |    894 TiB |    894 TiB |
+|       from large pool |  17088 KiB | 349689 KiB |    876 TiB |    876 TiB |
+|       from small pool |      0 KiB |  30007 KiB |     18 TiB |     18 TiB |
+|---------------------------------------------------------------------------|
+| Active memory         |  17088 KiB | 374816 KiB |    894 TiB |    894 TiB |
+|       from large pool |  17088 KiB | 349689 KiB |    876 TiB |    876 TiB |
+|       from small pool |      0 KiB |  30007 KiB |     18 TiB |     18 TiB |
+|---------------------------------------------------------------------------|
+| Requested memory      |  16640 KiB | 371302 KiB |    894 TiB |    894 TiB |
+|       from large pool |  16640 KiB | 346853 KiB |    876 TiB |    876 TiB |
+|       from small pool |      0 KiB |  29327 KiB |     18 TiB |     18 TiB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   | 225280 KiB | 434176 KiB | 434176 KiB | 208896 KiB |
+|       from large pool | 204800 KiB | 399360 KiB | 399360 KiB | 194560 KiB |
+|       from small pool |  20480 KiB |  34816 KiB |  34816 KiB |  14336 KiB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |  23872 KiB |  77074 KiB | 513935 GiB | 513935 GiB |
+|       from large pool |  23872 KiB |  70632 KiB | 494733 GiB | 494733 GiB |
+|       from small pool |      0 KiB |  15512 KiB |  19201 GiB |  19201 GiB |
+|---------------------------------------------------------------------------|
+| Allocations           |       2    |    7613    |  180815 K  |  180815 K  |
+|       from large pool |       2    |     121    |   88427 K  |   88427 K  |
+|       from small pool |       0    |    7536    |   92388 K  |   92388 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |       2    |    7613    |  180815 K  |  180815 K  |
+|       from large pool |       2    |     121    |   88427 K  |   88427 K  |
+|       from small pool |       0    |    7536    |   92388 K  |   92388 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |      20    |      35    |      35    |      15    |
+|       from large pool |      10    |      18    |      18    |       8    |
+|       from small pool |      10    |      17    |      17    |       7    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |       3    |    3580    |   98195 K  |   98195 K  |
+|       from large pool |       3    |      16    |   58775 K  |   58775 K  |
+|       from small pool |       0    |    3571    |   39419 K  |   39419 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+
+overriding args.task None to dset
+
+
+using device: cuda:0
+
+Using cache found in /home/aih/sina.wendrich/.cache/torch/hub/facebookresearch_dinov2_main
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+
+
+
+!!!: not committed yet
+/ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab/domainlab/utils/get_git_tag.py:16: UserWarning: !!!: not committed yet
+  warnings.warn("!!!: not committed yet")
+
+
+
+b'44271c83'
+model name: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+
+ Experiment start at: 2024-06-26 17:46:12.374713
+epoch: 1
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9017631, 'precision': 0.89991397, 'recall': 0.8326763, 'specificity': 0.8326763, 'f1': 0.85906696, 'auroc': 0.94689035, 'binary_precision': 0.8968739, 'binary_recall': 0.6924197, 'binary_specificity': 0.9729328, 'binary_f1_score': 0.7814958}
+confusion matrix:
+       0     1
+0  41265  1148
+1   4435  9984
+---- Validation: 
+scalar performance:
+{'acc': 0.95192105, 'precision': 0.6471155, 'recall': 0.63888943, 'specificity': 0.63888943, 'f1': 0.6428635, 'auroc': 0.82515895, 'binary_precision': 0.32018927, 'binary_recall': 0.30163446, 'binary_specificity': 0.9761444, 'binary_f1_score': 0.31063503}
+confusion matrix:
+       0    1
+0  17636  431
+1    470  203
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.95568806, 'precision': 0.7097129, 'recall': 0.6256287, 'specificity': 0.6256287, 'f1': 0.6556109, 'auroc': 0.88394976, 'binary_precision': 0.4509804, 'binary_recall': 0.2653846, 'binary_specificity': 0.98587286, 'binary_f1_score': 0.33414045}
+confusion matrix:
+      0   1
+0  5862  84
+1   191  69
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_1.png
+new oracle model saved
+better model found
+persisted
+after epoch: 1,now: 2024-06-26 18:04:03.887884,epoch time: 0:17:51.513171,used: 0:17:51.513171,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 2
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9296699, 'precision': 0.93239546, 'recall': 0.8785639, 'specificity': 0.8785639, 'f1': 0.90124345, 'auroc': 0.9687859, 'binary_precision': 0.9370911, 'binary_recall': 0.774811, 'binary_specificity': 0.98231673, 'binary_f1_score': 0.8482594}
+confusion matrix:
+       0      1
+0  41663    750
+1   3247  11172
+---- Validation: 
+scalar performance:
+{'acc': 0.95880467, 'precision': 0.7028122, 'recall': 0.70397246, 'specificity': 0.70397246, 'f1': 0.7033905, 'auroc': 0.86208034, 'binary_precision': 0.4268833, 'binary_recall': 0.4294205, 'binary_specificity': 0.9785244, 'binary_f1_score': 0.42814815}
+confusion matrix:
+       0    1
+0  17679  388
+1    384  289
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9618111, 'precision': 0.76433563, 'recall': 0.72812945, 'specificity': 0.72812945, 'f1': 0.74472463, 'auroc': 0.9077206, 'binary_precision': 0.5515695, 'binary_recall': 0.4730769, 'binary_specificity': 0.98318195, 'binary_f1_score': 0.5093168}
+confusion matrix:
+      0    1
+0  5846  100
+1   137  123
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_2.png
+new oracle model saved
+better model found
+persisted
+after epoch: 2,now: 2024-06-26 18:22:20.206871,epoch time: 0:18:16.318987,used: 0:36:07.832158,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 3
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9381862, 'precision': 0.9392175, 'recall': 0.89487314, 'specificity': 0.89487314, 'f1': 0.9142045, 'auroc': 0.9735806, 'binary_precision': 0.94104326, 'binary_recall': 0.80693483, 'binary_specificity': 0.98281145, 'binary_f1_score': 0.86884457}
+confusion matrix:
+       0      1
+0  41683    729
+1   2784  11636
+---- Validation: 
+scalar performance:
+{'acc': 0.95971185, 'precision': 0.71138614, 'recall': 0.7237551, 'specificity': 0.7237551, 'f1': 0.7173708, 'auroc': 0.8756796, 'binary_precision': 0.44257703, 'binary_recall': 0.46953937, 'binary_specificity': 0.9779709, 'binary_f1_score': 0.45565972}
+confusion matrix:
+       0    1
+0  17669  398
+1    357  316
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9634225, 'precision': 0.77260673, 'recall': 0.7675891, 'specificity': 0.7675891, 'f1': 0.77007145, 'auroc': 0.915632, 'binary_precision': 0.5647059, 'binary_recall': 0.5538462, 'binary_specificity': 0.981332, 'binary_f1_score': 0.5592233}
+confusion matrix:
+      0    1
+0  5835  111
+1   116  144
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_3.png
+new oracle model saved
+better model found
+persisted
+after epoch: 3,now: 2024-06-26 18:40:40.037671,epoch time: 0:18:19.830800,used: 0:54:27.662958,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 4
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9412479, 'precision': 0.9412911, 'recall': 0.9010666, 'specificity': 0.9010666, 'f1': 0.91884667, 'auroc': 0.97649825, 'binary_precision': 0.9413686, 'binary_recall': 0.8194868, 'binary_specificity': 0.9826464, 'binary_f1_score': 0.8762095}
+confusion matrix:
+       0      1
+0  41676    736
+1   2603  11817
+---- Validation: 
+scalar performance:
+{'acc': 0.95997864, 'precision': 0.7136618, 'recall': 0.7289004, 'specificity': 0.7289004, 'f1': 0.72098297, 'auroc': 0.8825973, 'binary_precision': 0.44674966, 'binary_recall': 0.47994056, 'binary_specificity': 0.9778602, 'binary_f1_score': 0.46275073}
+confusion matrix:
+       0    1
+0  17667  400
+1    350  323
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9634225, 'precision': 0.77210546, 'recall': 0.77310604, 'specificity': 0.77310604, 'f1': 0.7726047, 'auroc': 0.91763365, 'binary_precision': 0.5632184, 'binary_recall': 0.5653846, 'binary_specificity': 0.98082745, 'binary_f1_score': 0.56429946}
+confusion matrix:
+      0    1
+0  5832  114
+1   113  147
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_4.png
+better model found
+persisted
+after epoch: 4,now: 2024-06-26 19:01:31.274436,epoch time: 0:20:51.236765,used: 1:15:18.899723,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 5
+---- Training Domain: 
+scalar performance:
+{'acc': 0.94543564, 'precision': 0.94462013, 'recall': 0.90907365, 'specificity': 0.90907365, 'f1': 0.9250356, 'auroc': 0.9796915, 'binary_precision': 0.9431391, 'binary_recall': 0.8352639, 'binary_specificity': 0.9828834, 'binary_f1_score': 0.8859297}
+confusion matrix:
+       0      1
+0  41689    726
+1   2375  12042
+---- Validation: 
+scalar performance:
+{'acc': 0.95971185, 'precision': 0.7115994, 'recall': 0.7251857, 'specificity': 0.7251857, 'f1': 0.7181523, 'auroc': 0.8860975, 'binary_precision': 0.44289693, 'binary_recall': 0.47251114, 'binary_specificity': 0.9778602, 'binary_f1_score': 0.45722502}
+confusion matrix:
+       0    1
+0  17667  400
+1    355  318
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96455044, 'precision': 0.77942884, 'recall': 0.7773726, 'specificity': 0.7773726, 'f1': 0.77839637, 'auroc': 0.9196173, 'binary_precision': 0.57751936, 'binary_recall': 0.5730769, 'binary_specificity': 0.98166835, 'binary_f1_score': 0.57528955}
+confusion matrix:
+      0    1
+0  5837  109
+1   111  149
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_5.png
+new oracle model saved
+early stop counter: 1
+val acc:0.9597118496894836, best validation acc: 0.9599786400794983, corresponding to test acc:                         0.9634224772453308 / 0.9645504355430603
+after epoch: 5,now: 2024-06-26 19:19:48.281828,epoch time: 0:18:17.007392,used: 1:33:35.907115,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 6
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9478287, 'precision': 0.9488877, 'recall': 0.911489, 'specificity': 0.911489, 'f1': 0.928211, 'auroc': 0.98182553, 'binary_precision': 0.9508029, 'binary_recall': 0.83771414, 'binary_specificity': 0.98526394, 'binary_f1_score': 0.89068323}
+confusion matrix:
+       0      1
+0  41788    625
+1   2340  12079
+---- Validation: 
+scalar performance:
+{'acc': 0.96168625, 'precision': 0.7210896, 'recall': 0.7033211, 'specificity': 0.7033211, 'f1': 0.71178555, 'auroc': 0.88811195, 'binary_precision': 0.46353322, 'binary_recall': 0.42496285, 'binary_specificity': 0.9816793, 'binary_f1_score': 0.44341084}
+confusion matrix:
+       0    1
+0  17736  331
+1    387  286
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9668063, 'precision': 0.7997011, 'recall': 0.761999, 'specificity': 0.761999, 'f1': 0.77942926, 'auroc': 0.91870487, 'binary_precision': 0.61946905, 'binary_recall': 0.53846157, 'binary_specificity': 0.9855365, 'binary_f1_score': 0.5761317}
+confusion matrix:
+      0    1
+0  5860   86
+1   120  140
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_6.png
+new oracle model saved
+better model found
+persisted
+after epoch: 6,now: 2024-06-26 19:38:48.321980,epoch time: 0:19:00.040152,used: 1:52:35.947267,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 7
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9484093, 'precision': 0.9504801, 'recall': 0.91158056, 'specificity': 0.91158056, 'f1': 0.9289037, 'auroc': 0.9822886, 'binary_precision': 0.9542112, 'binary_recall': 0.83681256, 'binary_specificity': 0.9863485, 'binary_f1_score': 0.8916642}
+confusion matrix:
+       0      1
+0  41834    579
+1   2353  12066
+---- Validation: 
+scalar performance:
+{'acc': 0.9602455, 'precision': 0.7118055, 'recall': 0.7054349, 'specificity': 0.7054349, 'f1': 0.70856506, 'auroc': 0.88857645, 'binary_precision': 0.44478527, 'binary_recall': 0.4309064, 'binary_specificity': 0.9799635, 'binary_f1_score': 0.43773583}
+confusion matrix:
+       0    1
+0  17705  362
+1    383  290
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96455044, 'precision': 0.7805878, 'recall': 0.76817775, 'specificity': 0.76817775, 'f1': 0.774224, 'auroc': 0.91890347, 'binary_precision': 0.58064514, 'binary_recall': 0.5538462, 'binary_specificity': 0.98250926, 'binary_f1_score': 0.56692916}
+confusion matrix:
+      0    1
+0  5842  104
+1   116  144
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_7.png
+early stop counter: 1
+val acc:0.9602454900741577, best validation acc: 0.9616862535476685, corresponding to test acc:                         0.9668062925338745 / 0.9668062925338745
+after epoch: 7,now: 2024-06-26 19:58:52.020346,epoch time: 0:20:03.698366,used: 2:12:39.645633,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 8
+---- Training Domain: 
+scalar performance:
+{'acc': 0.95004576, 'precision': 0.9541501, 'recall': 0.91260266, 'specificity': 0.91260266, 'f1': 0.9309814, 'auroc': 0.98367554, 'binary_precision': 0.9614986, 'binary_recall': 0.83659315, 'binary_specificity': 0.98861223, 'binary_f1_score': 0.89470756}
+confusion matrix:
+       0      1
+0  41931    483
+1   2356  12062
+---- Validation: 
+scalar performance:
+{'acc': 0.9618463, 'precision': 0.7195821, 'recall': 0.6819461, 'specificity': 0.6819461, 'f1': 0.69877774, 'auroc': 0.8901237, 'binary_precision': 0.46209386, 'binary_recall': 0.38038632, 'binary_specificity': 0.98350585, 'binary_f1_score': 0.4172779}
+confusion matrix:
+       0    1
+0  17769  298
+1    417  256
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9658395, 'precision': 0.798678, 'recall': 0.7320707, 'specificity': 0.7320707, 'f1': 0.7606964, 'auroc': 0.9196632, 'binary_precision': 0.62, 'binary_recall': 0.47692308, 'binary_specificity': 0.9872183, 'binary_f1_score': 0.53913045}
+confusion matrix:
+      0    1
+0  5870   76
+1   136  124
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_8.png
+better model found
+persisted
+after epoch: 8,now: 2024-06-26 20:21:39.607809,epoch time: 0:22:47.587463,used: 2:35:27.233096,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 9
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9519109, 'precision': 0.95401716, 'recall': 0.9175376, 'specificity': 0.9175376, 'f1': 0.9339218, 'auroc': 0.9852699, 'binary_precision': 0.9578403, 'binary_recall': 0.8477597, 'binary_specificity': 0.98731554, 'binary_f1_score': 0.89944446}
+confusion matrix:
+       0      1
+0  41876    538
+1   2195  12223
+---- Validation: 
+scalar performance:
+{'acc': 0.96136606, 'precision': 0.7162005, 'recall': 0.68384284, 'specificity': 0.68384284, 'f1': 0.6985451, 'auroc': 0.89174354, 'binary_precision': 0.45518455, 'binary_recall': 0.38484398, 'binary_specificity': 0.9828417, 'binary_f1_score': 0.41706923}
+confusion matrix:
+       0    1
+0  17757  310
+1    414  259
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9660006, 'precision': 0.7986746, 'recall': 0.73767173, 'specificity': 0.73767173, 'f1': 0.7642876, 'auroc': 0.91876054, 'binary_precision': 0.6195122, 'binary_recall': 0.48846152, 'binary_specificity': 0.9868819, 'binary_f1_score': 0.5462366}
+confusion matrix:
+      0    1
+0  5868   78
+1   133  127
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_9.png
+early stop counter: 1
+val acc:0.9613660573959351, best validation acc: 0.9618462920188904, corresponding to test acc:                         0.9658395051956177 / 0.9668062925338745
+after epoch: 9,now: 2024-06-26 20:40:03.463611,epoch time: 0:18:23.855802,used: 2:53:51.088898,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 10
+---- Training Domain: 
+scalar performance:
+{'acc': 0.95419836, 'precision': 0.954587, 'recall': 0.923012, 'specificity': 0.923012, 'f1': 0.9374048, 'auroc': 0.9858602, 'binary_precision': 0.9553021, 'binary_recall': 0.859699, 'binary_specificity': 0.98632497, 'binary_f1_score': 0.9049827}
+confusion matrix:
+       0      1
+0  41833    580
+1   2023  12396
+---- Validation: 
+scalar performance:
+{'acc': 0.9600854, 'precision': 0.7092582, 'recall': 0.69605345, 'specificity': 0.69605345, 'f1': 0.70241183, 'auroc': 0.8905196, 'binary_precision': 0.44038156, 'binary_recall': 0.4115899, 'binary_specificity': 0.98051697, 'binary_f1_score': 0.42549923}
+confusion matrix:
+       0    1
+0  17715  352
+1    396  277
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96310025, 'precision': 0.7717637, 'recall': 0.75270903, 'specificity': 0.75270903, 'f1': 0.76184416, 'auroc': 0.9170619, 'binary_precision': 0.5643154, 'binary_recall': 0.52307695, 'binary_specificity': 0.98234105, 'binary_f1_score': 0.5429142}
+confusion matrix:
+      0    1
+0  5841  105
+1   124  136
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_10.png
+early stop counter: 2
+val acc:0.960085391998291, best validation acc: 0.9618462920188904, corresponding to test acc:                         0.9658395051956177 / 0.9668062925338745
+after epoch: 10,now: 2024-06-26 20:58:20.934347,epoch time: 0:18:17.470736,used: 3:12:08.559634,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 11
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9544623, 'precision': 0.95740736, 'recall': 0.92114687, 'specificity': 0.92114687, 'f1': 0.9374607, 'auroc': 0.9869712, 'binary_precision': 0.96276015, 'binary_recall': 0.85351646, 'binary_specificity': 0.9887773, 'binary_f1_score': 0.904853}
+confusion matrix:
+       0      1
+0  41938    476
+1   2112  12306
+---- Validation: 
+scalar performance:
+{'acc': 0.9615795, 'precision': 0.71467614, 'recall': 0.66321075, 'specificity': 0.66321075, 'f1': 0.6849979, 'auroc': 0.8918048, 'binary_precision': 0.45364892, 'binary_recall': 0.34175333, 'binary_specificity': 0.9846682, 'binary_f1_score': 0.3898305}
+confusion matrix:
+       0    1
+0  17790  277
+1    443  230
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9643893, 'precision': 0.78899395, 'recall': 0.714763, 'specificity': 0.714763, 'f1': 0.74575055, 'auroc': 0.9159157, 'binary_precision': 0.60209423, 'binary_recall': 0.44230768, 'binary_specificity': 0.9872183, 'binary_f1_score': 0.5099778}
+confusion matrix:
+      0    1
+0  5870   76
+1   145  115
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_11.png
+early stop counter: 3
+val acc:0.9615795016288757, best validation acc: 0.9618462920188904, corresponding to test acc:                         0.9658395051956177 / 0.9668062925338745
+after epoch: 11,now: 2024-06-26 21:16:20.471271,epoch time: 0:17:59.536924,used: 3:30:08.096558,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 12
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9547614, 'precision': 0.95628726, 'recall': 0.92293143, 'specificity': 0.92293143, 'f1': 0.938063, 'auroc': 0.9866152, 'binary_precision': 0.9590825, 'binary_recall': 0.85831195, 'binary_specificity': 0.987551, 'binary_f1_score': 0.9059034}
+confusion matrix:
+       0      1
+0  41885    528
+1   2043  12376
+---- Validation: 
+scalar performance:
+{'acc': 0.96125937, 'precision': 0.7098841, 'recall': 0.6516004, 'specificity': 0.6516004, 'f1': 0.6754491, 'auroc': 0.89125085, 'binary_precision': 0.44490644, 'binary_recall': 0.3179792, 'binary_specificity': 0.9852217, 'binary_f1_score': 0.37088385}
+confusion matrix:
+       0    1
+0  17800  267
+1    459  214
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96471155, 'precision': 0.79268456, 'recall': 0.7130922, 'specificity': 0.7130922, 'f1': 0.74588186, 'auroc': 0.915032, 'binary_precision': 0.6096257, 'binary_recall': 0.43846154, 'binary_specificity': 0.9877228, 'binary_f1_score': 0.5100671}
+confusion matrix:
+      0    1
+0  5873   73
+1   146  114
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_12.png
+early stop counter: 4
+val acc:0.9612593650817871, best validation acc: 0.9618462920188904, corresponding to test acc:                         0.9658395051956177 / 0.9668062925338745
+after epoch: 12,now: 2024-06-26 21:38:06.895317,epoch time: 0:21:46.424046,used: 3:51:54.520604,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 13
+---- Training Domain: 
+scalar performance:
+{'acc': 0.95613384, 'precision': 0.95703477, 'recall': 0.9258468, 'specificity': 0.9258468, 'f1': 0.94008887, 'auroc': 0.9865382, 'binary_precision': 0.9586955, 'binary_recall': 0.8643551, 'binary_specificity': 0.9873385, 'binary_f1_score': 0.9090843}
+confusion matrix:
+       0      1
+0  41875    537
+1   1956  12464
+---- Validation: 
+scalar performance:
+{'acc': 0.9601921, 'precision': 0.70581126, 'recall': 0.6732202, 'specificity': 0.6732202, 'f1': 0.6879287, 'auroc': 0.8915032, 'binary_precision': 0.43516874, 'binary_recall': 0.3640416, 'binary_specificity': 0.98239887, 'binary_f1_score': 0.39644012}
+confusion matrix:
+       0    1
+0  17749  318
+1    428  245
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9626168, 'precision': 0.7708882, 'recall': 0.7267109, 'specificity': 0.7267109, 'f1': 0.746584, 'auroc': 0.9135071, 'binary_precision': 0.5648148, 'binary_recall': 0.46923077, 'binary_specificity': 0.98419106, 'binary_f1_score': 0.512605}
+confusion matrix:
+      0    1
+0  5852   94
+1   138  122
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_13.png
+early stop counter: 5
+val acc:0.960192084312439, best validation acc: 0.9618462920188904, corresponding to test acc:                         0.9658395051956177 / 0.9668062925338745
+after epoch: 13,now: 2024-06-26 21:57:40.722437,epoch time: 0:19:33.827120,used: 4:11:28.347724,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 14
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9539872, 'precision': 0.9592812, 'recall': 0.91832113, 'specificity': 0.91832113, 'f1': 0.93650484, 'auroc': 0.9877517, 'binary_precision': 0.96878725, 'binary_recall': 0.84590846, 'binary_specificity': 0.99073374, 'binary_f1_score': 0.9031876}
+confusion matrix:
+       0      1
+0  42019    393
+1   2222  12198
+---- Validation: 
+scalar performance:
+{'acc': 0.96211314, 'precision': 0.7146376, 'recall': 0.6348768, 'specificity': 0.6348768, 'f1': 0.6645565, 'auroc': 0.89329517, 'binary_precision': 0.4556355, 'binary_recall': 0.28231797, 'binary_specificity': 0.98743564, 'binary_f1_score': 0.34862384}
+confusion matrix:
+       0    1
+0  17840  227
+1    483  190
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96406704, 'precision': 0.7917306, 'recall': 0.692527, 'specificity': 0.692527, 'f1': 0.73078835, 'auroc': 0.9139308, 'binary_precision': 0.60946745, 'binary_recall': 0.39615384, 'binary_specificity': 0.9889001, 'binary_f1_score': 0.48018646}
+confusion matrix:
+      0    1
+0  5880   66
+1   157  103
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_14.png
+better model found
+persisted
+after epoch: 14,now: 2024-06-26 22:17:07.232014,epoch time: 0:19:26.509577,used: 4:30:54.857301,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 15
+---- Training Domain: 
+scalar performance:
+{'acc': 0.958826, 'precision': 0.9584119, 'recall': 0.9316471, 'specificity': 0.9316471, 'f1': 0.94403344, 'auroc': 0.9887502, 'binary_precision': 0.9576387, 'binary_recall': 0.87647384, 'binary_specificity': 0.9868204, 'binary_f1_score': 0.9152604}
+confusion matrix:
+       0      1
+0  41855    559
+1   1781  12637
+---- Validation: 
+scalar performance:
+{'acc': 0.95928496, 'precision': 0.7020177, 'recall': 0.6849093, 'specificity': 0.6849093, 'f1': 0.6930335, 'auroc': 0.89384407, 'binary_precision': 0.4267101, 'binary_recall': 0.38930163, 'binary_specificity': 0.98051697, 'binary_f1_score': 0.4071484}
+confusion matrix:
+       0    1
+0  17715  352
+1    411  262
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96132773, 'precision': 0.75993824, 'recall': 0.7407501, 'specificity': 0.7407501, 'f1': 0.7499261, 'auroc': 0.91282344, 'binary_precision': 0.5416667, 'binary_recall': 0.5, 'binary_specificity': 0.98150015, 'binary_f1_score': 0.52}
+confusion matrix:
+      0    1
+0  5836  110
+1   130  130
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_15.png
+early stop counter: 1
+val acc:0.9592849612236023, best validation acc: 0.9621131420135498, corresponding to test acc:                         0.9640670418739319 / 0.9668062925338745
+after epoch: 15,now: 2024-06-26 22:34:57.202415,epoch time: 0:17:49.970401,used: 4:48:44.827702,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 16
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9568553, 'precision': 0.962226, 'recall': 0.9231262, 'specificity': 0.9231262, 'f1': 0.9405972, 'auroc': 0.9891014, 'binary_precision': 0.9719243, 'binary_recall': 0.8546463, 'binary_specificity': 0.9916062, 'binary_f1_score': 0.90952027}
+confusion matrix:
+       0      1
+0  42056    356
+1   2096  12324
+---- Validation: 
+scalar performance:
+{'acc': 0.96093917, 'precision': 0.7022924, 'recall': 0.63069165, 'specificity': 0.63069165, 'f1': 0.6578156, 'auroc': 0.89359117, 'binary_precision': 0.43123543, 'binary_recall': 0.27488855, 'binary_specificity': 0.9864947, 'binary_f1_score': 0.33575317}
+confusion matrix:
+       0    1
+0  17823  244
+1    488  185
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9639059, 'precision': 0.7910546, 'recall': 0.6887649, 'specificity': 0.6887649, 'f1': 0.72774494, 'auroc': 0.9129958, 'binary_precision': 0.6084337, 'binary_recall': 0.38846153, 'binary_specificity': 0.98906827, 'binary_f1_score': 0.4741784}
+confusion matrix:
+      0    1
+0  5881   65
+1   159  101
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_16.png
+early stop counter: 2
+val acc:0.9609391689300537, best validation acc: 0.9621131420135498, corresponding to test acc:                         0.9640670418739319 / 0.9668062925338745
+after epoch: 16,now: 2024-06-26 22:53:07.350541,epoch time: 0:18:10.148126,used: 5:06:54.975828,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 17
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9572248, 'precision': 0.962826, 'recall': 0.9235519, 'specificity': 0.9235519, 'f1': 0.94109553, 'auroc': 0.9893309, 'binary_precision': 0.97293675, 'binary_recall': 0.85519105, 'binary_specificity': 0.99191284, 'binary_f1_score': 0.910272}
+confusion matrix:
+       0      1
+0  42070    343
+1   2088  12331
+---- Validation: 
+scalar performance:
+{'acc': 0.9614194, 'precision': 0.7060643, 'recall': 0.62736434, 'specificity': 0.62736434, 'f1': 0.6562728, 'auroc': 0.8939642, 'binary_precision': 0.4390244, 'binary_recall': 0.26745912, 'binary_specificity': 0.9872696, 'binary_f1_score': 0.33240998}
+confusion matrix:
+       0    1
+0  17837  230
+1    493  180
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9643893, 'precision': 0.7960136, 'recall': 0.69085616, 'specificity': 0.69085616, 'f1': 0.7307817, 'auroc': 0.9125786, 'binary_precision': 0.6181818, 'binary_recall': 0.3923077, 'binary_specificity': 0.9894046, 'binary_f1_score': 0.48000002}
+confusion matrix:
+      0    1
+0  5883   63
+1   158  102
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_17.png
+early stop counter: 3
+val acc:0.961419403553009, best validation acc: 0.9621131420135498, corresponding to test acc:                         0.9640670418739319 / 0.9668062925338745
+after epoch: 17,now: 2024-06-26 23:10:39.066908,epoch time: 0:17:31.716367,used: 5:24:26.692195,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 18
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9581926, 'precision': 0.96175826, 'recall': 0.9269469, 'specificity': 0.9269469, 'f1': 0.94269615, 'auroc': 0.9888998, 'binary_precision': 0.96827126, 'binary_recall': 0.8635134, 'binary_specificity': 0.9903803, 'binary_f1_score': 0.9128968}
+confusion matrix:
+       0      1
+0  42005    408
+1   1968  12451
+---- Validation: 
+scalar performance:
+{'acc': 0.96029884, 'precision': 0.69918215, 'recall': 0.6403733, 'specificity': 0.6403733, 'f1': 0.66401845, 'auroc': 0.8931848, 'binary_precision': 0.42430705, 'binary_recall': 0.29569092, 'binary_specificity': 0.9850556, 'binary_f1_score': 0.34851137}
+confusion matrix:
+       0    1
+0  17797  270
+1    474  199
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9639059, 'precision': 0.78473663, 'recall': 0.71267176, 'specificity': 0.71267176, 'f1': 0.74284786, 'auroc': 0.9112632, 'binary_precision': 0.59375, 'binary_recall': 0.43846154, 'binary_specificity': 0.9868819, 'binary_f1_score': 0.5044248}
+confusion matrix:
+      0    1
+0  5868   78
+1   146  114
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_18.png
+early stop counter: 4
+val acc:0.9602988362312317, best validation acc: 0.9621131420135498, corresponding to test acc:                         0.9640670418739319 / 0.9668062925338745
+after epoch: 18,now: 2024-06-26 23:28:28.410450,epoch time: 0:17:49.343542,used: 5:42:16.035737,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 19
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9576823, 'precision': 0.9640044, 'recall': 0.9237261, 'specificity': 0.9237261, 'f1': 0.94167227, 'auroc': 0.9901668, 'binary_precision': 0.9753897, 'binary_recall': 0.854785, 'binary_specificity': 0.9926672, 'binary_f1_score': 0.9111136}
+confusion matrix:
+       0      1
+0  42101    311
+1   2094  12326
+---- Validation: 
+scalar performance:
+{'acc': 0.960619, 'precision': 0.6978909, 'recall': 0.62551874, 'specificity': 0.62551874, 'f1': 0.6525644, 'auroc': 0.89314306, 'binary_precision': 0.42280284, 'binary_recall': 0.26448736, 'binary_specificity': 0.9865501, 'binary_f1_score': 0.32541132}
+confusion matrix:
+       0    1
+0  17824  243
+1    495  178
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96310025, 'precision': 0.78126967, 'recall': 0.69202244, 'specificity': 0.69202244, 'f1': 0.72722167, 'auroc': 0.91058636, 'binary_precision': 0.5885714, 'binary_recall': 0.39615384, 'binary_specificity': 0.987891, 'binary_f1_score': 0.47356322}
+confusion matrix:
+      0    1
+0  5874   72
+1   157  103
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_19.png
+early stop counter: 5
+val acc:0.9606189727783203, best validation acc: 0.9621131420135498, corresponding to test acc:                         0.9640670418739319 / 0.9668062925338745
+after epoch: 19,now: 2024-06-26 23:45:57.046380,epoch time: 0:17:28.635930,used: 5:59:44.671667,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 20
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9595298, 'precision': 0.9636673, 'recall': 0.92870796, 'specificity': 0.92870796, 'f1': 0.9445263, 'auroc': 0.9898759, 'binary_precision': 0.9712241, 'binary_recall': 0.86613953, 'binary_specificity': 0.99127644, 'binary_f1_score': 0.9156767}
+confusion matrix:
+       0      1
+0  42044    370
+1   1930  12488
+---- Validation: 
+scalar performance:
+{'acc': 0.9596585, 'precision': 0.69753367, 'recall': 0.65363127, 'specificity': 0.65363127, 'f1': 0.67246926, 'auroc': 0.89311934, 'binary_precision': 0.42003852, 'binary_recall': 0.32392272, 'binary_specificity': 0.9833398, 'binary_f1_score': 0.3657718}
+confusion matrix:
+       0    1
+0  17766  301
+1    455  218
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96358365, 'precision': 0.77866626, 'recall': 0.72905445, 'specificity': 0.72905445, 'f1': 0.75112927, 'auroc': 0.910519, 'binary_precision': 0.5801887, 'binary_recall': 0.4730769, 'binary_specificity': 0.98503196, 'binary_f1_score': 0.5211865}
+confusion matrix:
+      0    1
+0  5857   89
+1   137  123
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_20.png
+early stop counter: 6
+val acc:0.9596585035324097, best validation acc: 0.9621131420135498, corresponding to test acc:                         0.9640670418739319 / 0.9668062925338745
+after epoch: 20,now: 2024-06-27 00:03:32.441419,epoch time: 0:17:35.395039,used: 6:17:20.066706,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 21
+---- Training Domain: 
+scalar performance:
+{'acc': 0.95905477, 'precision': 0.96457076, 'recall': 0.9267282, 'specificity': 0.9267282, 'f1': 0.9437125, 'auroc': 0.99042016, 'binary_precision': 0.9745703, 'binary_recall': 0.8610957, 'binary_specificity': 0.99236065, 'binary_f1_score': 0.9143257}
+confusion matrix:
+       0      1
+0  42088    324
+1   2003  12417
+---- Validation: 
+scalar performance:
+{'acc': 0.95981854, 'precision': 0.6941575, 'recall': 0.63654786, 'specificity': 0.63654786, 'f1': 0.65966547, 'auroc': 0.8922621, 'binary_precision': 0.41452992, 'binary_recall': 0.2882615, 'binary_specificity': 0.98483425, 'binary_f1_score': 0.34005255}
+confusion matrix:
+       0    1
+0  17793  274
+1    479  194
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96455044, 'precision': 0.7901113, 'recall': 0.71668607, 'specificity': 0.71668607, 'f1': 0.74743986, 'auroc': 0.9105145, 'binary_precision': 0.6041667, 'binary_recall': 0.44615385, 'binary_specificity': 0.9872183, 'binary_f1_score': 0.5132744}
+confusion matrix:
+      0    1
+0  5870   76
+1   144  116
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_21.png
+early stop counter: 7
+val acc:0.9598185420036316, best validation acc: 0.9621131420135498, corresponding to test acc:                         0.9640670418739319 / 0.9668062925338745
+after epoch: 21,now: 2024-06-27 00:21:02.046316,epoch time: 0:17:29.604897,used: 6:34:49.671603,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 22
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9606032, 'precision': 0.9637514, 'recall': 0.93139565, 'specificity': 0.93139565, 'f1': 0.9461473, 'auroc': 0.99015486, 'binary_precision': 0.96954274, 'binary_recall': 0.8721043, 'binary_specificity': 0.990687, 'binary_f1_score': 0.91824585}
+confusion matrix:
+       0      1
+0  42019    395
+1   1844  12574
+---- Validation: 
+scalar performance:
+{'acc': 0.9590715, 'precision': 0.6974771, 'recall': 0.67049325, 'specificity': 0.67049325, 'f1': 0.6828598, 'auroc': 0.89192754, 'binary_precision': 0.4186851, 'binary_recall': 0.35958394, 'binary_specificity': 0.9814026, 'binary_f1_score': 0.38689047}
+confusion matrix:
+       0    1
+0  17731  336
+1    431  242
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9614889, 'precision': 0.76107323, 'recall': 0.7408342, 'specificity': 0.7408342, 'f1': 0.75048995, 'auroc': 0.9087412, 'binary_precision': 0.54393303, 'binary_recall': 0.5, 'binary_specificity': 0.98166835, 'binary_f1_score': 0.52104205}
+confusion matrix:
+      0    1
+0  5837  109
+1   130  130
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_22.png
+early stop counter: 8
+val acc:0.9590715169906616, best validation acc: 0.9621131420135498, corresponding to test acc:                         0.9640670418739319 / 0.9668062925338745
+after epoch: 22,now: 2024-06-27 00:39:15.958076,epoch time: 0:18:13.911760,used: 6:53:03.583363,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 23
+---- Training Domain: 
+scalar performance:
+{'acc': 0.96012807, 'precision': 0.96626246, 'recall': 0.92801476, 'specificity': 0.92801476, 'f1': 0.9451699, 'auroc': 0.99017954, 'binary_precision': 0.9773745, 'binary_recall': 0.8628199, 'binary_specificity': 0.9932096, 'binary_f1_score': 0.9165316}
+confusion matrix:
+       0      1
+0  42125    288
+1   1978  12441
+---- Validation: 
+scalar performance:
+{'acc': 0.96003205, 'precision': 0.6965476, 'recall': 0.6388044, 'specificity': 0.6388044, 'f1': 0.66204715, 'auroc': 0.8924918, 'binary_precision': 0.41914892, 'binary_recall': 0.29271916, 'binary_specificity': 0.98488957, 'binary_f1_score': 0.34470692}
+confusion matrix:
+       0    1
+0  17794  273
+1    476  197
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9621334, 'precision': 0.76957417, 'recall': 0.70439076, 'specificity': 0.70439076, 'f1': 0.7319314, 'auroc': 0.90850085, 'binary_precision': 0.5641026, 'binary_recall': 0.42307693, 'binary_specificity': 0.98570466, 'binary_f1_score': 0.48351648}
+confusion matrix:
+      0    1
+0  5861   85
+1   150  110
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_23.png
+early stop counter: 9
+val acc:0.960032045841217, best validation acc: 0.9621131420135498, corresponding to test acc:                         0.9640670418739319 / 0.9668062925338745
+after epoch: 23,now: 2024-06-27 00:56:50.098560,epoch time: 0:17:34.140484,used: 7:10:37.723847,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 24
+---- Training Domain: 
+scalar performance:
+{'acc': 0.95935386, 'precision': 0.96588373, 'recall': 0.9263698, 'specificity': 0.9263698, 'f1': 0.944026, 'auroc': 0.9903894, 'binary_precision': 0.97767085, 'binary_recall': 0.85941184, 'binary_specificity': 0.9933277, 'binary_f1_score': 0.914735}
+confusion matrix:
+       0      1
+0  42131    283
+1   2027  12391
+---- Validation: 
+scalar performance:
+{'acc': 0.9600854, 'precision': 0.6953758, 'recall': 0.6331099, 'specificity': 0.6331099, 'f1': 0.6575631, 'auroc': 0.89299524, 'binary_precision': 0.41721854, 'binary_recall': 0.28083208, 'binary_specificity': 0.98538774, 'binary_f1_score': 0.33570158}
+confusion matrix:
+       0    1
+0  17803  264
+1    484  189
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9629391, 'precision': 0.77805746, 'recall': 0.69929427, 'specificity': 0.69929427, 'f1': 0.731382, 'auroc': 0.908501, 'binary_precision': 0.58152175, 'binary_recall': 0.41153845, 'binary_specificity': 0.9870501, 'binary_f1_score': 0.48198196}
+confusion matrix:
+      0    1
+0  5869   77
+1   153  107
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_24.png
+early stop counter: 10
+val acc:0.960085391998291, best validation acc: 0.9621131420135498, corresponding to test acc:                         0.9640670418739319 / 0.9668062925338745
+after epoch: 24,now: 2024-06-27 01:15:09.416671,epoch time: 0:18:19.318111,used: 7:28:57.041958,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 25
+---- Training Domain: 
+scalar performance:
+{'acc': 0.96125424, 'precision': 0.96644974, 'recall': 0.9307147, 'specificity': 0.9307147, 'f1': 0.9468607, 'auroc': 0.9908761, 'binary_precision': 0.9759252, 'binary_recall': 0.86871487, 'binary_specificity': 0.9927145, 'binary_f1_score': 0.91920453}
+confusion matrix:
+       0      1
+0  42104    309
+1   1893  12526
+---- Validation: 
+scalar performance:
+{'acc': 0.9597652, 'precision': 0.6955443, 'recall': 0.64295757, 'specificity': 0.64295757, 'f1': 0.66462004, 'auroc': 0.8921226, 'binary_precision': 0.41683778, 'binary_recall': 0.30163446, 'binary_specificity': 0.9842807, 'binary_f1_score': 0.35}
+confusion matrix:
+       0    1
+0  17783  284
+1    470  203
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9624557, 'precision': 0.77222145, 'recall': 0.70639795, 'specificity': 0.70639795, 'f1': 0.7342128, 'auroc': 0.906036, 'binary_precision': 0.5692308, 'binary_recall': 0.42692307, 'binary_specificity': 0.98587286, 'binary_f1_score': 0.48791212}
+confusion matrix:
+      0    1
+0  5862   84
+1   149  111
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_25.png
+early stop counter: 11
+val acc:0.9597651958465576, best validation acc: 0.9621131420135498, corresponding to test acc:                         0.9640670418739319 / 0.9668062925338745
+after epoch: 25,now: 2024-06-27 01:32:46.839113,epoch time: 0:17:37.422442,used: 7:46:34.464400,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 26
+---- Training Domain: 
+scalar performance:
+{'acc': 0.95998734, 'precision': 0.9644267, 'recall': 0.9292251, 'specificity': 0.9292251, 'f1': 0.94514513, 'auroc': 0.99022865, 'binary_precision': 0.9725313, 'binary_recall': 0.866773, 'binary_specificity': 0.9916771, 'binary_f1_score': 0.9166116}
+confusion matrix:
+       0      1
+0  42060    353
+1   1921  12498
+---- Validation: 
+scalar performance:
+{'acc': 0.9596051, 'precision': 0.6983705, 'recall': 0.65861046, 'specificity': 0.65861046, 'f1': 0.6759778, 'auroc': 0.8946028, 'binary_precision': 0.4213483, 'binary_recall': 0.3343239, 'binary_specificity': 0.982897, 'binary_f1_score': 0.37282518}
+confusion matrix:
+       0    1
+0  17758  309
+1    448  225
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9639059, 'precision': 0.7798834, 'recall': 0.73841757, 'specificity': 0.73841757, 'f1': 0.7572801, 'auroc': 0.90906185, 'binary_precision': 0.58181816, 'binary_recall': 0.4923077, 'binary_specificity': 0.9845274, 'binary_f1_score': 0.5333333}
+confusion matrix:
+      0    1
+0  5854   92
+1   132  128
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_26.png
+early stop counter: 12
+val acc:0.9596050977706909, best validation acc: 0.9621131420135498, corresponding to test acc:                         0.9640670418739319 / 0.9668062925338745
+after epoch: 26,now: 2024-06-27 01:50:42.475922,epoch time: 0:17:55.636809,used: 8:04:30.101209,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 27
+---- Training Domain: 
+scalar performance:
+{'acc': 0.95984656, 'precision': 0.96711934, 'recall': 0.9265902, 'specificity': 0.9265902, 'f1': 0.9446539, 'auroc': 0.99083483, 'binary_precision': 0.9802168, 'binary_recall': 0.85907483, 'binary_specificity': 0.9941056, 'binary_f1_score': 0.91565645}
+confusion matrix:
+       0      1
+0  42163    250
+1   2032  12387
+---- Validation: 
+scalar performance:
+{'acc': 0.9599253, 'precision': 0.6870207, 'recall': 0.6122841, 'specificity': 0.6122841, 'f1': 0.6390797, 'auroc': 0.893473, 'binary_precision': 0.40201005, 'binary_recall': 0.23774146, 'binary_specificity': 0.98682684, 'binary_f1_score': 0.2987862}
+confusion matrix:
+       0    1
+0  17829  238
+1    513  160
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96326137, 'precision': 0.7829631, 'recall': 0.69210654, 'specificity': 0.69210654, 'f1': 0.7278097, 'auroc': 0.9076035, 'binary_precision': 0.59195405, 'binary_recall': 0.39615384, 'binary_specificity': 0.9880592, 'binary_f1_score': 0.47465435}
+confusion matrix:
+      0    1
+0  5875   71
+1   157  103
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_27.png
+early stop counter: 13
+val acc:0.9599252939224243, best validation acc: 0.9621131420135498, corresponding to test acc:                         0.9640670418739319 / 0.9668062925338745
+after epoch: 27,now: 2024-06-27 02:08:17.121184,epoch time: 0:17:34.645262,used: 8:22:04.746471,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 28
+---- Training Domain: 
+scalar performance:
+{'acc': 0.95831573, 'precision': 0.9673314, 'recall': 0.92257893, 'specificity': 0.92257893, 'f1': 0.9422835, 'auroc': 0.9911001, 'binary_precision': 0.9833895, 'binary_recall': 0.8500382, 'binary_specificity': 0.99511963, 'binary_f1_score': 0.9118643}
+confusion matrix:
+       0      1
+0  42208    207
+1   2162  12255
+---- Validation: 
+scalar performance:
+{'acc': 0.9604055, 'precision': 0.6903795, 'recall': 0.6089569, 'specificity': 0.6089569, 'f1': 0.6371539, 'auroc': 0.8953264, 'binary_precision': 0.40897098, 'binary_recall': 0.23031203, 'binary_specificity': 0.9876017, 'binary_f1_score': 0.2946768}
+confusion matrix:
+       0    1
+0  17843  224
+1    518  155
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96422815, 'precision': 0.79887265, 'recall': 0.6778992, 'specificity': 0.6778992, 'f1': 0.7213325, 'auroc': 0.9080639, 'binary_precision': 0.625, 'binary_recall': 0.3653846, 'binary_specificity': 0.9904137, 'binary_f1_score': 0.46116504}
+confusion matrix:
+      0   1
+0  5889  57
+1   165  95
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_28.png
+early stop counter: 14
+val acc:0.9604055285453796, best validation acc: 0.9621131420135498, corresponding to test acc:                         0.9640670418739319 / 0.9668062925338745
+after epoch: 28,now: 2024-06-27 02:26:03.313043,epoch time: 0:17:46.191859,used: 8:39:50.938330,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 29
+---- Training Domain: 
+scalar performance:
+{'acc': 0.96111345, 'precision': 0.96847826, 'recall': 0.92865676, 'specificity': 0.92865676, 'f1': 0.94644916, 'auroc': 0.9915534, 'binary_precision': 0.9817708, 'binary_recall': 0.86276007, 'binary_specificity': 0.99455345, 'binary_f1_score': 0.91842616}
+confusion matrix:
+       0      1
+0  42181    231
+1   1979  12441
+---- Validation: 
+scalar performance:
+{'acc': 0.96029884, 'precision': 0.6970344, 'recall': 0.63250536, 'specificity': 0.63250536, 'f1': 0.65762615, 'auroc': 0.8947814, 'binary_precision': 0.42058167, 'binary_recall': 0.2793462, 'binary_specificity': 0.9856645, 'binary_f1_score': 0.33571428}
+confusion matrix:
+       0    1
+0  17808  259
+1    485  188
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96422815, 'precision': 0.7857617, 'recall': 0.7220349, 'specificity': 0.7220349, 'f1': 0.74940854, 'auroc': 0.9076606, 'binary_precision': 0.595, 'binary_recall': 0.4576923, 'binary_specificity': 0.9863774, 'binary_f1_score': 0.5173913}
+confusion matrix:
+      0    1
+0  5865   81
+1   141  119
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_29.png
+early stop counter: 15
+val acc:0.9602988362312317, best validation acc: 0.9621131420135498, corresponding to test acc:                         0.9640670418739319 / 0.9668062925338745
+after epoch: 29,now: 2024-06-27 02:43:28.013711,epoch time: 0:17:24.700668,used: 8:57:15.638998,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 30
+---- Training Domain: 
+scalar performance:
+{'acc': 0.959829, 'precision': 0.96783304, 'recall': 0.92595553, 'specificity': 0.92595553, 'f1': 0.94455206, 'auroc': 0.99121225, 'binary_precision': 0.9821982, 'binary_recall': 0.8571924, 'binary_specificity': 0.99471873, 'binary_f1_score': 0.9154476}
+confusion matrix:
+       0      1
+0  42190    224
+1   2059  12359
+---- Validation: 
+scalar performance:
+{'acc': 0.960619, 'precision': 0.6954789, 'recall': 0.61765075, 'specificity': 0.61765075, 'f1': 0.6456484, 'auroc': 0.893203, 'binary_precision': 0.41854638, 'binary_recall': 0.24814264, 'binary_specificity': 0.9871589, 'binary_f1_score': 0.31156716}
+confusion matrix:
+       0    1
+0  17835  232
+1    506  167
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96374476, 'precision': 0.78764915, 'recall': 0.6941978, 'specificity': 0.6941978, 'f1': 0.7307933, 'auroc': 0.90598726, 'binary_precision': 0.60115606, 'binary_recall': 0.4, 'binary_specificity': 0.9883956, 'binary_f1_score': 0.4803695}
+confusion matrix:
+      0    1
+0  5877   69
+1   156  104
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_30.png
+early stop counter: 16
+val acc:0.9606189727783203, best validation acc: 0.9621131420135498, corresponding to test acc:                         0.9640670418739319 / 0.9668062925338745
+after epoch: 30,now: 2024-06-27 03:01:06.965574,epoch time: 0:17:38.951863,used: 9:14:54.590861,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_26_17_46_12_seed_1_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+Experiment finished at epoch: 30 with time: 9:14:54.590861 at 2024-06-27 03:01:06.965574
+persisted model performance metric: 
+
+scalar performance:
+{'acc': 0.96406704, 'precision': 0.7917306, 'recall': 0.692527, 'specificity': 0.692527, 'f1': 0.73078835, 'auroc': 0.9139308, 'binary_precision': 0.60946745, 'binary_recall': 0.39615384, 'binary_specificity': 0.9889001, 'binary_f1_score': 0.48018646}
+confusion matrix:
+      0    1
+0  5880   66
+1   157  103
+oracle model performance metric: 
+
+scalar performance:
+{'acc': 0.9668063, 'precision': 0.7997011, 'recall': 0.761999, 'specificity': 0.761999, 'f1': 0.77942926, 'auroc': 0.91870487, 'binary_precision': 0.61946905, 'binary_recall': 0.53846157, 'binary_specificity': 0.9855365, 'binary_f1_score': 0.5761317}
+confusion matrix:
+      0    1
+0  5860   86
+1   120  140
+results aggregation path: zoutput/benchmarks/CAMELYON_center0_dinov2small_dann_lr1e5_bs16_classbalancing10/rule_results/1.csv
+confusion matrix saved in file: zoutput/benchmarks/CAMELYON_center0_dinov2small_dann_lr1e5_bs16_classbalancing10/confusion_matrix/1.csv.txt
+before torch memory clean up
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      | 190969 KiB | 459954 KiB |   1787 TiB |   1787 TiB |
+|       from large pool | 173494 KiB | 426325 KiB |   1749 TiB |   1749 TiB |
+|       from small pool |  17475 KiB |  34702 KiB |     37 TiB |     37 TiB |
+|---------------------------------------------------------------------------|
+| Active memory         | 190969 KiB | 459954 KiB |   1787 TiB |   1787 TiB |
+|       from large pool | 173494 KiB | 426325 KiB |   1749 TiB |   1749 TiB |
+|       from small pool |  17475 KiB |  34702 KiB |     37 TiB |     37 TiB |
+|---------------------------------------------------------------------------|
+| Requested memory      | 189281 KiB | 457562 KiB |   1787 TiB |   1787 TiB |
+|       from large pool | 172814 KiB | 424940 KiB |   1749 TiB |   1749 TiB |
+|       from small pool |  16467 KiB |  33694 KiB |     37 TiB |     37 TiB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   | 526336 KiB | 526336 KiB | 735232 KiB | 208896 KiB |
+|       from large pool | 487424 KiB | 487424 KiB | 681984 KiB | 194560 KiB |
+|       from small pool |  38912 KiB |  38912 KiB |  53248 KiB |  14336 KiB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |  38406 KiB |  83509 KiB |   1064 TiB |   1064 TiB |
+|       from large pool |  31306 KiB |  79555 KiB |   1026 TiB |   1026 TiB |
+|       from small pool |   7100 KiB |  15512 KiB |     37 TiB |     37 TiB |
+|---------------------------------------------------------------------------|
+| Allocations           |    2962    |    7613    |  361166 K  |  361164 K  |
+|       from large pool |      76    |     158    |  176605 K  |  176604 K  |
+|       from small pool |    2886    |    7536    |  184561 K  |  184559 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |    2962    |    7613    |  361166 K  |  361164 K  |
+|       from large pool |      76    |     158    |  176605 K  |  176604 K  |
+|       from small pool |    2886    |    7536    |  184561 K  |  184559 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |      41    |      41    |      56    |      15    |
+|       from large pool |      22    |      22    |      30    |       8    |
+|       from small pool |      19    |      19    |      26    |       7    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |      40    |    3580    |  194333 K  |  194333 K  |
+|       from large pool |      10    |      22    |  116358 K  |  116358 K  |
+|       from small pool |      30    |    3571    |   77975 K  |   77974 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+after torch memory clean up
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |  17088 KiB | 459954 KiB |   1787 TiB |   1787 TiB |
+|       from large pool |  17088 KiB | 426325 KiB |   1749 TiB |   1749 TiB |
+|       from small pool |      0 KiB |  34702 KiB |     37 TiB |     37 TiB |
+|---------------------------------------------------------------------------|
+| Active memory         |  17088 KiB | 459954 KiB |   1787 TiB |   1787 TiB |
+|       from large pool |  17088 KiB | 426325 KiB |   1749 TiB |   1749 TiB |
+|       from small pool |      0 KiB |  34702 KiB |     37 TiB |     37 TiB |
+|---------------------------------------------------------------------------|
+| Requested memory      |  16640 KiB | 457562 KiB |   1787 TiB |   1787 TiB |
+|       from large pool |  16640 KiB | 424940 KiB |   1749 TiB |   1749 TiB |
+|       from small pool |      0 KiB |  33694 KiB |     37 TiB |     37 TiB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   | 229376 KiB | 526336 KiB | 735232 KiB | 505856 KiB |
+|       from large pool | 204800 KiB | 487424 KiB | 681984 KiB | 477184 KiB |
+|       from small pool |  24576 KiB |  38912 KiB |  53248 KiB |  28672 KiB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |  23872 KiB |  83509 KiB |   1064 TiB |   1064 TiB |
+|       from large pool |  23872 KiB |  79555 KiB |   1026 TiB |   1026 TiB |
+|       from small pool |      0 KiB |  19186 KiB |     37 TiB |     37 TiB |
+|---------------------------------------------------------------------------|
+| Allocations           |       2    |    7613    |  361166 K  |  361166 K  |
+|       from large pool |       2    |     158    |  176605 K  |  176605 K  |
+|       from small pool |       0    |    7536    |  184561 K  |  184561 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |       2    |    7613    |  361166 K  |  361166 K  |
+|       from large pool |       2    |     158    |  176605 K  |  176605 K  |
+|       from small pool |       0    |    7536    |  184561 K  |  184561 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |      22    |      41    |      56    |      34    |
+|       from large pool |      10    |      22    |      30    |      20    |
+|       from small pool |      12    |      19    |      26    |      14    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |       3    |    3580    |  194334 K  |  194334 K  |
+|       from large pool |       3    |      22    |  116358 K  |  116358 K  |
+|       from small pool |       0    |    3571    |   77976 K  |   77976 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+before experiment starts
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |  17088 KiB | 459954 KiB |   1787 TiB |   1787 TiB |
+|       from large pool |  17088 KiB | 426325 KiB |   1749 TiB |   1749 TiB |
+|       from small pool |      0 KiB |  34702 KiB |     37 TiB |     37 TiB |
+|---------------------------------------------------------------------------|
+| Active memory         |  17088 KiB | 459954 KiB |   1787 TiB |   1787 TiB |
+|       from large pool |  17088 KiB | 426325 KiB |   1749 TiB |   1749 TiB |
+|       from small pool |      0 KiB |  34702 KiB |     37 TiB |     37 TiB |
+|---------------------------------------------------------------------------|
+| Requested memory      |  16640 KiB | 457562 KiB |   1787 TiB |   1787 TiB |
+|       from large pool |  16640 KiB | 424940 KiB |   1749 TiB |   1749 TiB |
+|       from small pool |      0 KiB |  33694 KiB |     37 TiB |     37 TiB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   | 229376 KiB | 526336 KiB | 735232 KiB | 505856 KiB |
+|       from large pool | 204800 KiB | 487424 KiB | 681984 KiB | 477184 KiB |
+|       from small pool |  24576 KiB |  38912 KiB |  53248 KiB |  28672 KiB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |  23872 KiB |  83509 KiB |   1064 TiB |   1064 TiB |
+|       from large pool |  23872 KiB |  79555 KiB |   1026 TiB |   1026 TiB |
+|       from small pool |      0 KiB |  19186 KiB |     37 TiB |     37 TiB |
+|---------------------------------------------------------------------------|
+| Allocations           |       2    |    7613    |  361166 K  |  361166 K  |
+|       from large pool |       2    |     158    |  176605 K  |  176605 K  |
+|       from small pool |       0    |    7536    |  184561 K  |  184561 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |       2    |    7613    |  361166 K  |  361166 K  |
+|       from large pool |       2    |     158    |  176605 K  |  176605 K  |
+|       from small pool |       0    |    7536    |  184561 K  |  184561 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |      22    |      41    |      56    |      34    |
+|       from large pool |      10    |      22    |      30    |      20    |
+|       from small pool |      12    |      19    |      26    |      14    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |       3    |    3580    |  194334 K  |  194334 K  |
+|       from large pool |       3    |      22    |  116358 K  |  116358 K  |
+|       from small pool |       0    |    3571    |   77976 K  |   77976 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+
+overriding args.task None to dset
+
+
+using device: cuda:0
+
+Using cache found in /home/aih/sina.wendrich/.cache/torch/hub/facebookresearch_dinov2_main
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+
+
+
+!!!: not committed yet
+/ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab/domainlab/utils/get_git_tag.py:16: UserWarning: !!!: not committed yet
+  warnings.warn("!!!: not committed yet")
+
+
+
+b'44271c83'
+model name: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+
+ Experiment start at: 2024-06-27 03:07:35.774396
+epoch: 1
+---- Training Domain: 
+scalar performance:
+{'acc': 0.8763231, 'precision': 0.8842979, 'recall': 0.78742766, 'specificity': 0.78742766, 'f1': 0.81967664, 'auroc': 0.9238415, 'binary_precision': 0.89660966, 'binary_recall': 0.59957695, 'binary_specificity': 0.9752783, 'binary_f1_score': 0.7186089}
+confusion matrix:
+       0     1
+0  41265  1046
+1   6058  9071
+---- Validation: 
+scalar performance:
+{'acc': 0.95925, 'precision': 0.6581967, 'recall': 0.6344422, 'specificity': 0.6344422, 'f1': 0.6452174, 'auroc': 0.75168085, 'binary_precision': 0.33988214, 'binary_recall': 0.28737542, 'binary_specificity': 0.981509, 'binary_f1_score': 0.31143114}
+confusion matrix:
+       0    1
+0  17835  336
+1    429  173
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9390928, 'precision': 0.5096944, 'recall': 0.50633895, 'specificity': 0.50633895, 'f1': 0.5068846, 'auroc': 0.7067504, 'binary_precision': 0.057692308, 'binary_recall': 0.037190083, 'binary_specificity': 0.97548777, 'binary_f1_score': 0.04522613}
+confusion matrix:
+      0    1
+0  5850  147
+1   233    9
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_1.png
+new oracle model saved
+better model found
+persisted
+after epoch: 1,now: 2024-06-27 03:25:25.016175,epoch time: 0:17:49.241779,used: 0:17:49.241779,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 2
+---- Training Domain: 
+scalar performance:
+{'acc': 0.91545963, 'precision': 0.92464113, 'recall': 0.8543546, 'specificity': 0.8543546, 'f1': 0.8818371, 'auroc': 0.952522, 'binary_precision': 0.94010794, 'binary_recall': 0.7252297, 'binary_specificity': 0.9834795, 'binary_f1_score': 0.818806}
+confusion matrix:
+       0      1
+0  41612    699
+1   4157  10972
+---- Validation: 
+scalar performance:
+{'acc': 0.96127415, 'precision': 0.6855086, 'recall': 0.6780494, 'specificity': 0.6780494, 'f1': 0.6816926, 'auroc': 0.8086029, 'binary_precision': 0.3916811, 'binary_recall': 0.3754153, 'binary_specificity': 0.9806835, 'binary_f1_score': 0.38337576}
+confusion matrix:
+       0    1
+0  17820  351
+1    376  226
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.94774806, 'precision': 0.6186834, 'recall': 0.5901508, 'specificity': 0.5901508, 'f1': 0.60204357, 'auroc': 0.8000598, 'binary_precision': 0.26923078, 'binary_recall': 0.20247933, 'binary_specificity': 0.97782224, 'binary_f1_score': 0.23113208}
+confusion matrix:
+      0    1
+0  5864  133
+1   193   49
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_2.png
+new oracle model saved
+better model found
+persisted
+after epoch: 2,now: 2024-06-27 03:43:38.729841,epoch time: 0:18:13.713666,used: 0:36:02.955445,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 3
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9301532, 'precision': 0.936491, 'recall': 0.88121486, 'specificity': 0.88121486, 'f1': 0.90421176, 'auroc': 0.9623476, 'binary_precision': 0.94765663, 'binary_recall': 0.77779245, 'binary_specificity': 0.9846372, 'binary_f1_score': 0.85436326}
+confusion matrix:
+       0      1
+0  41660    650
+1   3362  11768
+---- Validation: 
+scalar performance:
+{'acc': 0.95951635, 'precision': 0.67962193, 'recall': 0.69400537, 'specificity': 0.69400537, 'f1': 0.68649906, 'auroc': 0.82962, 'binary_precision': 0.37883437, 'binary_recall': 0.410299, 'binary_specificity': 0.97771174, 'binary_f1_score': 0.3939394}
+confusion matrix:
+       0    1
+0  17766  405
+1    355  247
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9480686, 'precision': 0.65331775, 'recall': 0.655748, 'specificity': 0.655748, 'f1': 0.6545215, 'auroc': 0.8362473, 'binary_precision': 0.33333334, 'binary_recall': 0.338843, 'binary_specificity': 0.972653, 'binary_f1_score': 0.33606556}
+confusion matrix:
+      0    1
+0  5833  164
+1   160   82
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_3.png
+new oracle model saved
+early stop counter: 1
+val acc:0.9595163464546204, best validation acc: 0.9612741470336914, corresponding to test acc:                         0.947748064994812 / 0.9480686187744141
+after epoch: 3,now: 2024-06-27 04:01:54.961153,epoch time: 0:18:16.231312,used: 0:54:19.186757,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 4
+---- Training Domain: 
+scalar performance:
+{'acc': 0.93560237, 'precision': 0.9410162, 'recall': 0.89102125, 'specificity': 0.89102125, 'f1': 0.9122515, 'auroc': 0.9669453, 'binary_precision': 0.95070976, 'binary_recall': 0.7968141, 'binary_specificity': 0.9852284, 'binary_f1_score': 0.8669855}
+confusion matrix:
+       0      1
+0  41686    625
+1   3074  12055
+---- Validation: 
+scalar performance:
+{'acc': 0.9610611, 'precision': 0.6860634, 'recall': 0.6851668, 'specificity': 0.6851668, 'f1': 0.6856139, 'auroc': 0.84122014, 'binary_precision': 0.39232054, 'binary_recall': 0.39036545, 'binary_specificity': 0.9799681, 'binary_f1_score': 0.39134055}
+confusion matrix:
+       0    1
+0  17807  364
+1    367  235
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.95399904, 'precision': 0.68683547, 'recall': 0.672712, 'specificity': 0.672712, 'f1': 0.6794525, 'auroc': 0.8545581, 'binary_precision': 0.39910313, 'binary_recall': 0.3677686, 'binary_specificity': 0.9776555, 'binary_f1_score': 0.38279572}
+confusion matrix:
+      0    1
+0  5863  134
+1   153   89
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_4.png
+new oracle model saved
+early stop counter: 2
+val acc:0.9610611200332642, best validation acc: 0.9612741470336914, corresponding to test acc:                         0.947748064994812 / 0.9539990425109863
+after epoch: 4,now: 2024-06-27 04:20:34.408073,epoch time: 0:18:39.446920,used: 1:12:58.633677,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 5
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9385968, 'precision': 0.9443487, 'recall': 0.89571404, 'specificity': 0.89571404, 'f1': 0.91649497, 'auroc': 0.9693291, 'binary_precision': 0.9546986, 'binary_recall': 0.80508924, 'binary_specificity': 0.9863389, 'binary_f1_score': 0.8735344}
+confusion matrix:
+       0      1
+0  41732    578
+1   2949  12181
+---- Validation: 
+scalar performance:
+{'acc': 0.96228623, 'precision': 0.6953635, 'recall': 0.692224, 'specificity': 0.692224, 'f1': 0.69377947, 'auroc': 0.8522395, 'binary_precision': 0.41047296, 'binary_recall': 0.4036545, 'binary_specificity': 0.9807936, 'binary_f1_score': 0.40703514}
+confusion matrix:
+       0    1
+0  17822  349
+1    359  243
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9572047, 'precision': 0.708729, 'recall': 0.68627596, 'specificity': 0.68627596, 'f1': 0.69677186, 'auroc': 0.86861265, 'binary_precision': 0.44186047, 'binary_recall': 0.39256197, 'binary_specificity': 0.97999, 'binary_f1_score': 0.4157549}
+confusion matrix:
+      0    1
+0  5877  120
+1   147   95
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_5.png
+new oracle model saved
+better model found
+persisted
+after epoch: 5,now: 2024-06-27 04:38:32.735042,epoch time: 0:17:58.326969,used: 1:30:56.960646,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 6
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9430188, 'precision': 0.94839823, 'recall': 0.9033225, 'specificity': 0.9033225, 'f1': 0.9228459, 'auroc': 0.9718725, 'binary_precision': 0.9581884, 'binary_recall': 0.8194316, 'binary_specificity': 0.98721343, 'binary_f1_score': 0.8833944}
+confusion matrix:
+       0      1
+0  41769    541
+1   2732  12398
+---- Validation: 
+scalar performance:
+{'acc': 0.96132743, 'precision': 0.6881193, 'recall': 0.68691045, 'specificity': 0.68691045, 'f1': 0.68751264, 'auroc': 0.86132395, 'binary_precision': 0.39632106, 'binary_recall': 0.3936877, 'binary_specificity': 0.9801332, 'binary_f1_score': 0.39499995}
+confusion matrix:
+       0    1
+0  17810  361
+1    365  237
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9591281, 'precision': 0.7254572, 'recall': 0.7209831, 'specificity': 0.7209831, 'f1': 0.72319454, 'auroc': 0.8790318, 'binary_precision': 0.47257385, 'binary_recall': 0.46280992, 'binary_specificity': 0.97915626, 'binary_f1_score': 0.4676409}
+confusion matrix:
+      0    1
+0  5872  125
+1   130  112
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_6.png
+new oracle model saved
+early stop counter: 1
+val acc:0.9613274335861206, best validation acc: 0.9622862339019775, corresponding to test acc:                         0.9572046995162964 / 0.9591280817985535
+after epoch: 6,now: 2024-06-27 04:56:35.794422,epoch time: 0:18:03.059380,used: 1:49:00.020026,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 7
+---- Training Domain: 
+scalar performance:
+{'acc': 0.94550836, 'precision': 0.952682, 'recall': 0.9059408, 'specificity': 0.9059408, 'f1': 0.9261152, 'auroc': 0.9750396, 'binary_precision': 0.9656912, 'binary_recall': 0.822328, 'binary_specificity': 0.9895536, 'binary_f1_score': 0.88826215}
+confusion matrix:
+       0      1
+0  41869    442
+1   2688  12441
+---- Validation: 
+scalar performance:
+{'acc': 0.96063495, 'precision': 0.68533665, 'recall': 0.6921741, 'specificity': 0.6921741, 'f1': 0.6886853, 'auroc': 0.8688166, 'binary_precision': 0.3904, 'binary_recall': 0.4053156, 'binary_specificity': 0.9790325, 'binary_f1_score': 0.397718}
+confusion matrix:
+       0    1
+0  17790  381
+1    358  244
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.95992947, 'precision': 0.73218447, 'recall': 0.7432101, 'specificity': 0.7432101, 'f1': 0.73755157, 'auroc': 0.8856859, 'binary_precision': 0.48425198, 'binary_recall': 0.5082645, 'binary_specificity': 0.97815573, 'binary_f1_score': 0.49596775}
+confusion matrix:
+      0    1
+0  5866  131
+1   119  123
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_7.png
+new oracle model saved
+early stop counter: 2
+val acc:0.9606349468231201, best validation acc: 0.9622862339019775, corresponding to test acc:                         0.9572046995162964 / 0.9599294662475586
+after epoch: 7,now: 2024-06-27 05:14:18.580113,epoch time: 0:17:42.785691,used: 2:06:42.805717,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 8
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9479631, 'precision': 0.950739, 'recall': 0.91368437, 'specificity': 0.91368437, 'f1': 0.9301695, 'auroc': 0.97607464, 'binary_precision': 0.9559144, 'binary_recall': 0.84124255, 'binary_specificity': 0.9861262, 'binary_f1_score': 0.89492}
+confusion matrix:
+       0      1
+0  41723    587
+1   2402  12728
+---- Validation: 
+scalar performance:
+{'acc': 0.9607415, 'precision': 0.6861642, 'recall': 0.69303215, 'specificity': 0.69303215, 'f1': 0.6895278, 'auroc': 0.8739145, 'binary_precision': 0.392, 'binary_recall': 0.40697673, 'binary_specificity': 0.97908753, 'binary_f1_score': 0.399348}
+confusion matrix:
+       0    1
+0  17791  380
+1    357  245
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96025, 'precision': 0.73448867, 'recall': 0.7493251, 'specificity': 0.7493251, 'f1': 0.7416477, 'auroc': 0.88988537, 'binary_precision': 0.4883721, 'binary_recall': 0.5206612, 'binary_specificity': 0.977989, 'binary_f1_score': 0.50400007}
+confusion matrix:
+      0    1
+0  5865  132
+1   116  126
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_8.png
+new oracle model saved
+early stop counter: 3
+val acc:0.9607415199279785, best validation acc: 0.9622862339019775, corresponding to test acc:                         0.9572046995162964 / 0.9602500200271606
+after epoch: 8,now: 2024-06-27 05:32:42.335380,epoch time: 0:18:23.755267,used: 2:25:06.560984,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 9
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9487639, 'precision': 0.95296574, 'recall': 0.9137558, 'specificity': 0.9137558, 'f1': 0.93109447, 'auroc': 0.9786968, 'binary_precision': 0.9607532, 'binary_recall': 0.8397779, 'binary_specificity': 0.98773366, 'binary_f1_score': 0.89620143}
+confusion matrix:
+       0      1
+0  41792    519
+1   2424  12705
+---- Validation: 
+scalar performance:
+{'acc': 0.96212643, 'precision': 0.69110316, 'recall': 0.6784897, 'specificity': 0.6784897, 'f1': 0.684554, 'auroc': 0.87788856, 'binary_precision': 0.40285206, 'binary_recall': 0.3754153, 'binary_specificity': 0.98156404, 'binary_f1_score': 0.38865003}
+confusion matrix:
+       0    1
+0  17836  335
+1    376  226
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9626543, 'precision': 0.7495829, 'recall': 0.748593, 'specificity': 0.748593, 'f1': 0.74908686, 'auroc': 0.894377, 'binary_precision': 0.5186722, 'binary_recall': 0.5165289, 'binary_specificity': 0.980657, 'binary_f1_score': 0.5175984}
+confusion matrix:
+      0    1
+0  5881  116
+1   117  125
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_9.png
+new oracle model saved
+early stop counter: 4
+val acc:0.9621264338493347, best validation acc: 0.9622862339019775, corresponding to test acc:                         0.9572046995162964 / 0.9626542925834656
+after epoch: 9,now: 2024-06-27 05:50:30.369821,epoch time: 0:17:48.034441,used: 2:42:54.595425,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 10
+---- Training Domain: 
+scalar performance:
+{'acc': 0.95250696, 'precision': 0.954823, 'recall': 0.9215408, 'specificity': 0.9215408, 'f1': 0.9365461, 'auroc': 0.9799919, 'binary_precision': 0.95919424, 'binary_recall': 0.8561042, 'binary_specificity': 0.9869774, 'binary_f1_score': 0.904722}
+confusion matrix:
+       0      1
+0  41760    551
+1   2177  12952
+---- Validation: 
+scalar performance:
+{'acc': 0.95983595, 'precision': 0.6875379, 'recall': 0.719868, 'specificity': 0.719868, 'f1': 0.7022478, 'auroc': 0.88287616, 'binary_precision': 0.39295775, 'binary_recall': 0.46345514, 'binary_specificity': 0.97628087, 'binary_f1_score': 0.42530486}
+confusion matrix:
+       0    1
+0  17740  431
+1    323  279
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9597692, 'precision': 0.73404515, 'recall': 0.78278154, 'specificity': 0.78278154, 'f1': 0.7557842, 'auroc': 0.89828557, 'binary_precision': 0.48474577, 'binary_recall': 0.59090906, 'binary_specificity': 0.974654, 'binary_f1_score': 0.5325884}
+confusion matrix:
+      0    1
+0  5845  152
+1    99  143
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_10.png
+early stop counter: 5
+val acc:0.959835946559906, best validation acc: 0.9622862339019775, corresponding to test acc:                         0.9572046995162964 / 0.9626542925834656
+after epoch: 10,now: 2024-06-27 06:09:05.296224,epoch time: 0:18:34.926403,used: 3:01:29.521828,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 11
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9504526, 'precision': 0.95745283, 'recall': 0.9141854, 'specificity': 0.9141854, 'f1': 0.9331063, 'auroc': 0.9802696, 'binary_precision': 0.97029096, 'binary_recall': 0.8375413, 'binary_specificity': 0.9908296, 'binary_f1_score': 0.8990422}
+confusion matrix:
+       0      1
+0  41922    388
+1   2458  12672
+---- Validation: 
+scalar performance:
+{'acc': 0.96047515, 'precision': 0.68336844, 'recall': 0.68807626, 'specificity': 0.68807626, 'f1': 0.68568856, 'auroc': 0.8848174, 'binary_precision': 0.3867314, 'binary_recall': 0.39700997, 'binary_specificity': 0.9791426, 'binary_f1_score': 0.39180326}
+confusion matrix:
+       0    1
+0  17792  379
+1    363  239
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9634557, 'precision': 0.75458634, 'recall': 0.7827164, 'specificity': 0.7827164, 'f1': 0.7678168, 'auroc': 0.9013743, 'binary_precision': 0.52592593, 'binary_recall': 0.58677685, 'binary_specificity': 0.978656, 'binary_f1_score': 0.5546875}
+confusion matrix:
+      0    1
+0  5869  128
+1   100  142
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_11.png
+new oracle model saved
+early stop counter: 6
+val acc:0.9604751467704773, best validation acc: 0.9622862339019775, corresponding to test acc:                         0.9572046995162964 / 0.9634556770324707
+after epoch: 11,now: 2024-06-27 06:27:17.620657,epoch time: 0:18:12.324433,used: 3:19:41.846261,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 12
+---- Training Domain: 
+scalar performance:
+{'acc': 0.95088786, 'precision': 0.95725614, 'recall': 0.9154047, 'specificity': 0.9154047, 'f1': 0.93378735, 'auroc': 0.981717, 'binary_precision': 0.968981, 'binary_recall': 0.84042835, 'binary_specificity': 0.990381, 'binary_f1_score': 0.9001381}
+confusion matrix:
+       0      1
+0  41905    407
+1   2414  12714
+---- Validation: 
+scalar performance:
+{'acc': 0.9630853, 'precision': 0.6957324, 'recall': 0.6701514, 'specificity': 0.6701514, 'f1': 0.6819383, 'auroc': 0.88736373, 'binary_precision': 0.41266796, 'binary_recall': 0.35714287, 'binary_specificity': 0.98315996, 'binary_f1_score': 0.38290298}
+confusion matrix:
+       0    1
+0  17865  306
+1    387  215
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9645777, 'precision': 0.7637025, 'recall': 0.7416625, 'specificity': 0.7416625, 'f1': 0.75214225, 'auroc': 0.9016933, 'binary_precision': 0.54751134, 'binary_recall': 0.5, 'binary_specificity': 0.983325, 'binary_f1_score': 0.5226782}
+confusion matrix:
+      0    1
+0  5897  100
+1   121  121
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_12.png
+new oracle model saved
+better model found
+persisted
+after epoch: 12,now: 2024-06-27 06:45:27.659077,epoch time: 0:18:10.038420,used: 3:37:51.884681,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 13
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9520021, 'precision': 0.9601451, 'recall': 0.9157892, 'specificity': 0.9157892, 'f1': 0.93514067, 'auroc': 0.9823679, 'binary_precision': 0.97504413, 'binary_recall': 0.83925974, 'binary_specificity': 0.99231863, 'binary_f1_score': 0.9020708}
+confusion matrix:
+       0      1
+0  41985    325
+1   2432  12698
+---- Validation: 
+scalar performance:
+{'acc': 0.963032, 'precision': 0.6928987, 'recall': 0.66048735, 'specificity': 0.66048735, 'f1': 0.67502457, 'auroc': 0.88941216, 'binary_precision': 0.40763053, 'binary_recall': 0.3372093, 'binary_specificity': 0.98376536, 'binary_f1_score': 0.36909094}
+confusion matrix:
+       0    1
+0  17876  295
+1    399  203
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96553934, 'precision': 0.77114254, 'recall': 0.7441455, 'specificity': 0.7441455, 'f1': 0.7568511, 'auroc': 0.903185, 'binary_precision': 0.562212, 'binary_recall': 0.5041322, 'binary_specificity': 0.98415875, 'binary_f1_score': 0.5315904}
+confusion matrix:
+      0    1
+0  5902   95
+1   120  122
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_13.png
+new oracle model saved
+early stop counter: 1
+val acc:0.9630320072174072, best validation acc: 0.9630852937698364, corresponding to test acc:                         0.9645776748657227 / 0.9655393362045288
+after epoch: 13,now: 2024-06-27 07:03:17.205705,epoch time: 0:17:49.546628,used: 3:55:41.431309,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 14
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9567897, 'precision': 0.96077794, 'recall': 0.9270637, 'specificity': 0.9270637, 'f1': 0.9422709, 'auroc': 0.98329985, 'binary_precision': 0.9683057, 'binary_recall': 0.8642432, 'binary_specificity': 0.9898842, 'binary_f1_score': 0.9133199}
+confusion matrix:
+       0      1
+0  41882    428
+1   2054  13076
+---- Validation: 
+scalar performance:
+{'acc': 0.9598892, 'precision': 0.6806273, 'recall': 0.69018275, 'specificity': 0.69018275, 'f1': 0.6852653, 'auroc': 0.8897439, 'binary_precision': 0.38110235, 'binary_recall': 0.40199336, 'binary_specificity': 0.97837216, 'binary_f1_score': 0.39126918}
+confusion matrix:
+       0    1
+0  17778  393
+1    360  242
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9572047, 'precision': 0.72069705, 'recall': 0.77351654, 'specificity': 0.77351654, 'f1': 0.74385834, 'auroc': 0.9023514, 'binary_precision': 0.45874587, 'binary_recall': 0.57438016, 'binary_specificity': 0.972653, 'binary_f1_score': 0.5100917}
+confusion matrix:
+      0    1
+0  5833  164
+1   103  139
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_14.png
+early stop counter: 2
+val acc:0.9598891735076904, best validation acc: 0.9630852937698364, corresponding to test acc:                         0.9645776748657227 / 0.9655393362045288
+after epoch: 14,now: 2024-06-27 07:21:45.174790,epoch time: 0:18:27.969085,used: 4:14:09.400394,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 15
+---- Training Domain: 
+scalar performance:
+{'acc': 0.955867, 'precision': 0.96170866, 'recall': 0.9239701, 'specificity': 0.9239701, 'f1': 0.9407873, 'auroc': 0.98398334, 'binary_precision': 0.9726058, 'binary_recall': 0.85656685, 'binary_specificity': 0.9913734, 'binary_f1_score': 0.9109058}
+confusion matrix:
+       0      1
+0  41946    365
+1   2170  12959
+---- Validation: 
+scalar performance:
+{'acc': 0.9618601, 'precision': 0.68743026, 'recall': 0.67112464, 'specificity': 0.67112464, 'f1': 0.6788594, 'auroc': 0.89114857, 'binary_precision': 0.3959854, 'binary_recall': 0.3604651, 'binary_specificity': 0.98178416, 'binary_f1_score': 0.3773913}
+confusion matrix:
+       0    1
+0  17840  331
+1    385  217
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9623337, 'precision': 0.7475122, 'recall': 0.7543744, 'specificity': 0.7543744, 'f1': 0.75089014, 'auroc': 0.9026755, 'binary_precision': 0.5140562, 'binary_recall': 0.5289256, 'binary_specificity': 0.97982323, 'binary_f1_score': 0.5213849}
+confusion matrix:
+      0    1
+0  5876  121
+1   114  128
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_15.png
+early stop counter: 3
+val acc:0.9618601202964783, best validation acc: 0.9630852937698364, corresponding to test acc:                         0.9645776748657227 / 0.9655393362045288
+after epoch: 15,now: 2024-06-27 07:39:38.719662,epoch time: 0:17:53.544872,used: 4:32:02.945266,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 16
+---- Training Domain: 
+scalar performance:
+{'acc': 0.95708567, 'precision': 0.9604255, 'recall': 0.9281095, 'specificity': 0.9281095, 'f1': 0.94274765, 'auroc': 0.9850124, 'binary_precision': 0.96675515, 'binary_recall': 0.86687815, 'binary_specificity': 0.98934084, 'binary_f1_score': 0.91409653}
+confusion matrix:
+       0      1
+0  41860    451
+1   2014  13115
+---- Validation: 
+scalar performance:
+{'acc': 0.9594098, 'precision': 0.6807145, 'recall': 0.7003747, 'specificity': 0.7003747, 'f1': 0.68996835, 'auroc': 0.8928839, 'binary_precision': 0.38059703, 'binary_recall': 0.42358804, 'binary_specificity': 0.9771614, 'binary_f1_score': 0.40094343}
+confusion matrix:
+       0    1
+0  17756  415
+1    347  255
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9588075, 'precision': 0.728708, 'recall': 0.7763331, 'specificity': 0.7763331, 'f1': 0.74994636, 'auroc': 0.903164, 'binary_precision': 0.47457626, 'binary_recall': 0.5785124, 'binary_specificity': 0.97415376, 'binary_f1_score': 0.52141523}
+confusion matrix:
+      0    1
+0  5842  155
+1   102  140
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_16.png
+early stop counter: 4
+val acc:0.959409773349762, best validation acc: 0.9630852937698364, corresponding to test acc:                         0.9645776748657227 / 0.9655393362045288
+after epoch: 16,now: 2024-06-27 07:58:01.424527,epoch time: 0:18:22.704865,used: 4:50:25.650131,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 17
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9589136, 'precision': 0.9616976, 'recall': 0.9315797, 'specificity': 0.9315797, 'f1': 0.94531965, 'auroc': 0.98503375, 'binary_precision': 0.96701044, 'binary_recall': 0.8738185, 'binary_specificity': 0.98934084, 'binary_f1_score': 0.9180556}
+confusion matrix:
+       0      1
+0  41860    451
+1   1909  13220
+---- Validation: 
+scalar performance:
+{'acc': 0.95994246, 'precision': 0.68197924, 'recall': 0.6942255, 'specificity': 0.6942255, 'f1': 0.6878762, 'auroc': 0.892809, 'binary_precision': 0.38354036, 'binary_recall': 0.410299, 'binary_specificity': 0.978152, 'binary_f1_score': 0.39646873}
+confusion matrix:
+       0    1
+0  17774  397
+1    355  247
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9591281, 'precision': 0.7296949, 'recall': 0.7685689, 'specificity': 0.7685689, 'f1': 0.74739593, 'auroc': 0.90346074, 'binary_precision': 0.47719297, 'binary_recall': 0.56198347, 'binary_specificity': 0.9751542, 'binary_f1_score': 0.516129}
+confusion matrix:
+      0    1
+0  5848  149
+1   106  136
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_17.png
+early stop counter: 5
+val acc:0.9599424600601196, best validation acc: 0.9630852937698364, corresponding to test acc:                         0.9645776748657227 / 0.9655393362045288
+after epoch: 17,now: 2024-06-27 08:16:15.127105,epoch time: 0:18:13.702578,used: 5:08:39.352709,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 18
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9611943, 'precision': 0.96301043, 'recall': 0.9361639, 'specificity': 0.9361639, 'f1': 0.94853866, 'auroc': 0.98674726, 'binary_precision': 0.9665124, 'binary_recall': 0.88327056, 'binary_specificity': 0.98905724, 'binary_f1_score': 0.9230185}
+confusion matrix:
+       0      1
+0  41848    463
+1   1766  13363
+---- Validation: 
+scalar performance:
+{'acc': 0.9574922, 'precision': 0.67295706, 'recall': 0.7066116, 'specificity': 0.7066116, 'f1': 0.688079, 'auroc': 0.8947921, 'binary_precision': 0.3646409, 'binary_recall': 0.4385382, 'binary_specificity': 0.97468495, 'binary_f1_score': 0.39819005}
+confusion matrix:
+       0    1
+0  17711  460
+1    338  264
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9552813, 'precision': 0.7142642, 'recall': 0.79036075, 'specificity': 0.79036075, 'f1': 0.74567163, 'auroc': 0.9036137, 'binary_precision': 0.44444445, 'binary_recall': 0.61157024, 'binary_specificity': 0.96915126, 'binary_f1_score': 0.51478267}
+confusion matrix:
+      0    1
+0  5812  185
+1    94  148
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_18.png
+early stop counter: 6
+val acc:0.9574921727180481, best validation acc: 0.9630852937698364, corresponding to test acc:                         0.9645776748657227 / 0.9655393362045288
+after epoch: 18,now: 2024-06-27 08:34:27.080816,epoch time: 0:18:11.953711,used: 5:26:51.306420,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 19
+---- Training Domain: 
+scalar performance:
+{'acc': 0.95934886, 'precision': 0.96329504, 'recall': 0.93126345, 'specificity': 0.93126345, 'f1': 0.9457972, 'auroc': 0.9858041, 'binary_precision': 0.9707852, 'binary_recall': 0.8719101, 'binary_specificity': 0.99061686, 'binary_f1_score': 0.9186949}
+confusion matrix:
+       0      1
+0  41913    397
+1   1938  13192
+---- Validation: 
+scalar performance:
+{'acc': 0.9610611, 'precision': 0.6868787, 'recall': 0.68837893, 'specificity': 0.68837893, 'f1': 0.6876254, 'auroc': 0.89435315, 'binary_precision': 0.3937397, 'binary_recall': 0.39700997, 'binary_specificity': 0.97974795, 'binary_f1_score': 0.39536807}
+confusion matrix:
+       0    1
+0  17803  368
+1    363  239
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96057063, 'precision': 0.7368398, 'recall': 0.7574228, 'specificity': 0.7574228, 'f1': 0.746643, 'auroc': 0.9039115, 'binary_precision': 0.49242425, 'binary_recall': 0.5371901, 'binary_specificity': 0.9776555, 'binary_f1_score': 0.513834}
+confusion matrix:
+      0    1
+0  5863  134
+1   112  130
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_19.png
+early stop counter: 7
+val acc:0.9610611200332642, best validation acc: 0.9630852937698364, corresponding to test acc:                         0.9645776748657227 / 0.9655393362045288
+after epoch: 19,now: 2024-06-27 08:53:06.468642,epoch time: 0:18:39.387826,used: 5:45:30.694246,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 20
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9585829, 'precision': 0.9653152, 'recall': 0.927644, 'specificity': 0.927644, 'f1': 0.94445467, 'auroc': 0.9869728, 'binary_precision': 0.9778877, 'binary_recall': 0.8622604, 'binary_specificity': 0.9930276, 'binary_f1_score': 0.91644126}
+confusion matrix:
+       0      1
+0  42015    295
+1   2084  13046
+---- Validation: 
+scalar performance:
+{'acc': 0.9629787, 'precision': 0.68911743, 'recall': 0.6484141, 'specificity': 0.6484141, 'f1': 0.6660098, 'auroc': 0.8954928, 'binary_precision': 0.4008529, 'binary_recall': 0.31229237, 'binary_specificity': 0.9845358, 'binary_f1_score': 0.35107377}
+confusion matrix:
+       0    1
+0  17890  281
+1    414  188
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96377623, 'precision': 0.75748944, 'recall': 0.7452111, 'specificity': 0.7452111, 'f1': 0.75118124, 'auroc': 0.90494835, 'binary_precision': 0.5347826, 'binary_recall': 0.5082645, 'binary_specificity': 0.98215777, 'binary_f1_score': 0.5211865}
+confusion matrix:
+      0    1
+0  5890  107
+1   119  123
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_20.png
+early stop counter: 8
+val acc:0.962978720664978, best validation acc: 0.9630852937698364, corresponding to test acc:                         0.9645776748657227 / 0.9655393362045288
+after epoch: 20,now: 2024-06-27 09:12:24.907424,epoch time: 0:19:18.438782,used: 6:04:49.133028,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 21
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9616121, 'precision': 0.9656958, 'recall': 0.9348166, 'specificity': 0.9348166, 'f1': 0.9488861, 'auroc': 0.9871292, 'binary_precision': 0.9734779, 'binary_recall': 0.878189, 'binary_specificity': 0.9914441, 'binary_f1_score': 0.9233816}
+confusion matrix:
+       0      1
+0  41948    362
+1   1843  13287
+---- Validation: 
+scalar performance:
+{'acc': 0.9620732, 'precision': 0.68930995, 'recall': 0.67284083, 'specificity': 0.67284083, 'f1': 0.6806535, 'auroc': 0.89537275, 'binary_precision': 0.39963505, 'binary_recall': 0.36378738, 'binary_specificity': 0.98189425, 'binary_f1_score': 0.38086957}
+confusion matrix:
+       0    1
+0  17842  329
+1    383  219
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9632954, 'precision': 0.753899, 'recall': 0.7528919, 'specificity': 0.7528919, 'f1': 0.7533943, 'auroc': 0.9042903, 'binary_precision': 0.526971, 'binary_recall': 0.5247934, 'binary_specificity': 0.98099047, 'binary_f1_score': 0.5258799}
+confusion matrix:
+      0    1
+0  5883  114
+1   115  127
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_21.png
+early stop counter: 9
+val acc:0.9620732069015503, best validation acc: 0.9630852937698364, corresponding to test acc:                         0.9645776748657227 / 0.9655393362045288
+after epoch: 21,now: 2024-06-27 09:30:16.913045,epoch time: 0:17:52.005621,used: 6:22:41.138649,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 22
+---- Training Domain: 
+scalar performance:
+{'acc': 0.95985377, 'precision': 0.9669554, 'recall': 0.92939395, 'specificity': 0.92939395, 'f1': 0.94617045, 'auroc': 0.9876384, 'binary_precision': 0.9802262, 'binary_recall': 0.8650274, 'binary_specificity': 0.99376047, 'binary_f1_score': 0.91903085}
+confusion matrix:
+       0      1
+0  42047    264
+1   2042  13087
+---- Validation: 
+scalar performance:
+{'acc': 0.9628189, 'precision': 0.68559116, 'recall': 0.6411041, 'specificity': 0.6411041, 'f1': 0.6599433, 'auroc': 0.8956611, 'binary_precision': 0.39427313, 'binary_recall': 0.29734218, 'binary_specificity': 0.984866, 'binary_f1_score': 0.33901513}
+confusion matrix:
+       0    1
+0  17896  275
+1    423  179
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9652188, 'precision': 0.7687553, 'recall': 0.741996, 'specificity': 0.741996, 'f1': 0.7545892, 'auroc': 0.904322, 'binary_precision': 0.55760366, 'binary_recall': 0.5, 'binary_specificity': 0.983992, 'binary_f1_score': 0.5272331}
+confusion matrix:
+      0    1
+0  5901   96
+1   121  121
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_22.png
+early stop counter: 10
+val acc:0.9628189206123352, best validation acc: 0.9630852937698364, corresponding to test acc:                         0.9645776748657227 / 0.9655393362045288
+after epoch: 22,now: 2024-06-27 09:49:36.558936,epoch time: 0:19:19.645891,used: 6:42:00.784540,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 23
+---- Training Domain: 
+scalar performance:
+{'acc': 0.96089834, 'precision': 0.9669408, 'recall': 0.9319756, 'specificity': 0.9319756, 'f1': 0.947716, 'auroc': 0.98828614, 'binary_precision': 0.978319, 'binary_recall': 0.8708526, 'binary_specificity': 0.99309856, 'binary_f1_score': 0.921463}
+confusion matrix:
+       0      1
+0  42018    292
+1   1954  13176
+---- Validation: 
+scalar performance:
+{'acc': 0.9613807, 'precision': 0.680441, 'recall': 0.65802824, 'specificity': 0.65802824, 'f1': 0.668396, 'auroc': 0.89568114, 'binary_precision': 0.38285714, 'binary_recall': 0.33388704, 'binary_specificity': 0.9821694, 'binary_f1_score': 0.3566992}
+confusion matrix:
+       0    1
+0  17847  324
+1    401  201
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9616926, 'precision': 0.74355686, 'recall': 0.75800645, 'specificity': 0.75800645, 'f1': 0.7505452, 'auroc': 0.90375006, 'binary_precision': 0.50583655, 'binary_recall': 0.5371901, 'binary_specificity': 0.97882277, 'binary_f1_score': 0.521042}
+confusion matrix:
+      0    1
+0  5870  127
+1   112  130
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_23.png
+early stop counter: 11
+val acc:0.9613807201385498, best validation acc: 0.9630852937698364, corresponding to test acc:                         0.9645776748657227 / 0.9655393362045288
+after epoch: 23,now: 2024-06-27 10:08:23.249805,epoch time: 0:18:46.690869,used: 7:00:47.475409,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 24
+---- Training Domain: 
+scalar performance:
+{'acc': 0.95926183, 'precision': 0.9665629, 'recall': 0.92827475, 'specificity': 0.92827475, 'f1': 0.94533575, 'auroc': 0.98825264, 'binary_precision': 0.9801772, 'binary_recall': 0.86278915, 'binary_specificity': 0.99376035, 'binary_f1_score': 0.9177447}
+confusion matrix:
+       0      1
+0  42046    264
+1   2076  13054
+---- Validation: 
+scalar performance:
+{'acc': 0.9636712, 'precision': 0.68626976, 'recall': 0.6214682, 'specificity': 0.6214682, 'f1': 0.6462274, 'auroc': 0.8960371, 'binary_precision': 0.3969072, 'binary_recall': 0.25581396, 'binary_specificity': 0.98712236, 'binary_f1_score': 0.31111112}
+confusion matrix:
+       0    1
+0  17937  234
+1    448  154
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96602017, 'precision': 0.77790713, 'recall': 0.72456825, 'specificity': 0.72456825, 'f1': 0.7480782, 'auroc': 0.90330017, 'binary_precision': 0.57731956, 'binary_recall': 0.46280992, 'binary_specificity': 0.9863265, 'binary_f1_score': 0.5137615}
+confusion matrix:
+      0    1
+0  5915   82
+1   130  112
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_24.png
+new oracle model saved
+better model found
+persisted
+after epoch: 24,now: 2024-06-27 10:27:36.713008,epoch time: 0:19:13.463203,used: 7:20:00.938612,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 25
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9619255, 'precision': 0.9689181, 'recall': 0.9328426, 'specificity': 0.9328426, 'f1': 0.94903815, 'auroc': 0.98932827, 'binary_precision': 0.9820484, 'binary_recall': 0.87138134, 'binary_specificity': 0.99430394, 'binary_f1_score': 0.9234109}
+confusion matrix:
+       0      1
+0  42069    241
+1   1946  13184
+---- Validation: 
+scalar performance:
+{'acc': 0.9630853, 'precision': 0.6817137, 'recall': 0.6235746, 'specificity': 0.6235746, 'f1': 0.6464256, 'auroc': 0.8958243, 'binary_precision': 0.38765433, 'binary_recall': 0.26079735, 'binary_specificity': 0.9863519, 'binary_f1_score': 0.3118173}
+confusion matrix:
+       0    1
+0  17923  248
+1    445  157
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96602017, 'precision': 0.7772845, 'recall': 0.7285337, 'specificity': 0.7285337, 'f1': 0.7502854, 'auroc': 0.90275264, 'binary_precision': 0.57575756, 'binary_recall': 0.47107437, 'binary_specificity': 0.98599297, 'binary_f1_score': 0.51818174}
+confusion matrix:
+      0    1
+0  5913   84
+1   128  114
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_25.png
+early stop counter: 1
+val acc:0.9630852937698364, best validation acc: 0.9636712074279785, corresponding to test acc:                         0.9660201668739319 / 0.9660201668739319
+after epoch: 25,now: 2024-06-27 10:46:13.716107,epoch time: 0:18:37.003099,used: 7:38:37.941711,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 26
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9614032, 'precision': 0.9684954, 'recall': 0.9319107, 'specificity': 0.9319107, 'f1': 0.94830763, 'auroc': 0.9893936, 'binary_precision': 0.981791, 'binary_recall': 0.8695882, 'binary_specificity': 0.9942332, 'binary_f1_score': 0.9222896}
+confusion matrix:
+       0      1
+0  42067    244
+1   1973  13156
+---- Validation: 
+scalar performance:
+{'acc': 0.9640441, 'precision': 0.68936056, 'recall': 0.62005466, 'specificity': 0.62005466, 'f1': 0.64603084, 'auroc': 0.89613116, 'binary_precision': 0.403183, 'binary_recall': 0.25249168, 'binary_specificity': 0.9876176, 'binary_f1_score': 0.31052095}
+confusion matrix:
+       0    1
+0  17946  225
+1    450  152
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96650106, 'precision': 0.7836101, 'recall': 0.7188701, 'specificity': 0.7188701, 'f1': 0.7465978, 'auroc': 0.9027439, 'binary_precision': 0.5891892, 'binary_recall': 0.45041323, 'binary_specificity': 0.987327, 'binary_f1_score': 0.51053864}
+confusion matrix:
+      0    1
+0  5921   76
+1   133  109
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_26.png
+new oracle model saved
+better model found
+persisted
+after epoch: 26,now: 2024-06-27 11:06:45.205517,epoch time: 0:20:31.489410,used: 7:59:09.431121,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 27
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9618036, 'precision': 0.9676232, 'recall': 0.93363035, 'specificity': 0.93363035, 'f1': 0.94898134, 'auroc': 0.9886291, 'binary_precision': 0.97861475, 'binary_recall': 0.8740912, 'binary_specificity': 0.9931695, 'binary_f1_score': 0.9234045}
+confusion matrix:
+       0      1
+0  42021    289
+1   1905  13225
+---- Validation: 
+scalar performance:
+{'acc': 0.962233, 'precision': 0.68405724, 'recall': 0.650438, 'specificity': 0.650438, 'f1': 0.6653444, 'auroc': 0.8959985, 'binary_precision': 0.39059305, 'binary_recall': 0.31727573, 'binary_specificity': 0.98360026, 'binary_f1_score': 0.35013744}
+confusion matrix:
+       0    1
+0  17873  298
+1    411  191
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9648982, 'precision': 0.766048, 'recall': 0.74381196, 'specificity': 0.74381196, 'f1': 0.75438535, 'auroc': 0.9029639, 'binary_precision': 0.5520362, 'binary_recall': 0.5041322, 'binary_specificity': 0.9834917, 'binary_f1_score': 0.52699786}
+confusion matrix:
+      0    1
+0  5898   99
+1   120  122
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_27.png
+early stop counter: 1
+val acc:0.9622330069541931, best validation acc: 0.9640440940856934, corresponding to test acc:                         0.9665010571479797 / 0.9665010571479797
+after epoch: 27,now: 2024-06-27 11:25:13.989921,epoch time: 0:18:28.784404,used: 8:17:38.215525,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 28
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9643106, 'precision': 0.96990174, 'recall': 0.93787956, 'specificity': 0.93787956, 'f1': 0.9524362, 'auroc': 0.98929036, 'binary_precision': 0.980529, 'binary_recall': 0.8820225, 'binary_specificity': 0.9937367, 'binary_f1_score': 0.9286709}
+confusion matrix:
+       0      1
+0  42045    265
+1   1785  13345
+---- Validation: 
+scalar performance:
+{'acc': 0.96148723, 'precision': 0.6819089, 'recall': 0.6604924, 'specificity': 0.6604924, 'f1': 0.67044413, 'auroc': 0.89555115, 'binary_precision': 0.38563326, 'binary_recall': 0.33887044, 'binary_specificity': 0.9821144, 'binary_f1_score': 0.36074272}
+confusion matrix:
+       0    1
+0  17846  325
+1    398  204
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9623337, 'precision': 0.7474451, 'recall': 0.7484262, 'specificity': 0.7484262, 'f1': 0.7479346, 'auroc': 0.9011253, 'binary_precision': 0.5144033, 'binary_recall': 0.5165289, 'binary_specificity': 0.9803235, 'binary_f1_score': 0.5154639}
+confusion matrix:
+      0    1
+0  5879  118
+1   117  125
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_28.png
+early stop counter: 2
+val acc:0.9614872336387634, best validation acc: 0.9640440940856934, corresponding to test acc:                         0.9665010571479797 / 0.9665010571479797
+after epoch: 28,now: 2024-06-27 11:43:08.709625,epoch time: 0:17:54.719704,used: 8:35:32.935229,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 29
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9619429, 'precision': 0.96794206, 'recall': 0.93370366, 'specificity': 0.93370366, 'f1': 0.94915557, 'auroc': 0.98879087, 'binary_precision': 0.9792654, 'binary_recall': 0.8740251, 'binary_specificity': 0.99338216, 'binary_f1_score': 0.9236572}
+confusion matrix:
+       0      1
+0  42030    280
+1   1906  13224
+---- Validation: 
+scalar performance:
+{'acc': 0.96100783, 'precision': 0.68086994, 'recall': 0.6674722, 'specificity': 0.6674722, 'f1': 0.67387956, 'auroc': 0.8965379, 'binary_precision': 0.38309354, 'binary_recall': 0.3538206, 'binary_specificity': 0.98112375, 'binary_f1_score': 0.36787564}
+confusion matrix:
+       0    1
+0  17828  343
+1    389  213
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.962494, 'precision': 0.7485096, 'recall': 0.7485096, 'specificity': 0.7485096, 'f1': 0.7485096, 'auroc': 0.90121305, 'binary_precision': 0.5165289, 'binary_recall': 0.5165289, 'binary_specificity': 0.98049027, 'binary_f1_score': 0.5165289}
+confusion matrix:
+      0    1
+0  5880  117
+1   117  125
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_29.png
+early stop counter: 3
+val acc:0.961007833480835, best validation acc: 0.9640440940856934, corresponding to test acc:                         0.9665010571479797 / 0.9665010571479797
+after epoch: 29,now: 2024-06-27 12:01:01.317413,epoch time: 0:17:52.607788,used: 8:53:25.543017,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 30
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9643454, 'precision': 0.9682872, 'recall': 0.93936807, 'specificity': 0.93936807, 'f1': 0.9526316, 'auroc': 0.98932266, 'binary_precision': 0.97584754, 'binary_recall': 0.886583, 'binary_specificity': 0.99215317, 'binary_f1_score': 0.9290761}
+confusion matrix:
+       0      1
+0  41978    332
+1   1716  13414
+---- Validation: 
+scalar performance:
+{'acc': 0.9580248, 'precision': 0.6718072, 'recall': 0.6932349, 'specificity': 0.6932349, 'f1': 0.6818029, 'auroc': 0.89572084, 'binary_precision': 0.3632353, 'binary_recall': 0.410299, 'binary_specificity': 0.97617084, 'binary_f1_score': 0.38533542}
+confusion matrix:
+       0    1
+0  17738  433
+1    355  247
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.96025, 'precision': 0.73607016, 'recall': 0.7751007, 'specificity': 0.7751007, 'f1': 0.7538837, 'auroc': 0.901037, 'binary_precision': 0.48943663, 'binary_recall': 0.57438016, 'binary_specificity': 0.97582126, 'binary_f1_score': 0.5285171}
+confusion matrix:
+      0    1
+0  5852  145
+1   103  139
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21581805_30.png
+early stop counter: 4
+val acc:0.958024799823761, best validation acc: 0.9640440940856934, corresponding to test acc:                         0.9665010571479797 / 0.9665010571479797
+after epoch: 30,now: 2024-06-27 12:20:53.305083,epoch time: 0:19:51.987670,used: 9:13:17.530687,model: dset_te_center0_dann_b44271c83_not_commited_2024md_06md_27_03_07_35_seed_2_21581805
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+Experiment finished at epoch: 30 with time: 9:13:17.530687 at 2024-06-27 12:20:53.305083
+persisted model performance metric: 
+
+scalar performance:
+{'acc': 0.96650106, 'precision': 0.7836101, 'recall': 0.7188701, 'specificity': 0.7188701, 'f1': 0.7465978, 'auroc': 0.9027439, 'binary_precision': 0.5891892, 'binary_recall': 0.45041323, 'binary_specificity': 0.987327, 'binary_f1_score': 0.51053864}
+confusion matrix:
+      0    1
+0  5921   76
+1   133  109
+oracle model performance metric: 
+
+scalar performance:
+{'acc': 0.96650106, 'precision': 0.7836101, 'recall': 0.7188701, 'specificity': 0.7188701, 'f1': 0.7465978, 'auroc': 0.9027439, 'binary_precision': 0.5891892, 'binary_recall': 0.45041323, 'binary_specificity': 0.987327, 'binary_f1_score': 0.51053864}
+confusion matrix:
+      0    1
+0  5921   76
+1   133  109
+results aggregation path: zoutput/benchmarks/CAMELYON_center0_dinov2small_dann_lr1e5_bs16_classbalancing10/rule_results/1.csv
+confusion matrix saved in file: zoutput/benchmarks/CAMELYON_center0_dinov2small_dann_lr1e5_bs16_classbalancing10/confusion_matrix/1.csv.txt
+before torch memory clean up
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      | 190975 KiB | 459960 KiB |   2688 TiB |   2688 TiB |
+|       from large pool | 173494 KiB | 426325 KiB |   2632 TiB |   2632 TiB |
+|       from small pool |  17481 KiB |  34708 KiB |     56 TiB |     56 TiB |
+|---------------------------------------------------------------------------|
+| Active memory         | 190975 KiB | 459960 KiB |   2688 TiB |   2688 TiB |
+|       from large pool | 173494 KiB | 426325 KiB |   2632 TiB |   2632 TiB |
+|       from small pool |  17481 KiB |  34708 KiB |     56 TiB |     56 TiB |
+|---------------------------------------------------------------------------|
+| Requested memory      | 189282 KiB | 457564 KiB |   2688 TiB |   2688 TiB |
+|       from large pool | 172814 KiB | 424940 KiB |   2632 TiB |   2632 TiB |
+|       from small pool |  16468 KiB |  33695 KiB |     56 TiB |     56 TiB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   | 526336 KiB | 526336 KiB |   1008 MiB | 505856 KiB |
+|       from large pool | 487424 KiB | 487424 KiB |    942 MiB | 477184 KiB |
+|       from small pool |  38912 KiB |  38912 KiB |     66 MiB |  28672 KiB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |  40448 KiB |  85551 KiB |   1632 TiB |   1632 TiB |
+|       from large pool |  31306 KiB |  79555 KiB |   1575 TiB |   1575 TiB |
+|       from small pool |   9142 KiB |  19186 KiB |     56 TiB |     56 TiB |
+|---------------------------------------------------------------------------|
+| Allocations           |    2974    |    7663    |  543184 K  |  543181 K  |
+|       from large pool |      76    |     158    |  265621 K  |  265621 K  |
+|       from small pool |    2898    |    7586    |  277562 K  |  277559 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |    2974    |    7663    |  543184 K  |  543181 K  |
+|       from large pool |      76    |     158    |  265621 K  |  265621 K  |
+|       from small pool |    2898    |    7586    |  277562 K  |  277559 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |      41    |      41    |      75    |      34    |
+|       from large pool |      22    |      22    |      42    |      20    |
+|       from small pool |      19    |      19    |      33    |      14    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |      40    |    3608    |  298882 K  |  298882 K  |
+|       from large pool |      10    |      22    |  174487 K  |  174487 K  |
+|       from small pool |      30    |    3598    |  124394 K  |  124394 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+after torch memory clean up
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |  17088 KiB | 459960 KiB |   2688 TiB |   2688 TiB |
+|       from large pool |  17088 KiB | 426325 KiB |   2632 TiB |   2632 TiB |
+|       from small pool |      0 KiB |  34708 KiB |     56 TiB |     56 TiB |
+|---------------------------------------------------------------------------|
+| Active memory         |  17088 KiB | 459960 KiB |   2688 TiB |   2688 TiB |
+|       from large pool |  17088 KiB | 426325 KiB |   2632 TiB |   2632 TiB |
+|       from small pool |      0 KiB |  34708 KiB |     56 TiB |     56 TiB |
+|---------------------------------------------------------------------------|
+| Requested memory      |  16640 KiB | 457564 KiB |   2688 TiB |   2688 TiB |
+|       from large pool |  16640 KiB | 424940 KiB |   2632 TiB |   2632 TiB |
+|       from small pool |      0 KiB |  33695 KiB |     56 TiB |     56 TiB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   | 231424 KiB | 526336 KiB |   1008 MiB |    782 MiB |
+|       from large pool | 204800 KiB | 487424 KiB |    942 MiB |    742 MiB |
+|       from small pool |  26624 KiB |  38912 KiB |     66 MiB |     40 MiB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |  23872 KiB |  85551 KiB |   1632 TiB |   1632 TiB |
+|       from large pool |  23872 KiB |  79555 KiB |   1575 TiB |   1575 TiB |
+|       from small pool |      0 KiB |  21228 KiB |     56 TiB |     56 TiB |
+|---------------------------------------------------------------------------|
+| Allocations           |       2    |    7663    |  543184 K  |  543184 K  |
+|       from large pool |       2    |     158    |  265621 K  |  265621 K  |
+|       from small pool |       0    |    7586    |  277562 K  |  277562 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |       2    |    7663    |  543184 K  |  543184 K  |
+|       from large pool |       2    |     158    |  265621 K  |  265621 K  |
+|       from small pool |       0    |    7586    |  277562 K  |  277562 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |      23    |      41    |      75    |      52    |
+|       from large pool |      10    |      22    |      42    |      32    |
+|       from small pool |      13    |      19    |      33    |      20    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |       3    |    3608    |  298883 K  |  298883 K  |
+|       from large pool |       3    |      22    |  174487 K  |  174487 K  |
+|       from small pool |       0    |    3598    |  124396 K  |  124396 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+[Thu Jun 27 12:21:53 2024]
+Finished job 0.
+1 of 1 steps (100%) done

@@ -1,0 +1,49 @@
+epoch: 1
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9693323, 'precision': 0.765036, 'recall': 0.7470906, 'specificity': 0.7470906, 'f1': 0.7557156, 'auroc': 0.9509381, 'binary_precision': 0.5471147, 'binary_recall': 0.5088315, 'binary_specificity': 0.9853497, 'binary_f1_score': 0.52727914}
+confusion matrix:
+       0    1
+0  41700  620
+1    723  749
+---- Validation: 
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Plan failed with a cudnnException: CUDNN_BACKEND_EXECUTION_PLAN_DESCRIPTOR: cudnnFinalize Descriptor Failed cudnn_status: CUDNN_STATUS_NOT_SUPPORTED (Triggered internally at /opt/conda/conda-bld/pytorch_1712608935911/work/aten/src/ATen/native/cudnn/Conv_v8.cpp:919.)
+  return F.conv2d(input, weight, bias, self.stride,
+scalar performance:
+{'acc': 0.9662622, 'precision': 0.74445343, 'recall': 0.7290148, 'specificity': 0.7290148, 'f1': 0.7364537, 'auroc': 0.9463003, 'binary_precision': 0.50748754, 'binary_recall': 0.47433904, 'binary_specificity': 0.98369056, 'binary_f1_score': 0.49035373}
+confusion matrix:
+       0    1
+0  17853  296
+1    338  305
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9686801, 'precision': 0.86258996, 'recall': 0.6831558, 'specificity': 0.6831558, 'f1': 0.7406361, 'auroc': 0.9399029, 'binary_precision': 0.751938, 'binary_recall': 0.3716475, 'binary_specificity': 0.994664, 'binary_f1_score': 0.4974359}
+confusion matrix:
+      0   1
+0  5965  32
+1   164  97
+t-SNE plot saved as zoutput/tsne/t-SNE_Test_center0_21111488_1.png
+[Wed Jun  5 11:47:07 2024]
+Error in rule run_experiment:
+    jobid: 0
+    input: zoutput/benchmarks/CAMELYON_center0_irm_vit_resnet_dinov2_bs16_lr1e-6/hyperparameters.csv
+    output: zoutput/benchmarks/CAMELYON_center0_irm_vit_resnet_dinov2_bs16_lr1e-6/rule_results/6.csv
+
+RuleException:
+RuntimeError in file /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/exp_protocol/benchmark.smk, line 161:
+[enforce fail at inline_container.cc:595] . unexpected pos 57361920 vs 57361744
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/exp_protocol/benchmark.smk", line 161, in __rule_run_experiment
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/exp_protocol/run_experiment.py", line 172, in run_experiment
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/exp/exp_main.py", line 77, in execute
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/algos/trainers/train_irm.py", line 51, in tr_epoch
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/algos/trainers/train_irm.py", line 66, in after_epoch
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/algos/observers/b_obvisitor.py", line 60, in update
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/algos/msels/a_model_sel.py", line 63, in update
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/algos/msels/c_msel_oracle.py", line 37, in base_update
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/models/a_model.py", line 159, in save
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/exp/exp_utils.py", line 88, in save
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/serialization.py", line 627, in save
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/serialization.py", line 475, in __exit__
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message

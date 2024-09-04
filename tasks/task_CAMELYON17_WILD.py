@@ -99,7 +99,7 @@ def get_task(na=None):
         df_center_train = df_train[df_train['center'] == center_name]
         df_center_val = df_val[df_val['center'] == center_name]
         print(f"Processing center: {center_name}, Train samples: {len(df_center_train)}, Val samples: {len(df_center_val)}")
-        if center_name == 0:  # Assuming center 0 uses validation/test transforms
+        if center_name == 4:  # Assuming center 0 uses validation/test transforms
             transform = img_trans_val_test
         else:
             transform = img_trans_train

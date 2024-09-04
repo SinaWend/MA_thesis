@@ -1,0 +1,71 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, nvidia_gpu=1
+Select jobs to execute...
+
+[Tue Jun 18 01:32:12 2024]
+rule run_experiment:
+    input: zoutput/benchmarks/CAMELYON_center0_erm_resnet_different_batchsizes_lre3/hyperparameters.csv
+    output: zoutput/benchmarks/CAMELYON_center0_erm_resnet_different_batchsizes_lre3/rule_results/0.csv
+    jobid: 0
+    reason: Forced execution
+    wildcards: index=0
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=/tmp, partition=gpu_p, qos=gpu_normal, nvidia_gpu=1
+
+--- Logging error ---
+Traceback (most recent call last):
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/models/a_model_classif.py", line 33, in <module>
+    from backpack import extend
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/backpack/__init__.py", line 10, in <module>
+    from backpack import extensions
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/backpack/extensions/__init__.py", line 3, in <module>
+    from .curvmatprod import GGNMP, HMP, PCHMP
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/backpack/extensions/curvmatprod/__init__.py", line 24, in <module>
+    from .ggnmp import GGNMP
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/backpack/extensions/curvmatprod/ggnmp/__init__.py", line 23, in <module>
+    from . import (
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/backpack/extensions/curvmatprod/ggnmp/conv2d.py", line 1, in <module>
+    from backpack.core.derivatives.conv2d import Conv2DDerivatives
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/backpack/core/derivatives/conv2d.py", line 1, in <module>
+    from backpack.core.derivatives.convnd import ConvNDDerivatives
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/backpack/core/derivatives/convnd.py", line 18, in <module>
+    from torch.nn.grad import _grad_input_padding
+ImportError: cannot import name '_grad_input_padding' from 'torch.nn.grad' (/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/grad.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/logging/__init__.py", line 1104, in emit
+    self.flush()
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/logging/__init__.py", line 1084, in flush
+    self.stream.flush()
+OSError: [Errno 122] Disk quota exceeded
+Call stack:
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/concurrent/futures/thread.py", line 83, in _worker
+    work_item.run()
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/snakemake/executors/__init__.py", line 699, in cached_or_run
+    run_func(*args)
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/snakemake/executors/__init__.py", line 2656, in run_wrapper
+    run(
+--- Logging error ---
+Traceback (most recent call last):
+
+
+
+
+
+
+
+
+
+

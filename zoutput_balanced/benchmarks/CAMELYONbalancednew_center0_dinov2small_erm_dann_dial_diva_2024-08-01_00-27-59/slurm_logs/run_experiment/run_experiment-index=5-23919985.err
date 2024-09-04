@@ -1,0 +1,983 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, nvidia_gpu=1
+Select jobs to execute...
+
+[Thu Aug  1 12:51:28 2024]
+rule run_experiment:
+    input: zoutput/benchmarks/CAMELYONbalancednew_center0_dinov2small_erm_2024-08-01_00-27-59/hyperparameters.csv
+    output: zoutput/benchmarks/CAMELYONbalancednew_center0_dinov2small_erm_2024-08-01_00-27-59/rule_results/5.csv
+    jobid: 0
+    reason: Forced execution
+    wildcards: index=5
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=/tmp, partition=gpu_p, qos=gpu_normal, nvidia_gpu=1
+
+Failed to import backpack: cannot import name '_grad_input_padding' from 'torch.nn.grad' (/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/grad.py)
+before experiment loop: 
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| Active memory         |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| Requested memory      |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| Allocations           |       0    |       0    |       0    |       0    |
+|       from large pool |       0    |       0    |       0    |       0    |
+|       from small pool |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Active allocs         |       0    |       0    |       0    |       0    |
+|       from large pool |       0    |       0    |       0    |       0    |
+|       from small pool |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |       0    |       0    |       0    |       0    |
+|       from large pool |       0    |       0    |       0    |       0    |
+|       from small pool |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |       0    |       0    |       0    |       0    |
+|       from large pool |       0    |       0    |       0    |       0    |
+|       from small pool |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+before experiment starts
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| Active memory         |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| Requested memory      |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from large pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|       from small pool |      0 B   |      0 B   |      0 B   |      0 B   |
+|---------------------------------------------------------------------------|
+| Allocations           |       0    |       0    |       0    |       0    |
+|       from large pool |       0    |       0    |       0    |       0    |
+|       from small pool |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Active allocs         |       0    |       0    |       0    |       0    |
+|       from large pool |       0    |       0    |       0    |       0    |
+|       from small pool |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |       0    |       0    |       0    |       0    |
+|       from large pool |       0    |       0    |       0    |       0    |
+|       from small pool |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |       0    |       0    |       0    |       0    |
+|       from large pool |       0    |       0    |       0    |       0    |
+|       from small pool |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+
+overriding args.task None to dset
+
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+Using cache found in /home/aih/sina.wendrich/.cache/torch/hub/facebookresearch_dinov2_main
+/home/aih/sina.wendrich/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+/home/aih/sina.wendrich/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+/home/aih/sina.wendrich/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+Using cache found in /home/aih/sina.wendrich/.cache/torch/hub/facebookresearch_dinov2_main
+
+using device: cuda:0
+
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+
+
+
+!!!: not committed yet
+/ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab/domainlab/utils/get_git_tag.py:16: UserWarning: !!!: not committed yet
+  warnings.warn("!!!: not committed yet")
+
+
+
+b'8efecac6'
+model name: dset_te_center0_diva_b8efecac6_not_commited_2024md_08md_01_13_02_09_seed_0_23919985
+
+ Experiment start at: 2024-08-01 13:02:10.666540
+hyper-parameter scheduler not set,going to use default Warmpup and epoch update
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Plan failed with a cudnnException: CUDNN_BACKEND_EXECUTION_PLAN_DESCRIPTOR: cudnnFinalize Descriptor Failed cudnn_status: CUDNN_STATUS_NOT_SUPPORTED (Triggered internally at /opt/conda/conda-bld/pytorch_1712608935911/work/aten/src/ATen/native/cudnn/Conv_v8.cpp:919.)
+  return F.conv2d(input, weight, bias, self.stride,
+before training, model accuracy: 0.9576542377471924
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/autograd/graph.py:744: UserWarning: Plan failed with a cudnnException: CUDNN_BACKEND_EXECUTION_PLAN_DESCRIPTOR: cudnnFinalize Descriptor Failed cudnn_status: CUDNN_STATUS_NOT_SUPPORTED (Triggered internally at /opt/conda/conda-bld/pytorch_1712608935911/work/aten/src/ATen/native/cudnn/Conv_v8.cpp:919.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+epoch: 1
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9501569, 'precision': 0.95087457, 'recall': 0.95017374, 'specificity': 0.95017374, 'f1': 0.95013833, 'auroc': 0.9879836, 'binary_precision': 0.9690733, 'binary_recall': 0.93007946, 'binary_specificity': 0.970268, 'binary_f1_score': 0.9491761}
+confusion matrix:
+       0      1
+0  27804    852
+1   2007  26697
+---- Validation: 
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Plan failed with a cudnnException: CUDNN_BACKEND_EXECUTION_PLAN_DESCRIPTOR: cudnnFinalize Descriptor Failed cudnn_status: CUDNN_STATUS_NOT_SUPPORTED (Triggered internally at /opt/conda/conda-bld/pytorch_1712608935911/work/aten/src/ATen/native/cudnn/Conv_v8.cpp:919.)
+  return F.conv2d(input, weight, bias, self.stride,
+scalar performance:
+{'acc': 0.92528737, 'precision': 0.6141675, 'recall': 0.7520548, 'specificity': 0.7520548, 'f1': 0.6509303, 'auroc': 0.86308086, 'binary_precision': 0.24445938, 'binary_recall': 0.5660964, 'binary_specificity': 0.93801314, 'binary_f1_score': 0.34146342}
+confusion matrix:
+       0     1
+0  17024  1125
+1    279   364
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9613295, 'precision': 0.75708795, 'recall': 0.8350689, 'specificity': 0.8350689, 'f1': 0.7901705, 'auroc': 0.91952556, 'binary_precision': 0.5275362, 'binary_recall': 0.697318, 'binary_specificity': 0.97281975, 'binary_f1_score': 0.60066}
+confusion matrix:
+      0    1
+0  5834  163
+1    79  182
+new oracle model saved
+better model found
+persisted
+after epoch: 1,now: 2024-08-01 13:44:31.480733,epoch time: 0:42:20.814193,used: 0:42:20.814193,model: dset_te_center0_diva_b8efecac6_not_commited_2024md_08md_01_13_02_09_seed_0_23919985
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 2
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9636855, 'precision': 0.9638679, 'recall': 0.96369326, 'specificity': 0.96369326, 'f1': 0.96368235, 'auroc': 0.99351776, 'binary_precision': 0.97326034, 'binary_recall': 0.95362693, 'binary_specificity': 0.97375953, 'binary_f1_score': 0.9633436}
+confusion matrix:
+       0      1
+0  27906    752
+1   1331  27371
+---- Validation: 
+scalar performance:
+{'acc': 0.91182417, 'precision': 0.6072131, 'recall': 0.78933793, 'specificity': 0.78933793, 'f1': 0.64538044, 'auroc': 0.87210333, 'binary_precision': 0.22741936, 'binary_recall': 0.6578538, 'binary_specificity': 0.9208221, 'binary_f1_score': 0.3379944}
+confusion matrix:
+       0     1
+0  16712  1437
+1    220   423
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9541387, 'precision': 0.7288847, 'recall': 0.85696965, 'specificity': 0.85696965, 'f1': 0.77653676, 'auroc': 0.9144349, 'binary_precision': 0.46889952, 'binary_recall': 0.75095785, 'binary_specificity': 0.96298146, 'binary_f1_score': 0.57731956}
+confusion matrix:
+      0    1
+0  5775  222
+1    65  196
+early stop counter: 1
+val acc:0.9118241667747498, best validation acc: 0.9252873659133911, corresponding to test acc:                         0.9613295197486877 / 0.9613295197486877
+after epoch: 2,now: 2024-08-01 14:23:53.051972,epoch time: 0:39:21.571239,used: 1:21:42.385432,model: dset_te_center0_diva_b8efecac6_not_commited_2024md_08md_01_13_02_09_seed_0_23919985
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 3
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9687936, 'precision': 0.96885085, 'recall': 0.9687973, 'specificity': 0.9687973, 'f1': 0.9687928, 'auroc': 0.9945146, 'binary_precision': 0.97420084, 'binary_recall': 0.9631346, 'binary_specificity': 0.97446007, 'binary_f1_score': 0.9686361}
+confusion matrix:
+       0      1
+0  27929    732
+1   1058  27641
+---- Validation: 
+scalar performance:
+{'acc': 0.8869732, 'precision': 0.58845747, 'recall': 0.79597366, 'specificity': 0.79597366, 'f1': 0.6178497, 'auroc': 0.8669251, 'binary_precision': 0.18873477, 'binary_recall': 0.6982893, 'binary_specificity': 0.89365804, 'binary_f1_score': 0.29715422}
+confusion matrix:
+       0     1
+0  16219  1930
+1    194   449
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.94263345, 'precision': 0.69607013, 'recall': 0.86196065, 'specificity': 0.86196065, 'f1': 0.7494718, 'auroc': 0.9114934, 'binary_precision': 0.40239045, 'binary_recall': 0.77394634, 'binary_specificity': 0.949975, 'binary_f1_score': 0.52948886}
+confusion matrix:
+      0    1
+0  5697  300
+1    59  202
+early stop counter: 2
+val acc:0.8869732022285461, best validation acc: 0.9252873659133911, corresponding to test acc:                         0.9613295197486877 / 0.9613295197486877
+after epoch: 3,now: 2024-08-01 15:04:35.675950,epoch time: 0:40:42.623978,used: 2:02:25.009410,model: dset_te_center0_diva_b8efecac6_not_commited_2024md_08md_01_13_02_09_seed_0_23919985
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 4
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9712866, 'precision': 0.971316, 'recall': 0.97128975, 'specificity': 0.97128975, 'f1': 0.9712863, 'auroc': 0.99555326, 'binary_precision': 0.9752327, 'binary_recall': 0.96718, 'binary_specificity': 0.97539955, 'binary_f1_score': 0.9711897}
+confusion matrix:
+       0      1
+0  27953    705
+1    942  27760
+---- Validation: 
+scalar performance:
+{'acc': 0.88229036, 'precision': 0.584103, 'recall': 0.7890489, 'specificity': 0.7890489, 'f1': 0.6109245, 'auroc': 0.86053246, 'binary_precision': 0.18044807, 'binary_recall': 0.688958, 'binary_specificity': 0.8891399, 'binary_f1_score': 0.28599098}
+confusion matrix:
+       0     1
+0  16137  2012
+1    200   443
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.92841166, 'precision': 0.6642607, 'recall': 0.84721094, 'specificity': 0.84721094, 'f1': 0.71540594, 'auroc': 0.90522206, 'binary_precision': 0.33962265, 'binary_recall': 0.7586207, 'binary_specificity': 0.9358012, 'binary_f1_score': 0.46919432}
+confusion matrix:
+      0    1
+0  5612  385
+1    63  198
+early stop counter: 3
+val acc:0.8822903633117676, best validation acc: 0.9252873659133911, corresponding to test acc:                         0.9613295197486877 / 0.9613295197486877
+after epoch: 4,now: 2024-08-01 15:45:18.429112,epoch time: 0:40:42.753162,used: 2:43:07.762572,model: dset_te_center0_diva_b8efecac6_not_commited_2024md_08md_01_13_02_09_seed_0_23919985
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+early stop trigger
+Experiment finished at epoch: 4 with time: 2:43:07.762572 at 2024-08-01 15:45:18.429112
+persisted model performance metric: 
+
+scalar performance:
+{'acc': 0.9613295, 'precision': 0.75708795, 'recall': 0.8350689, 'specificity': 0.8350689, 'f1': 0.7901705, 'auroc': 0.91952556, 'binary_precision': 0.5275362, 'binary_recall': 0.697318, 'binary_specificity': 0.97281975, 'binary_f1_score': 0.60066}
+confusion matrix:
+      0    1
+0  5834  163
+1    79  182
+oracle model performance metric: 
+
+scalar performance:
+{'acc': 0.9613295, 'precision': 0.75708795, 'recall': 0.8350689, 'specificity': 0.8350689, 'f1': 0.7901705, 'auroc': 0.91952556, 'binary_precision': 0.5275362, 'binary_recall': 0.697318, 'binary_specificity': 0.97281975, 'binary_f1_score': 0.60066}
+confusion matrix:
+      0    1
+0  5834  163
+1    79  182
+results aggregation path: zoutput/benchmarks/CAMELYONbalancednew_center0_dinov2small_erm_2024-08-01_00-27-59/rule_results/5.csv
+results aggregation path: zoutput/benchmarks/CAMELYONbalancednew_center0_dinov2small_erm_2024-08-01_00-27-59/rule_results/5.csv
+confusion matrix saved in file: zoutput/benchmarks/CAMELYONbalancednew_center0_dinov2small_erm_2024-08-01_00-27-59/confusion_matrix/5.csv.txt
+before torch memory clean up
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |   2295 MiB |   6871 MiB | 382254 GiB | 382252 GiB |
+|       from large pool |   2250 MiB |   6826 MiB | 378590 GiB | 378588 GiB |
+|       from small pool |     45 MiB |     86 MiB |   3664 GiB |   3664 GiB |
+|---------------------------------------------------------------------------|
+| Active memory         |   2295 MiB |   6871 MiB | 382254 GiB | 382252 GiB |
+|       from large pool |   2250 MiB |   6826 MiB | 378590 GiB | 378588 GiB |
+|       from small pool |     45 MiB |     86 MiB |   3664 GiB |   3664 GiB |
+|---------------------------------------------------------------------------|
+| Requested memory      |   2286 MiB |   6863 MiB | 382181 GiB | 382179 GiB |
+|       from large pool |   2242 MiB |   6819 MiB | 378522 GiB | 378519 GiB |
+|       from small pool |     44 MiB |     85 MiB |   3659 GiB |   3659 GiB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   |   7338 MiB |   7338 MiB |   7338 MiB |      0 B   |
+|       from large pool |   7246 MiB |   7246 MiB |   7246 MiB |      0 B   |
+|       from small pool |     92 MiB |     92 MiB |     92 MiB |      0 B   |
+|---------------------------------------------------------------------------|
+| Non-releasable memory | 500206 KiB |    803 MiB | 202980 GiB | 202979 GiB |
+|       from large pool | 489352 KiB |    800 MiB | 199277 GiB | 199277 GiB |
+|       from small pool |  10854 KiB |     15 MiB |   3702 GiB |   3702 GiB |
+|---------------------------------------------------------------------------|
+| Allocations           |    3634    |    8301    |   48613 K  |   48610 K  |
+|       from large pool |     176    |     456    |   27875 K  |   27875 K  |
+|       from small pool |    3458    |    8124    |   20738 K  |   20734 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |    3634    |    8301    |   48613 K  |   48610 K  |
+|       from large pool |     176    |     456    |   27875 K  |   27875 K  |
+|       from small pool |    3458    |    8124    |   20738 K  |   20734 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |     209    |     209    |     209    |       0    |
+|       from large pool |     163    |     163    |     163    |       0    |
+|       from small pool |      46    |      46    |      46    |       0    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |      76    |    3622    |   28549 K  |   28549 K  |
+|       from large pool |      28    |     151    |   18790 K  |   18790 K  |
+|       from small pool |      48    |    3594    |    9758 K  |    9758 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+after torch memory clean up
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |  16640 KiB |   6871 MiB | 382254 GiB | 382254 GiB |
+|       from large pool |  16640 KiB |   6826 MiB | 378590 GiB | 378590 GiB |
+|       from small pool |      0 KiB |     86 MiB |   3664 GiB |   3664 GiB |
+|---------------------------------------------------------------------------|
+| Active memory         |  16640 KiB |   6871 MiB | 382254 GiB | 382254 GiB |
+|       from large pool |  16640 KiB |   6826 MiB | 378590 GiB | 378590 GiB |
+|       from small pool |      0 KiB |     86 MiB |   3664 GiB |   3664 GiB |
+|---------------------------------------------------------------------------|
+| Requested memory      |  16640 KiB |   6863 MiB | 382181 GiB | 382181 GiB |
+|       from large pool |  16640 KiB |   6819 MiB | 378522 GiB | 378522 GiB |
+|       from small pool |      0 KiB |     85 MiB |   3659 GiB |   3659 GiB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   |   2784 MiB |   7338 MiB |   7338 MiB |   4554 MiB |
+|       from large pool |   2728 MiB |   7246 MiB |   7246 MiB |   4518 MiB |
+|       from small pool |     56 MiB |     92 MiB |     92 MiB |     36 MiB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |  30464 KiB |    803 MiB | 202980 GiB | 202980 GiB |
+|       from large pool |  30464 KiB |    800 MiB | 199278 GiB | 199278 GiB |
+|       from small pool |      0 KiB |     34 MiB |   3702 GiB |   3702 GiB |
+|---------------------------------------------------------------------------|
+| Allocations           |       2    |    8301    |   48613 K  |   48613 K  |
+|       from large pool |       2    |     456    |   27875 K  |   27875 K  |
+|       from small pool |       0    |    8124    |   20738 K  |   20738 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |       2    |    8301    |   48613 K  |   48613 K  |
+|       from large pool |       2    |     456    |   27875 K  |   27875 K  |
+|       from small pool |       0    |    8124    |   20738 K  |   20738 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |      68    |     209    |     209    |     141    |
+|       from large pool |      40    |     163    |     163    |     123    |
+|       from small pool |      28    |      46    |      46    |      18    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |       3    |    3622    |   28550 K  |   28550 K  |
+|       from large pool |       3    |     151    |   18790 K  |   18790 K  |
+|       from small pool |       0    |    3594    |    9759 K  |    9759 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+before experiment starts
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |  16640 KiB |   6871 MiB | 382254 GiB | 382254 GiB |
+|       from large pool |  16640 KiB |   6826 MiB | 378590 GiB | 378590 GiB |
+|       from small pool |      0 KiB |     86 MiB |   3664 GiB |   3664 GiB |
+|---------------------------------------------------------------------------|
+| Active memory         |  16640 KiB |   6871 MiB | 382254 GiB | 382254 GiB |
+|       from large pool |  16640 KiB |   6826 MiB | 378590 GiB | 378590 GiB |
+|       from small pool |      0 KiB |     86 MiB |   3664 GiB |   3664 GiB |
+|---------------------------------------------------------------------------|
+| Requested memory      |  16640 KiB |   6863 MiB | 382181 GiB | 382181 GiB |
+|       from large pool |  16640 KiB |   6819 MiB | 378522 GiB | 378522 GiB |
+|       from small pool |      0 KiB |     85 MiB |   3659 GiB |   3659 GiB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   |   2784 MiB |   7338 MiB |   7338 MiB |   4554 MiB |
+|       from large pool |   2728 MiB |   7246 MiB |   7246 MiB |   4518 MiB |
+|       from small pool |     56 MiB |     92 MiB |     92 MiB |     36 MiB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |  30464 KiB |    803 MiB | 202980 GiB | 202980 GiB |
+|       from large pool |  30464 KiB |    800 MiB | 199278 GiB | 199278 GiB |
+|       from small pool |      0 KiB |     34 MiB |   3702 GiB |   3702 GiB |
+|---------------------------------------------------------------------------|
+| Allocations           |       2    |    8301    |   48613 K  |   48613 K  |
+|       from large pool |       2    |     456    |   27875 K  |   27875 K  |
+|       from small pool |       0    |    8124    |   20738 K  |   20738 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |       2    |    8301    |   48613 K  |   48613 K  |
+|       from large pool |       2    |     456    |   27875 K  |   27875 K  |
+|       from small pool |       0    |    8124    |   20738 K  |   20738 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |      68    |     209    |     209    |     141    |
+|       from large pool |      40    |     163    |     163    |     123    |
+|       from small pool |      28    |      46    |      46    |      18    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |       3    |    3622    |   28550 K  |   28550 K  |
+|       from large pool |       3    |     151    |   18790 K  |   18790 K  |
+|       from small pool |       0    |    3594    |    9759 K  |    9759 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+
+overriding args.task None to dset
+
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+Using cache found in /home/aih/sina.wendrich/.cache/torch/hub/facebookresearch_dinov2_main
+Using cache found in /home/aih/sina.wendrich/.cache/torch/hub/facebookresearch_dinov2_main
+
+using device: cuda:0
+
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+
+
+
+!!!: not committed yet
+/ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab/domainlab/utils/get_git_tag.py:16: UserWarning: !!!: not committed yet
+  warnings.warn("!!!: not committed yet")
+
+
+
+b'8efecac6'
+model name: dset_te_center0_diva_b8efecac6_not_commited_2024md_08md_01_15_55_09_seed_1_23919985
+
+ Experiment start at: 2024-08-01 15:55:10.111575
+hyper-parameter scheduler not set,going to use default Warmpup and epoch update
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Plan failed with a cudnnException: CUDNN_BACKEND_EXECUTION_PLAN_DESCRIPTOR: cudnnFinalize Descriptor Failed cudnn_status: CUDNN_STATUS_NOT_SUPPORTED (Triggered internally at /opt/conda/conda-bld/pytorch_1712608935911/work/aten/src/ATen/native/cudnn/Conv_v8.cpp:919.)
+  return F.conv2d(input, weight, bias, self.stride,
+before training, model accuracy: 0.04270061478018761
+epoch: 1
+---- Training Domain: 
+scalar performance:
+{'acc': 0.96034086, 'precision': 0.9608562, 'recall': 0.96035314, 'specificity': 0.96035314, 'f1': 0.9603305, 'auroc': 0.99186933, 'binary_precision': 0.9764503, 'binary_recall': 0.9434944, 'binary_specificity': 0.97721195, 'binary_f1_score': 0.95968944}
+confusion matrix:
+       0      1
+0  28131    656
+1   1629  27200
+---- Validation: 
+scalar performance:
+{'acc': 0.8911953, 'precision': 0.5905586, 'recall': 0.77548337, 'specificity': 0.77548337, 'f1': 0.62076217, 'auroc': 0.8652854, 'binary_precision': 0.19536129, 'binary_recall': 0.6508172, 'binary_specificity': 0.90014946, 'binary_f1_score': 0.30051455}
+confusion matrix:
+       0     1
+0  16263  1804
+1    235   438
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.8720593, 'precision': 0.60491544, 'recall': 0.8394441, 'specificity': 0.8394441, 'f1': 0.6369958, 'auroc': 0.906667, 'binary_precision': 0.21953781, 'binary_recall': 0.8038462, 'binary_specificity': 0.875042, 'binary_f1_score': 0.34488449}
+confusion matrix:
+      0    1
+0  5203  743
+1    51  209
+new oracle model saved
+better model found
+persisted
+after epoch: 1,now: 2024-08-01 16:35:29.824422,epoch time: 0:40:19.712847,used: 0:40:19.712847,model: dset_te_center0_diva_b8efecac6_not_commited_2024md_08md_01_15_55_09_seed_1_23919985
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 2
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9662247, 'precision': 0.9662249, 'recall': 0.96622515, 'specificity': 0.96622515, 'f1': 0.9662247, 'auroc': 0.99413157, 'binary_precision': 0.96683335, 'binary_recall': 0.96562606, 'binary_specificity': 0.9668242, 'binary_f1_score': 0.9662293}
+confusion matrix:
+       0      1
+0  27831    955
+1    991  27839
+---- Validation: 
+scalar performance:
+{'acc': 0.84268945, 'precision': 0.57360715, 'recall': 0.8096942, 'specificity': 0.8096942, 'f1': 0.58656335, 'auroc': 0.88582456, 'binary_precision': 0.15706964, 'binary_recall': 0.7741456, 'binary_specificity': 0.8452427, 'binary_f1_score': 0.2611529}
+confusion matrix:
+       0     1
+0  15271  2796
+1    152   521
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.8059942, 'precision': 0.57706624, 'recall': 0.83439094, 'specificity': 0.83439094, 'f1': 0.5800755, 'auroc': 0.9072577, 'binary_precision': 0.16140603, 'binary_recall': 0.86538464, 'binary_specificity': 0.80339724, 'binary_f1_score': 0.27206773}
+confusion matrix:
+      0     1
+0  4777  1169
+1    35   225
+early stop counter: 1
+val acc:0.8426894545555115, best validation acc: 0.8911952972412109, corresponding to test acc:                         0.8720592856407166 / 0.8720592856407166
+after epoch: 2,now: 2024-08-01 17:16:10.801439,epoch time: 0:40:40.977017,used: 1:21:00.689864,model: dset_te_center0_diva_b8efecac6_not_commited_2024md_08md_01_15_55_09_seed_1_23919985
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 3
+---- Training Domain: 
+scalar performance:
+{'acc': 0.97082406, 'precision': 0.97084093, 'recall': 0.9708265, 'specificity': 0.9708265, 'f1': 0.9708239, 'auroc': 0.99553144, 'binary_precision': 0.9738542, 'binary_recall': 0.9676726, 'binary_specificity': 0.9739804, 'binary_f1_score': 0.97075355}
+confusion matrix:
+       0      1
+0  28037    749
+1    932  27898
+---- Validation: 
+scalar performance:
+{'acc': 0.85992527, 'precision': 0.5831575, 'recall': 0.82364, 'specificity': 0.82364, 'f1': 0.60460675, 'auroc': 0.89035195, 'binary_precision': 0.17553191, 'binary_recall': 0.7845468, 'binary_specificity': 0.8627332, 'binary_f1_score': 0.28687856}
+confusion matrix:
+       0     1
+0  15587  2480
+1    145   528
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.8134064, 'precision': 0.57845527, 'recall': 0.8309032, 'specificity': 0.8309032, 'f1': 0.5845734, 'auroc': 0.90544844, 'binary_precision': 0.16492537, 'binary_recall': 0.85, 'binary_specificity': 0.81180626, 'binary_f1_score': 0.27625}
+confusion matrix:
+      0     1
+0  4827  1119
+1    39   221
+early stop counter: 2
+val acc:0.8599252700805664, best validation acc: 0.8911952972412109, corresponding to test acc:                         0.8720592856407166 / 0.8720592856407166
+after epoch: 3,now: 2024-08-01 17:56:02.117374,epoch time: 0:39:51.315935,used: 2:00:52.005799,model: dset_te_center0_diva_b8efecac6_not_commited_2024md_08md_01_15_55_09_seed_1_23919985
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 4
+---- Training Domain: 
+scalar performance:
+{'acc': 0.97297627, 'precision': 0.9732194, 'recall': 0.9729847, 'specificity': 0.9729847, 'f1': 0.9729731, 'auroc': 0.99621415, 'binary_precision': 0.9841298, 'binary_recall': 0.9614971, 'binary_specificity': 0.98447216, 'binary_f1_score': 0.9726818}
+confusion matrix:
+       0      1
+0  28340    447
+1   1110  27719
+---- Validation: 
+scalar performance:
+{'acc': 0.88932765, 'precision': 0.5982218, 'recall': 0.8160002, 'specificity': 0.8160002, 'f1': 0.6316412, 'auroc': 0.8872641, 'binary_precision': 0.2072712, 'binary_recall': 0.7369985, 'binary_specificity': 0.89500195, 'binary_f1_score': 0.3235486}
+confusion matrix:
+       0     1
+0  16170  1897
+1    177   496
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.84643894, 'precision': 0.5924093, 'recall': 0.84262466, 'specificity': 0.84262466, 'f1': 0.6137196, 'auroc': 0.9083935, 'binary_precision': 0.19309123, 'binary_recall': 0.8384615, 'binary_specificity': 0.84678775, 'binary_f1_score': 0.31389487}
+confusion matrix:
+      0    1
+0  5035  911
+1    42  218
+early stop counter: 3
+val acc:0.8893276453018188, best validation acc: 0.8911952972412109, corresponding to test acc:                         0.8720592856407166 / 0.8720592856407166
+after epoch: 4,now: 2024-08-01 18:36:35.200658,epoch time: 0:40:33.083284,used: 2:41:25.089083,model: dset_te_center0_diva_b8efecac6_not_commited_2024md_08md_01_15_55_09_seed_1_23919985
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+early stop trigger
+Experiment finished at epoch: 4 with time: 2:41:25.089083 at 2024-08-01 18:36:35.200658
+persisted model performance metric: 
+
+scalar performance:
+{'acc': 0.8720593, 'precision': 0.60491544, 'recall': 0.8394441, 'specificity': 0.8394441, 'f1': 0.6369958, 'auroc': 0.906667, 'binary_precision': 0.21953781, 'binary_recall': 0.8038462, 'binary_specificity': 0.875042, 'binary_f1_score': 0.34488449}
+confusion matrix:
+      0    1
+0  5203  743
+1    51  209
+oracle model performance metric: 
+
+scalar performance:
+{'acc': 0.8720593, 'precision': 0.60491544, 'recall': 0.8394441, 'specificity': 0.8394441, 'f1': 0.6369958, 'auroc': 0.906667, 'binary_precision': 0.21953781, 'binary_recall': 0.8038462, 'binary_specificity': 0.875042, 'binary_f1_score': 0.34488449}
+confusion matrix:
+      0    1
+0  5203  743
+1    51  209
+results aggregation path: zoutput/benchmarks/CAMELYONbalancednew_center0_dinov2small_erm_2024-08-01_00-27-59/rule_results/5.csv
+confusion matrix saved in file: zoutput/benchmarks/CAMELYONbalancednew_center0_dinov2small_erm_2024-08-01_00-27-59/confusion_matrix/5.csv.txt
+before torch memory clean up
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |   2297 MiB |   6878 MiB | 766647 GiB | 766644 GiB |
+|       from large pool |   2252 MiB |   6833 MiB | 759306 GiB | 759304 GiB |
+|       from small pool |     45 MiB |     86 MiB |   7340 GiB |   7340 GiB |
+|---------------------------------------------------------------------------|
+| Active memory         |   2297 MiB |   6878 MiB | 766647 GiB | 766644 GiB |
+|       from large pool |   2252 MiB |   6833 MiB | 759306 GiB | 759304 GiB |
+|       from small pool |     45 MiB |     86 MiB |   7340 GiB |   7340 GiB |
+|---------------------------------------------------------------------------|
+| Requested memory      |   2286 MiB |   6863 MiB | 765902 GiB | 765900 GiB |
+|       from large pool |   2242 MiB |   6819 MiB | 758571 GiB | 758569 GiB |
+|       from small pool |     44 MiB |     85 MiB |   7331 GiB |   7331 GiB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   |   7196 MiB |   7338 MiB |  11750 MiB |   4554 MiB |
+|       from large pool |   7110 MiB |   7246 MiB |  11628 MiB |   4518 MiB |
+|       from small pool |     86 MiB |     92 MiB |    122 MiB |     36 MiB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory | 454898 KiB |    803 MiB | 475215 GiB | 475215 GiB |
+|       from large pool | 439936 KiB |    800 MiB | 467817 GiB | 467817 GiB |
+|       from small pool |  14962 KiB |     34 MiB |   7397 GiB |   7397 GiB |
+|---------------------------------------------------------------------------|
+| Allocations           |    3610    |    8333    |   97399 K  |   97395 K  |
+|       from large pool |     176    |     456    |   55860 K  |   55860 K  |
+|       from small pool |    3434    |    8156    |   41538 K  |   41535 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |    3610    |    8333    |   97399 K  |   97395 K  |
+|       from large pool |     176    |     456    |   55860 K  |   55860 K  |
+|       from small pool |    3434    |    8156    |   41538 K  |   41535 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |     162    |     209    |     303    |     141    |
+|       from large pool |     119    |     163    |     242    |     123    |
+|       from small pool |      43    |      46    |      61    |      18    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |      68    |    3634    |   56504 K  |   56504 K  |
+|       from large pool |      24    |     151    |   37595 K  |   37595 K  |
+|       from small pool |      44    |    3610    |   18908 K  |   18908 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+after torch memory clean up
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |  16640 KiB |   6878 MiB | 766647 GiB | 766647 GiB |
+|       from large pool |  16640 KiB |   6833 MiB | 759306 GiB | 759306 GiB |
+|       from small pool |      0 KiB |     86 MiB |   7340 GiB |   7340 GiB |
+|---------------------------------------------------------------------------|
+| Active memory         |  16640 KiB |   6878 MiB | 766647 GiB | 766647 GiB |
+|       from large pool |  16640 KiB |   6833 MiB | 759306 GiB | 759306 GiB |
+|       from small pool |      0 KiB |     86 MiB |   7340 GiB |   7340 GiB |
+|---------------------------------------------------------------------------|
+| Requested memory      |  16640 KiB |   6863 MiB | 765902 GiB | 765902 GiB |
+|       from large pool |  16640 KiB |   6819 MiB | 758571 GiB | 758571 GiB |
+|       from small pool |      0 KiB |     85 MiB |   7331 GiB |   7331 GiB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   |   2742 MiB |   7338 MiB |  11750 MiB |   9008 MiB |
+|       from large pool |   2682 MiB |   7246 MiB |  11628 MiB |   8946 MiB |
+|       from small pool |     60 MiB |     92 MiB |    122 MiB |     62 MiB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |  30464 KiB |    803 MiB | 475216 GiB | 475215 GiB |
+|       from large pool |  30464 KiB |    800 MiB | 467818 GiB | 467818 GiB |
+|       from small pool |      0 KiB |     37 MiB |   7397 GiB |   7397 GiB |
+|---------------------------------------------------------------------------|
+| Allocations           |       2    |    8333    |   97399 K  |   97399 K  |
+|       from large pool |       2    |     456    |   55860 K  |   55860 K  |
+|       from small pool |       0    |    8156    |   41538 K  |   41538 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |       2    |    8333    |   97399 K  |   97399 K  |
+|       from large pool |       2    |     456    |   55860 K  |   55860 K  |
+|       from small pool |       0    |    8156    |   41538 K  |   41538 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |      68    |     209    |     303    |     235    |
+|       from large pool |      38    |     163    |     242    |     204    |
+|       from small pool |      30    |      46    |      61    |      31    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |       3    |    3634    |   56505 K  |   56505 K  |
+|       from large pool |       3    |     151    |   37595 K  |   37595 K  |
+|       from small pool |       0    |    3610    |   18909 K  |   18909 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+before experiment starts
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |  16640 KiB |   6878 MiB | 766647 GiB | 766647 GiB |
+|       from large pool |  16640 KiB |   6833 MiB | 759306 GiB | 759306 GiB |
+|       from small pool |      0 KiB |     86 MiB |   7340 GiB |   7340 GiB |
+|---------------------------------------------------------------------------|
+| Active memory         |  16640 KiB |   6878 MiB | 766647 GiB | 766647 GiB |
+|       from large pool |  16640 KiB |   6833 MiB | 759306 GiB | 759306 GiB |
+|       from small pool |      0 KiB |     86 MiB |   7340 GiB |   7340 GiB |
+|---------------------------------------------------------------------------|
+| Requested memory      |  16640 KiB |   6863 MiB | 765902 GiB | 765902 GiB |
+|       from large pool |  16640 KiB |   6819 MiB | 758571 GiB | 758571 GiB |
+|       from small pool |      0 KiB |     85 MiB |   7331 GiB |   7331 GiB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   |   2742 MiB |   7338 MiB |  11750 MiB |   9008 MiB |
+|       from large pool |   2682 MiB |   7246 MiB |  11628 MiB |   8946 MiB |
+|       from small pool |     60 MiB |     92 MiB |    122 MiB |     62 MiB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |  30464 KiB |    803 MiB | 475216 GiB | 475215 GiB |
+|       from large pool |  30464 KiB |    800 MiB | 467818 GiB | 467818 GiB |
+|       from small pool |      0 KiB |     37 MiB |   7397 GiB |   7397 GiB |
+|---------------------------------------------------------------------------|
+| Allocations           |       2    |    8333    |   97399 K  |   97399 K  |
+|       from large pool |       2    |     456    |   55860 K  |   55860 K  |
+|       from small pool |       0    |    8156    |   41538 K  |   41538 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |       2    |    8333    |   97399 K  |   97399 K  |
+|       from large pool |       2    |     456    |   55860 K  |   55860 K  |
+|       from small pool |       0    |    8156    |   41538 K  |   41538 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |      68    |     209    |     303    |     235    |
+|       from large pool |      38    |     163    |     242    |     204    |
+|       from small pool |      30    |      46    |      61    |      31    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |       3    |    3634    |   56505 K  |   56505 K  |
+|       from large pool |       3    |     151    |   37595 K  |   37595 K  |
+|       from small pool |       0    |    3610    |   18909 K  |   18909 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+
+overriding args.task None to dset
+
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+Using cache found in /home/aih/sina.wendrich/.cache/torch/hub/facebookresearch_dinov2_main
+Using cache found in /home/aih/sina.wendrich/.cache/torch/hub/facebookresearch_dinov2_main
+
+using device: cuda:0
+
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+
+
+
+!!!: not committed yet
+/ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab/domainlab/utils/get_git_tag.py:16: UserWarning: !!!: not committed yet
+  warnings.warn("!!!: not committed yet")
+
+
+
+b'8efecac6'
+model name: dset_te_center0_diva_b8efecac6_not_commited_2024md_08md_01_18_46_49_seed_2_23919985
+
+ Experiment start at: 2024-08-01 18:46:50.556154
+hyper-parameter scheduler not set,going to use default Warmpup and epoch update
+/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Plan failed with a cudnnException: CUDNN_BACKEND_EXECUTION_PLAN_DESCRIPTOR: cudnnFinalize Descriptor Failed cudnn_status: CUDNN_STATUS_NOT_SUPPORTED (Triggered internally at /opt/conda/conda-bld/pytorch_1712608935911/work/aten/src/ATen/native/cudnn/Conv_v8.cpp:919.)
+  return F.conv2d(input, weight, bias, self.stride,
+before training, model accuracy: 0.03926911577582359
+epoch: 1
+---- Training Domain: 
+scalar performance:
+{'acc': 0.95823616, 'precision': 0.9593117, 'recall': 0.9582403, 'specificity': 0.9582403, 'f1': 0.9582119, 'auroc': 0.99171746, 'binary_precision': 0.9815816, 'binary_recall': 0.9340124, 'binary_specificity': 0.9824682, 'binary_f1_score': 0.95720637}
+confusion matrix:
+       0      1
+0  28636    511
+1   1924  27233
+---- Validation: 
+scalar performance:
+{'acc': 0.9264369, 'precision': 0.6081041, 'recall': 0.748389, 'specificity': 0.748389, 'f1': 0.6442084, 'auroc': 0.849231, 'binary_precision': 0.23156443, 'binary_recall': 0.55813956, 'binary_specificity': 0.9386385, 'binary_f1_score': 0.32732585}
+confusion matrix:
+       0     1
+0  17056  1115
+1    266   336
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9195384, 'precision': 0.62780464, 'recall': 0.7836646, 'specificity': 0.7836646, 'f1': 0.66861165, 'auroc': 0.8646823, 'binary_precision': 0.27112675, 'binary_recall': 0.6363636, 'binary_specificity': 0.9309655, 'binary_f1_score': 0.38024688}
+confusion matrix:
+      0    1
+0  5583  414
+1    88  154
+new oracle model saved
+better model found
+persisted
+after epoch: 1,now: 2024-08-01 19:29:44.616053,epoch time: 0:42:54.059899,used: 0:42:54.059899,model: dset_te_center0_diva_b8efecac6_not_commited_2024md_08md_01_18_46_49_seed_2_23919985
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 2
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9667433, 'precision': 0.9668265, 'recall': 0.96674514, 'specificity': 0.96674514, 'f1': 0.9667419, 'auroc': 0.9942169, 'binary_precision': 0.9731289, 'binary_recall': 0.96001375, 'binary_specificity': 0.9734765, 'binary_f1_score': 0.96652687}
+confusion matrix:
+       0      1
+0  28371    773
+1   1166  27994
+---- Validation: 
+scalar performance:
+{'acc': 0.85649604, 'precision': 0.57287806, 'recall': 0.81745934, 'specificity': 0.81745934, 'f1': 0.5890076, 'auroc': 0.88069344, 'binary_precision': 0.15432915, 'binary_recall': 0.77574754, 'binary_specificity': 0.8591712, 'binary_f1_score': 0.25744212}
+confusion matrix:
+       0     1
+0  15612  2559
+1    135   467
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.8272159, 'precision': 0.57103723, 'recall': 0.79710555, 'specificity': 0.79710555, 'f1': 0.5788957, 'auroc': 0.8729881, 'binary_precision': 0.15339966, 'binary_recall': 0.7644628, 'binary_specificity': 0.8297482, 'binary_f1_score': 0.25552484}
+confusion matrix:
+      0     1
+0  4976  1021
+1    57   185
+early stop counter: 1
+val acc:0.8564960360527039, best validation acc: 0.9264369010925293, corresponding to test acc:                         0.9195383787155151 / 0.9195383787155151
+after epoch: 2,now: 2024-08-01 20:12:19.299738,epoch time: 0:42:34.683685,used: 1:25:28.743584,model: dset_te_center0_diva_b8efecac6_not_commited_2024md_08md_01_18_46_49_seed_2_23919985
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 3
+---- Training Domain: 
+scalar performance:
+{'acc': 0.96950465, 'precision': 0.96996427, 'recall': 0.96950734, 'specificity': 0.96950734, 'f1': 0.9694973, 'auroc': 0.99494773, 'binary_precision': 0.9847042, 'binary_recall': 0.95383614, 'binary_specificity': 0.9851786, 'binary_f1_score': 0.9690244}
+confusion matrix:
+       0      1
+0  28715    432
+1   1346  27811
+---- Validation: 
+scalar performance:
+{'acc': 0.8963405, 'precision': 0.58825827, 'recall': 0.7890557, 'specificity': 0.7890557, 'f1': 0.61923873, 'auroc': 0.8698611, 'binary_precision': 0.18831168, 'binary_recall': 0.6744186, 'binary_specificity': 0.9036927, 'binary_f1_score': 0.29441625}
+confusion matrix:
+       0     1
+0  16421  1750
+1    196   406
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.87449914, 'precision': 0.58664936, 'recall': 0.7780808, 'specificity': 0.7780808, 'f1': 0.6125435, 'auroc': 0.8648429, 'binary_precision': 0.18800461, 'binary_recall': 0.6735537, 'binary_specificity': 0.882608, 'binary_f1_score': 0.29395851}
+confusion matrix:
+      0    1
+0  5293  704
+1    79  163
+early stop counter: 2
+val acc:0.8963404893875122, best validation acc: 0.9264369010925293, corresponding to test acc:                         0.9195383787155151 / 0.9195383787155151
+after epoch: 3,now: 2024-08-01 20:55:02.845730,epoch time: 0:42:43.545992,used: 2:08:12.289576,model: dset_te_center0_diva_b8efecac6_not_commited_2024md_08md_01_18_46_49_seed_2_23919985
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+epoch: 4
+---- Training Domain: 
+scalar performance:
+{'acc': 0.97410125, 'precision': 0.9741849, 'recall': 0.9741026, 'specificity': 0.9741026, 'f1': 0.97410023, 'auroc': 0.99609673, 'binary_precision': 0.9805339, 'binary_recall': 0.9674189, 'binary_specificity': 0.9807864, 'binary_f1_score': 0.9739323}
+confusion matrix:
+       0      1
+0  28586    560
+1    950  28208
+---- Validation: 
+scalar performance:
+{'acc': 0.8823843, 'precision': 0.5799521, 'recall': 0.7914829, 'specificity': 0.7914829, 'f1': 0.60532117, 'auroc': 0.8684156, 'binary_precision': 0.17117117, 'binary_recall': 0.69435215, 'binary_specificity': 0.8886137, 'binary_f1_score': 0.27463862}
+confusion matrix:
+       0     1
+0  16147  2024
+1    184   418
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.8647219, 'precision': 0.58300555, 'recall': 0.78489137, 'specificity': 0.78489137, 'f1': 0.6056196, 'auroc': 0.8706128, 'binary_precision': 0.17978723, 'binary_recall': 0.6983471, 'binary_specificity': 0.8714357, 'binary_f1_score': 0.285956}
+confusion matrix:
+      0    1
+0  5226  771
+1    73  169
+early stop counter: 3
+val acc:0.8823843002319336, best validation acc: 0.9264369010925293, corresponding to test acc:                         0.9195383787155151 / 0.9195383787155151
+after epoch: 4,now: 2024-08-01 21:37:10.123572,epoch time: 0:42:07.277842,used: 2:50:19.567418,model: dset_te_center0_diva_b8efecac6_not_commited_2024md_08md_01_18_46_49_seed_2_23919985
+working direcotry: /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab
+early stop trigger
+Experiment finished at epoch: 4 with time: 2:50:19.567418 at 2024-08-01 21:37:10.123572
+persisted model performance metric: 
+
+scalar performance:
+{'acc': 0.9195384, 'precision': 0.62780464, 'recall': 0.7836646, 'specificity': 0.7836646, 'f1': 0.66861165, 'auroc': 0.8646823, 'binary_precision': 0.27112675, 'binary_recall': 0.6363636, 'binary_specificity': 0.9309655, 'binary_f1_score': 0.38024688}
+confusion matrix:
+      0    1
+0  5583  414
+1    88  154
+oracle model performance metric: 
+
+scalar performance:
+{'acc': 0.9195384, 'precision': 0.62780464, 'recall': 0.7836646, 'specificity': 0.7836646, 'f1': 0.66861165, 'auroc': 0.8646823, 'binary_precision': 0.27112675, 'binary_recall': 0.6363636, 'binary_specificity': 0.9309655, 'binary_f1_score': 0.38024688}
+confusion matrix:
+      0    1
+0  5583  414
+1    88  154
+results aggregation path: zoutput/benchmarks/CAMELYONbalancednew_center0_dinov2small_erm_2024-08-01_00-27-59/rule_results/5.csv
+confusion matrix saved in file: zoutput/benchmarks/CAMELYONbalancednew_center0_dinov2small_erm_2024-08-01_00-27-59/confusion_matrix/5.csv.txt
+before torch memory clean up
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |   2297 MiB |   6878 MiB |   1128 TiB |   1128 TiB |
+|       from large pool |   2252 MiB |   6833 MiB |   1117 TiB |   1117 TiB |
+|       from small pool |     45 MiB |     86 MiB |     10 TiB |     10 TiB |
+|---------------------------------------------------------------------------|
+| Active memory         |   2297 MiB |   6878 MiB |   1128 TiB |   1128 TiB |
+|       from large pool |   2252 MiB |   6833 MiB |   1117 TiB |   1117 TiB |
+|       from small pool |     45 MiB |     86 MiB |     10 TiB |     10 TiB |
+|---------------------------------------------------------------------------|
+| Requested memory      |   2286 MiB |   6863 MiB |   1126 TiB |   1126 TiB |
+|       from large pool |   2242 MiB |   6819 MiB |   1116 TiB |   1116 TiB |
+|       from small pool |     44 MiB |     85 MiB |     10 TiB |     10 TiB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   |   7316 MiB |   7338 MiB |  16324 MiB |   9008 MiB |
+|       from large pool |   7230 MiB |   7246 MiB |  16176 MiB |   8946 MiB |
+|       from small pool |     86 MiB |     92 MiB |    148 MiB |     62 MiB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory | 489708 KiB |    821 MiB | 751990 GiB | 751990 GiB |
+|       from large pool | 472704 KiB |    818 MiB | 740853 GiB | 740852 GiB |
+|       from small pool |  17004 KiB |     37 MiB |  11137 GiB |  11137 GiB |
+|---------------------------------------------------------------------------|
+| Allocations           |    3622    |    8419    |  146724 K  |  146720 K  |
+|       from large pool |     176    |     456    |   84163 K  |   84163 K  |
+|       from small pool |    3446    |    8242    |   62560 K  |   62557 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |    3622    |    8419    |  146724 K  |  146720 K  |
+|       from large pool |     176    |     456    |   84163 K  |   84163 K  |
+|       from small pool |    3446    |    8242    |   62560 K  |   62557 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |     162    |     209    |     397    |     235    |
+|       from large pool |     119    |     163    |     323    |     204    |
+|       from small pool |      43    |      46    |      74    |      31    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |      69    |    3675    |   84626 K  |   84626 K  |
+|       from large pool |      24    |     151    |   55747 K  |   55747 K  |
+|       from small pool |      45    |    3651    |   28879 K  |   28879 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+after torch memory clean up
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |  16640 KiB |   6878 MiB |   1128 TiB |   1128 TiB |
+|       from large pool |  16640 KiB |   6833 MiB |   1117 TiB |   1117 TiB |
+|       from small pool |      0 KiB |     86 MiB |     10 TiB |     10 TiB |
+|---------------------------------------------------------------------------|
+| Active memory         |  16640 KiB |   6878 MiB |   1128 TiB |   1128 TiB |
+|       from large pool |  16640 KiB |   6833 MiB |   1117 TiB |   1117 TiB |
+|       from small pool |      0 KiB |     86 MiB |     10 TiB |     10 TiB |
+|---------------------------------------------------------------------------|
+| Requested memory      |  16640 KiB |   6863 MiB |   1126 TiB |   1126 TiB |
+|       from large pool |  16640 KiB |   6819 MiB |   1116 TiB |   1116 TiB |
+|       from small pool |      0 KiB |     85 MiB |     10 TiB |     10 TiB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   |   2776 MiB |   7338 MiB |  16324 MiB |  13548 MiB |
+|       from large pool |   2714 MiB |   7246 MiB |  16176 MiB |  13462 MiB |
+|       from small pool |     62 MiB |     92 MiB |    148 MiB |     86 MiB |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |  30464 KiB |    821 MiB | 751991 GiB | 751991 GiB |
+|       from large pool |  30464 KiB |    818 MiB | 740853 GiB | 740853 GiB |
+|       from small pool |      0 KiB |     39 MiB |  11137 GiB |  11137 GiB |
+|---------------------------------------------------------------------------|
+| Allocations           |       2    |    8419    |  146724 K  |  146724 K  |
+|       from large pool |       2    |     456    |   84163 K  |   84163 K  |
+|       from small pool |       0    |    8242    |   62560 K  |   62560 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |       2    |    8419    |  146724 K  |  146724 K  |
+|       from large pool |       2    |     456    |   84163 K  |   84163 K  |
+|       from small pool |       0    |    8242    |   62560 K  |   62560 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |      69    |     209    |     397    |     328    |
+|       from large pool |      38    |     163    |     323    |     285    |
+|       from small pool |      31    |      46    |      74    |      43    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |       3    |    3675    |   84627 K  |   84627 K  |
+|       from large pool |       3    |     151    |   55747 K  |   55747 K  |
+|       from small pool |       0    |    3651    |   28880 K  |   28880 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
+[Thu Aug  1 21:38:40 2024]
+Finished job 0.
+1 of 1 steps (100%) done

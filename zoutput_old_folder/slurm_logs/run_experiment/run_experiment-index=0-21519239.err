@@ -1,0 +1,130 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, nvidia_gpu=1
+Select jobs to execute...
+
+[Fri Jun 21 10:21:09 2024]
+rule run_experiment:
+    input: zoutput/benchmarks/CAMELYON_center0_irm_resnet_bs16_lre5_classbalancing/hyperparameters.csv
+    output: zoutput/benchmarks/CAMELYON_center0_irm_resnet_bs16_lre5_classbalancing/rule_results/0.csv
+    jobid: 0
+    reason: Forced execution
+    wildcards: index=0
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=/tmp, partition=gpu_p, qos=gpu_normal, nvidia_gpu=1
+
+Failed to import backpack: cannot import name '_grad_input_padding' from 'torch.nn.grad' (/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/grad.py)
+before experiment loop: 
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/logging/__init__.py", line 1103, in emit
+    stream.write(msg + self.terminator)
+OSError: [Errno 122] Disk quota exceeded
+Call stack:
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/concurrent/futures/thread.py", line 83, in _worker
+    work_item.run()
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/snakemake/executors/__init__.py", line 699, in cached_or_run
+    run_func(*args)
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/snakemake/executors/__init__.py", line 2656, in run_wrapper
+    run(
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/exp_protocol/benchmark.smk", line 187, in __rule_run_experiment
+    rule all:
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/exp_protocol/run_experiment.py", line 149, in run_experiment
+    logger.info(str(torch.cuda.memory_summary()))
+Unable to print the message and arguments - possible formatting error.
+Use the traceback above to help find the error.
+before experiment starts
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/logging/__init__.py", line 1103, in emit
+    stream.write(msg + self.terminator)
+OSError: [Errno 122] Disk quota exceeded
+Call stack:
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/concurrent/futures/thread.py", line 83, in _worker
+    work_item.run()
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/snakemake/executors/__init__.py", line 699, in cached_or_run
+    run_func(*args)
+
+overriding args.task None to dset
+
+
+using device: cuda:0
+
+
+
+
+!!!: not committed yet
+/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/utils/get_git_tag.py:16: UserWarning: !!!: not committed yet
+  warnings.warn("!!!: not committed yet")
+
+
+
+b'44271c83'
+model name: dset_te_center0_erm_b44271c83_not_commited_2024md_06md_21_10_35_05_seed_0_21519239
+
+ Experiment start at: 2024-06-21 10:35:05.365057
+before training, model accuracy: 0.3101629912853241
+epoch: 1
+---- Training Domain: 
+scalar performance:
+{'acc': 0.9055546, 'precision': 0.4527773, 'recall': 0.5, 'specificity': 0.5, 'f1': 0.47521842, 'auroc': 0.5441136, 'binary_precision': 0.0, 'binary_recall': 0.0, 'binary_specificity': 1.0, 'binary_f1_score': 0.0}
+confusion matrix:
+       0  1
+0  42322  0
+1   4414  0
+---- Validation: 
+scalar performance:
+{'acc': 0.9657833, 'precision': 0.48289165, 'recall': 0.5, 'specificity': 0.5, 'f1': 0.49129692, 'auroc': 0.32845116, 'binary_precision': 0.0, 'binary_recall': 0.0, 'binary_specificity': 1.0, 'binary_f1_score': 0.0}
+confusion matrix:
+       0  1
+0  18149  0
+1    643  0
+---- Test Domain (oracle): 
+scalar performance:
+{'acc': 0.9582934, 'precision': 0.4791467, 'recall': 0.5, 'specificity': 0.5, 'f1': 0.48935127, 'auroc': 0.2733097, 'binary_precision': 0.0, 'binary_recall': 0.0, 'binary_specificity': 1.0, 'binary_f1_score': 0.0}
+confusion matrix:
+      0  1
+0  5997  0
+1   261  0
+t-SNE plot saved as /localscratch/sina.wendrich/tsne/t-SNE_Test_center0_21519239_1.png
+[Fri Jun 21 10:55:10 2024]
+Error in rule run_experiment:
+    jobid: 0
+    input: zoutput/benchmarks/CAMELYON_center0_irm_resnet_bs16_lre5_classbalancing/hyperparameters.csv
+    output: zoutput/benchmarks/CAMELYON_center0_irm_resnet_bs16_lre5_classbalancing/rule_results/0.csv
+
+RuleException:
+RuntimeError in file /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/exp_protocol/benchmark.smk, line 161:
+[enforce fail at inline_container.cc:595] . unexpected pos 59826432 vs 59826264
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/exp_protocol/benchmark.smk", line 161, in __rule_run_experiment
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/exp_protocol/run_experiment.py", line 172, in run_experiment
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/exp/exp_main.py", line 77, in execute
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/algos/trainers/train_irm.py", line 51, in tr_epoch
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/algos/trainers/train_irm.py", line 66, in after_epoch
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/algos/observers/b_obvisitor.py", line 60, in update
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/algos/msels/a_model_sel.py", line 63, in update
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/algos/msels/c_msel_oracle.py", line 37, in base_update
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/models/a_model.py", line 159, in save
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/exp/exp_utils.py", line 89, in save
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/serialization.py", line 627, in save
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/serialization.py", line 475, in __exit__
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message

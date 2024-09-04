@@ -1,0 +1,39 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, nvidia_gpu=1
+Select jobs to execute...
+
+[Fri Jun 21 10:56:27 2024]
+rule parameter_sampling:
+    input: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/conf/CAMELYON_benchmark.yaml
+    output: zoutput/benchmarks/CAMELYON_center0_irm_resnet_bs16_lre5_classbalancing/hyperparameters.csv
+    jobid: 1
+    reason: Updated input files: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/conf/CAMELYON_benchmark.yaml
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=/tmp, partition=gpu_p, qos=gpu_normal
+
+
+
+
+!!!: not committed yet
+/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/utils/get_git_tag.py:16: UserWarning: !!!: not committed yet
+  warnings.warn("!!!: not committed yet")
+
+
+
+b'44271c83'
+[Fri Jun 21 10:57:18 2024]
+Error in rule parameter_sampling:
+    jobid: 1
+    input: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/conf/CAMELYON_benchmark.yaml
+    output: zoutput/benchmarks/CAMELYON_center0_irm_resnet_bs16_lre5_classbalancing/hyperparameters.csv
+
+RuleException:
+OSError in file /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/exp_protocol/benchmark.smk, line 111:
+[Errno 122] Disk quota exceeded
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/exp_protocol/benchmark.smk", line 111, in __rule_parameter_sampling
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/utils/hyperparameter_sampling.py", line 477, in sample_hyperparameters
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message

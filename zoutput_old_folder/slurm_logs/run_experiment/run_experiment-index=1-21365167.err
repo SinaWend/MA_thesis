@@ -1,0 +1,78 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, nvidia_gpu=1
+Select jobs to execute...
+
+[Tue Jun 18 00:49:40 2024]
+rule run_experiment:
+    input: zoutput/benchmarks/CAMELYON_center0_erm_resnet_different_batchsizes_lre3/hyperparameters.csv
+    output: zoutput/benchmarks/CAMELYON_center0_erm_resnet_different_batchsizes_lre3/rule_results/1.csv
+    jobid: 0
+    reason: Forced execution
+    wildcards: index=1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=/tmp, partition=gpu_p, qos=gpu_normal, nvidia_gpu=1
+
+Failed to import backpack: cannot import name '_grad_input_padding' from 'torch.nn.grad' (/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/grad.py)
+before experiment loop: 
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/logging/__init__.py", line 1103, in emit
+    stream.write(msg + self.terminator)
+OSError: [Errno 122] Disk quota exceeded
+Call stack:
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/concurrent/futures/thread.py", line 83, in _worker
+    work_item.run()
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/snakemake/executors/__init__.py", line 699, in cached_or_run
+    run_func(*args)
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/snakemake/executors/__init__.py", line 2656, in run_wrapper
+    run(
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/exp_protocol/benchmark.smk", line 187, in __rule_run_experiment
+    rule all:
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/exp_protocol/run_experiment.py", line 149, in run_experiment
+    logger.info(str(torch.cuda.memory_summary()))
+Unable to print the message and arguments - possible formatting error.
+Use the traceback above to help find the error.
+before experiment starts
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/logging/__init__.py", line 1103, in emit
+    stream.write(msg + self.terminator)
+OSError: [Errno 122] Disk quota exceeded
+Call stack:
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/concurrent/futures/thread.py", line 83, in _worker
+    work_item.run()
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/snakemake/executors/__init__.py", line 699, in cached_or_run
+    run_func(*args)
+
+overriding args.task None to dset
+
+
+using device: cuda:0
+
+
+
+
+!!!: not committed yet
+
+
+
+b'44271c83'
+epoch: 1

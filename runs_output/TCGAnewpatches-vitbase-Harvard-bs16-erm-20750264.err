@@ -1,0 +1,22 @@
+Failed to import backpack: cannot import name '_grad_input_padding' from 'torch.nn.grad' (/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/grad.py)
+
+
+
+no algorithm conf specified, going to use default
+
+
+
+/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/arg_parser.py:365: UserWarning: no algorithm conf specified, going to use default
+  warnings.warn("no algorithm conf specified, going to use default")
+Traceback (most recent call last):
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/main_out.py", line 4, in <module>
+    domainlab_cli()
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/cli.py", line 25, in domainlab_cli
+    exp = Exp(args=args)
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/exp/exp_main.py", line 30, in __init__
+    self.task = TaskChainNodeGetter(args)()
+  File "/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/tasks/zoo_tasks.py", line 36, in __call__
+    node = self.task_module.get_task(self.args.task)
+  File "/lustre/groups/aih/sina.wendrich/MA_code/MA_thesis/tasks/task_tissue_TCGA.py", line 135, in get_task
+    for slide_dir in os.listdir(patches_path):
+FileNotFoundError: [Errno 2] No such file or directory: '/localscratch/sina.wendrich/output_TCGA_patches/KIRC/patches/8'

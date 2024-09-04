@@ -1,0 +1,40 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, nvidia_gpu=1
+Select jobs to execute...
+
+[Sun May 26 12:24:42 2024]
+rule parameter_sampling:
+    input: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/conf/CAMELYON_benchmark.yaml
+    output: zoutput/benchmarks/CAMELYON_center0_irm_vit_resnet_dinov2_bs32/hyperparameters.csv
+    jobid: 1
+    reason: Updated input files: /ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/conf/CAMELYON_benchmark.yaml
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=/tmp, partition=gpu_p, qos=gpu_normal
+
+
+
+
+!!!: not committed yet
+/ictstr01/groups/aih/sina.wendrich/MA_code/MA_thesis/DomainLab/domainlab/utils/get_git_tag.py:16: UserWarning: !!!: not committed yet
+  warnings.warn("!!!: not committed yet")
+
+
+
+b'44271c83'
+[Sun May 26 12:24:44 2024]
+Finished job 1.
+1 of 2 steps (50%) done
+Select jobs to execute...
+
+[Sun May 26 12:24:44 2024]
+rule run_experiment:
+    input: zoutput/benchmarks/CAMELYON_center0_irm_vit_resnet_dinov2_bs32/hyperparameters.csv
+    output: zoutput/benchmarks/CAMELYON_center0_irm_vit_resnet_dinov2_bs32/rule_results/5.csv
+    jobid: 0
+    reason: Input files updated by another job: zoutput/benchmarks/CAMELYON_center0_irm_vit_resnet_dinov2_bs32/hyperparameters.csv
+    wildcards: index=5
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=/tmp, partition=gpu_p, qos=gpu_normal, nvidia_gpu=1
+
+slurmstepd: error: *** JOB 20863186 ON gpusrv59 CANCELLED AT 2024-05-26T12:24:50 ***

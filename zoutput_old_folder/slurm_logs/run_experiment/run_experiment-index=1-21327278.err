@@ -1,0 +1,17 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, nvidia_gpu=1
+Select jobs to execute...
+
+[Sat Jun 15 22:09:15 2024]
+rule run_experiment:
+    input: zoutput/benchmarks/CAMELYON_center0_erm_dinov2_bs16_different_batchsizes/hyperparameters.csv
+    output: zoutput/benchmarks/CAMELYON_center0_erm_dinov2_bs16_different_batchsizes/rule_results/1.csv
+    jobid: 0
+    reason: Forced execution
+    wildcards: index=1
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=/tmp, partition=gpu_p, qos=gpu_normal, nvidia_gpu=1
+
+slurmstepd: error: *** JOB 21327278 ON gpusrv54 CANCELLED AT 2024-06-15T22:10:21 ***

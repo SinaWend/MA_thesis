@@ -1,0 +1,37 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, nvidia_gpu=1
+Select jobs to execute...
+
+[Fri Jul 26 05:47:33 2024]
+rule run_experiment:
+    input: zoutput/benchmarks/CAMELYONbalanced_center0_dinov2small_erm_diva_irm_10seeds_nofreeze_2024-07-26_00-12-34/hyperparameters.csv
+    output: zoutput/benchmarks/CAMELYONbalanced_center0_dinov2small_erm_diva_irm_10seeds_nofreeze_2024-07-26_00-12-34/rule_results/22.csv
+    jobid: 0
+    reason: Forced execution
+    wildcards: index=22
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=/tmp, partition=gpu_p, qos=gpu_normal, nvidia_gpu=1
+
+Failed to import backpack: cannot import name '_grad_input_padding' from 'torch.nn.grad' (/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/torch/nn/grad.py)
+[Fri Jul 26 05:47:43 2024]
+Error in rule run_experiment:
+    jobid: 0
+    input: zoutput/benchmarks/CAMELYONbalanced_center0_dinov2small_erm_diva_irm_10seeds_nofreeze_2024-07-26_00-12-34/hyperparameters.csv
+    output: zoutput/benchmarks/CAMELYONbalanced_center0_dinov2small_erm_diva_irm_10seeds_nofreeze_2024-07-26_00-12-34/rule_results/22.csv
+
+RuleException:
+KeyError in file /ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab/domainlab/exp_protocol/benchmark.smk, line 161:
+22
+  File "/ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab/domainlab/exp_protocol/benchmark.smk", line 161, in __rule_run_experiment
+  File "/ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab/domainlab/exp_protocol/run_experiment.py", line 80, in run_experiment
+  File "/ictstr01/home/aih/sina.wendrich/MA_thesis/DomainLab/domainlab/exp_protocol/run_experiment.py", line 28, in load_parameters
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/pandas/core/indexing.py", line 1073, in __getitem__
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/pandas/core/indexing.py", line 1312, in _getitem_axis
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/pandas/core/indexing.py", line 1260, in _get_label
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/pandas/core/generic.py", line 4056, in xs
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3804, in get_loc
+  File "/home/aih/sina.wendrich/miniconda3/envs/domainlab_py310/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message

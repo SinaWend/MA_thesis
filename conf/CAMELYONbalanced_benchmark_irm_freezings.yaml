@@ -1,0 +1,97 @@
+# Example of a comprehensive benchmark config for broader testing scenarios.
+
+# List of all domains that are used as test domains
+# In a leave-one-out setup, i.e., for each run,
+# one domain from this list is chosen as test domain
+# while training is performed on all other domains
+# of the specified dataset.
+test_domains:
+  - center0
+  # - center1
+  # - center2
+  # - center3
+  #- center4
+
+output_dir: zoutput/benchmarks/CAMELYONbalancednew_center0_grid_dinov2small_erm_irm_nofreeze_halffreeze_allfreeze
+
+# Number of hyperparameter samples per task.
+num_param_samples: 1
+mode: grid
+
+startseed: 100
+endseed: 102
+
+domainlab_args:
+  tpath: /home/aih/sina.wendrich/MA_thesis/tasks/task_CAMELYON17_balanced.py
+  bs: 16
+  epos: 15
+  es: 3
+  lr: 1e-5
+
+erm_dinov2:
+  model: erm
+  npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+
+irm_nofreeze:
+  model: erm
+  trainer: irm
+  npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_nofreeze.py
+  hyperparameters:
+    gamma_reg:
+      distribution: categorical   # name of the distribution
+      datatype: float
+      values:                     # concrete values to choose from
+        - 0.00001
+        - 0.0001
+        - 0.001
+        - 0.01
+        - 0.1
+        - 1
+
+
+
+erm_dinov2_halffreeze:
+  model: erm
+  npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_halffreeze_blocks.py
+
+
+
+irm_dinov2_config1_half:
+  model: erm
+  trainer: irm
+  npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_halffreeze_blocks.py
+  hyperparameters:
+    gamma_reg:
+      distribution: categorical   # name of the distribution
+      datatype: float
+      values:                     # concrete values to choose from
+        - 0.00001
+        - 0.0001
+        - 0.001
+        - 0.01
+        - 0.1
+        - 1
+
+
+erm_dinov2_allfreeze:
+  model: erm
+  npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_allfreeze.py
+
+
+
+irm_dinov2_config1_all:
+  model: erm
+  trainer: irm
+  npath: /home/aih/sina.wendrich/MA_thesis/nets/dinov2_allfreeze.py
+  hyperparameters:
+    gamma_reg:
+      distribution: categorical   # name of the distribution
+      datatype: float
+      values:                     # concrete values to choose from
+        - 0.00001
+        - 0.0001
+        - 0.001
+        - 0.01
+        - 0.1
+        - 1
+

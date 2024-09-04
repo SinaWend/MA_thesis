@@ -1,0 +1,31 @@
+test_domains:
+  - acevedo
+
+output_dir: zoutput/benchmarks/BLOOD_acevedo_vit_different_models_missing16
+
+# Number of hyperparameter samples per task.
+num_param_samples: 1
+
+startseed: 100
+endseed: 101
+
+domainlab_args:
+  tpath: /home/aih/sina.wendrich/MA_thesis/tasks/task_blood2.py
+  epos: 10
+  es: 5
+  npath: /home/aih/sina.wendrich/MA_thesis/nets/vit.py
+  lr: 1e-5
+  bs: 32
+
+
+
+
+dann_irm:
+  model: dann
+  trainer: irm
+  hyperparameters:
+    gamma_reg:
+      min: 0.001
+      max: 0.1
+      distribution: loguniform
+

@@ -396,18 +396,6 @@ def process_slides(slide_path, annotation_path, save_path, center_name, patch_si
         wsi = scene.read_block(
                 size=(int(scene.size[0] // scaling), int(scene.size[1] // scaling))
             )        
-    
-#   #plot wsi:            
-#         fig, ax = plt.subplots(figsize=(10, 10))
-#         ax.imshow(wsi, aspect='equal')  # Display the downsampled WSI
-#         ax.set_title('Downsampled WSI with Annotations')
-#     # Add patches to the plot
-#         p = PatchCollection(annotation_polygons, facecolor='green', edgecolor='green', alpha=0.9)
-#         ax.add_collection(p)
-# # Save the figure
-#         plt.savefig(save_path)
-#         plt.close()
-
 
         print(f"Processing scene {scn}, scaled size: {wsi.shape}")
         #The coordinate system of the wsi consists of heigth and width, so the wsi has to be indexed
@@ -433,11 +421,8 @@ def process_slides(slide_path, annotation_path, save_path, center_name, patch_si
     print("patch count:", len(paths))
     print("Time taken: ", end - start, "seconds")
     
-
-    labeled_patches = paths[paths['label'] == 1.0]
-# Print out the number of labeled patches
-    print(f"Number of labeled patches: {labeled_patches.shape[0]}")
     return coords, paths
+
 
 def process_row_annotations(wsi, scn, x, patch_size, save_path, center_name, downscaling_factor, slide_name, white_thresh, black_thresh, calc_thresh, invalid_ratio_thresh, edge_threshold, annotations):
     patches_coords = pd.DataFrame({"scn": [], "x": [], "y": [], "label": []})
@@ -455,7 +440,7 @@ def process_row_annotations(wsi, scn, x, patch_size, save_path, center_name, dow
                                      (x , (y + patch_size) )])
             label = 0
             for annotation, anns in annotations:
-                if annotation.intersects(patch_polygon) or annotation.touches(patch_polygon):
+                if annotation.intersects(patch_polygon):
                     label = 1
                     break
             im_path = patch_dir / f"{slide_name}_patch_{scn}_{x}_{y}_{center_name}_{label}.png"
