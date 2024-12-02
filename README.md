@@ -36,7 +36,3 @@ This repository contains code and resources for my Master's thesis on improving 
 ## Acknowledgments
 
 Thanks to **Prof. Dr. Dr. Fabian Theis**, **Dr. Carsten Marr**, and **Dr. Xudong Sun** for their guidance throughout this project.
-
----
-
-Let me know if you need further adjustments!
